@@ -27,6 +27,7 @@ def create_app():
     from .search import search
     from .card import card
     from .quiz import quiz
+    from .upload import upload
     app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(home, url_prefix='/')
     app.register_blueprint(todo, url_prefix='/')
