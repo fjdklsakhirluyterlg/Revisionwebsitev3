@@ -3,7 +3,7 @@ from . import db
 from flask_login import current_user, login_required
 from .models import airplane
 
-airplanes = Blueprint("airplane", __name__)
+airplanes = Blueprint("airplanes", __name__)
 
 @airplanes.route("/api/ratings/airplane/add", methods=["POST"])
 def api_add_planes():
