@@ -10,6 +10,7 @@ import shutil
 from .classes import Position
 from .api import Randomz
 import random, math
+import subprocess
 
 home = Blueprint('home', __name__)
 
@@ -493,3 +494,19 @@ def hs2():
 @home.route("/crossrail")
 def crossrail():
     return "I like crossrail"
+
+@home.route("/other/break-my-computer")
+def break_computer():
+    x = (i for i in range(9999999))
+    return jsonify(list(x))
+
+@home.route("/other/devies-on-my-network")
+def devices_Non_my_network():
+    command = "arp -a"
+    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    output, error = process.communicate()
+    return f"outputs: {output.decode('utf-8')}, errors: {error.decode('utf-8')}"
+
+@home.route("/help/api")
+def api_help_stuff():
+    return "It like breaking"
