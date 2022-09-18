@@ -3,9 +3,9 @@ from . import db
 from flask_login import current_user, login_required
 from .models import airplane
 
-airplane = Blueprint("airplane", __name__)
+airplanes = Blueprint("airplane", __name__)
 
-@airplane.route("/api/ratings/airplane/add", methods=["POST"])
+@airplanes.route("/api/ratings/airplane/add", methods=["POST"])
 def api_add_planes():
     try:
         if request.headers['Content-Type'] == 'airplanelication/json':
@@ -26,7 +26,7 @@ def api_add_planes():
     except:
         return jsonify(error="something went wrong")
 
-@airplane.route("/api/airplane")
+@airplanes.route("/api/airplane")
 def api2_view_airplane():
     x = db.session.query(airplane).all()
     dict = {}
@@ -34,7 +34,7 @@ def api2_view_airplane():
         dict[i.id] = [i.type, i.length, i.width, i.top_speed, i.airline, i.base]
     return dict
 
-@airplane.route("/api/airplane/add")
+@airplanes.route("/api/airplane/add")
 def api2_add_airplane():
     type = request.args.get("type", default="A320")
     length = request.args.get("length", default=200.0)
@@ -47,7 +47,7 @@ def api2_add_airplane():
     db.session.commit()
     return jsonify(msg="worked!")
 
-@airplane.route("/api/airplane/delete")
+@airplanes.route("/api/airplane/delete")
 def api2_airplane_delete():
     id = request.args.get("id")
     airplanex = db.session.query(airplane).filter(airplane.id == id).first()
@@ -55,7 +55,7 @@ def api2_airplane_delete():
     db.session.commit()
     return redirect(url_for("api2_view_airplane"))
 
-@airplane.route("/api/airplane/update/name")
+@airplanes.route("/api/airplane/update/name")
 def api2_airplane_update_name():
     id = request.args.get("id")
     new_name = request.args.get("name")
@@ -64,7 +64,7 @@ def api2_airplane_update_name():
     db.session.commit()
     return jsonify(msg="worked")
 
-@airplane.route('/api/airplane/update/airline')
+@airplanes.route('/api/airplane/update/airline')
 def update_airline_api_airplane():
     id = request.args.get("id")
     new_airplne = request.args.get("airline")
@@ -73,7 +73,7 @@ def update_airline_api_airplane():
     db.session.commit()
     return jsonify(msg="updated")
 
-@airplane.route('/api/airplane/update/base')
+@airplanes.route('/api/airplane/update/base')
 def update_base_api_airplane():
     id = request.args.get("id")
     new_base = request.args.get("base")
@@ -82,7 +82,7 @@ def update_base_api_airplane():
     db.session.commit()
     return jsonify(msg="worked")
 
-@airplane.route("/api/airplane/search")
+@airplanes.route("/api/airplane/search")
 def api2_airplane_search():
     p = request.args.get("p", default="type")
     q = request.args.get("q", default="A320")
