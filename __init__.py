@@ -28,6 +28,7 @@ def create_app():
     from .card import card
     from .quiz import quiz
     from .upload import upload
+    from .cars import cars
     app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(home, url_prefix='/')
     app.register_blueprint(todo, url_prefix='/')
@@ -41,7 +42,9 @@ def create_app():
     app.register_blueprint(search, url_prefix="/")
     app.register_blueprint(card, url_prefix="/")
     app.register_blueprint(quiz, url_prefix="/")
-
+    app.register_blueprint(upload, url_prefix="/")
+    app.register_blueprint(cars, url_prefix="/")
+    
     login_manager = LoginManager()
     login_manager.login_view = "auth.login"
     login_manager.init_app(app)
