@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>All blogs </title>
+        <style>
+            a:link {color: green; background-color: transparent; text-decoration: none;}          
+            a:visited {color: #6065e0; background-color: transparent; text-decoration: none;}     
+            a:hover {color: red; background-color: transparent; text-decoration: underline;}
+            a:active {color: yellow; background-color: transparent; text-decoration: underline;}
+        </style>
+    <body style="background-color:black; color:white;">
+        <a href="/blogs/viewadd">create</a>
+        <hr>
+        {% for i, tag in blogs%}
+        <div class="card">
+            <button><h2><a href="/blogs/views/{{i.title}}">{{i.title}}</a></h2></button>
+            <a href="/blogs/views/{{i.title}}"><p>{{i.content.split("\n\n")[0][:250] | safe}}...</p></a>
+            <p>views: {{i.views}}</p>
+            <div>
+                <p>tags: </p>
+                {% for h in tag %}
+                <a href="/blogs/tags/{{h}}">{{h}}</a>
+                {% endfor %}
+            </div>
+            <hr>
+            </div>
+        {% endfor %}
+    </body>
+</html>    

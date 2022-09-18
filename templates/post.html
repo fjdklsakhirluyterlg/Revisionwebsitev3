@@ -1,0 +1,46 @@
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/codemirror.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/xml/xml.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/javascript/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/css/css.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/htmlmixed/htmlmixed.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css">
+</head>
+<body style="background-color: black; color: white">
+    <h1>{{title}}</h1>
+    <a href="/community">community home</a>
+    <p>{{likes}} likes | {{dislikes}} dislikes | created by <a href="/users/view/{{user_id}}">{{user_name}}</a> | created at {{created_at}} | {{views}} views</p>
+    <button><a href="/community/addlike/{{title}}">add like</a></button> | <button><a href="/community/adddislike/{{title}}">add dislike</a></button>
+    <pre><div style="white-space: pre-line; overflow: auto;"><pre>{{content}}</pre></div></pre>
+    <br>
+    <hr>
+    <br>
+    {% for tag in tags %}
+    <span><a href="/community/tags/{{tag}}">{{tag}}</a></span>
+    {% endfor %}
+    <br><hr>
+    {% if awnsers %}
+    {% for awnser in awnsers%}
+    <div id="{{awnser.title}}"><p>{{awnser.title}} </p><p> {{awnser.likes}} likes | {{awnser.dislikes}} dislikes | created at {{awnser.created_at}} | created by <a href="/users/view/{{awnser.user_id}}">{{awnser.author}}</a></p>
+    <pre><div style="white-space: pre-line; overflow: auto;"><pre>{{awnser.content}}</pre></div></pre><hr></div>
+    {% endfor %}
+    {% endif %}
+    <p> Enter your awnser: </p>
+    <form action="/community/add/awnser/{{id}}" method="POST">
+        <label>Title</label>
+        <input type="text" name="title"><br>
+        <label>Author</label>
+        <input type="text" name="author" value="{{current_user.name}}"><br>
+        <label>Content: </label>
+        <textarea id="content" name="content" rows="20" cols="174"></textarea>
+        <script>
+            window.code = CodeMirror.fromTextArea(document.getElementById('content'), {
+                lineNumbers: true,
+                mode:  "htmlmixed",
+                theme: 'monokai'
+            });
+        </script>
+        <button type="submit">Submit</button>
+    </form>
+</body>

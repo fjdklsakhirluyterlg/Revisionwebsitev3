@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/codemirror.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/python/python.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css">
+    </head>
+    <body style="background-color: black">
+        <form action="/ide/python" method="post" id="MyForm">
+            <button type="submit" style="background-color: #ADD8E6;">run</button>
+            <div>
+            <br>
+            {% if code %}
+            <div style="border: 5px solid grey"><textarea id='code' name="script" rows="20" cols="174" style="background-color:black; color:#FFFFFF; height=50%" spellcheck="false">{{code}}</textarea></div>
+            {% else %}
+            <div style="border: 5px solid grey"><textarea id='code' name="script" rows="20" cols="174" style="background-color:black; color:#FFFFFF; height=50%" spellcheck="false">print("hello world")</textarea></div>
+            {% endif %}
+            <script>
+                window.code = CodeMirror.fromTextArea(document.getElementById('code'), {
+                    lineNumbers: true,
+                    mode: 'python',
+                    indentUnit: 4,
+                    theme: 'monokai'
+
+                });
+            </script>
+            <br>
+            </div>
+        </form>
+        {% if output %}
+        <div style="border: 5px solid grey"><textarea readonly rows="20" cols="174" style="background-color:black; color:#FFFFFF; height=50%">{{output}}</textarea></div>
+        {% elif error %}
+        <div style="border: 5px solid grey"><textarea readonly rows="20" cols="174" style="background-color:black; color:#FFFFFF; height=50%">{{error}}</textarea></div>
+        {% else %}
+        <div style="border: 5px solid grey"><textarea readonly rows="20" cols="174" style="background-color:black; color:#FFFFFF; height=50%"></textarea></div>
+        {% endif %}
+
+    </body>
+</html>

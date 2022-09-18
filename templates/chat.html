@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function scrollToBottom() {
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+        history.scrollRestoration = "manual";
+        window.onload = scrollToBottom;
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        id = {{id}}
+        setInterval(function() {
+            $('#t').load(`/chats/${id} #t`)
+        }, 3000);
+    </script>
+</head>
+<body style="background-color: black; color:white;">
+    <h1>{{name}}</h1>
+    <p>Description: {{description}}</p>
+    <p> People: 
+    {% for person in people %}
+        <span>{{person.name}}</span>
+    {% endfor %}
+    </p> <button><a href="/chat/adduser/{{id}}">add user</a></button>
+    <div id="t">
+        {% if texts %}
+            {% for text in texts %}
+                {% if text.authorname != current_user.name %}
+                    <br>
+                    <div style="background-color: green; width: 50%; border-radius: 25px; padding-left: 20px; margin-top: 5px;">
+                    <p>{{text.authorname}} | {{text.timestamp}}</p>
+                    <p>{{text.text}}</p>
+                    </div>
+                    <div style="background-color: #808080; width: 31%; border-radius: 25px; padding-left: 20px; margin-left: 40%;  margin-top:-20px">
+                    {% for reaction in text.reactions %}
+                        <span>{{reaction.icon}}</span>
+                    {% endfor %}
+                    <form action="/chat/add-reaction/{{text.id}}" method="POST"><label>♥</label><input type="radio" name="reaction" value="♥"><label>👍</label><input type="radio" name="reaction" value="👍"><label>😭</label><input type="radio" name="reaction" value="😭"><label>👎</label><input type="radio" name="reaction" value="👎"><button type="submit">submit</button></form>
+                    </div>
+                {% else %}
+                    <br>
+                    <div style="background-color: blue; width: 50%; border-radius: 25px; padding-left: 20px; margin-top: 5px; margin-left: 50%;">
+                    <p>{{text.authorname}} | {{text.timestamp}}</p>
+                    <p>{{text.text}}</p>
+                    </div>
+                    <div style="background-color: #808080; width: 31%; border-radius: 25px; padding-left: 20px; margin-left: 40%;  margin-top:-20px; text-align: right; padding-right: 20px;">
+                    {% for reaction in text.reactions %}
+                        <span>{{reaction.icon}}</span>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <form action="/chat/add-text/{{id}}" method="POST">
+        <label>Enter text: </label>
+        <input type="text" name="text">
+        <button type="submit">&spades;</button>
+    </form>
+    </body>
+</html>

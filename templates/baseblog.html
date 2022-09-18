@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>{{title}} - blogs</title>
+        <style>
+            a:link {color: green; background-color: transparent; text-decoration: none;}          
+            a:visited {color: #6065e0; background-color: transparent; text-decoration: none;}     
+            a:hover {color: red; background-color: transparent; text-decoration: underline;}
+            a:active {color: yellow; background-color: transparent; text-decoration: underline;}
+            code {background-color: blue;border-radius: 3px;font-family: courier, monospace;padding: 0 3px;}
+            ::selection {color: red;background: black;}
+        </style> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                //$('#comments').hide()
+                $("#toggle").click(function(){
+                  $("#comments").toggle(100);
+                });
+              });
+        </script>
+    </head>
+    <body style="background-color:black; color:white;">
+        <button>
+            <a href="/blogs/viewall">blogs home</a>
+        </button>
+        <button>
+            <a href="/blogs/viewedit?id={{id}}">edit</a>
+        </button> 
+        <button>
+            <a href="/blogs/make-newsletter/{{id}}">make newsletter</a>
+        </button><br> 
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
+        <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-url="https://www.linkedin.com"></script>
+        <h1>{{title}}</h1>
+        <h3>Created by Armaan Banerjee at {{time}}</h3>
+        <p>{{words}} words. {{read_time}} minutes to read</p>
+        <p>{{views}} views</p>
+        <form action="/blogs/addlike/{{id}}"><label>{{likes}}</label><button type="submit">likes</button></form>
+        <form action="/blogs/adddislike/{{id}}"><label>{{dislikes}}</label><button type="submit">dislikes</button></form>
+        {% if show %}
+            <!--<form action="/blog/addbookmark/{{id}}" method="POST"><label>Bookmark</label><input type="text" name="note"><button type="submit">Submit</button></form>-->
+        {% endif %}
+        <hr>
+        <pre><div style="white-space: pre-line; overflow: auto;"><pre>{{content | safe}}</pre></div></pre>
+        <hr>
+        <p>tags: </p>
+        <div>
+            {% for tag in tags %}
+            <a href="/blogs/tags/{{tag}}">{{tag}}</a>
+            {% endfor %}
+        </div>
+        {% if related %}
+        <p>related:</p>
+        <p>
+        {% for blog in related %}
+        <span><a href="/blogs/views/{{blog}}">{{blog}}</a></span>
+        {% endfor %}
+        </p>
+        {% endif %}
+       <button id="toggle"> show {{comments | length}} comments</button>
+       <div id="comments">
+        {% if show %}
+        <form action="/blogs/create-comment/{{id}}" method="POST">
+            <label>author</label>
+            <br>
+            <input type="text" name="author" required value="{{current_user.name}}">
+            <br>
+            <label>comment</label>
+            <br>
+            <input type="text" name="text" required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        {% else %}
+        {% if login %}
+            <p> please login </p>
+            <form action="/login" method="POST">
+                <label>Enter your name</label>
+                <input type="text" name="name" />
+                <label>Enter your password</label>
+                <input type="password" name="password" />
+                <button type="submit">Submit</button>
+            </form>
+            <p>or signup</p>
+            <a href="/signup">signup</a>
+        {% else %}
+        <p> {{msg}} </p>
+        {% endif %}
+        {% endif %}
+        {% if comments %}
+        {% for comment in comments %}
+        <div id="{{comment.text}}">
+        <p>{{comment.blog_id}} | {{comment.author}} posted at {{comment.timestamp}}</p>
+        <p>{{comment.text}}</p>
+        <form action="/blogs/comments/addlike/{{comment.id}}"><label>{{comment.likes}}</label><button type="submit">likes</button></form><form action="/blogs/comments/adddislike/{{comment.id}}"><label>{{comment.dislikes}}</label><button type="submit">dislikes</button></form>{% if current_user.mod %}<form action="/blogs/comments/report/{{comment.id}}"><button type="submit">report</button></form>{% endif %}
+        {% if show %}
+        <form action="/blogs/create_reply/{{id}}?parent={{comment.id}}" method="POST" id="form">
+            <label>author</label>
+            <input type="text" name="author" required value="{{current_user.name}}">
+            <label>comment</label>
+            <input type="text" name="text" required>
+            <!--<input type="text" name="parent" value={{comment.id}}>-->
+            <button type="submit">Submit</button>
+        </form>
+        <button id="btn">Reply</button>
+        <script src="{{url_for('static', filename='baseblog.js')}}"></script>
+        {% endif %}
+        {% if comment.replies %}
+        {% for reply in comment.replies %}
+        <div style="padding-left: 80px;" id="{{reply.text}}">
+            <p>{{reply.blog_id}} | {{reply.author}} replied at {{reply.timestamp}}</p>
+            <p>{{reply.text}}</p>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <hr>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    </body>
+</html>

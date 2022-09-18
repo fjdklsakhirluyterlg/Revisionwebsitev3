@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head><title>login</title></head>
+<body>
+    <form action="/login" method="POST">
+        <lable>Enter your name or email address</lable>
+        <input type="text" name="name" />
+        <label>Enter your password</label>
+        <input type="password" name="password" />
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if msg %}
+    <p>{{ msg }}</p>
+    {% endif %}

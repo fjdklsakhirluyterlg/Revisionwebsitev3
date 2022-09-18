@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/codemirror.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/codemirror.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/xml/xml.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/javascript/javascript.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/css/css.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/htmlmixed/htmlmixed.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css">
+    </head>
+    <body style="background-color:black; color:white;">
+        <p>{{id}} | {{title}} | {{views}}</p>
+        <form action="/blogs/viewedit?id={{id}}" method="POST">
+            <div>
+            <label>Title</label>
+            <br>
+            <input type="text" name="title" required value={{title}}>
+            <br>
+            <label>Content</label>
+            <br>
+            <div style="border: 5px solid grey"><textarea id='code' name="content" rows="20" cols="174" style="background-color:black; color:#FFFFFF; height=50%" spellcheck="false">{{content}}</textarea></div>
+            <script>
+                window.code = CodeMirror.fromTextArea(document.getElementById('code'), {
+                    lineNumbers: true,
+                    mode:  "htmlmixed",
+                    theme: 'monokai',
+                });
+            </script>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if message %}
+            <p>{{ message | safe}}</p>
+        {% endif %}
+    </body>
+</html>

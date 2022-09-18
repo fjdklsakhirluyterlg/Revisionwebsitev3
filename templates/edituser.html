@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="/users/edit/{{id}}" method="POST">
+            <lable>Name: </lable>
+            <input type="text" name="name" value="{{name}}">
+            <label>Email</label>
+            <input type="email" name="email" value="{{email}}">
+            <button type="submit">Submit</button>
+        </form>
+
+        <p>if you are trying to change your password please go <a href="/user/edit/changepassword">here</a></p>
+    </body>
+</html>

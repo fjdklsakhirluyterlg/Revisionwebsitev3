@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="/ide/js" method="post">
+            <label>Enter your script:</label>
+            <textarea name="script" rows="15" columns="100" style="background-color:black; color:#FFFFFF">console.log("hello world")</textarea>
+            <input type = "submit" value = "submit" />
+        </form>
+        
+        {% if output or error %}
+        <p>{{output}}</p>
+        <p>{{error}}</p>
+        {% endif %}
+    </body>
+</html>

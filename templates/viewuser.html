@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>view {{name}}</title>
+</head>
+<body style="background-color: black; color: white">
+<p>you are viewing the profile of {{name}}.</p>
+<p>activity: </p>
+{% for comment , blog in comments %}
+    <div style="background-color: blue; border-radius: 25px; padding-left: 20px;">
+    <p>{{name}} posted as {{comment.author}} at {{comment.timestamp}} on <a style="color: green" href="/blogs/views/{{blog.title}}">{{blog.title}}</a>:</p> 
+    <p>{{comment.text}}</p>
+    <p>it has {{comment.likes}} likes and {{comment.dislikes}} dislikes </p>
+    <hr>
+    <br>
+    </div>
+{% endfor %}
+{% for post in posts %}
+<div style="background-color: blue; border-radius: 25px; padding-left: 20px;"><p>{{name}} posted at <a style="color: green;" href="/community/view/{{post.title}}">{{post.title}}</a></p>
+    <p>{{post.likes}} likes and {{post.dislikes}} dislikes </p></div>
+{% endfor %}
+{% for awnser in awnsers %}
+<div style="background-color: blue; border-radius: 25px; padding-left: 20px;"><p>{{name}} awnsered at <a style="color: green" href="/community/views/{{awnser.post_id}}#{{awnser.title}}">{{awnser.title}}</a></p>
+    <p>{{awnser.likes}} likes and {{awnser.dislikes}} dislikes </p></div>
+{% endfor %}
+<p>Chat with <a style="color: green" href="/chat/add?user={{name}}">{{name}}</a>.</p>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Minesweeper</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="indexmine.css" type="text/css">
+    <script type="text/javascript" src="./indexmine.js"></script>
+  </head>
+  <body>
+      <div id="box">
+         <h2>MINESWEEPER!</h2><hr><br><br>
+            <div id="field"></div>
+            <button id="load">Load</button>
+            <br>
+          <div id="lost" style="display: none;">
+            <h3>You got bombed!</h3>
+            <button id="new-game-button" type="button" onclick="reload()">Start Again</button>
+          </div>         
+      </div>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<script>
+    function myFunction(){
+        var x = document.getElementById("q").value;
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function(){
+            document.getElementById("div").innerHTML = this.responseText;
+        }
+        xhttp.open("GET", "/search/better?q=" + x, true)
+        xhttp.send();
+    }
+</script>
+<body style="background-color: black; color: white">
+    <form><input type="text" id="q" oninput="myFunction()"></form><pre><div id="div"></div></pre>
+</body>

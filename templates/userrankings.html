@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <style>
+            a:link {color: green; background-color: yellow; text-decoration: underline;}                   
+            a:visited {color: #6065e0; background-color: transparent; text-decoration: none;}     
+            a:hover {color: red; background-color: transparent; text-decoration: underline;}
+            a:active {color: yellow; background-color: transparent; text-decoration: underline;}
+        </style>
+    </head>
+<body style="background-color: black; color: white;">
+    <h1>The ten most liked users</h1>
+    {% for user in users %}
+    <div style="background-color: blue; border-radius: 25px; padding-left: 20px;">
+        <h2><a href="/users/view/{{user.id}}">{{user.name}}: </a></h2>
+        <p>{{user.points}} points</p>
+        <p>{{user.timestamp}}</p>
+        <hr>
+        {% for comment in user.comments[:3] %}
+            <p>{{comment.text}}</p>
+            <p>{{comment.likes}} likes | {{comment.dislikes}} dislikes </p>
+            <hr>
+        {% endfor %}
+        {% for post in user.posts[:3] %}
+            <p>{{post.title}}</p>
+            <p>{{post.likes}} likes | {{post.dislikes}} dislikes </p>
+        {% endfor %}
+        {% for awnser in user.awnsers%}
+            <p>{{awnser.title}}</p>
+            <p>{{awnser.likes}} likes | {{awnser.dislikes}} dislikes </p>
+        {% endfor %}
+        <br>
+    </div>
+    {% endfor %}
+</body>

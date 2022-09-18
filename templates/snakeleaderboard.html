@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Snake leaderboard</h1>
+        {% for leader in leaders %}
+            <h3><a href="/users/view/{{leader.user_id}}">{{leader.name}}</a></h3>
+            <p>{{leader.score}}</p>
+            <p>{{leader.food}}</p>
+        {% endfor %}
+    </body>
+</html>

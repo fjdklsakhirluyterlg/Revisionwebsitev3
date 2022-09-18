@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            a:link {color: green; background-color: transparent; text-decoration: none;}          
+            a:visited {color: #6065e0; background-color: transparent; text-decoration: none;}     
+            a:hover {color: red; background-color: transparent; text-decoration: underline;}
+            a:active {color: yellow; background-color: transparent; text-decoration: underline;}
+        </style>
+    </head>
+    <body style="background-color:black; color:white;">
+        <button>
+            <a href="/blogs/viewall">blogs home</a>
+        </button>
+        {% if showf or unfollowf %}<button>
+            {% if showf %}<a href="/user/tags/add/{{id}}">follow</a>{% elif unfollowf %}<a href="/user/tags/delete/{{id}}">unfollow</a>{% endif %}
+        </button>{% endif %}
+        <p>{{things}} blogs</p>
+        {% if not post %}
+        <p>{{views}} total views. {{average}} on average views</p>
+        {% endif %}
+        <p> {{words}} total words. {{avwords}} on average words. {{time_to_read}} minutes to read all. {{avtime}} minutes on average to read</p>
+        {% for i in blogs%}
+        <div>
+            <h2>{{i.title}}</h2>
+            {% if not post%}
+            <a href="/blogs/views/{{i.title}}">{{i.title}}</a>
+            {% else %}
+            <a href="/community/view/{{i.title}}">{{i.title}}</a>
+            {% endif %}
+            <hr>
+        {% endfor %}
+    </body>
+</html>    

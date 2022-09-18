@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="/books/add">
+            <div>
+            <label> Book title</label>
+            <input type="text" name="booktitle">
+            <!-- <label> Book author</label>
+            <input type="text" name="bookauthor"> -->
+            <label> Book summary</label>
+            <input type="text" name="booksummary">
+            </div>
+            <button type="submit">Add</button>
+        </form>
+
+        {% for x in listy %}
+        <div>
+            <p>{{x.list}}</p>
+            <!-- <p>{{x.summary}}</p> -->
+            <a href="/books/delete/{{ x.id }}">Delete</a>
+        </div>
+        {% endfor %}
+    </body>
+</html>

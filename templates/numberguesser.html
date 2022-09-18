@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Number guesser</h1>
+        <p> Guess the number</p>
+        <label>Enter guess</label>
+        <input id="guess" type="number">
+        <input type="submit" id="submit">
+        <script>
+            const correct = Math.floor((Math.random() * 10) + 1)
+            var guesses = 0;
+            document.getElementById("submit").onclick = function() {
+                var guess = document.getElementById('guess').value
+                guesses+=1
+                if (guess == correct) {
+                    alert(`${guess} is correct, nic job bro, you did it in ${guesses}`)
+                } else if(guesses <= 3) {
+                    alert("Try again")
+                } else {
+                    alert(`Sorry brother, the correct awnser was ${correct}`)
+                }
+            }
+        </script>
+    </body>
+</html>

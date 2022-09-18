@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div>
+            <form action="/math/collatz" method="post">
+                <label>Collatz</label>
+                <input type="number" name="Colnum">
+            </form>
+            <button type="submit">Submit</button>
+        </div>
+
+        {% for x in colnums %}
+        <p>{{x}}</p>
+        {% endfor %}
+
+        <p>{{colnums}}</p>
+    </body>
+</html>

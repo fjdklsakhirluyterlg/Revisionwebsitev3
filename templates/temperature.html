@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function ctof(temp) {
+                return (temp * 9/5) + 32
+            }
+            function ftoc(temp) {
+                return (temp - 32)* 9/5
+            }
+
+            var x = document.getElementById("submitb").onclick = function(){
+                var temp;
+                if (document.getElementById("celc").checked){
+                    temp = document.getElementById("temp").value
+                    temp = Number(temp)
+                    temp = ctof(temp)
+                    document.getElementById("tempc").innerHTML = temp
+                } else if(document.getElementById("faren").checked){
+                    temp = document.getElementById("temp").value
+                    temp = parseFloat(temp)
+                    temp = ftoc(temp)
+                    document.getElementById("tempc").innerHTML = temp
+                } else {
+                    alert("Please pick one")
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <label>Enter temp</label><br>
+        <input type="text" id="temp"><br>
+        <label>Convert to:</label><br>
+        <input type="radio" id="celc" name="unit"><label>Celcius</label><br>
+        <input type="radio" id="faren" name="unit"><label>Farenheight</label><br>
+        <button type="submit" id="submitb">Submit</button>
+        <p id="tempc"></p>
+    </body>
+</html>

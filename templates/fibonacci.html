@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div>
+            <form action="/math/fibonacci" method="post">
+                <div>
+                    <label>fibonacci</label>
+                    <input type="number" name="Fibnum">
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+
+            <p>Fibonacci numbers untill your number:</p>
+
+            {% for x in fibnums %}
+            <p>{{x}}</p>
+            {% endfor %}
+
+            <p>{{fibnums}}</p>
+        </div>
+    </body>
+</html>
