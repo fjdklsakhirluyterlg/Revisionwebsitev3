@@ -481,3 +481,15 @@ def collatz_api():
 @home.route("/test/ipad")
 def ipad_test():
     return "This is so cool"
+
+@home.route("/mr-beast")
+def mr_beast():
+    return "<p>Congrats on 100 mil mr beast!!!!!!!!!!!!!!!!!!</p> <a href='https://www.youtube.com/watch?v=tVWWp1PqDus' mr</a>"
+
+@home.route("/hs2")
+def hs2():
+    return "I like hs2"
+
+@home.route("/crossrail")
+def crossrail():
+    return "I like crossrail"
