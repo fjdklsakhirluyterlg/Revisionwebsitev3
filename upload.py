@@ -31,3 +31,12 @@ def upload_files_to_server():
                 name = os.path.join(f"{UPLOAD_FOLDER}/", filename)
                 file.save(name)
     
+@login_required
+@upload.route('/uploads/<filename>')
+def see_upload(filename):
+    return send_from_directory("/files/user/", filename)
+
+@login_required
+@upload.route("/files/all")
+def see_all_files():
+    files = os.listdir("./files/user")
