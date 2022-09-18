@@ -510,3 +510,15 @@ def devices_Non_my_network():
 @home.route("/help/api")
 def api_help_stuff():
     return "It like breaking"
+
+@home.route("/api/test/poststuff", methods=["GET", "POST"])
+def test_of_post_stuff():
+    try:
+        # if request.headers['Content-Type'] == 'application/json':
+        if request.method == "POST":
+            data = request.get_json()
+            return jsonify(data)
+        return jsonify(error="wrong method")
+    except Exception as e:
+        print(e)
+        return jsonify(error="Error!")
