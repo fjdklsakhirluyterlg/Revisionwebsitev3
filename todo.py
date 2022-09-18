@@ -32,3 +32,28 @@ def deletet(todo_id):
     db.session.delete(todo)
     db.session.commit()
     return redirect(url_for("show_todo"))
+
+@todo.route("/api/todo/add")
+def api_add_todo():
+    x = request.args.get("title")
+    new_todo = Todo(title=x, complete=False)
+    db.session.add(new_todo)
+    db.session.commit()
+    return jsonify(message="worked")
+
+@todo.route("/api/todo/delete")
+def api_delete_todo():
+    id = request.args.get("id")
+    todo = db.session.query(Todo).filter(Todo.id == id).first()
+    db.session.delete(todo)
+    db.session.commit()
+    return ""
+
+@todo.route("/api/todo/")
+@todo.route("/api/todo/view")
+def api_todo_view():
+    x = db.session.query(Todo).all()
+    dict = {}
+    for i in x:
+        dict[f"{i.id}"] = [i.title, i.complete]
+    return dict
