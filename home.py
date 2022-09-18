@@ -3,7 +3,7 @@ import requests
 from .models import Snake_leaderboard
 from flask_login import login_user, login_required, logout_user, current_user, LoginManager, UserMixin
 from . import db
-from .functions import is_integer_num, coefficient, fib, send_email, get_ecenomic_stuff, get_day_of_the_year, get_user_ip_address, collatz, generateπfrom_random
+from .functions import is_integer_num, coefficient, fib, send_email, get_ecenomic_stuff, get_day_of_the_year, get_user_ip_address, collatz, generateπfrom_random, get_loc_from_ip
 import os
 from itertools import permutations
 import shutil
@@ -514,7 +514,7 @@ def api_help_stuff():
 @home.route("/api/test/poststuff", methods=["GET", "POST"])
 def test_of_post_stuff():
     try:
-        # if request.headers['Content-Type'] == 'application/json':
+        # if request.headers['Content-Type'] == 'homelication/json':
         if request.method == "POST":
             data = request.get_json()
             return jsonify(data)
@@ -522,3 +522,52 @@ def test_of_post_stuff():
     except Exception as e:
         print(e)
         return jsonify(error="Error!")
+
+@home.route("/me/why?")
+def why_does_this_not_work():
+    return "this should never be seen"
+
+@home.route("/me/ipad/test")
+def ipad_test_thingy_for_me():
+    return "hi this was done on an ipad!!!!"
+
+@home.route("/games/minecraft")
+def minecraft():
+    return "Minecraft is a very popular game it is now owned by microsoft"
+
+@home.route("/games/crossy-roads")
+def crossy_roads():
+    return "I got 40,000 once, cool right? its a popular game for mobile"
+
+@home.route("/info")
+def info_stuff():
+    x = get_user_ip_address()
+    y = get_loc_from_ip(x)
+    return "Its broken at the moment sorrry"#f"city: {y[0]}, country: {y[2]}, location: {y[3]}, postal address: {y[5]}, don't sue me you came here for a reason"
+
+@home.route("/inflation")
+def inflation_is_preety_bad():
+    x = get_loc_from_ip(get_user_ip_address())
+    if x[2] == "GB" or "UK":
+        y = 9.4
+        return f"You are in the U.K inflation pretty bad, its {y} fro cpi"
+    else:
+        return "I am working on getting the latest thing for you, inflation pretty bad for you unless you in japan, everyone likes japan though unless your KIM JON UN, then maybe not, but you probably not him"
+
+@home.route("/youtube")
+def youtube():
+    return """
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Youtube</a>
+    <p> click it </p>
+    <div>
+    <summary>click it</summary>
+    <article>I said click it</article>
+    </div>
+    <p> Enter stuff if you are bored, i am because i am</p>
+    <input type="text" />
+    <p> Hi youtube </p>
+    <p> who am i kidding </p>
+    <p> no ones gonna see this </p>
+    <img src="/hello.jpeg" alt="hi">
+    <p> Thats a picture </p>
+    """
