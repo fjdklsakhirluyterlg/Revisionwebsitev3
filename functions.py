@@ -381,3 +381,47 @@ def send_newsletter_with_flask(title, addresses, content):
     msg.html = content
     mail.send(msg)
     return "sent"
+
+def send_email_newsletter(address, content):
+    try:
+        sender_email = "drive.banerjee.armaan@gmail.com"
+        receiver_email = address
+        password = "ixsrblyncyrupttv"
+        message = EmailMessage()
+        subject = "Newsletter"
+        body = f"Hello there, you have been emailed from me, your email adress is {address}"
+        x = get_ecenomic_stuff()
+        l = x[0]
+        body2 = f"The GBP is worth €{l}"
+        message["From"] = sender_email
+        message["To"] = receiver_email
+        message["Subject"] = subject
+        now_date = datetime.now()
+
+        html = f"""
+        <html>
+            <body>
+                <h1>{subject}</h1>
+                <br>
+                <p>{body}</p>
+                <p>{body2}</p>
+                <div>
+                <p>{content}</p>
+                </div>
+                <p>Armaan Banerjee - {now_date}</p>
+            </body>
+        </html>
+        """
+
+        message.add_alternative(html, subtype="html")
+
+        context = ssl.create_default_context()
+
+
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+            server.login(sender_email, password)
+            server.sendmail(sender_email, receiver_email, message.as_string())
+
+        return "Success"
+    except Exception as e:
+        return e
