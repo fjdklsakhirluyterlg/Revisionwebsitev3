@@ -10,7 +10,6 @@ from flask_socketio import SocketIO, send
 def create_app():
     app = Flask(__name__)
     db = SQLAlchemy(app)
-    db.init_app(app)
     api = Api(app)
     mail = Mail(app)
     CORS(app, resources={r"*": {"origins": "*"}})
@@ -97,6 +96,7 @@ def create_app():
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
     mail = Mail(app)
     socketio = SocketIO(app)
+    db.init_app(app)
     
     return app
 
