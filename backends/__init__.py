@@ -13,6 +13,7 @@ DB_NAME = "database.db"
 
 def create_app():
     app = Flask(__name__)
+    db.init_app(app)
     api = Api(app)
     mail = Mail(app)
     CORS(app, resources={r"*": {"origins": "*"}})
@@ -98,7 +99,6 @@ def create_app():
     mail = Mail(app)
     socketio = SocketIO(app)
     create_database(app)
-    db.init_app(app)
     
     return app
 
