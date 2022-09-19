@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect, send_from_
 from . import db
 from flask_login import current_user, login_required
 from .models import Card, Stack
+from . import app
 
 card = Blueprint("card", __name__)
 
@@ -104,3 +105,5 @@ def api_make_card_correct():
 def api_make_card_incorrect():
     id = request.args.get("id")
     card = Card.query.filter_by(id=id).first()
+    
+app.register_blueprint(card, url_prefix="/")

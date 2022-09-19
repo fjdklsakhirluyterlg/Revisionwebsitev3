@@ -3,6 +3,7 @@ from . import db
 from flask_login import current_user, login_required
 from werkzeug.utils import secure_filename
 import os
+from . import app
 
 upload = Blueprint("upload", __name__)
 
@@ -40,3 +41,6 @@ def see_upload(filename):
 @upload.route("/files/all")
 def see_all_files():
     files = os.listdir("./files/user")
+
+
+app.register_blueprint(upload, url_prefix="/")

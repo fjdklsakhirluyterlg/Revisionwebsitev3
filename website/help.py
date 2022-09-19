@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from .models import Help
+from . import app
 
 help = Blueprint('helo', __name__)
 
@@ -66,3 +67,5 @@ def api_view_help():
         c = db.session.query(Help.question).all()
     
     return jsonify(subject=f"y", topic=f"a", question=f"b", awnser=f"c")
+
+app.register_blueprint(help, url_prefix="/")

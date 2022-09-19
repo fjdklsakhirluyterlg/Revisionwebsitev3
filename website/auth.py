@@ -86,4 +86,4 @@ def logout():
     logout_user()
     return redirect("/login")
 
-app.register_blueprint("auth", url_prefix="/")
+app.register_blueprint(auth, url_prefix="/")

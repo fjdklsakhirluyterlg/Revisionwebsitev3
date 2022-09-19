@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect, send_from_
 from . import db
 from flask_login import current_user, login_required
 from .models import restauraunt
+from . import app
 
 restauraunts = Blueprint("restauraunts", __name__)
 
@@ -36,3 +37,5 @@ def api2_restauraunt_delete():
     restaurauntx = db.session.query(restauraunt).filter(restauraunt.id == id).first()
     db.session.delete(restaurauntx)
     db.session.commit()
+
+app.register_blueprint(restauraunts, url_prefix="/")

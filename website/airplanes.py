@@ -104,3 +104,5 @@ def api2_airplane_search():
     for i in x:
         dict[i.id] = [i.type, i.length, i.width, i.top_speed, i.airline, i.base]
     return dict
+
+app.register_blueprint(airplane, url_prefix="/")

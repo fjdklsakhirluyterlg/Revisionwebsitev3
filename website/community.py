@@ -3,6 +3,7 @@ from . import db
 from flask_login import current_user, login_required
 from .models import Post, Tag, User, Notifications, Awnser
 import math
+from . import app
 
 community = Blueprint("community", __name__)
 
@@ -195,3 +196,5 @@ def user_unfollow_tag(id):
     db.session.commit()
     next = request.args.get("next", default="/dashboard")
     return redirect(next)
+
+app.register_blueprint(community, url_prefix="/")

@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect, send_from_
 from . import db
 from flask_login import current_user, login_required
 from .models import Quiz, Category, Question, Qawnser
+from . import app
 
 quiz = Blueprint("quiz", __name__)
 
@@ -120,3 +121,5 @@ def check_if_right_awnser():
         return jsonify(msg="Correct")
     else:
         return jsonify(msg="Not Correct", correct=act_correct, awnser=awnser)
+    
+app.register_blueprint(quiz, url_prefix="/")

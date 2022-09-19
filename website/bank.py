@@ -61,4 +61,4 @@ def api_update_name_bank(request):
     db.session.commit()
     return jsonify(message="worked")
 
-app.register_blueprint("bank", url_prefix="/")
+app.register_blueprint(bank, url_prefix="/")
