@@ -10,6 +10,8 @@ from .models import User
 
 def create_app():
     app = Flask(__name__)
+    db = SQLAlchemy(app)
+    db.init_app(app)
     api = Api(app)
     mail = Mail(app)
     CORS(app, resources={r"*": {"origins": "*"}})
@@ -98,8 +100,6 @@ def create_app():
     app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
     mail = Mail(app)
-    db = SQLAlchemy(app)
-    db.init_app(app)
     socketio = SocketIO(app)
     
     return app
