@@ -1,4 +1,4 @@
-from . import db
+from __main__ import db
 from flask_login import UserMixin
 from sqlalchemy import or_
 from datetime import datetime
