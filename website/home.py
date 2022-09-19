@@ -11,6 +11,7 @@ from .classes import Position
 from .api import Randomz
 import random, math
 import subprocess
+from . import app
 
 home = Blueprint('home', __name__)
 
@@ -616,3 +617,5 @@ def quizzes_simple():
 @home.route("/python")
 def python_explainer():
     return "I built this website with it."
+
+app.register_blueprint(home, url_prefix='/')
