@@ -8,7 +8,6 @@ from flask_restful import Resource, Api
 from flask_socketio import SocketIO, send
 from os import path
 
-db = SQLAlchemy()
 DB_NAME = "database.db"
 
 def create_app():
@@ -98,13 +97,13 @@ def create_app():
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
     mail = Mail(app)
     socketio = SocketIO(app)
-    create_database(app)
     
-    return app
-
-def create_database(app):
+    db = SQLAlchemy(app)
     if not path.exists('website/' + DB_NAME):
         db.create_all(app=app)
         print('Created Database!')
+    
+    return app
+
 
 app = create_app()
