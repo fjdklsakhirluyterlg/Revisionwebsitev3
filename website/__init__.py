@@ -101,3 +101,5 @@ def create_app():
     db = SQLAlchemy(app)
     db.init_app(app)
     socketio = SocketIO(app)
+    
+    return app
