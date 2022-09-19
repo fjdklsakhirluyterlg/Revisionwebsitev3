@@ -7,9 +7,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Resource, Api
 from flask_socketio import SocketIO, send
 
+db = SQLAlchemy()
+
 def create_app():
     app = Flask(__name__)
-    db = SQLAlchemy(app)
     api = Api(app)
     mail = Mail(app)
     CORS(app, resources={r"*": {"origins": "*"}})
