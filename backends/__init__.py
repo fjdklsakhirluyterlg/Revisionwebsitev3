@@ -12,7 +12,6 @@ DB_NAME = "database.db"
 
 def create_app():
     app = Flask(__name__)
-    db.init_app(app)
     api = Api(app)
     mail = Mail(app)
     CORS(app, resources={r"*": {"origins": "*"}})
@@ -102,6 +101,8 @@ def create_app():
     if not path.exists('website/' + DB_NAME):
         db.create_all(app=app)
         print('Created Database!')
+    
+    db.init_app(app)
     
     return app
 
