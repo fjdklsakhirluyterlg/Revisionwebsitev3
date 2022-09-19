@@ -15,8 +15,8 @@ def create_app():
     mail = Mail(app)
     CORS(app, resources={r"*": {"origins": "*"}})
     
-    from .auth import auth
-    from .home import home
+    # from .auth import auth
+    # from .home import home
     from .todo import todo
     from .newsletter import newsletter
     from .book import book
