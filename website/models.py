@@ -2,8 +2,9 @@ from flask_login import UserMixin
 from sqlalchemy import or_
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
+from . import app
 
-db = SQLAlchemy()
+db = SQLAlchemy(app)
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
