@@ -6,8 +6,10 @@ from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Resource, Api
 from flask_socketio import SocketIO, send
+from os import path
 
 db = SQLAlchemy()
+DB_NAME = "database.db"
 
 def create_app():
     app = Flask(__name__)
@@ -81,8 +83,6 @@ def create_app():
 
     app.register_error_handler(404, page_not_found)
 
-    DB_NAME = "database.db"
-
     app.config['SQLALCHEMY_DATABASE_URI'] =f'sqlite:///{DB_NAME}'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SECRET_KEY'] = "key"
@@ -100,5 +100,10 @@ def create_app():
     db.init_app(app)
     
     return app
+
+def create_database(app):
+    if not path.exists('website/' + DB_NAME):
+        db.create_all(app=app)
+        print('Created Database!')
 
 app = create_app()
