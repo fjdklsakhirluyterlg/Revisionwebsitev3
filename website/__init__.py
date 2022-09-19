@@ -59,9 +59,9 @@ def create_app():
     login_manager.login_view = "auth.login"
     login_manager.init_app(app)
 
-    @login_manager.user_loader
-    def load_user(id):
-        return User.query.get(int(id))
+    # @login_manager.user_loader
+    # def load_user(id):
+    #     return User.query.get(int(id))
 
     @app.errorhandler(500)
     def internal_server_error(e):
