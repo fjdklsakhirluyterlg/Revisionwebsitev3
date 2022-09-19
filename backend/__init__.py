@@ -97,6 +97,7 @@ def create_app():
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
     mail = Mail(app)
     socketio = SocketIO(app)
+    create_database(app)
     db.init_app(app)
     
     return app
