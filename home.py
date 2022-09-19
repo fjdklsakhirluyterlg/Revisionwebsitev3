@@ -571,3 +571,44 @@ def youtube():
     <img src="/hello.jpeg" alt="hi">
     <p> Thats a picture </p>
     """
+
+@home.route("/api/rrrrrr")
+def rrrrrr():
+    return jsonify(message="why you a pirate")
+
+@home.route("/world")
+def wrold_is_mad():
+    return "it is mad"
+
+@home.route("/ios")
+def ios():
+    return "It costs a lot of money"
+
+@home.route("/android")
+def android():
+    return "it also costs money"
+
+@home.route("/todosvelte")
+def wierd_todo_view():
+    return {"members": ["member1", "member2", "member3"]}
+
+@home.route("/todosvelte/<path:path>")
+def wierd_todo(path):
+    return send_from_directory('svelte/todo', path)
+
+@home.route("/quizzes/simple", methods=["GET", "POST"])
+def quizzes_simple():
+    if request.method == "POST":
+        awnsers = ["hi", "test"]
+        guesses = []
+        dif = {}
+        a = request.form.get('a')
+        b = request.form.get('b')
+        guesses.homeend(a)
+        guesses.homeend(b)
+        
+        for i in range(len(awnsers)):
+            if awnsers[i] != guesses[i]:
+                dif[guesses[i]] = awnsers[i]
+        
+        return dif
