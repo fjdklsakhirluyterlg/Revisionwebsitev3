@@ -34,8 +34,8 @@ def create_app():
     from .restauraunts import restauraunts
     from .songs import songs
     from .bank import bank
-    app.register_blueprint(auth, url_prefix='/')
-    app.register_blueprint(home, url_prefix='/')
+    # app.register_blueprint(auth, url_prefix='/')
+    # app.register_blueprint(home, url_prefix='/')
     app.register_blueprint(todo, url_prefix='/')
     app.register_blueprint(newsletter, url_prefix="/")
     app.register_blueprint(book, url_prefix="/")
