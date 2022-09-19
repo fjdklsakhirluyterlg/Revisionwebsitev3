@@ -103,3 +103,5 @@ def create_app():
     socketio = SocketIO(app)
     
     return app
+
+app = create_app()
