@@ -612,3 +612,7 @@ def quizzes_simple():
                 dif[guesses[i]] = awnsers[i]
         
         return dif
+
+@home.route("/python")
+def python_explainer():
+    return "I built this website with it."
