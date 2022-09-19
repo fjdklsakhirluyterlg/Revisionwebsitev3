@@ -82,9 +82,6 @@ def create_app():
 
     app.register_error_handler(404, page_not_found)
 
-    blogs = Blueprint('blogs',__name__, url_prefix='/blogs')
-    app.register_blueprint(blogs)
-
     DB_NAME = "database.db"
 
     app.config['SQLALCHEMY_DATABASE_URI'] =f'sqlite:///{DB_NAME}'
