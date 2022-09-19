@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect, send_from_
 from . import db
 from flask_login import current_user, login_required
 from .models import airplane
+from . import app
 
 airplanes = Blueprint("airplanes", __name__)
 
