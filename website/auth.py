@@ -6,6 +6,7 @@ from . import db
 from flask_mail import Mail, Message
 import random
 from . import mail
+from . import app
 
 auth = Blueprint('auth', __name__)
 
@@ -84,3 +85,5 @@ def login():
 def logout():
     logout_user()
     return redirect("/login")
+
+app.register_blueprint("auth", url_prefix="/")
