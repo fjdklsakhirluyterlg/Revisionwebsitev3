@@ -25,7 +25,7 @@ def validate_user_with_email(address, securitykey, name):
         <body>
             <h1> Hi {name}</h1>
             <p>Thank you for creating an acount on my website.</p>
-            <p>Please validate your email <a href='http://localhost:5050/user/validate/{securitykey}'>here</a>
+            <p>Please validate your email <a href='http://localhost:5090/user/validate/{securitykey}'>here</a>
             <p>Please validate your email <a href='https://murmuring-tundra-00105.herokuapp.com/user/validate/{securitykey}'>here</a>
         </body>
     </html>
