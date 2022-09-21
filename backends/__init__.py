@@ -16,6 +16,18 @@ socketio = SocketIO()
 
 def create_app():
     app = Flask(__name__)
+    app.config['SQLALCHEMY_DATABASE_URI'] =f'sqlite:///{DB_NAME}'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SECRET_KEY'] = "key"
+    app.config['MAIL_SERVER']='smtp.outlook.com'
+    app.config['MAIL_PORT'] = 587
+    app.config['MAIL_USERNAME'] = 'drive1.banerjee.armaan@outlook.com'
+    app.config['MAIL_PASSWORD'] = 'Transport11.'
+    app.config['MAIL_USE_TLS'] = True
+    app.config['MAIL_USE_SSL'] = False
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
+    app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024
+    app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
     db.init_app(app)
     CORS(app, resources={r"*": {"origins": "*"}})
     
