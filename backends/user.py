@@ -229,4 +229,8 @@ def find_user_related_tags():
     #         del sort[name]
     return sort 
 
+@user.route("/api/user/info")
+def show_me_user_info_thingy():
+    id = request.args.get("id")
+
 # app.register_blueprint(user, url_prefix="/")
