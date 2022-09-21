@@ -19,44 +19,44 @@ def create_app():
     db.init_app(app)
     CORS(app, resources={r"*": {"origins": "*"}})
     
-    # from .auth import auth
+    from .auth import auth
     from .home import home
-    # from .todo import todo
-    # from .newsletter import newsletter
-    # from .book import book
-    # from .help import help
-    # from .blogs import blogs
-    # from .user import user
-    # from .community import community
-    # from .chat import chat
-    # from .search import search
-    # from .card import card
-    # from .quiz import quiz
-    # from .upload import upload
-    # from .cars import cars
-    # from .airplanes import airplanes
-    # from .restauraunts import restauraunts
-    # from .songs import songs
-    # from .bank import bank
-    # # app.register_blueprint(auth, url_prefix='/')
+    from .todo import todo
+    from .newsletter import newsletter
+    from .book import book
+    from .help import help
+    from .blogs import blogs
+    from .user import user
+    from .community import community
+    from .chat import chat
+    from .search import search
+    from .card import card
+    from .quiz import quiz
+    from .upload import upload
+    from .cars import cars
+    from .airplanes import airplanes
+    from .restauraunts import restauraunts
+    from .songs import songs
+    from .bank import bank
+    app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(home, url_prefix='/')
-    # app.register_blueprint(todo, url_prefix='/')
-    # app.register_blueprint(newsletter, url_prefix="/")
-    # app.register_blueprint(book, url_prefix="/")
-    # app.register_blueprint(help, url_prefix="/")
-    # app.register_blueprint(blogs, url_prefix="/")
-    # app.register_blueprint(user, url_prefix="/")
-    # app.register_blueprint(community, url_prefix="/")
-    # app.register_blueprint(chat, url_prefix="/")
-    # app.register_blueprint(search, url_prefix="/")
-    # app.register_blueprint(card, url_prefix="/")
-    # app.register_blueprint(quiz, url_prefix="/")
-    # app.register_blueprint(upload, url_prefix="/")
-    # app.register_blueprint(cars, url_prefix="/")
-    # app.register_blueprint(airplanes, url_prefix="/")
-    # app.register_blueprint(restauraunts, url_prefix="/")
-    # app.register_blueprint(songs, url_prefix="/")
-    # app.register_blueprint(bank, url_prefix="/")
+    app.register_blueprint(todo, url_prefix='/')
+    app.register_blueprint(newsletter, url_prefix="/")
+    app.register_blueprint(book, url_prefix="/")
+    app.register_blueprint(help, url_prefix="/")
+    app.register_blueprint(blogs, url_prefix="/")
+    app.register_blueprint(user, url_prefix="/")
+    app.register_blueprint(community, url_prefix="/")
+    app.register_blueprint(chat, url_prefix="/")
+    app.register_blueprint(search, url_prefix="/")
+    app.register_blueprint(card, url_prefix="/")
+    app.register_blueprint(quiz, url_prefix="/")
+    app.register_blueprint(upload, url_prefix="/")
+    app.register_blueprint(cars, url_prefix="/")
+    app.register_blueprint(airplanes, url_prefix="/")
+    app.register_blueprint(restauraunts, url_prefix="/")
+    app.register_blueprint(songs, url_prefix="/")
+    app.register_blueprint(bank, url_prefix="/")
     
     login_manager = LoginManager()
     login_manager.login_view = "auth.login"
