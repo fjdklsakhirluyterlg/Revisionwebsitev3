@@ -99,7 +99,7 @@ def create_app():
 
     @app.errorhandler(404)
     def page_not_found(e):
-        return f"Sorry could not find this"
+        return f"Sorry could not find this, please try again"
 
     app.register_error_handler(404, page_not_found)
 
