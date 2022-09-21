@@ -3,16 +3,16 @@ import cv2
 
 stream = Blueprint("stream", __name__)
 
-# @stream.route("/stream")
-# def stream():
-#     video = cv2.VideoCapture(0)
-#     def generator(webcam):
-#         while True:
-#             success, image = video.read()
-#             if success:
-#                 ret, jpeg = cv2.imencode('.jpg', image)
-#                 frame = jpeg.tobytes()
-#                 yield (b'--frame\r\n'
-#                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+@stream.route("/stream")
+def stream():
+    video = cv2.VideoCapture(0)
+    def generator(webcam):
+        while True:
+            success, image = video.read()
+            if success:
+                ret, jpeg = cv2.imencode('.jpg', image)
+                frame = jpeg.tobytes()
+                yield (b'--frame\r\n'
+                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
     
-#     return Response(generator(video),mimetype='multipart/x-mixed-replace; boundary=frame')
+    return Response(generator(video),mimetype='multipart/x-mixed-replace; boundary=frame')
