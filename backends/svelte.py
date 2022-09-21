@@ -4,8 +4,8 @@ svelte = Blueprint("svelte", __name__)
 
 @svelte.route("/<path:path>")
 def base(path):
-    return send_from_directory('client/public', path)
+    return send_from_directory('frontend/public', path)
 
 @svelte.route("/f/svelte/i")
 def maybe_it_returns_the_index():
-    return send_from_directory('client/public', 'index.html')
+    return send_from_directory('fontend/public', 'index.html')
