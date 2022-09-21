@@ -11,7 +11,7 @@ from .classes import Position
 from .api import Randomz
 import random, math
 import subprocess
-from . import app
+# from . import app
 
 home = Blueprint('home', __name__)
 
