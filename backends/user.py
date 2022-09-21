@@ -235,5 +235,6 @@ def show_me_user_info_thingy():
     dict = {}
     user = User.query.filter_by(id=id).first()
     dict["key"] = user.security_key
+    return dict
 
 # app.register_blueprint(user, url_prefix="/")
