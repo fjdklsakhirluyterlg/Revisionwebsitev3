@@ -17,7 +17,7 @@ def create_app():
     CORS(app, resources={r"*": {"origins": "*"}})
     
     # from .auth import auth
-    from home import home
+    from .home import home
     # from .todo import todo
     # from .newsletter import newsletter
     # from .book import book
