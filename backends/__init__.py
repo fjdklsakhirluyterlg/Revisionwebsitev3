@@ -103,6 +103,3 @@ def create_app():
     print('Created Database!')
 
     return app
-
-
-app = create_app()
