@@ -232,5 +232,8 @@ def find_user_related_tags():
 @user.route("/api/user/info")
 def show_me_user_info_thingy():
     id = request.args.get("id")
+    dict = {}
+    user = User.query.filter_by(id=id).first()
+    dict["key"] = user.security_key
 
 # app.register_blueprint(user, url_prefix="/")
