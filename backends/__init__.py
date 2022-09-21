@@ -10,11 +10,12 @@ from os import path
 
 DB_NAME = "database.db"
 db = SQLAlchemy()
+api = Api()
+mail = Mail()
+socketio = SocketIO()
 
 def create_app():
     app = Flask(__name__)
-    api = Api(app)
-    mail = Mail(app)
     CORS(app, resources={r"*": {"origins": "*"}})
     
     # from .auth import auth
@@ -95,8 +96,7 @@ def create_app():
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
-    mail = Mail(app)
-    socketio = SocketIO(app)
+    socketio = SocketIO()
     
     if not path.exists('website/' + DB_NAME):
         db.create_all(app=app)
