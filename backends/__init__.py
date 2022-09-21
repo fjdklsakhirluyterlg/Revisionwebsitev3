@@ -9,6 +9,7 @@ from flask_socketio import SocketIO, send
 from os import path
 
 DB_NAME = "database.db"
+db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
@@ -97,7 +98,6 @@ def create_app():
     mail = Mail(app)
     socketio = SocketIO(app)
     
-    db = SQLAlchemy(app)
     if not path.exists('website/' + DB_NAME):
         db.create_all(app=app)
         print('Created Database!')

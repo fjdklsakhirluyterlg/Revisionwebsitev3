@@ -1,10 +1,8 @@
 from flask_login import UserMixin
 from sqlalchemy import or_
 from datetime import datetime
-from . import app
+from . import db
 from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy(app)
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -15,7 +13,6 @@ class Emaillist(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     emailadd = db.Column(db.String(1000), unique=True)
 
-db.create_all()
 
 class Readinglist(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -25,7 +22,6 @@ class Readinglist(db.Model):
     pages = db.Column(db.Integer)
     rating = db.Column(db.Float)
 
-db.create_all()
     
 class Cars(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -43,7 +39,6 @@ class bank_user(db.Model):
     money = db.Column(db.Float)
     account_type = db.Column(db.String(100))
 
-db.create_all()
     
 class airplane(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -55,7 +50,6 @@ class airplane(db.Model):
     airline = db.Column(db.String(200))
     base = db.Column(db.String(200))
 
-db.create_all()
 
 class boat(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -148,7 +142,6 @@ class Tag(db.Model):
         'name': self.name     
         }
 
-db.create_all()
 
 # class follow(db.Model):
 #     id = db.Column(db.Integer, primary_key=True)
@@ -316,5 +309,3 @@ class Help(db.Model):
     question = db.Column(db.String(1000))
     awnser = db.Column(db.String(1000))
     # FUTURE ME: REMEBER TO MAKE THIS SO THAT WHEN SOMEONE SEARCHES FOR HELP ON SOMETHING THEY GET CORRECT AWNSER BACK, IE: ?topic:chemistry&q="electron" GOES TO {"electron": "A subatomic particle with a negative charge and orbits the nuclues in shells"}
-
-db.create_all()
