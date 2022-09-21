@@ -16,6 +16,7 @@ socketio = SocketIO()
 
 def create_app():
     app = Flask(__name__)
+    db.init_app(app)
     CORS(app, resources={r"*": {"origins": "*"}})
     
     # from .auth import auth
@@ -96,13 +97,11 @@ def create_app():
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
-    socketio = SocketIO()
     
-    if not path.exists('website/' + DB_NAME):
-        db.create_all(app=app)
-        print('Created Database!')
     
-    db.init_app(app)
+    db.create_all(app=app)
+    print('Created Database!')
+    
     
     return app
 
