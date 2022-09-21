@@ -1,6 +1,9 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
+import cv2
 
-# @app.route("/stream")
+stream = Blueprint("stream", __name__)
+
+# @stream.route("/stream")
 # def stream():
 #     video = cv2.VideoCapture(0)
 #     def generator(webcam):
