@@ -51,6 +51,7 @@ def create_app():
     from .songs import songs
     from .bank import bank
     # from .stream import stream
+    from .svelte import svelte
     app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(home, url_prefix='/')
     app.register_blueprint(todo, url_prefix='/')
@@ -70,6 +71,7 @@ def create_app():
     app.register_blueprint(restauraunts, url_prefix="/")
     app.register_blueprint(songs, url_prefix="/")
     app.register_blueprint(bank, url_prefix="/")
+    app.register_blueprint(svelte, url_prefix="/")
     # app.register_blueprint(stream, url_prefix="/")
     
     from .models import User
