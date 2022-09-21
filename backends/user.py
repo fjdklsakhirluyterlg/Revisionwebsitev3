@@ -6,7 +6,7 @@ from .auth import mank_random_long_id, validate_user_with_email
 from .models import Blog, Notifications
 from werkzeug.security import generate_password_hash, check_password_hash
 from .blogs import blogs_related_to_blog, related_tags_thingy
-from . import app
+# from . import app
 
 user = Blueprint("user", __name__)
 
@@ -229,4 +229,4 @@ def find_user_related_tags():
     #         del sort[name]
     return sort 
 
-app.register_blueprint(user, url_prefix="/")
+# app.register_blueprint(user, url_prefix="/")

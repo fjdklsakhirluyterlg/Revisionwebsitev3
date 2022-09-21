@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 import subprocess
 import random
-from . import app
+# from . import app
 
 ide = Blueprint("ide", __name__)
 
@@ -81,4 +81,4 @@ def cpp_ide():
     else:
         return render_template("idecpp.html")
 
-app.register_blueprint(ide, url_prefix="/")
+# app.register_blueprint(ide, url_prefix="/")

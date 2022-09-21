@@ -4,7 +4,7 @@ from . import db
 from flask_login import current_user, login_required
 from .models import Blog, User, Comment, Replies, User, Tag, Post
 from sqlalchemy import or_
-from . import app
+# from . import app
 
 search = Blueprint("search", __name__)
 
@@ -83,4 +83,4 @@ def better_search():
     users = [user.name for user in resusers]
     return render_template("bettersearch.html", blogs=resblogs, tags=restags, comments=rescomments, posts=resposts, replies=resrelpies, users=resusers)
 
-app.register_blueprint(search, url_prefix="/")
+# app.register_blueprint(search, url_prefix="/")

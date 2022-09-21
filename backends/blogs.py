@@ -4,7 +4,7 @@ from .models import Blog, Notifications, Tag, tag_blog, Comment, Replies, User, 
 from flask_login import current_user, login_required
 import html, requests, math
 from .functions import send_newsletter_with_flask
-from . import app
+# from . import app
 
 blogs = Blueprint("blogs", __name__)
 
@@ -595,4 +595,4 @@ def add_api_bookmark_things():
     bookmark_id = getattr(new, "id")
     return {"id": bookmark_id}
 
-app.register_blueprint(blogs, url_prefix="/")
+# app.register_blueprint(blogs, url_prefix="/")

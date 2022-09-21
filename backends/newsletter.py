@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect, send_from_
 from . import db
 from .models import Emaillist
 from .functions import send_email_newsletter
-from . import app
+# from . import app
 
 newsletter = Blueprint("newsletter", __name__)
 
@@ -77,4 +77,4 @@ def create_newsletter():
     for email in emails:
         send_email_newsletter(email, content)
         
-app.register_blueprint(newsletter, url_prefix="/")
+# app.register_blueprint(newsletter, url_prefix="/")

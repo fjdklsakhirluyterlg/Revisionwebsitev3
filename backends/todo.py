@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from .models import Todo
-from . import app
+# from . import app
 
 todo = Blueprint('todo', __name__)
 
@@ -59,4 +59,4 @@ def api_todo_view():
         dict[f"{i.id}"] = [i.title, i.complete]
     return dict
 
-app.register_blueprint(todo, url_prefix='/')
+# app.register_blueprint(todo, url_prefix='/')

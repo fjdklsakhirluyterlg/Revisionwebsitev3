@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from .models import boat
-from . import app
+# from . import app
 
 boat = Blueprint("boat", __name__)
 
@@ -66,4 +66,4 @@ def api_boat_update(request):
         db.session.commit()
         return jsonify(msg="worked")
     
-app.register_blueprint(boat, url_prefix="/")
+# app.register_blueprint(boat, url_prefix="/")

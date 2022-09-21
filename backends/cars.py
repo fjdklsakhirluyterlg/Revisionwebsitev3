@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect, send_from_
 from . import db
 from flask_login import current_user, login_required
 from .models import Cars
-from . import app
+# from . import app
 
 cars = Blueprint("cars", __name__)
 
@@ -140,4 +140,4 @@ def api_add_cars():
         print(errors)
         return jsonify(errors="there is an error")
 
-app.register_blueprint(cars, url_prefix="/")
+# app.register_blueprint(cars, url_prefix="/")

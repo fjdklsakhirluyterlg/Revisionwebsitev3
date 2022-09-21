@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from .models import Readinglist
-from . import app
+# from . import app
 
 book = Blueprint("book", __name__)
 
@@ -99,4 +99,4 @@ def api_readinglist_search():
     
     return dict
 
-app.register_blueprint(book, url_prefix="/")
+# app.register_blueprint(book, url_prefix="/")

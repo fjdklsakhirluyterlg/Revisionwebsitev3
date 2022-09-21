@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect, send_from_
 from . import db
 from flask_login import current_user, login_required
 from .models import airplane
-from . import app
+# from . import app
 
 airplanes = Blueprint("airplanes", __name__)
 
@@ -105,4 +105,4 @@ def api2_airplane_search():
         dict[i.id] = [i.type, i.length, i.width, i.top_speed, i.airline, i.base]
     return dict
 
-app.register_blueprint(airplane, url_prefix="/")
+# app.register_blueprint(airplane, url_prefix="/")

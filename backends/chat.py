@@ -3,7 +3,7 @@ from . import db
 from flask_login import current_user, login_required
 from .models import Chat, Text, User, Notifications, Reaction
 from . import socketio
-from . import app
+# from . import app
 
 chat = Blueprint("chat", __name__)
 
@@ -166,4 +166,4 @@ def get_teh_texts_from_a_chat():
     res.headers.add("Access-Control-Allow-Origin", "*")
     return res
 
-app.register_blueprint(chat, url_prefix="/")
+# app.register_blueprint(chat, url_prefix="/")
