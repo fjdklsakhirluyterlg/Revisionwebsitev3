@@ -360,7 +360,7 @@ def see_all_blogs():
 def blog_view_add():
     if request.method == "POST":
         try:
-            URL = "http://localhost:5050/blogs/add"    
+            URL = "http://localhost:5090/blogs/add"    
             title = request.form["title"].replace(" ", "-")
             content = request.form["content"]
             feature_image = "stuff"
