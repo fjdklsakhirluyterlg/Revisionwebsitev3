@@ -17,7 +17,7 @@ def create_app():
     CORS(app, resources={r"*": {"origins": "*"}})
     
     # from .auth import auth
-    # from .home import home
+    from home import home
     # from .todo import todo
     # from .newsletter import newsletter
     # from .book import book
@@ -36,7 +36,7 @@ def create_app():
     # from .songs import songs
     # from .bank import bank
     # # app.register_blueprint(auth, url_prefix='/')
-    # # app.register_blueprint(home, url_prefix='/')
+    app.register_blueprint(home, url_prefix='/')
     # app.register_blueprint(todo, url_prefix='/')
     # app.register_blueprint(newsletter, url_prefix="/")
     # app.register_blueprint(book, url_prefix="/")

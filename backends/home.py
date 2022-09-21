@@ -618,4 +618,4 @@ def quizzes_simple():
 def python_explainer():
     return "I built this website with it."
 
-app.register_blueprint(home, url_prefix='/')
+# app.register_blueprint(home, url_prefix='/')
