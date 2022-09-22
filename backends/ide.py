@@ -18,7 +18,7 @@ def python_ide():
         num = random.randint(0, 100000)
         current = os.getcwd()
         path = f"{current}/programs/file{num}.py"
-        with open(path, "a+") as file:
+        with open(path, "w+") as file:
             file.write(x)
         
         command = f'python {path}'
