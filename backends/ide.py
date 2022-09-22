@@ -17,7 +17,6 @@ def python_ide():
         num = random.randint(0, 100000)
         with open(f"./programs/file{num}.py", "w") as file:
             file.write(x)
-            file.close()
         
         command = f'python ./programs/file{num}.py'
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
