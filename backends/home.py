@@ -618,4 +618,8 @@ def quizzes_simple():
 def python_explainer():
     return "I built this website with it."
 
+@home.route("/test/tracker")
+def test_tracker():
+    pass
+
 # app.register_blueprint(home, url_prefix='/')
