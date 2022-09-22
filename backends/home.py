@@ -620,6 +620,6 @@ def python_explainer():
 
 @home.route("/test/tracker")
 def test_tracker():
-    pass
+    return render_template("tracker.html")
 
 # app.register_blueprint(home, url_prefix='/')
