@@ -16,13 +16,11 @@ def python_ide():
     if request.method == "POST":    
         x = request.form.get("script")
         num = random.randint(0, 100000)
-        cur_path = os.path.dirname(__file__)
-
-        new_path = os.path.relpath(f'./programs/file{num}.py', cur_path)
-        with open(new_path, "w") as file:
+        path = f"./programs/file{num}.py"
+        with open(f"", "w") as file:
             file.write(x)
         
-        command = f'python {new_path}'
+        command = f'python '
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
         return render_template("idepy.html", output=output.decode('utf-8'), error=error.decode('utf-8'), code=x)
