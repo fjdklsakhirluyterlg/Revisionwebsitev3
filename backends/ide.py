@@ -22,7 +22,7 @@ def python_ide():
         with open(new_path, "w") as file:
             file.write(x)
         
-        command = f'python ./programs/file{num}.py'
+        command = f'python {new_path}'
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
         return render_template("idepy.html", output=output.decode('utf-8'), error=error.decode('utf-8'), code=x)
