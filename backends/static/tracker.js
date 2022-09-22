@@ -6,6 +6,9 @@ document.addEventListener('mousemove', (e) => {
     const rekt = tracker.getBoundingClientRect()
     const trackerx = rekt.left + rekt.width / 2
     const trackery = rekt.top + rekt.height / 2
+
+    const angled = angle(mousex, mousey, trackerx, trackery)
+    console.log(angled)
 })
 
 function angle(cx, cy, ex, ey){
