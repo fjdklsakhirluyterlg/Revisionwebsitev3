@@ -1,5 +1,5 @@
 <script>
-	console.log("hi")
+    import Api from "./Api.svelte";
 </script>
 
 <main>
