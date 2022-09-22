@@ -16,7 +16,8 @@ def python_ide():
     if request.method == "POST":    
         x = request.form.get("script")
         num = random.randint(0, 100000)
-        path = f"./programs/file{num}.py"
+        current = os.getcwd()
+        path = f"{current}/programs/file{num}.py"
         with open(path, "a+") as file:
             file.write(x)
         
