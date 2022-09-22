@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 import subprocess
 import random
+import os
 # from . import app
 
 ide = Blueprint("ide", __name__)
@@ -15,6 +16,9 @@ def python_ide():
     if request.method == "POST":    
         x = request.form.get("script")
         num = random.randint(0, 100000)
+        cur_path = os.path.dirname(__file__)
+
+        new_path = os.path.relpath(f'./programs/file{num}.py', cur_path)
         with open(f"./programs/file{num}.py", "w") as file:
             file.write(x)
         
