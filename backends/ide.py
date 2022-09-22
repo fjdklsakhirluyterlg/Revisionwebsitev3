@@ -24,6 +24,7 @@ def python_ide():
         command = f'python {path}'
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         output, error = process.communicate()
+        os.remove(path)
         return render_template("idepy.html", output=output.decode('utf-8'), error=error.decode('utf-8'), code=x)
     
     else:
