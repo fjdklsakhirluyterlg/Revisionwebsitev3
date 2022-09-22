@@ -17,7 +17,7 @@ def python_ide():
         x = request.form.get("script")
         num = random.randint(0, 100000)
         path = f"./programs/file{num}.py"
-        with open(path, "w+") as file:
+        with open(path, "a+") as file:
             file.write(x)
         
         command = f'python {path}'
