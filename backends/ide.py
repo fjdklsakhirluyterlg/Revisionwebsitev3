@@ -18,7 +18,6 @@ def python_ide():
         num = random.randint(0, 100000)
         current = os.getcwd()
         path = f"{current}/programs/file{num}.py"
-        os.system(f"touch {path}")
         with open(path, "w+") as file:
             file.write(x)
         
