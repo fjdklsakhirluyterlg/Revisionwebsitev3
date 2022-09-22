@@ -19,7 +19,7 @@ def python_ide():
         cur_path = os.path.dirname(__file__)
 
         new_path = os.path.relpath(f'./programs/file{num}.py', cur_path)
-        with open(f"./programs/file{num}.py", "w") as file:
+        with open(new_path, "w") as file:
             file.write(x)
         
         command = f'python ./programs/file{num}.py'
