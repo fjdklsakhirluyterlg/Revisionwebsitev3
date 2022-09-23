@@ -92,7 +92,7 @@
         {% endif %}
         {% if comments %}
         {% for comment in comments %}
-        <div id="{{comment.text}}">
+        <div id="{{comment.id}}">
         <p>{{comment.blog_id}} | {{comment.author}} posted at {{comment.timestamp}}</p>
         <p>{{comment.text}}</p>
         <form action="/blogs/comments/addlike/{{comment.id}}"><label>{{comment.likes}}</label><button type="submit">likes</button></form><form action="/blogs/comments/adddislike/{{comment.id}}"><label>{{comment.dislikes}}</label><button type="submit">dislikes</button></form>{% if current_user.mod %}<form action="/blogs/comments/report/{{comment.id}}"><button type="submit">report</button></form>{% endif %}
