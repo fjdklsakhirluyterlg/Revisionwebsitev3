@@ -168,6 +168,6 @@ def get_teh_texts_from_a_chat():
 
 @chat.route("/chat/better/work")
 def pls_better_chat():
-    pass
+    return render_template("socketchat.html")
 
 # app.register_blueprint(chat, url_prefix="/")
