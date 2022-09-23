@@ -442,7 +442,8 @@ def create_comment_on_blog(id):
     comment = Comment(text=text, author=author, blog_id=id, user_id=current_user.id)
     db.session.add(comment)
     db.session.commit()
-    return redirect(f"/blogs/views/{blog.title}#{text}")
+    cid = getattr(comment, "id")
+    return redirect(f"/blogs/views/{blog.title}#{cid}")
 
 @login_required
 @blogs.route("/blogs/create_reply/<int:id>", methods=["POST"])
