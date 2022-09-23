@@ -170,7 +170,7 @@ def get_teh_texts_from_a_chat():
 def pls_better_chat():
     return render_template("socketchat.html")
 
-@chat.route("/static/<path:path>")
+@chat.route("/chat/<path:path>")
 def static_dir(path):
     return send_from_directory("static", path)
 
