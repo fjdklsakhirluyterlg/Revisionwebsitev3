@@ -1,3 +1,5 @@
+function change_state(id){
+
 const btn = document.getElementById('btn');
 
 btn.addEventListener('click', () => {
@@ -11,3 +13,5 @@ btn.addEventListener('click', () => {
     form.style.display = 'none';
   }
 });
+
+}
