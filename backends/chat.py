@@ -166,4 +166,8 @@ def get_teh_texts_from_a_chat():
     res.headers.add("Access-Control-Allow-Origin", "*")
     return res
 
+@chat.route("/chat/better/work")
+def pls_better_chat():
+    pass
+
 # app.register_blueprint(chat, url_prefix="/")
