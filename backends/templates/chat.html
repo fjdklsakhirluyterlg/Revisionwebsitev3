@@ -17,6 +17,7 @@
             socket.send("User connected")
         })
         socket.on('message', function(data){
+            var name = {{current_user.name}}
             $("#texts").append("<p>" + data.message + "</p>")
         })
         $('#submit').on("click", function(){
