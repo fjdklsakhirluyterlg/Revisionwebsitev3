@@ -122,7 +122,5 @@ def create_app():
     
     db.create_all(app=app)
     print('Created Database!')
-    
-    socketio.run(app, port=5090)
 
     return app
