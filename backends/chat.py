@@ -69,6 +69,7 @@ def messageReceived(message):
 @socketio.on("left")
 def leftRecieved(message):
     print(f"{message=}")
+    socketio.send(message, broadcast=True)
     
 @login_required
 @chat.route('/chat/add-text/<id>', methods=["POST"])
