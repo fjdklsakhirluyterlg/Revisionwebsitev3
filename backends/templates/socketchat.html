@@ -18,6 +18,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
 <script type="text/javascript">
+    $(document).ready(funtion() {
     var socket = io.connect('http://' + document.domain + ':' + location.port);
     socket.on( 'connect', function() {
     socket.emit( 'my event', {
@@ -40,6 +41,8 @@
         $( 'h3' ).remove()
         $( 'div.message_holder' ).append( '<div><b style="color: #000">'+msg.user_name+'</b> '+msg.message+'</div>' )
     }
-    })</script>
+    })
+    })
+</script>
 </body>
 </html>
