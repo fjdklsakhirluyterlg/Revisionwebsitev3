@@ -17,7 +17,7 @@
             socket.send("User connected")
         })
         socket.on('message', function(data){
-            $("#texts").append("<p>" + data + "</p>")
+            $("#texts").append("<p>" + data.message + "</p>")
         })
         $('#submit').on("click", function(){
             var name = {{current_user.name | tojson}}
