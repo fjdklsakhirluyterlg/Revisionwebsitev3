@@ -1,7 +1,6 @@
-#include <string.h>
-#include <cstdlib.h>
-#include <ctime.h>
-#include <cmath.h>
+#include <math.h>
+#include <stdlib.h>
+#include <time.h>
 float generateπ_from_random(int n){
     int ins = 0;
     int outs = 0;
