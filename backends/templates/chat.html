@@ -24,9 +24,9 @@
             var name = {{current_user.name | tojson}};
             var date = new Date().toLocaleString()
             if (name == data.name) {
-                $("#texts").append("<br><div class='user'><p>" + data.name + "|" + date + "</p><p>" + data.message + "</p></div>")
+                $("#texts").append("<br><div class='user'><p>" + data.name + " | " + date + "</p><p>" + data.message + "</p></div>")
             }else{
-                $("#texts").append("<div class='nonuser'><p>" + data.name + "|" + date + "</p><p>" + date.message + "</p></div>")
+                $("#texts").append("<div class='nonuser'><p>" + data.name + " | " + date + "</p><p>" + date.message + "</p></div>")
             }
         })
         $('#submit').on("click", function(){
