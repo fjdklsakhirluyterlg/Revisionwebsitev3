@@ -6,13 +6,12 @@
 </head>
 <body>
 
-<h3 style='color: #ccc;font-size: 30px;'>No message yet..</h3>
-<div class="message_holder"></div>
+<div class="message_holder" id="messages"></div>
 
 <form action="">
     <input type="text" class="username" placeholder="User Name" id="username"/>
     <input type="text" class="message" placeholder="Messages" id="message"/>
-    <input type="submit"/>
+    <button id="submit" type="submit">send</button>
 </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -23,8 +22,11 @@
     socket.on('connect', function() {
         socket.send("User connected")
     })
-    socket.on('message', function(){
-        
+    socket.on('message', function(data){
+        $("#messages").append($('<p>').text(data))
+    })
+    $('#submit').on("click", function(){
+        socket.send($("#username"))
     })
     })
 </script>
