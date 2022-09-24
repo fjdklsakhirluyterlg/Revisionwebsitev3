@@ -60,8 +60,9 @@ def chat_with_other_users(id):
     except:
         return redirect("/login")
 
-def messageReceived(methods=['GET', 'POST']):
-    print('message was received!!!')
+def messageReceived(message):
+    print('message ': message)
+    
 
 @socketio.on('my event')
 def handle_my_custom_event(json, methods=['GET', 'POST']):
