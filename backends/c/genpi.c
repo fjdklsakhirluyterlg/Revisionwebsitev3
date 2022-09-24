@@ -6,8 +6,8 @@ float generateπ_from_random(int n){
     int outs = 0;
     for(int i = 0; i < n; i++){
         // srand((unsigned) time(0));
-        int x = rand() % 2;
-        int y = rand() % 2;
+        int x = rand() % 10;
+        int y = rand() % 10;
         float distance = pow(x, 2) + pow(y, 2);
         if (distance <= 1){
             ins = ins + 1;
@@ -16,5 +16,5 @@ float generateπ_from_random(int n){
         }
     }
 
-    return 4*ins/outs;
+    return 4*(ins/outs);
 }
