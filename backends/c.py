@@ -1,7 +1,7 @@
 from ctypes import *
-from pathlib import Path
+import os
 
-dir = Path(Path.cwd()).parent
+dir = os.getcwd()
 
 loc = f"{dir}/c/square.c"
 
