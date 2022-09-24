@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 float generateπ_from_random(int n){
     int ins = 0;
