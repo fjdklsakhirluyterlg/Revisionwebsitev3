@@ -37,11 +37,12 @@
         <span>{{person.name}}</span>
     {% endfor %}
     </p> <button><a href="/chat/adduser/{{id}}">add user</a></button>
-    <br><div id="messages">{% if texts %}
+    <br><div id="messages">
+        {% if texts %}
         {% for text in texts %}
             {% if text.authorname != current_user.name %}
                 <br>
-                <div style="background-color: green; width: 50%; border-radius: 25px; padding-left: 20px; margin-top: 5px;" id="nonuser">
+                <div style="background-color: green; width: 50%; border-radius: 25px; padding-left: 20px; margin-top: 5px;">
                 <p>{{text.authorname}} | {{text.timestamp}}</p>
                 <p>{{text.text}}</p>
                 </div>
