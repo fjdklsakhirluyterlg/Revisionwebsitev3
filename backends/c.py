@@ -3,7 +3,7 @@ import os
 
 dir = os.getcwd()
 
-loc = f"{dir}/c/square.c"
+loc = f"{dir}/c/square.so"
 
 functions = CDLL(loc)
 
