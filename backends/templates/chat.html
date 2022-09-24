@@ -22,6 +22,7 @@
         $('#submit').on("click", function(){
             event.preventDefault();
             socket.send({{current_user.name}}+ ":" + $('#message').val())
+            console.log("clicked")
         })
         })
     </script>
