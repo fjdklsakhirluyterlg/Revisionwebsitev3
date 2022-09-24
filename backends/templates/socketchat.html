@@ -23,6 +23,7 @@
         $("#messages").append($('<p>').text(data))
     })
     $('#submit').on("click", function(){
+        event.preventDefault();
         socket.send($("#username").val() + ":" + $('#message').val())
     })
     })
