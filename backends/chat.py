@@ -61,7 +61,7 @@ def chat_with_other_users(id):
         return redirect("/login")
 
 def messageReceived(message):
-    print('message ': message)
+    print(f'message : {message}')
     
 
 @socketio.on('my event')
