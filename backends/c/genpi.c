@@ -8,7 +8,7 @@ float generateπ_from_random(int n){
         // srand((unsigned) time(0));
         int x = rand() % 2;
         int y = rand() % 2;
-        float distance = pow(x, 2) + pow(x, 2);
+        float distance = pow(x, 2) + pow(y, 2);
         if (distance <= 1){
             ins = ins + 1;
         } else {
