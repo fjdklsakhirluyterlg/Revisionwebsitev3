@@ -63,8 +63,7 @@ def chat_with_other_users(id):
 @socketio.on("message")
 def messageReceived(message):
     print(f'message : {message}')
-    if message == "User connected":
-        socketio.send(message, broadcast=True)
+    socketio.send(message, broadcast=True)
     
     
 
