@@ -3,6 +3,7 @@
 <head>
     <style>
         .user {background-color: blue; width: 50%; border-radius: 25px; padding-left: 20px; margin-top: 5px; margin-left: 50%;}
+        .nonuser {background-color: green; width: 50%; border-radius: 25px; padding-left: 20px; margin-top: 5px;}
     </style>
     <script>
         function scrollToBottom() {
@@ -23,8 +24,11 @@
             var name = {{current_user.name}}
             var date = new Date()
             var datesting = date.toLocaleString()
-            if (name === data.name){$("#texts").append("<div class='user'><p>" + data.name+ "|" + datestring + "</p><p>" + date.message + "</p></div>")}
-            
+            if (name === data.name){
+                $("#texts").append("<div class='user'><p>" + data.name+ "|" + datestring + "</p><p>" + date.message + "</p></div>")
+            } else {
+                $("#texts").append("<div class='nonuser'><p>" + data.name+ "|" + datestring + "</p><p>" + date.message + "</p></div>")
+            }
         })
         $('#submit').on("click", function(){
             var name = {{current_user.name | tojson}}
