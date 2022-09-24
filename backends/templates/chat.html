@@ -10,6 +10,21 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.2/socket.io.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        var socket = io.connect("http://localhost:5090");
+        socket.on('connect', function(){
+            socket.send("User connected")
+        })
+        socket.on('message', function(data){
+            $("#messages").append($('<p>').text(data))
+        })
+        $('#submit').on("click", function(){
+            event.preventDefault();
+            socket.send({{current_user.name}}+ ":" + $('#message').val())
+        })
+        })
+    </script>
 </head>
 <body style="background-color: black; color:white;">
     <h1>{{name}}</h1>
