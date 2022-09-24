@@ -16,7 +16,7 @@
 <script>
     $(document).ready(funtion() {
     var socket = io.connect("http://localhost:5090");
-    socket.on('connect', function() {
+    socket.on('connect', function(){
         socket.send("User connected")
     })
     socket.on('message', function(data){
