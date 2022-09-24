@@ -66,6 +66,7 @@ def messageReceived(message):
     if message == "User connected":
         socketio.send(message, broadcast=True)
     
+    
 
 @socketio.on('my event')
 def handle_my_custom_event(json, methods=['GET', 'POST']):
