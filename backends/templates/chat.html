@@ -21,7 +21,8 @@
         })
         $('#submit').on("click", function(){
             event.preventDefault();
-            socket.send({{current_user.name}}+ ":" + $('#message').val())
+            var name = {{current_user.name}}
+            socket.send(name + ":" + $('#message').val())
             console.log("clicked")
         })
         })
