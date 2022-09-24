@@ -66,13 +66,6 @@ def messageReceived(message):
     if message != "User connected":
         socketio.send(message, broadcast=True)
     
-    
-
-@socketio.on('my event')
-def handle_my_custom_event(json, methods=['GET', 'POST']):
-    print('received my event: ' + str(json))
-    socketio.emit('my response', json, callback=messageReceived)
-    
 @login_required
 @chat.route('/chat/add-text/<id>', methods=["POST"])
 def add_text(id):
