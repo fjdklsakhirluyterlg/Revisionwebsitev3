@@ -23,7 +23,6 @@
             var name = {{current_user.name | tojson}}
             socket.send(name + ":" + $('#message').val())
             console.log("clicked")
-            $('#message').val('')
         })
         })
     </script>
