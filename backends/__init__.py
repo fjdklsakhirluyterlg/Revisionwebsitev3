@@ -30,6 +30,7 @@ def create_app():
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
     db.init_app(app)
     CORS(app, resources={r"*": {"origins": "*"}})
+    socketio.init_app(app, cors_allowed_origins="*", logger=True, engineio_logger=True)
     
     from .auth import auth
     from .home import home
