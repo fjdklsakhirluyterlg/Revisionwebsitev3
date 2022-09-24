@@ -17,6 +17,7 @@
             socket.send("User connected")
         })
         socket.on('message', function(data){
+            data = JSON.stringify(data);
             $("#texts").append("<p>" + data + "</p>")
         })
         $('#submit').on("click", function(){
