@@ -18,7 +18,7 @@
         })
         socket.on('message', function(data){
             data = JSON.stringify(data);
-            $("#texts").append("<p>" + data + "</p>")
+            $("#texts").append("<p>" + data.message + "</p>")
         })
         $('#submit').on("click", function(){
             var name = {{current_user.name | tojson}}
