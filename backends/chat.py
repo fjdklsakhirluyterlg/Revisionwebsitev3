@@ -65,6 +65,10 @@ def messageReceived(message):
     print(f'message : {message}')
     if message != "User connected":
         socketio.send(message, broadcast=True)
+
+@socketio.on("left")
+def leftRecieved(message):
+    print(f"{message=}")
     
 @login_required
 @chat.route('/chat/add-text/<id>', methods=["POST"])
