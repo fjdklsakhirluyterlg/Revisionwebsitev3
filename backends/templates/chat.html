@@ -20,7 +20,6 @@
             $("#messages").append($('<p>').text(data))
         })
         $('#submit').on("click", function(){
-            event.preventDefault();
             var name = {{current_user.name | tojson}}
             socket.send(name + ":" + $('#message').val())
             console.log("clicked")
