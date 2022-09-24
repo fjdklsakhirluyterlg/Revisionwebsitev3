@@ -37,8 +37,8 @@
         <span>{{person.name}}</span>
     {% endfor %}
     </p> <button><a href="/chat/adduser/{{id}}">add user</a></button>
-    <br><div id="messages">
-        {% if texts %}
+    <br><div id="messages"></div>
+        <div id="texts">{% if texts %}
         {% for text in texts %}
             {% if text.authorname != current_user.name %}
                 <br>
