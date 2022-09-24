@@ -24,6 +24,7 @@
     })
     $('#submit').on("click", function(){
         socket.send($("#username").val() + ":" + $('#message').val())
+        $("#messages").append($('<p>').text($("#username").val() + ":" + $('#message').val()))
     })
     })
 </script>
