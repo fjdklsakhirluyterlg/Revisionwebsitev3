@@ -60,8 +60,11 @@ def chat_with_other_users(id):
     except:
         return redirect("/login")
 
+@socketio.on("message")
 def messageReceived(message):
     print(f'message : {message}')
+    if message == "User connected":
+        socketio.send(message, broadcast=True)
     
 
 @socketio.on('my event')
