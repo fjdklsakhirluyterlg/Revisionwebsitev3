@@ -21,7 +21,10 @@
         })
         socket.on('message', function(data){
             var name = {{current_user.name}}
-            $("#texts").append("<p>" + data.message + "</p>")
+            var date = new Date()
+            var datesting = date.toLocaleString()
+            if (name === data.name){$("#texts").append("<div class='user'><p>" + data.name+ "|" + datestring + "</p><p>" + date.message + "</p></div>")}
+            
         })
         $('#submit').on("click", function(){
             var name = {{current_user.name | tojson}}
