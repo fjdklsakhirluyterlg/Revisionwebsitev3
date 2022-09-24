@@ -21,7 +21,8 @@
         })
         $('#submit').on("click", function(){
             var name = {{current_user.name | tojson}}
-            socket.send(name + ":" + $('#message').val())
+            var data = {"name": name, "message": $('#message').val()}
+            socket.send(data)
             console.log("clicked")
         })
         })
