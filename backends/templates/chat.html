@@ -21,7 +21,7 @@
             socket.send("User connected")
         })
         socket.on('message', function(data){
-            var name = {{current_user.name | safe}};
+            var name = {{current_user.name | tojson}};
             var date = new Date();
             var datesting = date.toLocaleString();
             if (name == data.name) {
