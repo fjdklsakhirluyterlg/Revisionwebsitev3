@@ -37,41 +37,11 @@
         <span>{{person.name}}</span>
     {% endfor %}
     </p> <button><a href="/chat/adduser/{{id}}">add user</a></button>
-    <!--<div id="t">
-        {% if texts %}
-            {% for text in texts %}
-                {% if text.authorname != current_user.name %}
-                    <br>
-                    <div style="background-color: green; width: 50%; border-radius: 25px; padding-left: 20px; margin-top: 5px;">
-                    <p>{{text.authorname}} | {{text.timestamp}}</p>
-                    <p>{{text.text}}</p>
-                    </div>
-                    <div style="background-color: #808080; width: 31%; border-radius: 25px; padding-left: 20px; margin-left: 40%;  margin-top:-20px">
-                    {% for reaction in text.reactions %}
-                        <span>{{reaction.icon}}</span>
-                    {% endfor %}
-                    <form action="/chat/add-reaction/{{text.id}}" method="POST"><label>♥</label><input type="radio" name="reaction" value="♥"><label>👍</label><input type="radio" name="reaction" value="👍"><label>😭</label><input type="radio" name="reaction" value="😭"><label>👎</label><input type="radio" name="reaction" value="👎"><button type="submit">submit</button></form>
-                    </div>
-                {% else %}
-                    <br>
-                    <div style="background-color: blue; width: 50%; border-radius: 25px; padding-left: 20px; margin-top: 5px; margin-left: 50%;">
-                    <p>{{text.authorname}} | {{text.timestamp}}</p>
-                    <p>{{text.text}}</p>
-                    </div>
-                    <div style="background-color: #808080; width: 31%; border-radius: 25px; padding-left: 20px; margin-left: 40%;  margin-top:-20px; text-align: right; padding-right: 20px;">
-                    {% for reaction in text.reactions %}
-                        <span>{{reaction.icon}}</span>
-                    {% endfor %}
-                    </div>
-                {% endif %}
-            {% endfor %}
-        {% endif %}
-    </div>-->
     <br><div id="messages">{% if texts %}
         {% for text in texts %}
             {% if text.authorname != current_user.name %}
                 <br>
-                <div style="background-color: green; width: 50%; border-radius: 25px; padding-left: 20px; margin-top: 5px;">
+                <div style="background-color: green; width: 50%; border-radius: 25px; padding-left: 20px; margin-top: 5px;" id="nonuser">
                 <p>{{text.authorname}} | {{text.timestamp}}</p>
                 <p>{{text.text}}</p>
                 </div>
@@ -83,7 +53,7 @@
                 </div>
             {% else %}
                 <br>
-                <div style="background-color: blue; width: 50%; border-radius: 25px; padding-left: 20px; margin-top: 5px; margin-left: 50%;">
+                <div style="background-color: blue; width: 50%; border-radius: 25px; padding-left: 20px; margin-top: 5px; margin-left: 50%;" id="user">
                 <p>{{text.authorname}} | {{text.timestamp}}</p>
                 <p>{{text.text}}</p>
                 </div>
