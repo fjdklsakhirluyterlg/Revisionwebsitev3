@@ -22,7 +22,7 @@
         $('#submit').on("click", function(){
             var name = {{current_user.name | tojson}}
             var data = {"name": name, "message": $('#message').val()}
-            socket.send(JSON.stringify(data))
+            socket.send(data)
             console.log("clicked")
         })
         })
