@@ -22,13 +22,11 @@
         })
         socket.on('message', function(data){
             var name = {{current_user.name | tojson}};
-            var date = new Date();
-            var datesting = date.toLocaleString();
+            var date = new Date().toLocaleString()
             if (name == data.name) {
-                //$("#texts").append("<div class='user'><p>" + data.name + "|" + datestring + "</p><p>" + date.message + "</p></div>")
-                $("#texts").append("<br><div class='user'><p>" + data.name + "</p><p>" + data.message + "</p></div>")
+                $("#texts").append("<br><div class='user'><p>" + data.name + "|" + date + "</p><p>" + data.message + "</p></div>")
             }else{
-                $("#texts").append("<div class='nonuser'><p>" + data.name + "</p><p>" + date.message + "</p></div>")
+                $("#texts").append("<div class='nonuser'><p>" + data.name + "|" + date + "</p><p>" + date.message + "</p></div>")
             }
         })
         $('#submit').on("click", function(){
