@@ -105,5 +105,9 @@ def api_make_card_correct():
 def api_make_card_incorrect():
     id = request.args.get("id")
     card = Card.query.filter_by(id=id).first()
+
+@card.route("/stack/add")
+def view_stack_add():
+    return render_template("cardadd.html")
     
 # app.register_blueprint(card, url_prefix="/")
