@@ -31,6 +31,7 @@ def create_app():
     db.init_app(app)
     CORS(app, resources={r"*": {"origins": "*"}})
     socketio.init_app(app, cors_allowed_origins="*", logger=True)
+    mail.init_app(app)
     
     from .auth import auth
     from .home import home
