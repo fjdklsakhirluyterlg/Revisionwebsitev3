@@ -25,4 +25,4 @@ def c_square_num(num):
 @c.route("/c/functions/genpi/<int:num>")
 def c_gen_pi(num):
     x = functions2.generateπ_from_random(num)
-    return f"pi approximation: {x}"
+    return f"pi approximation: {x}, for some reason it says 0"
