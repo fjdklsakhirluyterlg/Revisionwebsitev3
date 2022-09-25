@@ -32,6 +32,8 @@ def upload_files_to_server():
                 curdir = os.getcwd()
                 name = os.path.join(f"{curdir}/backends/images/", filename)
                 file.save(name)
+        
+        return "uploaded"
     else:
         return render_template("upload.html")
     
