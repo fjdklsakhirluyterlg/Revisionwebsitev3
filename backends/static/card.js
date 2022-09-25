@@ -30,9 +30,9 @@ function addcards(){
     var back = Array.from(backx)
     var cards = front.map(function(front, i){return [front, back[i]]})
     console.log(cards)
-    // cards.forEach(element => {
-    //     cardfetch(element[0].value, element[1].value)
-    // });
+    cards.forEach(element => {
+        cardfetch(element[0].value, element[1].value)
+    });
 }
 
 function cardfetch(front, back){
