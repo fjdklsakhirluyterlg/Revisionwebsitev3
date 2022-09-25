@@ -30,9 +30,10 @@ function zip(arrays) {
 }
 
 function addcards(){
+    const zip = (a, b) => a.map((k, i) => [k, b[i]]);
     var front = document.getElementsByClassName("front")
     var back = document.getElementsByClassName("back")
-    var cards = zip([front, back])
+    var cards = zip(front, back)
     console.log(cards)
     // cards.forEach(element => {
     //     cardfetch(element[0].value, element[1].value)
