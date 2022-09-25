@@ -50,5 +50,10 @@ def see_all_files():
     files = os.listdir(f"{curdir}/backends/images")
     return render_template("files.html", files=files)
 
+@login_required
+@app.route("/uploaded/user/all")
+def al_that_user_uploaded():
+    pass
+
 
 # app.register_blueprint(upload, url_prefix="/")
