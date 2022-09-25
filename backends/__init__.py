@@ -30,7 +30,7 @@ def create_app():
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
     db.init_app(app)
     CORS(app, resources={r"*": {"origins": "*"}})
-    socketio.init_app(app, cors_allowed_origins="*", logger=True)
+    socketio.init_app(app, cors_allowed_origins="*")
     mail.init_app(app)
     
     from .auth import auth
