@@ -8,5 +8,7 @@ function addstack(id){
     }).then(res => {
         console.log(res);
         alert("added")
+    }).catch((error) => {
+        console.error('Error:', error);
     });
 }
