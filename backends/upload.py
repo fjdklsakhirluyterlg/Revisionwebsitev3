@@ -57,8 +57,8 @@ def al_that_user_uploaded():
     filer = os.listdir(f"{curdir}/backends/images")
     files = []
     for f in filer:
-        f = f.split(".")
-        if f[1] == current_user.id:
+        z = f.split(".")
+        if z[1] == current_user.id:
             files.append(f)
     
     print(files)
