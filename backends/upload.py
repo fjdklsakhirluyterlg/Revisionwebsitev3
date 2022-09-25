@@ -30,7 +30,7 @@ def upload_files_to_server():
                 filename = secure_filename(file.filename)
                 names.append(filename)
                 curdir = os.getcwd()
-                name = os.path.join(f"{curdir}/images/", filename)
+                name = os.path.join(f"{curdir}/backends/images/", filename)
                 file.save(name)
     else:
         return render_template("upload.html")
@@ -39,7 +39,7 @@ def upload_files_to_server():
 @upload.route('/uploads/<filename>')
 def see_upload(filename):
     curdir = os.getcwd()
-    return send_from_directory(f"{curdir}/images/", filename)
+    return send_from_directory(f"{curdir}/backends/images/", filename)
 
 @login_required
 @upload.route("/files/all")
