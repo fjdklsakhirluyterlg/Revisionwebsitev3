@@ -1,3 +1,3 @@
 <body><form onsubmit="addstack({{current_user.id}});return false"><input type="text" id="name"><button type="submit">submit</button></form>
-<button onclick="addcardform()">add card</button><form><template><label>front</label><input type="text" class="front"><label>back</label><input type="text" class="back"><button type="submit">submit</button></template></form>
+<button onclick="addcardform()">add card</button><form><template><label>front</label><input type="text" class="front"><label>back</label><input type="text" class="back"><button type="submit">submit</button><br></template></form>
 <script src="{{url_for('static', filename='card.js')}}"></script></body>
