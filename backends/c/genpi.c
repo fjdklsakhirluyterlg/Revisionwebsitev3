@@ -10,9 +10,9 @@ float generateπ_from_random(int n){
         int y = rand() % 10;
         float distance = pow(x, 2) + pow(y, 2);
         if (distance <= 1){
-            ins = ins + 1;
+            ins += 1;
         } else {
-            outs = outs + 1;
+            outs += 1;
         }
     }
 
