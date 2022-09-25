@@ -18,5 +18,7 @@ function addstack(id){
 function addcardform(){
     var temp = document.getElementsByTagName("template")[0];
     var clon = temp.content.cloneNode(true);
-    document.body.appendChild(clon);
+    var div = document.getElementById("cards")
+    div.append(clon)
+    // document.body.appendChild(clon);
 }
