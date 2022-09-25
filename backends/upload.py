@@ -32,6 +32,8 @@ def upload_files_to_server():
                 curdir = os.getcwd()
                 name = os.path.join(f"{curdir}/images/", filename)
                 file.save(name)
+    else:
+        return render_template("upload.html")
     
 @login_required
 @upload.route('/uploads/<filename>')
