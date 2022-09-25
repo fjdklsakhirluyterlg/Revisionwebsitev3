@@ -76,6 +76,7 @@ def api_view_specific_card(id):
     dict["stack name"] = stack.name
     dict["stack id"] = card.stack_id
     dict["id"] = id
+    return dict
 
 @card.route("/api/stack/cards/add", methods=["POST"])
 def api_card_add_stuff():
