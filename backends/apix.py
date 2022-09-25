@@ -1,6 +1,7 @@
 from flask_restful import Resource, Api
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 import random
+from .functions import get_top_bbc_actual, get_top_bbc_links, get_top_bbc_news, get_top_bbc_content
 
 class Randomz(Resource):
     def get(self):
@@ -22,3 +23,12 @@ class Randomz(Resource):
         a = fact()
 
         return {'number': x, 'hex colour': y, 'fortune': z, 'fact': a}
+
+class top_bbc_news(Resource):
+    def get(self):
+        lst = get_top_bbc_news()
+        link = get_top_bbc_links()
+        cont = get_top_bbc_content()
+        act = get_top_bbc_actual()
+        res_dct = {i + 1: {'headline': lst[i], 'link': f"https://www.bbc.co.uk{link[i]}", 'info': cont[i], 'content': act[i], 'length': f"{len(act[i].split())} words"} for i in range(0, len(lst))}
+        return res_dct
