@@ -1,5 +1,5 @@
 function addstack(id){
-    console.log("adding...")
+    e.preventDefault
     const name = document.getElementById("name").val()
     data = {"user_id": id, "name": name}
     fetch("/api/stack/add", {
