@@ -53,7 +53,14 @@ def see_all_files():
 @login_required
 @upload.route("/uploaded/user/all")
 def al_that_user_uploaded():
-    pass
+    curdir = os.getcwd()
+    filer = os.listdir(f"{curdir}/backends/images")
+    files = []
+    for f in filer:
+        f.split(".")
+        if f[1] == current_user.id:
+            files.append(f)
+    return render_template("files.html", files=files)
 
 
 # app.register_blueprint(upload, url_prefix="/")
