@@ -51,7 +51,7 @@ def see_all_files():
     return render_template("files.html", files=files)
 
 @login_required
-@app.route("/uploaded/user/all")
+@upload.route("/uploaded/user/all")
 def al_that_user_uploaded():
     pass
 
