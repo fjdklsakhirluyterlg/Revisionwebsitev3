@@ -22,3 +22,7 @@ function addcardform(){
     div.append(clon)
     // document.body.appendChild(clon);
 }
+
+function addcards(){
+    
+}
