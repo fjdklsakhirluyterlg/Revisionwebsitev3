@@ -29,3 +29,8 @@ function addcards(){
     const back = document.getElementById("back")
     const cards = zip(front, back)
 }
+
+function cardfetch(front, back){
+    data = {"id": stack_id, "front": front, "back": back}
+    fetch()
+}

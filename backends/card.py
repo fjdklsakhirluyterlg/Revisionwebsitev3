@@ -86,6 +86,8 @@ def api_card_add_stuff():
     new = Card(front=front, back=back, stack_id=stack_id)
     db.session.add(new)
     db.session.commit()
+    id = getattr(new, "id")
+    return jsonify({"id": id})
     
 @card.route("/api/stack/cards/delete")
 def api_cards_delete_stuff():
