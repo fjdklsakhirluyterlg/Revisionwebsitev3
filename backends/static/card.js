@@ -24,8 +24,8 @@ function addcardform(){
 }
 
 function addcards(){
-    var front = document.getElementsByClassName("front")
-    var back = document.getElementsByClassName("back")
+    var front = document.querySelectorAll(".front")
+    var back = document.querySelectorAll(".back")
     var cards = front.map(function(front, i){return [front, back[i]]})
     console.log(cards)
     // cards.forEach(element => {
