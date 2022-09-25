@@ -41,3 +41,16 @@ class GBPTOEUR(Resource):
     def get(self):
         x = get_ecenomic_stuff()[0]
         return {'GBP': x}
+
+class ftse100(Resource):
+    def get(self):
+        x = get_ecenomic_stuff()[1]
+        return {'FTSE100': x}
+
+class APIrickroll(Resource):
+    def get(self):
+        return {'Rick astley': 'Never gonna give you up', 'message': 'you should have known'}
+
+class Banana(Resource):
+    def get(self):
+        return {'food': {'banana': 'yellow', 'chicken': 'meat'}, 'cities': ['london', 'new york', 'shanghai', 'dehli']}
