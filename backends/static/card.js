@@ -30,7 +30,7 @@ function addcards(){
     var cards = zip(front, back)
     console.log(cards)
     for (var i = 0; i < cards.length; i++){
-        console.log("i")
+        console.log(i)
     }
 }
 
