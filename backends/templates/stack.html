@@ -1,2 +1,2 @@
 <head><style></style></head>
-<body><h1>{{stack.name}}</h1>{% for card in stack.cards%}<div class="outer;"><div class="inner"><div class="front"><p>{{card.front}}</p></div><div class="back"><p>{{card.back}}</p></div></div></div>{%endfor%}</body>
+<body><h1>{{stack.name}}</h1>{% for card in stack.cards%}<div class="flip"><div class="flip-content"><div class="flip-front"><p>{{card.front}}</p></div><div class="flip-back"><p>{{card.back}}</p></div></div></div>{%endfor%}</body>
