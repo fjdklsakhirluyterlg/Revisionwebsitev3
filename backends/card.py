@@ -22,7 +22,7 @@ def api_add_stack():
         db.session.add(new_card)
     db.session.commit()
     
-    return jsonify("should be added")
+    return jsonify({"id": id})
 
 @card.route("/api/stack/view")
 def api_view_stack():

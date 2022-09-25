@@ -1,3 +1,5 @@
+var stack_id = ""
+
 function addstack(id){
     const name = document.getElementById("name").value
     console.log(name)
