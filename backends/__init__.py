@@ -79,6 +79,10 @@ def create_app():
     app.register_blueprint(ide, url_prefix="/")
     # app.register_blueprint(stream, url_prefix="/")
     
+    from .api import Randomz
+    
+    api.add_resource(Randomz, '/api/random')
+    
     from .models import User
     
     login_manager = LoginManager()
