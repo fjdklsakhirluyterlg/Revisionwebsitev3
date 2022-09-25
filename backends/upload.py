@@ -58,6 +58,7 @@ def al_that_user_uploaded():
     files = []
     for f in filer:
         f.split(".")
+        print(f)
         if f[1] == current_user.id:
             files.append(f)
     return render_template("files.html", files=files)
