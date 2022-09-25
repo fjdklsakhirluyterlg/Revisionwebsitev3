@@ -15,7 +15,7 @@ function addstack(id){
 }
 
 var form = document.getElementById("myForm");
-function handleForm(event) { event.preventDefault(); } 
+function handleForm(event) { event.preventDefault(); addstack(1) } 
 if(form){
 form.addEventListener('submit', handleForm)
 }
