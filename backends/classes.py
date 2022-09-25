@@ -35,3 +35,22 @@ class bankuser:
                 self.user[name][0] = (self.user[name][0])*1.04
             elif self.user[name][1] == "Standard":
                 self.user[name][0] = (self.user[name][0])*1.02
+
+class Bank(): 
+    crisis = False
+    def create_atm(self, money, moneylimit):
+        while not self.crisis:
+            if money <= moneylimit:
+                yield f"£{money}"
+            else:
+                yield f"£{money} is not avaible to you, please withdraw a max of £{moneylimit}"
+        
+        while self.crisis:
+            newmoneylimit = 40
+            if money <= newmoneylimit:
+                yield f"£{money}"
+            else:
+                if moneylimit >= newmoneylimit:
+                    yield f"£{money} is not avaible to you, please withdraw a max of £{newmoneylimit}"
+                else:
+                    yield f"£{money} is not avaible to you, please withdraw a max of £{moneylimit}"
