@@ -48,6 +48,7 @@ def see_upload(filename):
 def see_all_files():
     curdir = os.getcwd()
     files = os.listdir(f"{curdir}/backends/images")
+    
 
 
 # app.register_blueprint(upload, url_prefix="/")
