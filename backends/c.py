@@ -7,7 +7,7 @@ c = Blueprint("c", __name__)
 dir = os.getcwd()
 
 if "backends" not in dir:
-    dir += "backends"
+    dir += "/backends"
 
 loc = f"{dir}/c/square.so"
 
