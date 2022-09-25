@@ -32,7 +32,6 @@ def create_app():
     CORS(app, resources={r"*": {"origins": "*"}})
     socketio.init_app(app, cors_allowed_origins="*", logger=True)
     mail.init_app(app)
-    api.init_app(app)
     
     from .auth import auth
     from .home import home
@@ -88,6 +87,8 @@ def create_app():
     api.add_resource(ftse100, '/api/ecenomics/ftse100')
     api.add_resource(APIrickroll, '/api/test/dQw4w9WgXcQ')
     api.add_resource(Banana, '/api/test/food')
+    
+    api.init_app(app)
     
     from .models import User
     
