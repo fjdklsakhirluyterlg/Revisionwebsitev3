@@ -36,7 +36,8 @@ def upload_files_to_server():
 @login_required
 @upload.route('/uploads/<filename>')
 def see_upload(filename):
-    return send_from_directory("/files/user/", filename)
+    curdir = os.getcwd()
+    return send_from_directory(f"{curdir}/images/", filename)
 
 @login_required
 @upload.route("/files/all")
