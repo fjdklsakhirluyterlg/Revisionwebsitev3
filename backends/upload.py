@@ -30,7 +30,8 @@ def upload_files_to_server():
                 filename = secure_filename(file.filename)
                 names.append(filename)
                 curdir = os.getcwd()
-                name = os.path.join(f"{curdir}/backends/images/", filename)
+                namex = f"{filename}{current_user.name}{current_user.id}"
+                name = os.path.join(f"{curdir}/backends/images/", namex)
                 file.save(name)
         
         return "uploaded"
