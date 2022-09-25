@@ -14,7 +14,7 @@ loc2 = f"{dir}/c/genpi.so"
 
 functions2 = CDLL(loc2)
 
-print(functions2.generateπ_from_random(5000))
+print(functions2.generateπ_from_random(500))
 
 @c.route("/c/functions/square/<int:num>")
 def c_square_num(num):
