@@ -58,7 +58,7 @@ def al_that_user_uploaded():
     files = []
     for f in filer:
         z = f.split(".")
-        print(z[1])
+        print(current_user.id)
         if z[1] == current_user.id:
             files.append(f)
     
