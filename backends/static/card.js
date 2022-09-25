@@ -9,7 +9,8 @@ function addstack(id){
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
     }).then(res => {
-        console.log(res.json());
+        ddd = res.json()
+        console.log(ddd.id);
     }).catch((error) => {
         console.error('Error:', error);
     });
