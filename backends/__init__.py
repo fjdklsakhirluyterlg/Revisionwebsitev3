@@ -52,7 +52,7 @@ def create_app():
     from .songs import songs
     from .bank import bank
     from .ide import ide
-    # from .c import c
+    from .c import c
     # from .stream import stream
     from .svelte import svelte
     app.register_blueprint(auth, url_prefix='/')
