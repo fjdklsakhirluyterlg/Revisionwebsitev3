@@ -29,9 +29,9 @@ function addcards(){
     var back = document.getElementsByClassName("back")
     var cards = zip(front, back)
     console.log(cards)
-    cards.forEach(element => {
-        cardfetch(element[0].value, element[1].value)
-    });
+    // cards.forEach(element => {
+    //     cardfetch(element[0].value, element[1].value)
+    // });
 }
 
 function cardfetch(front, back){
