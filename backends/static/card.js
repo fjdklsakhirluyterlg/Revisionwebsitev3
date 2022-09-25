@@ -24,5 +24,8 @@ function addcardform(){
 }
 
 function addcards(){
-    
+    const zip = (a, b) => a.map((k, i) => [k, b[i]]);
+    const front = document.getElementsByClassName("front")
+    const back = document.getElementById("back")
+    const cards = zip(front, back)
 }
