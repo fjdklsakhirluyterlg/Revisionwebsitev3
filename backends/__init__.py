@@ -79,9 +79,10 @@ def create_app():
     app.register_blueprint(ide, url_prefix="/")
     # app.register_blueprint(stream, url_prefix="/")
     
-    from .apix import Randomz
+    from .apix import Randomz, top_bbc_news
     
     api.add_resource(Randomz, '/api/random')
+    api.add_resource(top_bbc_news, "/api/news/bbc/top")
     
     from .models import User
     
