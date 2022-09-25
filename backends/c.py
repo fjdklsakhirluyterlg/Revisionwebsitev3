@@ -21,5 +21,5 @@ print(functions2.generateπ_from_random(500))
 
 @c.route("/c/functions/square/<int:num>")
 def c_square_num(num):
-    x = functions.square(num)
+    x = functions.square(int(num))
     return f"your number squared is {x}"
