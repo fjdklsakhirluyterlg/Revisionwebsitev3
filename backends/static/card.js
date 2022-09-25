@@ -18,4 +18,3 @@ function addcardform(){
     var clon = temp.content.cloneNode(true);
     document.body.appendChild(clon);
 }
-}
