@@ -56,14 +56,11 @@ def al_that_user_uploaded():
     curdir = os.getcwd()
     filer = os.listdir(f"{curdir}/backends/images")
     files = []
-    non = []
     for f in filer:
         z = f.split(".")
         print(current_user.id)
         if z[1] == str(current_user.id):
             files.append(f)
-        non.append(f)
-    print(non)
     return render_template("files.html", files=files)
 
 
