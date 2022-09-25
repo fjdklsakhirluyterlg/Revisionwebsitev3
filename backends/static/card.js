@@ -10,7 +10,7 @@ function addstack(id){
         body: JSON.stringify(data)
     }).then(res => res.json()
     ).then(
-        data => console.log(data.id), stack_id = data.id
+        data => stack_id = data.id
     ).catch((error) => {
         console.error('Error:', error);
     });
