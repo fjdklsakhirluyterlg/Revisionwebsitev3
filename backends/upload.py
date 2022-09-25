@@ -29,7 +29,8 @@ def upload_files_to_server():
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 names.append(filename)
-                name = os.path.join(f"{UPLOAD_FOLDER}/", filename)
+                curdir = os.getcwd()
+                name = os.path.join(f"{curdir}/images/", filename)
                 file.save(name)
     
 @login_required
