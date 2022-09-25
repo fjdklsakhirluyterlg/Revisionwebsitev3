@@ -7,5 +7,6 @@ function addstack(id){
         body: JSON.stringify(data)
     }).then(res => {
         console.log(res);
+        alert("added")
     });
 }
