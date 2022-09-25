@@ -14,6 +14,8 @@ function addstack(id){
     ).catch((error) => {
         console.error('Error:', error);
     });
+
+    console.log(stack_id)
 }
 
 function addcardform(){
