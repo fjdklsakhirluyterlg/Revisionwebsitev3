@@ -37,5 +37,7 @@ function cardfetch(front, back){
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
     }).then(res => res.json()
-    ).then(obj => console.log(obj.id))
+    ).then(obj => console.log(obj.id)).catch((error) => {
+        console.error('Error:', error);
+    });
 }
