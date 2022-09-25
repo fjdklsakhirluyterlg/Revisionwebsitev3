@@ -29,7 +29,7 @@ function addcards(){
     const back = document.getElementById("back")
     const cards = zip(front, back)
     cards.forEach(element => {
-        cardfetch(element[0], element[1])
+        cardfetch(element[0].value, element[1].value)
     });
 }
 
