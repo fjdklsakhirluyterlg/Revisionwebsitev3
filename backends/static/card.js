@@ -33,6 +33,8 @@ function addcards(){
     cards.forEach(element => {
         cardfetch(element[0].value, element[1].value)
     });
+
+    window.location.href = "/cards/view/armaan/hjk/" + stack_id
 }
 
 function cardfetch(front, back){
