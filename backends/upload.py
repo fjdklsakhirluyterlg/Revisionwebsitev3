@@ -60,7 +60,7 @@ def al_that_user_uploaded():
     for f in filer:
         z = f.split(".")
         print(current_user.id)
-        if z[1] == current_user.id:
+        if z[1] == str(current_user.id):
             files.append(f)
         non.append(f)
     print(non)
