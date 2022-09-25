@@ -8,7 +8,7 @@ import os
 from itertools import permutations
 import shutil
 from .classes import Position
-from .api import Randomz
+from .apix import Randomz
 import random, math
 import subprocess
 # from . import app
