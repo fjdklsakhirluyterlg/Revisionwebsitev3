@@ -1,1 +1,1 @@
-<body><h1>{{stack.name}}</h1>{% for card in stack.cards%}<p>{{card.front}} | {{card.back}}</p>{%endfor%}</body>
+<body><h1>{{stack.name}}</h1>{% for card in stack.cards%}<div class="front"><p>{{card.front}}</p></div><div class="back"><p>{{card.back}}</p></div>{%endfor%}</body>
