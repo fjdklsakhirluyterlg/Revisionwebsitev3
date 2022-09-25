@@ -10,11 +10,9 @@ function addstack(id){
         body: JSON.stringify(data)
     }).then(res => res.json()
     ).then(data => stack_id = data.id
-    ).catch((error) => {
+    ).then(() => console.log(stack_id)).catch((error) => {
         console.error('Error:', error);
     });
-
-    console.log("stack_id" + stack_id)
 }
 
 function addcardform(){
