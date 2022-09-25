@@ -17,8 +17,6 @@ loc2 = f"{dir}/c/genpi.so"
 
 functions2 = CDLL(loc2)
 
-print(functions2.generateπ_from_random(500))
-
 @c.route("/c/functions/square/<int:num>")
 def c_square_num(num):
     x = functions.square(int(num))
@@ -26,4 +24,5 @@ def c_square_num(num):
 
 @c.route("/c/functions/genpi/<int:num>")
 def c_gen_pi(num):
-    pass
+    x = functions2.generateπ_from_random(num)
+    return f"pi approximation: {x}"
