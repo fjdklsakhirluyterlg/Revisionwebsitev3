@@ -8,11 +8,10 @@ function addstack(id){
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
-    }).then(res => {
-        console.log(res)
-        var res = res.json()
-        console.log(res.id)
-    }).catch((error) => {
+    }).then(res => res.json()
+    ).then(
+        data => console.log(data.id)
+    ).catch((error) => {
         console.error('Error:', error);
     });
 }
