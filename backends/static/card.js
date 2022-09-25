@@ -23,17 +23,10 @@ function addcardform(){
     // document.body.appendChild(clon);
 }
 
-function zip(arrays) {
-    return arrays[0].map(function(_,i){
-        return arrays.map(function(array){return array[i]})
-    });
-}
-
 function addcards(){
-    const zip = (a, b) => a.map((k, i) => [k, b[i]]);
     var front = document.getElementsByClassName("front")
     var back = document.getElementsByClassName("back")
-    var cards = zip(front, back)
+    var cards = front.map(function(front, i){return [front, back[i]]})
     console.log(cards)
     // cards.forEach(element => {
     //     cardfetch(element[0].value, element[1].value)
