@@ -46,7 +46,8 @@ def see_upload(filename):
 @login_required
 @upload.route("/uploaded/all")
 def see_all_files():
-    files = os.listdir("./files/user")
+    curdir = os.getcwd()
+    files = os.listdir(f"{curdir}/backends/images")
 
 
 # app.register_blueprint(upload, url_prefix="/")
