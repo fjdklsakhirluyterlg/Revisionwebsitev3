@@ -43,7 +43,6 @@ def see_upload(filename):
     curdir = os.getcwd()
     return send_from_directory(f"{curdir}/backends/images/", filename)
 
-@login_required
 @upload.route("/uploaded/all")
 def see_all_files():
     curdir = os.getcwd()
