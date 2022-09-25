@@ -11,6 +11,7 @@ chat = Blueprint("chat", __name__)
 @chat.route("/chat/add", methods=["GET", "POST"])
 def chats_view():
     if request.method == "POST":
+        
         user1 = current_user
         users = request.form["users"].split(" ")
         description = request.form["description"]
