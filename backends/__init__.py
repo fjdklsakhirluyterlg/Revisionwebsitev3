@@ -83,6 +83,11 @@ def create_app():
     
     api.add_resource(Randomz, '/api/random')
     api.add_resource(top_bbc_news, "/api/news/bbc/top")
+    api.add_resource(HelloWorld, '/api/test')
+    api.add_resource(GBPTOEUR, '/api/convert/EURTOGBP')
+    api.add_resource(ftse100, '/api/ecenomics/ftse100')
+    api.add_resource(APIrickroll, '/api/test/dQw4w9WgXcQ')
+    api.add_resource(Banana, '/api/test/food')
     
     from .models import User
     
