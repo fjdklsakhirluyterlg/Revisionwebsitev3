@@ -13,3 +13,7 @@ function addstack(id){
         console.error('Error:', error);
     });
 }
+
+var form = document.getElementById("myForm");
+function handleForm(event) { event.preventDefault(); } 
+form.addEventListener('submit', handleForm);
