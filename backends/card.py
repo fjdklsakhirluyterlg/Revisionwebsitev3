@@ -105,6 +105,10 @@ def api_make_card_correct():
 def api_make_card_incorrect():
     id = request.args.get("id")
     card = Card.query.filter_by(id=id).first()
+    
+@card.route("/cards/view/<user>/<name>/<id>")
+def veiw_stack_things():
+    pass
 
 @card.route("/stack/add")
 def view_stack_add():
