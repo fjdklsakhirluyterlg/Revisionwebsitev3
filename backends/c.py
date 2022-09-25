@@ -14,7 +14,7 @@ loc2 = f"{dir}/c/genpi.so"
 
 functions2 = CDLL(loc2)
 
-@c.route("/c/functtions/square/<int:num>")
+@c.route("/c/functions/square/<int:num>")
 def c_square_num(num):
     x = functions.square(num)
     return f"your number squared is {x}"
