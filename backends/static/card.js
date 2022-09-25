@@ -25,13 +25,13 @@ function addcardform(){
 
 function addcards(){
     const zip = (a, b) => a.map((k, i) => [k, b[i]]);
-    const front = document.getElementsByClassName("front")
-    const back = document.getElementById("back")
-    const cards = zip(front, back)
+    var front = document.getElementsByClassName("front")
+    var back = document.getElementById("back")
+    var cards = zip(front, back)
     console.log(cards)
-    cards.forEach(element => {
-        cardfetch(element[0].value, element[1].value)
-    });
+    for (var i = 0; i < cards.length; i++){
+        console.log("i")
+    }
 }
 
 function cardfetch(front, back){
