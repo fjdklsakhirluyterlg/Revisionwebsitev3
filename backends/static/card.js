@@ -32,5 +32,10 @@ function addcards(){
 
 function cardfetch(front, back){
     data = {"id": stack_id, "front": front, "back": back}
-    fetch()
+    fetch("/api/stack/cards/add", {
+        method : "POST",
+        headers: {'Content-Type': 'application/json'}, 
+        body: JSON.stringify(data)
+    }).then(res => res.json()
+    ).then(obj => console.log(obj.id))
 }
