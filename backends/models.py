@@ -266,6 +266,7 @@ class Multiplechoice(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     question = db.Column(db.Text)
     awnsers = db.relationship("Mutliawnser", backref="question")
+    quiz_id = db.Column(db.Integer, db.ForeignKey("quiz.id"))
 
 class Multiawnser(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -291,6 +292,7 @@ class Quiz(db.Model):
     description = db.Column(db.String(200), nullable=True)
     name = db.Column(db.String(200))
     questions = db.relationship("Question", backref="quiz")
+    multiple_choice = db.relationship("Multiplechoice", backref="quiz")
     category = db.relationship('Category',secondary=quiz_category,backref=db.backref('quiz',lazy="dynamic"))
 
 class Category(db.Model):
