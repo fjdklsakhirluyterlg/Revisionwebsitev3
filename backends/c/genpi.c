@@ -20,5 +20,5 @@ float generateπ_from_random(int n){
         }
     }
 
-    return 4*(ins/outs);
+    return ins;
 }
