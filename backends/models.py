@@ -259,7 +259,8 @@ class Singlequestion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     awnser = db.Column(db.Text)
     question = db.Column(db.Text)
-    type = db.Column(db.Integer)
+    type = db.Column(db.String(400))
+    error = db.Column(db.String(100))
 
 class Multiplechoice(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -271,10 +272,6 @@ class Multiawnser(db.Model):
     awnser = db.Column(db.Text)
     correct = db.Column(db.Boolean)
     question_id = db.Column(db.Integer, db.ForeignKey("Multiplechoice"))
-
-class Typequestion(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(500))
 
 class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
