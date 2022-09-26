@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 float generateπ_from_random(int n){
+    srand((unsigned int)time(NULL));
     int ins = 0;
     int outs = 0;
     for(int i = 0; i < n; i++){
