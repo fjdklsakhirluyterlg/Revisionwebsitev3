@@ -267,6 +267,8 @@ class Multipleshoice(db.Model):
 
 class Multiawnser(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    awnser = db.Column(db.Text)
+    correct = db.Column(db.Boolean)
 
 class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
