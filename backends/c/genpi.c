@@ -8,8 +8,9 @@ float generateπ_from_random(int n){
     int outs = 0;
     for(int i = 0; i < n; i++){
         // srand((unsigned) time(0));
-        int x = rand() % 1;
-        int y = rand() % 1;
+        float max = 1.0;
+        int x = ((float)rand()/(float)(RAND_MAX)) * max;
+        int y = ((float)rand()/(float)(RAND_MAX)) * max;
         float distance = x*x + y*y;
         if (distance <= 1){
             ins += 1;
