@@ -255,10 +255,10 @@ class Qawnser(db.Model):
     correct = db.Column(db.Boolean)
     error = db.Column(db.Integer, nullable=True, default=None)
 
-class qsinlgawnser(db.Model):
+class Singlequestion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     awnser = db.Column(db.Text)
-    question_id = db.Column(db.Integer)
+    question = db.Column(db.Text)
 
 class Multiplechoice(db.Model):
     id = db.Column(db.Integer, primary_key=True)
