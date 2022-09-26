@@ -260,15 +260,16 @@ class qsinlgawnser(db.Model):
     awnser = db.Column(db.Text)
     question_id = db.Column(db.Integer)
 
-class Multipleshoice(db.Model):
+class Multiplechoice(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     question = db.Column(db.Text)
-    # awnsers = db.relationship("Qawnser", backref="question")
+    awnsers = db.relationship("Mutliawnser", backref="question")
 
 class Multiawnser(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     awnser = db.Column(db.Text)
     correct = db.Column(db.Boolean)
+    question_id = db.Column(db.Integer, db.ForeignKey("Multiplechoice"))
 
 class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
