@@ -261,6 +261,7 @@ class Singlequestion(db.Model):
     question = db.Column(db.Text)
     type = db.Column(db.String(400))
     error = db.Column(db.Integer)
+    quiz_id = db.Column(db.Integer, db.ForeignKey("quiz.id"))
 
 class Multiplechoice(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -293,6 +294,7 @@ class Quiz(db.Model):
     name = db.Column(db.String(200))
     questions = db.relationship("Question", backref="quiz")
     multiple_choice = db.relationship("Multiplechoice", backref="quiz")
+    single_choice = db.relationship("Singlequestion", backref="quiz")
     category = db.relationship('Category',secondary=quiz_category,backref=db.backref('quiz',lazy="dynamic"))
 
 class Category(db.Model):
