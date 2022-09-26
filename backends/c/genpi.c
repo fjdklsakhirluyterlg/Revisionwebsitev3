@@ -10,7 +10,7 @@ float generateπ_from_random(int n){
         // srand((unsigned) time(0));
         int x = rand() % 10;
         int y = rand() % 10;
-        float distance = pow(x, 2) + pow(y, 2);
+        float distance = x**2 + y**2;
         if (distance <= 1){
             ins += 1;
         } else {
