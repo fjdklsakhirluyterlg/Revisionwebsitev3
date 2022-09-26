@@ -260,7 +260,7 @@ class Singlequestion(db.Model):
     awnser = db.Column(db.Text)
     question = db.Column(db.Text)
     type = db.Column(db.String(400))
-    error = db.Column(db.String(100))
+    error = db.Column(db.Integer)
 
 class Multiplechoice(db.Model):
     id = db.Column(db.Integer, primary_key=True)
