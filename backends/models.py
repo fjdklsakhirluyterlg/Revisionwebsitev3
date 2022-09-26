@@ -259,7 +259,7 @@ class Singlequestion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     awnser = db.Column(db.Text)
     question = db.Column(db.Text)
-    
+    type = db.Column(db.Integer)
 
 class Multiplechoice(db.Model):
     id = db.Column(db.Integer, primary_key=True)
