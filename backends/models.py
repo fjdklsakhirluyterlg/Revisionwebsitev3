@@ -260,7 +260,7 @@ class qsinlgawnser(db.Model):
     awnser = db.Column(db.Text)
     question_id = db.Column(db.Integer)
 
-class multipleshoice(db.Model):
+class Multipleshoice(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     question = db.Column(db.Text)
     # awnsers = db.relationship("Qawnser", backref="question")
