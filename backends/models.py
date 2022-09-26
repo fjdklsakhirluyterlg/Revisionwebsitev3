@@ -265,6 +265,9 @@ class multipleshoice(db.Model):
     question = db.Column(db.Text)
     # awnsers = db.relationship("Qawnser", backref="question")
 
+class Multiawnser(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+
 class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     question = db.Column(db.Text)
