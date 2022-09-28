@@ -73,7 +73,7 @@ def leftRecieved(message):
 
 @socketio.on("join")
 def joinRoom(message):
-    pass
+    socketio.join_room(int(message["room"]))
     
 @login_required
 @chat.route('/chat/add-text/<id>', methods=["POST"])
