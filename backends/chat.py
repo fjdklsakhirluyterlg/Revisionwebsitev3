@@ -70,6 +70,10 @@ def messageReceived(message):
 def leftRecieved(message):
     print(f"{message=}")
     socketio.send(message, broadcast=True)
+
+@socketio.on("join")
+def joinRoom(message):
+    pass
     
 @login_required
 @chat.route('/chat/add-text/<id>', methods=["POST"])
