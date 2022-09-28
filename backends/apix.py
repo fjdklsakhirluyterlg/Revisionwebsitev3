@@ -35,7 +35,7 @@ class top_bbc_news(Resource):
 
 class HelloWorld(Resource):
     def get(self):
-        return {'hello': 'there!'}
+        return {'hello': 'there'}
 
 class GBPTOEUR(Resource):
     def get(self):
