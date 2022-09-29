@@ -5,4 +5,6 @@ cost = Blueprint("cost", __name__)
 
 @cost.route("/cost/calculators/energy/bath")
 def bath_cost_for_user():
-    pass
+    if request.method == "POST":
+        volume = request.form["volume"]
+        
