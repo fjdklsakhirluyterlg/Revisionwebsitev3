@@ -2,3 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect, send_from_
 from . import db
 
 cost = Blueprint("cost", __name__)
+
+@cost.route("/cost/calculators/energy/bath")
+def bath_cost_for_user():
+    pass
