@@ -12,3 +12,4 @@ def bath_cost_for_user():
         energy = volume * 4.18 * (start - end)
         energyk = energy / 1000
         cost = 0.50 * energyk
+        return cost, energy
