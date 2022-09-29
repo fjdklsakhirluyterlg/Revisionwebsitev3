@@ -7,4 +7,6 @@ cost = Blueprint("cost", __name__)
 def bath_cost_for_user():
     if request.method == "POST":
         volume = request.form["volume"]
-        
+        start = request.form["start"]
+        end = request.form["end"]
+        energy = volume * 4.18 * (start - end)
