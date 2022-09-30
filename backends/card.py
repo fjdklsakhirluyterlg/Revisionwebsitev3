@@ -113,6 +113,10 @@ def api_make_card_incorrect():
 def veiw_stack_things(user, name, id):
     stack = Stack.query.filter_by(id=id).first()
     return render_template("stack.html", stack=stack)
+
+@card.route("/cards/test/<user>/<name>/<id>")
+def test_user_on_cards():
+    pass
     
 
 @card.route("/stack/add")
