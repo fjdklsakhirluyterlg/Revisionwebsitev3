@@ -122,6 +122,7 @@ def test_user_on_cards(id):
 def check_front_if_true():
     data = request.get_json()
     card_id = data["card_id"]
+    awnser = data["awnser"]
     
 
 @card.route("/stack/add")
