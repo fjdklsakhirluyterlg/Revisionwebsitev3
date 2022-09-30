@@ -126,6 +126,7 @@ def check_front_if_true():
     card = Card.query.filter_by(id=card_id).first()
     if card.front == awnser:
         return jsonify({"msg": "correct"})
+    return jsonify({"msg": "incorrect"})
     
 
 @card.route("/stack/add")
