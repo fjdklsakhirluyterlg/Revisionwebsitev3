@@ -123,6 +123,7 @@ def check_front_if_true():
     data = request.get_json()
     card_id = data["card_id"]
     awnser = data["awnser"]
+    card = Card.query.filter_by(id=card_id).first()
     
 
 @card.route("/stack/add")
