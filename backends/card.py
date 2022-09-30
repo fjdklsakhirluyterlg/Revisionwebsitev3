@@ -115,8 +115,8 @@ def veiw_stack_things(user, name, id):
     return render_template("stack.html", stack=stack)
 
 @card.route("/cards/test/<user>/<name>/<id>")
-def test_user_on_cards():
-    pass
+def test_user_on_cards(id):
+    stack = Stack.query.filter_by(id=id).first()
     
 
 @card.route("/stack/add")
