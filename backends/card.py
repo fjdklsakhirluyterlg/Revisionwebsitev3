@@ -127,6 +127,16 @@ def check_front_if_true():
     if card.front == awnser:
         return jsonify({"msg": "correct"})
     return jsonify({"msg": "incorrect"})
+
+@card.route("/cards/check/back")
+def check_back_if_true():
+    data = request.get_json()
+    card_id = data["card_id"]
+    awnser = data["awnser"]
+    card = Card.query.filter_by(id=card_id).first()
+    if card.back == awnser:
+        return jsonify({"msg": "correct"})
+    return jsonify({"msg": "incorrect"})
     
 
 @card.route("/stack/add")
