@@ -120,7 +120,8 @@ def test_user_on_cards(id):
 
 @card.route("/cards/check/front")
 def check_front_if_true():
-    pass
+    data = request.get_json()
+    card_id = data["card_id"]
     
 
 @card.route("/stack/add")
