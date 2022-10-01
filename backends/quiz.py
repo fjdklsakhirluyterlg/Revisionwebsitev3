@@ -131,6 +131,7 @@ def add_single_question_to_quiz():
     error = data["error"]
     quiz_id = data["quiz_id"]
     new = Singlequestion(question=question, awnser=awnser, type=type, error=error, quiz_id=quiz_id)
-    
+    db.session.add(new)
+    db.session.commit()
     
 # app.register_blueprint(quiz, url_prefix="/")
