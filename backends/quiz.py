@@ -169,7 +169,7 @@ def add_quiz_multiple_awnser_things():
     for a in data["awnsers"]:
         text = a["awnser"]
         correct = a["correct"]
-        new_awnser = Multiawnser(awnser=text, correct=correct, question_id=id)
+        new_awnser = Multiawnser(awnser=text, correct=bool(correct), question_id=id)
         db.session.add(new_awnser)
     
     db.session.commit()
