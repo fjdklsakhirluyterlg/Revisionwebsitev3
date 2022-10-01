@@ -171,6 +171,5 @@ def add_quiz_multiple_awnser_things():
         correct = a["correct"]
         new_awnser = Multiawnser(awnser=text, correct=correct, question_id=id)
         db.session.add(new_awnser)
-        db.session.commit()
     
 # app.register_blueprint(quiz, url_prefix="/")
