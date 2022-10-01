@@ -121,5 +121,9 @@ def check_if_right_awnser():
         return jsonify(msg="Correct")
     else:
         return jsonify(msg="Not Correct", correct=act_correct, awnser=awnser)
+
+@quiz.route("/api/quiz/add/single")
+def add_single_question_to_quiz():
+    pass
     
 # app.register_blueprint(quiz, url_prefix="/")
