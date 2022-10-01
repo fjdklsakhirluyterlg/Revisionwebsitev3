@@ -154,5 +154,7 @@ def add_quiz_to_website():
             new_category = Category(name=c)
             new_category.quiz.quizend(new)
             db.session.add(new_category)
+    id = getattr(new, "id")
+    return jsonify({"id":id})
     
 # app.register_blueprint(quiz, url_prefix="/")
