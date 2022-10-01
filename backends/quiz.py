@@ -181,5 +181,9 @@ def view_quiz_thing_stuff(name, id):
     single = quiz.single_choice
     multiple = quiz.multiple_choice
     return render_template("quiz.html", single=single, multi=multiple)
+
+@quiz.route("/api/quiz/check/single")
+def check_single_choice_quiz_if_correct():
+    pass
     
 # app.register_blueprint(quiz, url_prefix="/")
