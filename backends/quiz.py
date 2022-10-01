@@ -160,6 +160,6 @@ def add_quiz_to_website():
 
 @quiz.route("/api/quiz/add/multiple")
 def add_quiz_multiple_awnser_things():
-    pass
+    data = request.get_json()
     
 # app.register_blueprint(quiz, url_prefix="/")
