@@ -174,5 +174,9 @@ def add_quiz_multiple_awnser_things():
     
     db.session.commit()
     return jsonify({"id":id})
+
+@quiz.route("/quiz/view/<name>/<id>")
+def view_quiz_thing_stuff(name, id):
+    pass
     
 # app.register_blueprint(quiz, url_prefix="/")
