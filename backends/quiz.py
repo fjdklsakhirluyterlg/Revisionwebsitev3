@@ -146,5 +146,13 @@ def add_quiz_to_website():
     new = Quiz(user_id=user_id, description=description, name=name)
     db.session.add(new)
     db.session.commit()
+    for c in category:
+        present = Category.query.filter_by(name=c).first()
+        if present:
+            present.quiz.quizend(new)
+        else:
+            new_category = Category(name=c)
+            new_category.quiz.quizend(new)
+            db.session.add(new_category)
     
 # app.register_blueprint(quiz, url_prefix="/")
