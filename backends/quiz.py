@@ -178,7 +178,7 @@ def add_quiz_multiple_awnser_things():
 @quiz.route("/quiz/view/<name>/<id>")
 def view_quiz_thing_stuff(name, id):
     quiz = Quiz.query.filter_by(id=id).first()
-    single = quiz.single_choise
+    single = quiz.single_choice
     multiple = quiz.multiple_choice
     return render_template("quiz.html", single=single, multi=multiple)
     
