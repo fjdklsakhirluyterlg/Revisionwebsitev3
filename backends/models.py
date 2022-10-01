@@ -266,7 +266,7 @@ class Singlequestion(db.Model):
 class Multiplechoice(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     question = db.Column(db.Text)
-    awnsers = db.relationship("Mutliawnser", backref="question")
+    awnsers = db.relationship("Multiawnser", backref="question")
     quiz_id = db.Column(db.Integer, db.ForeignKey("quiz.id"))
 
 class Multiawnser(db.Model):
