@@ -184,6 +184,6 @@ def view_quiz_thing_stuff(name, id):
 
 @quiz.route("/api/quiz/check/single")
 def check_single_choice_quiz_if_correct():
-    pass
+    data = request.get_json()
     
 # app.register_blueprint(quiz, url_prefix="/")
