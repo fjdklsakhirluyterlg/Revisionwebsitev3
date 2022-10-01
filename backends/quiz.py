@@ -59,7 +59,7 @@ def api_view_quizzes():
         dict[name] = {"descirption": description, "categories": category}
     return jsonify(dict)
 
-@quiz.route("/api/question")
+@quiz.route("/api/questionx")
 def api_view_form():
     id = request.args.get("id")
     q = Question.query.filter_by(id=id).first()
