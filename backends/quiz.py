@@ -143,5 +143,8 @@ def add_quiz_to_website():
     description = data["description"]
     name = data["name"]
     category = data["category"]
+    new = Quiz(user_id=user_id, description=description, name=name)
+    db.session.add(new)
+    db.session.commit()
     
 # app.register_blueprint(quiz, url_prefix="/")
