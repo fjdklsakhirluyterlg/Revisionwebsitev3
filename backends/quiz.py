@@ -122,7 +122,7 @@ def check_if_right_awnser():
     else:
         return jsonify(msg="Not Correct", correct=act_correct, awnser=awnser)
 
-@quiz.route("/api/quiz/add/single")
+@quiz.route("/api/quiz/add/single", methods=["POST"])
 def add_single_question_to_quiz():
     data = request.get_json()
     question = data["question"]
@@ -136,7 +136,7 @@ def add_single_question_to_quiz():
     id = getattr(new, "id")
     return jsonify({"id":id})
 
-@quiz.route("/api/quiz/add")
+@quiz.route("/api/quiz/add", methods=["POST"])
 def add_quiz_to_website():
     data = request.get_json()
     user_id = data["user_id"]
@@ -157,7 +157,7 @@ def add_quiz_to_website():
     id = getattr(new, "id")
     return jsonify({"id":id})
 
-@quiz.route("/api/quiz/add/multiple")
+@quiz.route("/api/quiz/add/multiple", methods=["POST"])
 def add_quiz_multiple_awnser_things():
     data = request.get_json()
     question = data["question"]
