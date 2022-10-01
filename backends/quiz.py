@@ -196,5 +196,9 @@ def check_single_choice_quiz_if_correct():
     elif q.awnser == awnser:
         return jsonify({"message": "correct"})
     return jsonify({"message": "incorrect", "actual": q.awnser})
+
+@quiz.route("/api/quiz/check/muliple")
+def check_multiple_choice_quiz_if_correct():
+    pass
     
 # app.register_blueprint(quiz, url_prefix="/")
