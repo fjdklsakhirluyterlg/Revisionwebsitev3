@@ -180,5 +180,6 @@ def view_quiz_thing_stuff(name, id):
     quiz = Quiz.query.filter_by(id=id).first()
     single = quiz.single_choise
     multiple = quiz.multiple_choice
+    return render_template("quiz.html", single=single, multi=multiple)
     
 # app.register_blueprint(quiz, url_prefix="/")
