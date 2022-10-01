@@ -6,7 +6,7 @@ from .models import Quiz, Category, Question, Qawnser, Singlequestion
 
 quiz = Blueprint("quiz", __name__)
 
-@quiz.route("/api/quiz/add", methods=["POST"])
+@quiz.route("/api/quiz/adds", methods=["POST"])
 def add_quiz_from_thing():
     data = request.get_json()
     user_id = data["user_id"]
@@ -135,5 +135,7 @@ def add_single_question_to_quiz():
     db.session.commit()
     id = getattr(new, "id")
     return jsonify({"id":id})
+
+
     
 # app.register_blueprint(quiz, url_prefix="/")
