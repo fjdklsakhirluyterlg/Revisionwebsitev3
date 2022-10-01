@@ -273,7 +273,7 @@ class Multiawnser(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     awnser = db.Column(db.Text)
     correct = db.Column(db.Boolean)
-    question_id = db.Column(db.Integer, db.ForeignKey("Multiplechoice"))
+    question_id = db.Column(db.Integer, db.ForeignKey("multiplechoice.id"))
 
 class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
