@@ -162,5 +162,6 @@ def add_quiz_multiple_awnser_things():
     data = request.get_json()
     question = data["question"]
     quiz_id = data["quiz_id"]
+    new_question = Multiplechoice(question=question, quiz_id=quiz_id)
     
 # app.register_blueprint(quiz, url_prefix="/")
