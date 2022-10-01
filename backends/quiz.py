@@ -178,5 +178,7 @@ def add_quiz_multiple_awnser_things():
 @quiz.route("/quiz/view/<name>/<id>")
 def view_quiz_thing_stuff(name, id):
     quiz = Quiz.query.filter_by(id=id).first()
+    single = quiz.single_choise
+    multiple = quiz.multiple_choice
     
 # app.register_blueprint(quiz, url_prefix="/")
