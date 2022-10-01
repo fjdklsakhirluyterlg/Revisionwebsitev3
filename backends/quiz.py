@@ -166,5 +166,7 @@ def add_quiz_multiple_awnser_things():
     db.session.add(new_question)
     db.session.commit()
     id = getattr(new_question, "id")
+    for a in data["awnsers"]:
+        text = ""
     
 # app.register_blueprint(quiz, url_prefix="/")
