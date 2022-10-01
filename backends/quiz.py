@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
-from .models import Quiz, Category, Question, Qawnser
+from .models import Quiz, Category, Question, Qawnser, Singlequestion
 # from . import app
 
 quiz = Blueprint("quiz", __name__)
@@ -130,5 +130,6 @@ def add_single_question_to_quiz():
     type = data["type"]
     error = data["error"]
     quiz_id = data["quiz_id"]
+    new = Singlequestion(question=question, awnser=awnser, type=type, error=error, quiz_id=quiz_id)
     
 # app.register_blueprint(quiz, url_prefix="/")
