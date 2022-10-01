@@ -93,7 +93,7 @@ def api_delete_quiz():
     db.session.delete(quiz)
     db.session.commit()
 
-@quiz.route("/api/question/check", methods=["POST"])
+@quiz.route("/apis/questions/check", methods=["POST"])
 def check_if_right_awnser():
     data = request.get_json()
     qid = data["question"]
