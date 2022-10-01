@@ -138,6 +138,10 @@ def add_single_question_to_quiz():
 
 @quiz.route("/api/quiz/add")
 def add_quiz_to_website():
-    pass
+    data = request.get_json()
+    user_id = data["user_id"]
+    description = data["description"]
+    name = data["name"]
+    category = data["category"]
     
 # app.register_blueprint(quiz, url_prefix="/")
