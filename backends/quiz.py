@@ -192,5 +192,9 @@ def check_single_choice_quiz_if_correct():
     if q.type == "number":
         if q.awnser * (1 - (q.error)/100) <= int(awnser) <= q.awnser * (1 + (q.error)/100):
             return jsonify({"message": "correct"})
+        return jsonify({"message": "incorrect", "actual": q.awnser})
+    elif q.awnser == awnser:
+        return jsonify({"message": "correct"})
+    return jsonify({"message": "incorrect", "actual": q.awnser})
     
 # app.register_blueprint(quiz, url_prefix="/")
