@@ -1,3 +1,4 @@
+from ssl import _PasswordType
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
@@ -156,5 +157,9 @@ def add_quiz_to_website():
             db.session.add(new_category)
     id = getattr(new, "id")
     return jsonify({"id":id})
+
+@quiz.route("/api/quiz/add/multiple")
+def add_quiz_multiple_awnser_things():
+    pass
     
 # app.register_blueprint(quiz, url_prefix="/")
