@@ -133,5 +133,7 @@ def add_single_question_to_quiz():
     new = Singlequestion(question=question, awnser=awnser, type=type, error=error, quiz_id=quiz_id)
     db.session.add(new)
     db.session.commit()
+    id = getattr(new, "id")
+    return jsonify({"id":id})
     
 # app.register_blueprint(quiz, url_prefix="/")
