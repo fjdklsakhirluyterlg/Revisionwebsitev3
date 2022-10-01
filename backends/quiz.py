@@ -136,6 +136,8 @@ def add_single_question_to_quiz():
     id = getattr(new, "id")
     return jsonify({"id":id})
 
-
+@quiz.route("/api/quiz/add")
+def add_quiz_to_website():
+    pass
     
 # app.register_blueprint(quiz, url_prefix="/")
