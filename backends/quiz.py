@@ -169,6 +169,6 @@ def add_quiz_multiple_awnser_things():
     for a in data["awnsers"]:
         text = a["awnser"]
         correct = a["correct"]
-        new_awnser = Multiawnser(awnser=text, correct=correct)
+        new_awnser = Multiawnser(awnser=text, correct=correct, question_id=id)
     
 # app.register_blueprint(quiz, url_prefix="/")
