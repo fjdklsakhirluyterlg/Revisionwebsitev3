@@ -125,5 +125,10 @@ def check_if_right_awnser():
 @quiz.route("/api/quiz/add/single")
 def add_single_question_to_quiz():
     data = request.get_json()
+    question = data["question"]
+    awnser = data["awnser"]
+    type = data["type"]
+    error = data["error"]
+    quiz_id = data["quiz_id"]
     
 # app.register_blueprint(quiz, url_prefix="/")
