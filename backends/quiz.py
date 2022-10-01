@@ -163,5 +163,8 @@ def add_quiz_multiple_awnser_things():
     question = data["question"]
     quiz_id = data["quiz_id"]
     new_question = Multiplechoice(question=question, quiz_id=quiz_id)
+    db.session.add(new_question)
+    db.session.commit()
+    id = getattr(new_question, "id")
     
 # app.register_blueprint(quiz, url_prefix="/")
