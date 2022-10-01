@@ -1,1 +1,1 @@
-<body>{%for s in single%}<div><p>{{s.question}} | {{s.awnser}}</p><p>{{s.type}} | {{s.error}}</p></div>{% endfor %}
+<body>{%for s in single%}<div><p>{{s.question}} | {{s.awnser}}</p><p>{{s.type}} | {{s.error}}</p></div>{% endfor %}{% for m in multi%}<p>{{m.question}}: </p><p>{% for a in m.awnsers%}<span>{{a.awnser}}</span>{%endfor%}</p>{% endfor %}
