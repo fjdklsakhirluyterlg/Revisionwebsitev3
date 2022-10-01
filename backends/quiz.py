@@ -187,5 +187,10 @@ def check_single_choice_quiz_if_correct():
     data = request.get_json()
     id = data["id"]
     awnser = data["awnser"]
+    q = Singlequestion.query.filter_by(id=id).first()
+    type = q.type
+    if q.type == "number":
+        if q.awnser * (1 - (q.error)/100) <= int(awnser) <= q.awnser * (1 + (q.error)/100):
+            return jsonify({"message": "correct"})
     
 # app.register_blueprint(quiz, url_prefix="/")
