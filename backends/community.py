@@ -221,7 +221,7 @@ def api_community_add_comment_to_post():
     text = data["text"]
     author = data["author"]
     post_id = data["post_id"]
-    parent = int(data["parent_id"])
+    parent = data["parent_id"]
     if parent == "":
         parent = None
     
