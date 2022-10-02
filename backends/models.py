@@ -246,7 +246,7 @@ class PostComment(db.Model):
     likes = db.Column(db.Integer, default=0)
     dislikes = db.Column(db.Integer, default=0)
     post_id = db.Column(db.Integer)
-    parent_id = db.Column(db.Integer, db.Foreignkey("postcomment.id"), nullable=True)
+    parent_id = db.Column(db.Integer, db.ForeignKey("postcomment.id"), nullable=True)
     children = db.relationship("Postcomment", backref="parent")
 
 
