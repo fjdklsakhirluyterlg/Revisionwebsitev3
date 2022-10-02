@@ -255,7 +255,7 @@ class Postcomment(db.Model):
     def save(self):
         db.session.add(self)
         db.session.commit()
-        parent = Postcomment.query.filter_by(id=self.parent_id)
+        parent = Postcomment.query.filter_by(id=self.parent_id).first()
         if parent:
             prefix = parent.path
         else:
