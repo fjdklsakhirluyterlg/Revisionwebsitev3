@@ -247,6 +247,7 @@ class PostComment(db.Model):
     dislikes = db.Column(db.Integer, default=0)
     post_id = db.Column(db.Integer)
     parent_id = db.Column(db.Integer, db.Foreignkey("postcomment.id"), nullable=True)
+    children = db.relationship("Postcomment", backref="parent")
 
 
 class Qawnser(db.Model):
