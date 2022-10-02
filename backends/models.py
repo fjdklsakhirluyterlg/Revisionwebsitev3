@@ -257,7 +257,7 @@ class Postcomment(db.Model):
         db.session.commit()
         parent = Postcomment.query.filter_by(id=self.parent_id).first()
         if parent:
-            prefix = parent.path
+            prefix = str(parent.path)
         else:
             prefix = ""
         self.path = prefix + '{:0{}d}'.format(self.id, self._N)
