@@ -10,3 +10,5 @@ function check_single(id){
         console.error('Error:', error);
     })
 }
+
+function check_multi(id, idx){}
