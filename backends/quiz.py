@@ -200,7 +200,7 @@ def check_single_choice_quiz_if_correct():
 @quiz.route("/api/quiz/check/muliple")
 def check_multiple_choice_quiz_if_correct():
     data = request.get_json()
-    awnser = data["awnser_id"]
-    question = data["question_id"]
+    awnser = int(data["awnser_id"])
+    question = int(data["question_id"])
     
 # app.register_blueprint(quiz, url_prefix="/")
