@@ -250,6 +250,7 @@ class PostComment(db.Model):
     replies = db.relationship(
         'PostComment', backref='parent',
         lazy='dynamic')
+    path = db.Column(db.Integer)
 
     def save(self):
         db.session.add(self)
