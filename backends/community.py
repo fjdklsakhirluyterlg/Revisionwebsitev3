@@ -104,7 +104,7 @@ def view_all_community(title):
     post.views += 1
     comments = post.comments
     db.session.commit()
-    return render_template("post.html", tags=tags, content=content, views=views, likes=likes, user_name=user_name, user_id=user_id, dislikes=dislikes, created_at=created_at, title=title, id=id, awnsers=awnsers)
+    return render_template("post.html", tags=tags, content=content, views=views, likes=likes, user_name=user_name, user_id=user_id, dislikes=dislikes, created_at=created_at, title=title, id=id, awnsers=awnsers, comments=comments)
 
 @community.route("/community/views/<id>")
 def redirect_to_actual_post(id):
