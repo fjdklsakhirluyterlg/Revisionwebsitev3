@@ -197,7 +197,7 @@ def check_single_choice_quiz_if_correct():
         return jsonify({"message": "correct"})
     return jsonify({"message": "incorrect", "actual": q.awnser})
 
-@quiz.route("/api/quiz/check/muliple", methods=["POST"])
+@quiz.route("/api/quiz/check/multiple", methods=["POST"])
 def check_multiple_choice_quiz_if_correct():
     data = request.get_json()
     awnserid = int(data["awnser_id"])
