@@ -214,7 +214,9 @@ def community_add_comment():
     new.save()
     return jsonify({"message":new.level()})
 
-@community.route("/api/community/add/comment/ppst")
+@community.route("/api/community/add/comment/post")
+def community_api_add_post_to_post():
+    pass
     
 
 # app.register_blueprint(community, url_prefix="/")
