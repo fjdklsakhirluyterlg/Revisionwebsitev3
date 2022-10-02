@@ -182,7 +182,7 @@ def view_quiz_thing_stuff(name, id):
     multiple = quiz.multiple_choice
     return render_template("quiz.html", single=single, multi=multiple)
 
-@quiz.route("/api/quiz/check/single")
+@quiz.route("/api/quiz/check/single", methods=["POST"])
 def check_single_choice_quiz_if_correct():
     data = request.get_json()
     id = data["id"]
@@ -197,7 +197,7 @@ def check_single_choice_quiz_if_correct():
         return jsonify({"message": "correct"})
     return jsonify({"message": "incorrect", "actual": q.awnser})
 
-@quiz.route("/api/quiz/check/muliple")
+@quiz.route("/api/quiz/check/muliple", methods=["POST"])
 def check_multiple_choice_quiz_if_correct():
     data = request.get_json()
     awnserid = int(data["awnser_id"])
