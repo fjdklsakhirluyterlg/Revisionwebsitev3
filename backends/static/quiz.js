@@ -8,5 +8,5 @@ function check_single(id){
     }).then(res => res.json()
     ).then(obj => console.log(obj.message)).catch((error) => {
         console.error('Error:', error);
-    });
+    }).then(obj => document.getElementById(`spansingle${id}`).innerHTML = obj.message)
 }
