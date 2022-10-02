@@ -200,7 +200,7 @@ def user_unfollow_tag(id):
     return redirect(next)
 
 @login_required
-@community.route("/community/add/comment")
+@community.route("/community/add/comment/post")
 def community_add_comment():
     data = request.get_json()
     text = data["text"]
@@ -213,6 +213,8 @@ def community_add_comment():
     new = Postcomment(text=text, author=author, post_id=post_id, parent_id=parent)
     new.save()
     return jsonify({"message":new.level()})
+
+@community.route("/api/community/add/comment/ppst")
     
 
 # app.register_blueprint(community, url_prefix="/")
