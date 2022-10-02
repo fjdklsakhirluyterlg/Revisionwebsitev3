@@ -197,4 +197,9 @@ def user_unfollow_tag(id):
     next = request.args.get("next", default="/dashboard")
     return redirect(next)
 
+@login_required
+@community.route("/community/add/comment")
+def community_add_comment():
+    pass
+
 # app.register_blueprint(community, url_prefix="/")
