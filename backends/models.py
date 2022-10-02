@@ -260,7 +260,7 @@ class Postcomment(db.Model):
         db.session.commit()
     
     def level(self):
-        return len(self.path)
+        return self.path
 
 
 class Qawnser(db.Model):
