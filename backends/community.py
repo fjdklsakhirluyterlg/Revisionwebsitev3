@@ -208,6 +208,6 @@ def community_add_comment():
     if parent == "":
         parent = None
     
-    new = PostComment(text=text, author=author)
+    new = PostComment(text=text, author=author, post_id=post_id)
 
 # app.register_blueprint(community, url_prefix="/")
