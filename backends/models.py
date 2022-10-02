@@ -247,9 +247,7 @@ class PostComment(db.Model):
     dislikes = db.Column(db.Integer, default=0)
     post_id = db.Column(db.Integer)
     parent_id = db.Column(db.Integer, db.ForeignKey("postcomment.id"), nullable=True)
-    # replies = db.relationship(
-    #     'PostComment', backref='parent',
-    #     lazy='dynamic')
+    replies = db.relationship("PostComment", backref="parent", lazy=True)
     path = db.Column(db.Integer)
 
     def save(self):
