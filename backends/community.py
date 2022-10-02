@@ -203,6 +203,7 @@ def community_add_comment():
     data = request.get_json()
     text = data["text"]
     author = current_user.name
-    post_id = data["post"]
+    post_id = data["post_id"]
+    parent = data["parent_id"]
 
 # app.register_blueprint(community, url_prefix="/")
