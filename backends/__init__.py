@@ -27,10 +27,10 @@ def create_app():
     app.config['MAIL_USE_SSL'] = False
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
+    mail.init_app(app)
     db.init_app(app)
     CORS(app, resources={r"*": {"origins": "*"}})
     socketio.init_app(app, cors_allowed_origins="*")
-    mail.init_app(app)
     
     from .auth import auth
     from .home import home
