@@ -209,10 +209,7 @@ def community_add_comment():
     if parent == "":
         parent = None
     
-    new = PostComment(text=text, author=author, post_id=post_id)
-    db.session.add(new)
-    db.session.commit()
-    id = getattr(new, "id")
-    return jsonify({"message":id})
+    new = PostComment(text=text, author=author, post_id=post_id, parent_id=parent)
+    
 
 # app.register_blueprint(community, url_prefix="/")
