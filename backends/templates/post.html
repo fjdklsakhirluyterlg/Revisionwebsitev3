@@ -20,7 +20,7 @@
     <span><a href="/community/tags/{{tag}}">{{tag}}</a></span>
     {% endfor %}
     <br><hr>
-    {% for comment in comments %} <p>{{comment.text}}</p>{% for reply in comment.replies%}<p>{{rep.y.text}}</p>{%endfor%}{%endfor%}
+    {% for comment in comments %} <p>{{comment.text}}</p>{% for reply in comment.replies%}<p>{{reply.text}}</p>{%endfor%}{%endfor%}
     {% if awnsers %}
     {% for awnser in awnsers%}
     <div id="{{awnser.title}}"><p>{{awnser.title}} </p><p> {{awnser.likes}} likes | {{awnser.dislikes}} dislikes | created at {{awnser.created_at}} | created by <a href="/users/view/{{awnser.user_id}}">{{awnser.author}}</a></p>
