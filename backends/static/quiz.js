@@ -1,3 +1,4 @@
 function check_single(id){
-    const value = document.getElementById(`inputsingle${id}`)
+    const awnser = document.getElementById(`inputsingle${id}`).value
+    var data = {}
 }
