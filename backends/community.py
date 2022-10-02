@@ -200,7 +200,7 @@ def user_unfollow_tag(id):
     return redirect(next)
 
 @login_required
-@community.route("/community/add/comment/post")
+@community.route("/community/add/comment/post", methods=["POST"])
 def community_add_comment():
     data = request.get_json()
     text = data["text"]
