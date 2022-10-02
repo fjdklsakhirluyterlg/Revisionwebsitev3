@@ -11,9 +11,7 @@ function check_single(id){
     })
 }
 
-function check_multi(id){
-    const classx = document.getElementById(`mulit${id}`).className
-    const question_id = classx.substring(4)
+function check_multi(id, question_id){
     var data = {"awnser_id":id, "question_id":question_id}
     fetch("/api/quiz/check/single", {
         method : "POST",
