@@ -83,6 +83,6 @@ def better_search():
     users = [user.name for user in resusers]
     resawnsers = Awnser.query.filter(or_(Awnser.title.like(f"%{q}%"), Awnser.content.like(f"%{q}%")))
     awnsers = [awnser.title for awnser in resawnsers]
-    return render_template("bettersearch.html", blogs=resblogs, tags=restags, comments=rescomments, posts=resposts, replies=resrelpies, users=resusers)
+    return render_template("bettersearch.html", blogs=resblogs, tags=restags, comments=rescomments, posts=resposts, replies=resrelpies, users=resusers, awnsers=resawnsers)
 
 # app.register_blueprint(search, url_prefix="/")
