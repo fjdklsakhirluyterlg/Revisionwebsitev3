@@ -202,6 +202,11 @@ def check_multiple_choice_quiz_if_correct():
     data = request.get_json()
     awnserid = int(data["awnser_id"])
     questionid = int(data["question_id"])
-    question = Multiplechoice.query.filter_by(id=questionid)
+    question = Multiplechoice.query.filter_by(id=questionid).first()
+    awnser = Multiawnser.query.filter_by(id=awnserid).first()
+    if awnser in question.awnsers and awnser.correct:
+        return jsonify({"message":"correct"})
+    else: 
+        return jsonify({"message":"incorrect"})
     
 # app.register_blueprint(quiz, url_prefix="/")
