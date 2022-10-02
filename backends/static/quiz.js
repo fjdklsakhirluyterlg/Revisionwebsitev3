@@ -13,4 +13,6 @@ function check_single(id){
 
 function check_multi(id){
     const awnser = document.getElementById(`mulit${id}`).value
+    const classx = document.getElementById(`mulit${id}`).className
+    const question_id = classx.substring(4)
 }
