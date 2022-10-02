@@ -1,1 +1,1 @@
-<body>{%for s in single%}<div id="single.{{s.id}}"><label>{{s.question}}<input type="{{s.type}}" id="input{{s.id}}"></div>{% endfor %}{% for m in multi%}<p>{{m.question}}: </p><p>{% for a in m.awnsers%}<span>{{a.awnser}} |</span>{%endfor%}</p>{% endfor %}
+<body>{%for s in single%}<div id="single.{{s.id}}"><form><label>{{s.question}}<input type="{{s.type}}" id="input{{s.id}}"></form></div>{% endfor %}{% for m in multi%}<p>{{m.question}}: </p><p>{% for a in m.awnsers%}<span>{{a.awnser}} |</span>{%endfor%}</p>{% endfor %}
