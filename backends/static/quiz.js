@@ -11,4 +11,6 @@ function check_single(id){
     })
 }
 
-function check_multi(id, idx){}
+function check_multi(id){
+    const awnser = document.getElementById()
+}
