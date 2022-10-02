@@ -227,7 +227,7 @@ def api_community_add_comment_to_post():
     
     new = Postcomment(text=text, author=author, post_id=post_id, parent_id=parent)
     new.save()
-    return jsonify({"message":new.level()})
+    return jsonify({"message": new.level()})
     
 
 # app.register_blueprint(community, url_prefix="/")
