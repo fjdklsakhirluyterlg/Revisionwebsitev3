@@ -209,5 +209,7 @@ def community_add_comment():
         parent = None
     
     new = PostComment(text=text, author=author, post_id=post_id)
+    db.session.add(new)
+    db.session.commit()
 
 # app.register_blueprint(community, url_prefix="/")
