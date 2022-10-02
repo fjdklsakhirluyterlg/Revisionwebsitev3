@@ -219,7 +219,15 @@ def community_add_comment():
 def api_community_add_comment_to_post():
     data = request.get_json()
     text = data["text"]
-
+    author = data["author"]
+    post_id = data["post_id"]
+    parent = data["parent_id"]
+    if parent == "":
+        parent = None
+    
+    new = Postcomment(text=text, author=author, post_id=post_id, parent_id=parent)
+    new.save()
+    return jsonify({"message":new.level()})
     
 
 # app.register_blueprint(community, url_prefix="/")
