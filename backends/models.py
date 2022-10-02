@@ -237,6 +237,7 @@ class Post(db.Model):
     awnsers = db.relationship("Awnser", backref="post")
     views = db.Column(db.Integer, default=0)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    comments = db.relationship("PostComment", backref=True)
 
 class Postcomment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -245,7 +246,7 @@ class Postcomment(db.Model):
     timestamp = db.Column(db.DateTime(), default=datetime.utcnow, index=True)
     likes = db.Column(db.Integer, default=0)
     dislikes = db.Column(db.Integer, default=0)
-    post_id = db.Column(db.Integer)
+    post_id = db.Column(db.Integer, db.ForeignKey("post.id"))
     parent_id = db.Column(db.Integer, db.ForeignKey("postcomment.id"), nullable=True)
     replies = db.relationship("Postcomment", backref=db.backref('parent', remote_side=[id]), lazy=True)
     path = db.Column(db.Integer)
