@@ -255,7 +255,11 @@ class Postcomment(db.Model):
     def save(self):
         db.session.add(self)
         db.session.commit()
-        prefix = self.parent_id.path + '.' if self.parent_id else ''
+        parent = Postcomment.query.filter_by(id=self.parent_id)
+        if parent:
+            prefix = parent.path
+        else:
+            prefix = ""
         self.path = prefix + '{:0{}d}'.format(self.id, self._N)
         db.session.commit()
     
