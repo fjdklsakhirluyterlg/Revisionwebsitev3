@@ -13,7 +13,7 @@ function check_single(id){
 
 function check_multi(id, question_id){
     var data = {"awnser_id":id, "question_id":question_id}
-    fetch("/api/quiz/check/single", {
+    fetch("/api/quiz/check/multiple", {
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
