@@ -247,7 +247,16 @@ class PostComment(db.Model):
     dislikes = db.Column(db.Integer, default=0)
     post_id = db.Column(db.Integer)
     parent_id = db.Column(db.Integer, db.ForeignKey("postcomment.id"), nullable=True)
-    children = db.relationship("Postcomment", backref="parent")
+    replies = db.relationship(
+        'PostComment', backref=db.backref('parent', remote_side=[id]),
+        lazy='dynamic')
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+        prefix = self.parent.path + '.' if self.parent else ''
+        self.path = prefix + '{:0{}d}'.format(self.id, self._N)
+        db.session.commit()
 
 
 class Qawnser(db.Model):
