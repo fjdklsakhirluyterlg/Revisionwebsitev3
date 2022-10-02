@@ -201,6 +201,7 @@ def user_unfollow_tag(id):
 @community.route("/community/add/comment")
 def community_add_comment():
     data = request.get_json()
-    
+    text = data["text"]
+    author = current_user.name
 
 # app.register_blueprint(community, url_prefix="/")
