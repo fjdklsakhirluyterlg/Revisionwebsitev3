@@ -2,7 +2,7 @@ from socket import IP_DEFAULT_MULTICAST_TTL, IP_DROP_MEMBERSHIP
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
-from .models import Post, Tag, User, Notifications, Awnser, PostComment
+from .models import Post, Tag, User, Notifications, Awnser, Postcomment
 import math
 # from . import app
 

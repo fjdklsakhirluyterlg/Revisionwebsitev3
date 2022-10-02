@@ -238,7 +238,7 @@ class Post(db.Model):
     views = db.Column(db.Integer, default=0)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
-class PostComment(db.Model):
+class Postcomment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(200))
     author = db.Column(db.String(320))
@@ -247,7 +247,7 @@ class PostComment(db.Model):
     dislikes = db.Column(db.Integer, default=0)
     post_id = db.Column(db.Integer)
     parent_id = db.Column(db.Integer, db.ForeignKey("postcomment.id"), nullable=True)
-    replies = db.relationship("PostComment", backref="parent", lazy=True)
+    replies = db.relationship("Postcomment", backref="parent", lazy=True)
     path = db.Column(db.Integer)
 
     def save(self):
