@@ -248,7 +248,7 @@ class PostComment(db.Model):
     post_id = db.Column(db.Integer)
     parent_id = db.Column(db.Integer, db.ForeignKey("postcomment.id"), nullable=True)
     replies = db.relationship(
-        'PostComment', backref=db.backref('parent', remote_side=[id]),
+        'PostComment', backref='parent',
         lazy='dynamic')
 
     def save(self):
