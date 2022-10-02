@@ -241,7 +241,7 @@ class Post(db.Model):
 class PostComment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(200))
-    author = db.Column(db.String(32))
+    author = db.Column(db.String(320))
     timestamp = db.Column(db.DateTime(), default=datetime.utcnow, index=True)
     likes = db.Column(db.Integer, default=0)
     dislikes = db.Column(db.Integer, default=0)
