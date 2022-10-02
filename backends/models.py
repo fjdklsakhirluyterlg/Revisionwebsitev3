@@ -237,7 +237,7 @@ class Post(db.Model):
     awnsers = db.relationship("Awnser", backref="post")
     views = db.Column(db.Integer, default=0)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    comments = db.relationship("PostComment", backref="Post")
+    comments = db.relationship("Postcomment", backref="Post")
 
 class Postcomment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
