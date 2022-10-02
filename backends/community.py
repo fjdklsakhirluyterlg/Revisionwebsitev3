@@ -215,7 +215,7 @@ def community_add_comment():
     return jsonify({"message":new.level()})
 
 
-@community.route("/api/community/add/comment/post")
+@community.route("/api/community/add/comment/post", methods=["POST"])
 def api_community_add_comment_to_post():
     data = request.get_json()
     text = data["text"]
