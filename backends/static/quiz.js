@@ -17,7 +17,7 @@ function check_multi(id, question_id){
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
-    }).then(res => res.json()).then(obj => console.log(obj.message)).catch((error) => {
+    }).then(res => res.json()).then(thing => document.getElementById(`spanmulti${question_id}`).innerHTML = thing.message).then(obj => console.log(obj.message)).catch((error) => {
         console.error('Error:', error);
     })
 }
