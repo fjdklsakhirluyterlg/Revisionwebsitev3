@@ -1,3 +1,4 @@
+from socket import IP_DEFAULT_MULTICAST_TTL, IP_DROP_MEMBERSHIP
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
@@ -211,5 +212,7 @@ def community_add_comment():
     new = PostComment(text=text, author=author, post_id=post_id)
     db.session.add(new)
     db.session.commit()
+    id = getattr(new, "id")
+    return jsonify({"message":id})
 
 # app.register_blueprint(community, url_prefix="/")
