@@ -12,5 +12,5 @@ function check_single(id){
 }
 
 function check_multi(id){
-    const awnser = document.getElementById()
+    const awnser = document.getElementById(`mulit${id}`).value
 }
