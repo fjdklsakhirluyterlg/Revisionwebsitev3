@@ -257,6 +257,9 @@ class PostComment(db.Model):
         prefix = self.parent.path + '.' if self.parent else ''
         self.path = prefix + '{:0{}d}'.format(self.id, self._N)
         db.session.commit()
+    
+    def level(self):
+        return len(self.path)
 
 
 class Qawnser(db.Model):
