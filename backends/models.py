@@ -240,6 +240,7 @@ class Post(db.Model):
     comments = db.relationship("Postcomment", backref="Post")
 
 class Postcomment(db.Model):
+    _N = 6
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(200))
     author = db.Column(db.String(320))
