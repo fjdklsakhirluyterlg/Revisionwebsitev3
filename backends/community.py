@@ -205,5 +205,7 @@ def community_add_comment():
     author = current_user.name
     post_id = data["post_id"]
     parent = data["parent_id"]
+    if parent == "":
+        parent = None
 
 # app.register_blueprint(community, url_prefix="/")
