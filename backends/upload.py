@@ -67,7 +67,6 @@ def al_that_user_uploaded():
 def upload_files_to_server():
     if request.method == 'POST':
         if 'file' not in request.files:
-            flash('No file part')
             return redirect(request.url)
         names = []
         for file in request.files.getlist('file'):
@@ -81,7 +80,7 @@ def upload_files_to_server():
                 namex = f"{current_user.name}.{current_user.id}.{filename}"
                 name = os.path.join(f"{curdir}/backends/banners/", namex)
                 file.save(name)
-                
+
         return "banner uploaded"
     else:
         return render_template("upload.html")
