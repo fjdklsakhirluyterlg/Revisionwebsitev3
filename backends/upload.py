@@ -81,6 +81,7 @@ def upload_files_to_server():
                 namex = f"{current_user.name}.{current_user.id}.{filename}"
                 name = os.path.join(f"{curdir}/backends/banners/", namex)
                 file.save(name)
+                
         return "banner uploaded"
     else:
         return render_template("upload.html")
