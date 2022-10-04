@@ -77,7 +77,6 @@ def upload_files_to_server():
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 names.append(filename)
-                
                 curdir = os.getcwd()
                 namex = f"{current_user.name}.{current_user.id}.{filename}"
                 name = os.path.join(f"{curdir}/backends/banners/", namex)
