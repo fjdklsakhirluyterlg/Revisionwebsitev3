@@ -64,7 +64,7 @@ def al_that_user_uploaded():
 
 @login_required
 @upload.route("/upload/banner", methods=["GET", "POST"])
-def upload_files_to_server():
+def upload_banner_to_server():
     if request.method == 'POST':
         if 'file' not in request.files:
             return redirect(request.url)
