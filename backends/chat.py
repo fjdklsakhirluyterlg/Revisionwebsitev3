@@ -65,6 +65,8 @@ def messageReceived(message):
     print(f'message : {message}')
     if message != "User connected":
         socketio.send(message, broadcast=True)
+    else:
+        socketio.join_room()
 
 @socketio.on("left")
 def leftRecieved(message):
