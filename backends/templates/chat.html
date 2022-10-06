@@ -20,6 +20,9 @@
         socket.on('connect', function(){
             socket.send("User connected")
         })
+        socket.emit('join', {
+            data: 'room1'
+        } )
         socket.on('message', function(data){
             var name = {{current_user.name | tojson}};
             var date = new Date().toLocaleString()
