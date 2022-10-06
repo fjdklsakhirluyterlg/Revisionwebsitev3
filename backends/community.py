@@ -234,6 +234,10 @@ def api_community_add_comment_to_post():
     new = Postcomment(text=text, author=author, post_id=post_id, parent_id=parent)
     new.save()
     return jsonify({"message": new.level()})
+
+@community.route("/api/community/comments/view")
+def view_comments_on_post_stuff():
+    pass
     
 
 # app.register_blueprint(community, url_prefix="/")
