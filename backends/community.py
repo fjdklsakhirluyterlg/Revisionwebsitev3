@@ -106,6 +106,15 @@ def view_all_community(title):
     db.session.commit()
     return render_template("post.html", tags=tags, content=content, views=views, likes=likes, user_name=user_name, user_id=user_id, dislikes=dislikes, created_at=created_at, title=title, id=id, awnsers=awnsers, comments=comments)
 
+def quick_sort_comments(array):
+    if len(array) < 2:
+        return array
+    else:
+        pivot = array[0]
+        less = [i for i in array[1:] if i <= pivot]
+        greater = [i for i in array[1:] if i > pivot]
+        return quick_sort_comments(less) + [pivot] + quick_sort_comments(greater)
+
 @community.route("/community/views/<id>")
 def redirect_to_actual_post(id):
     post = Post.query.filter_by(id=id).first()
