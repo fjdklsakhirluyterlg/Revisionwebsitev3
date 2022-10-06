@@ -20,7 +20,7 @@
         socket.on('connect', function(){
             socket.send("User connected")
         })
-        socket.emit('join', {
+        socket.on('join', function(){
             data: 'room1'
         } )
         socket.on('message', function(data){
