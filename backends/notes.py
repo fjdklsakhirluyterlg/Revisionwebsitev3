@@ -6,4 +6,4 @@ note = Blueprint("note", __name__)
 
 @note.route("/api/notes/add")
 def api_add_a_note_thing():
-    pass
+    data = request.get_json()
