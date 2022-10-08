@@ -343,4 +343,4 @@ class Help(db.Model):
     # FUTURE ME: REMEBER TO MAKE THIS SO THAT WHEN SOMEONE SEARCHES FOR HELP ON SOMETHING THEY GET CORRECT AWNSER BACK, IE: ?topic:chemistry&q="electron" GOES TO {"electron": "A subatomic particle with a negative charge and orbits the nuclues in shells"}
 
 class Note(db.Model):
-    id - db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
