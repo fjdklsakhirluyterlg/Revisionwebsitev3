@@ -344,3 +344,5 @@ class Help(db.Model):
 
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.Text)
+    
