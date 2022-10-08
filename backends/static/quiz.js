@@ -6,7 +6,7 @@ function check_single(id){
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
     }).then(res => res.json()
-    ).then(obj => document.getElementById(`spansingle${id}`).innerHTML = obj.message).then(obj => console.log(obj.message)).catch((error) => {
+    ).then(obj => obj.message === "correct" ? document.getElementById(`spansingle${id}`).innerHTML = "&#x2713;": "&#10006;").then(obj => console.log(obj.message)).catch((error) => {
         console.error('Error:', error);
     })
 }
