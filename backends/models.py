@@ -348,4 +348,5 @@ class Note(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     blog_id = db.Column(db.Integer, db.ForeignKey("blog.id"), nullable=True, default=None)
     post_id = db.Column(db.Integer, db.ForeignKey("post.id"), nullable=True, default=None)
+    stack_id = db.Column(db.Integer, db.ForeignKey("stack.id"), nullable=True, default=None)
 
