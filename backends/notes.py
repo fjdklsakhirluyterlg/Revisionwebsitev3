@@ -10,7 +10,7 @@ def api_add_a_note_thing():
     text = data["text"]
     user_id = data["user_id"]
 
-    new = Note(text=text, user_id=user_id)
+    new = Note(texts=text, user_id=user_id)
     db.session.add(new)
     db.session.commit()
 
