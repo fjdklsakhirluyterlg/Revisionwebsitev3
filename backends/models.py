@@ -356,3 +356,9 @@ class Note(db.Model):
         else:
             return False
 
+    
+    def part_of_post(self, id):
+        if self.post_id:
+            return True
+        else:
+            return False
