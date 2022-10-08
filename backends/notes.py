@@ -14,3 +14,6 @@ def api_add_a_note_thing():
     db.session.add(new)
     db.session.commit()
 
+    id = getattr(new, "id")
+    return {"id": id}
+
