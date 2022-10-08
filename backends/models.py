@@ -351,5 +351,8 @@ class Note(db.Model):
     stack_id = db.Column(db.Integer, db.ForeignKey("stack.id"), nullable=True, default=None)
 
     def part_of_blog(self, id):
-        note = Note.query.filter_by(id=id).first()
+        if self.blog_id:
+            return True
+        else:
+            return False
 
