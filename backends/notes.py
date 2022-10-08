@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect, send_from_
 from .import db
 from .models import Note
 
-note = Blueprint("note", __name__)
+notes = Blueprint("notes", __name__)
 
 @note.route("/api/notes/add")
 def api_add_a_note_thing():
@@ -16,4 +16,5 @@ def api_add_a_note_thing():
 
     id = getattr(new, "id")
     return {"id": id}
+
 
