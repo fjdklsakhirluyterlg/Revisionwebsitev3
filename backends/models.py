@@ -351,14 +351,14 @@ class Note(db.Model):
     stack_id = db.Column(db.Integer, db.ForeignKey("stack.id"), nullable=True, default=None)
 
     def part_of_blog(self, id):
-        if self.blog_id:
+        if self.blog_id == id:
             return True
         else:
             return False
 
     
     def part_of_post(self, id):
-        if self.post_id:
+        if self.post_id == id:
             return True
         else:
             return False
