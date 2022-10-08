@@ -362,3 +362,9 @@ class Note(db.Model):
             return True
         else:
             return False
+    
+    def part_of_stack(self, id):
+        if self.stack_id == id:
+            return True
+        else:
+            return False
