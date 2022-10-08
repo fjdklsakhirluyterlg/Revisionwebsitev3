@@ -6,7 +6,7 @@ function check_single(id){
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
     }).then(res => res.json()
-    ).then(obj => obj.message === "correct" ? document.getElementById(`spansingle${id}`).innerHTML = "&#x2713;": "&#10006;").then(obj => console.log(obj.message)).catch((error) => {
+    ).then(obj => obj.message === "correct" ? document.getElementById(`spansingle${id}`).innerHTML = "x2713;": document.getElementById(`spansingle${id}`).innerHTML = "10006;").catch((error) => {
         console.error('Error:', error);
     })
 }
@@ -17,7 +17,7 @@ function check_multi(id, question_id){
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
-    }).then(res => res.json()).then(thing => thing.message === "correct" ? document.getElementById(`spanmulti${question_id}`).innerHTML = "&#x2713;": "&#10006;").then(obj => console.log(obj.message)).catch((error) => {
+    }).then(res => res.json()).then(thing => thing.message === "correct" ? document.getElementById(`spanmulti${question_id}`).innerHTML = "&#x2713;": document.getElementById(`spanmulti${question_id}`).innerHTML = "&#10006;").then(obj => console.log(obj.message)).catch((error) => {
         console.error('Error:', error);
     })
 }
