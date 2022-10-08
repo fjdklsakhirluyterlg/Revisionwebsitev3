@@ -350,3 +350,6 @@ class Note(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey("post.id"), nullable=True, default=None)
     stack_id = db.Column(db.Integer, db.ForeignKey("stack.id"), nullable=True, default=None)
 
+    def part_of_blog(self, id):
+        note = Note.query.filter_by(id=id).first()
+
