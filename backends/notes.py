@@ -4,7 +4,7 @@ from .models import Note
 
 notes = Blueprint("notes", __name__)
 
-@note.route("/api/notes/add")
+@notes.route("/api/notes/add")
 def api_add_a_note_thing():
     data = request.get_json()
     text = data["text"]
