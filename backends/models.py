@@ -346,4 +346,5 @@ class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.Text)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    blog_id = db.Column(db.Integer, db.ForeignKey("blog.id"), nullable=True, default=None)
 
