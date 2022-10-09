@@ -58,17 +58,3 @@ function edit() {
     document.getElementById("editor").innerHTML = text
     count += 1
 }
-
-var target = document.querySelector("div")
-
-var observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      edit()
-    });
-  });
-
-  var config = {
-    characterData: true
-  };
-
-observer.observe(target, config);
