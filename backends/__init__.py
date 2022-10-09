@@ -120,6 +120,11 @@ def create_app():
     def page_not_found(e):
         return f"Sorry could not find this, please try again!!"
 
+    @app.after_request
+    def add_header(response):
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        return response
+
     app.register_error_handler(404, page_not_found)
 
     app.config['SQLALCHEMY_DATABASE_URI'] =f'sqlite:///{DB_NAME}'
