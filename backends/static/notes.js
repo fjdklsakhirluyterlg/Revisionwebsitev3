@@ -2,10 +2,10 @@ count = 0
 
 id = 0
 
-function submit(id){
+function submit(idx){
     var text = document.getElementById("editor").innerHTML
 
-    data = {"text":text, "user_id":id}
+    data = {"text":text, "user_id":idx}
 
     if (count >= 1){
 
