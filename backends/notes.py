@@ -25,3 +25,7 @@ def edite_note_thing(id):
 def delete_note(id):
     pass
 
+@notes.route("/notes/add")
+def add_notes_view():
+    return render_template("notes.html")
+
