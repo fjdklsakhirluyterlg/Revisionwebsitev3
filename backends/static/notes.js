@@ -10,4 +10,5 @@ function submit(id){
     }).then(res => res.json()
     )
 
+    document.getElementById("editor").innerHTML = text
 }
