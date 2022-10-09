@@ -120,7 +120,7 @@ def api_cars():
 @cars.route("/api/ratings/cars/add", methods=["POST"])
 def api_add_cars():
     try:
-        if request.headers['Content-Type'] == 'carslication/json':
+        if request.headers['Content-Type'] == 'application/json':
             data = request.get_json()
             name = data["name"]
             brand = data["brand"]

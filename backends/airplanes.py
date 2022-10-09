@@ -9,7 +9,7 @@ airplanes = Blueprint("airplanes", __name__)
 @airplanes.route("/api/ratings/airplane/add", methods=["POST"])
 def api_add_planes():
     try:
-        if request.headers['Content-Type'] == 'airplanelication/json':
+        if request.headers['Content-Type'] == 'application/json':
             data = request.get_json()
             type = data["type"]
             length = data["length"]

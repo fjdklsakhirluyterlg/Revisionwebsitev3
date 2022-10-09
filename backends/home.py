@@ -515,7 +515,7 @@ def api_help_stuff():
 @home.route("/api/test/poststuff", methods=["GET", "POST"])
 def test_of_post_stuff():
     try:
-        # if request.headers['Content-Type'] == 'homelication/json':
+        # if request.headers['Content-Type'] == 'application/json':
         if request.method == "POST":
             data = request.get_json()
             return jsonify(data)

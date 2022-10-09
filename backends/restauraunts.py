@@ -9,7 +9,7 @@ restauraunts = Blueprint("restauraunts", __name__)
 @restauraunts.route("/api/ratings/restaurants/add", methods=["POST"])
 def api_add_restuaraunt():
     try: 
-        if request.headers['Content-Type'] == 'restaurauntslication/json':
+        if request.headers['Content-Type'] == 'application/json':
             data = request.get_json()
             name = data["name"]
             overall_rating = float(data["rating"])
