@@ -73,4 +73,4 @@ var observer = new MutationObserver(function(mutations) {
     characterData: true
   };
 
-  observer.observe(target, config);
+observer.observe(target, config);
