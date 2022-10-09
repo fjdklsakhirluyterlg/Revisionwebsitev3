@@ -1,16 +1,13 @@
 <body><link href="https://cdn.quilljs.com/1.2.6/quill.snow.css" rel="stylesheet"><script src="https://cdn.quilljs.com/1.2.6/quill.min.js"></script><div class="toolbar ql-snow" id="toolbar"><div class="editor" id="editor"></div><script>
     var quill = new Quill('#editor', {
-        const  modules  = {
+        modules: {
             toolbar: [
-                [{ font: [] }],
-                [{ header: [1, 2, 3, 4, 5, 6, false] }],
-                ["bold", "italic", "underline", "strike"],
-                [{ color: [] }, { background: [] }],
-                [{ script:  "sub" }, { script:  "super" }],
-                ["blockquote", "code-block"],
-                [{ list:  "ordered" }, { list:  "bullet" }],
-                [{ indent:  "-1" }, { indent:  "+1" }, { align: [] }],
-                ["link", "image", "video"],
-                ["clean"]],
-        }, theme: 'snow'});
+              [{ header: [1, 2, false] }],
+              ['bold', 'italic', 'underline'],
+              ['image', 'code-block'], 
+              ["link", "image", "video"],
+            ]
+          },
+    theme: 'snow'
+  });
 </script></body>
