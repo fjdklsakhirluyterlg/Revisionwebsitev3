@@ -1,4 +1,4 @@
-<body><link href="https://cdn.quilljs.com/1.2.6/quill.snow.css" rel="stylesheet"><script src="https://cdn.quilljs.com/1.2.6/quill.min.js"></script><div class="toolbar ql-snow" id="toolbar"><button onclick="submit({{current_user.id}}); return false">submit</button></div><div class="editor" id="editor"></div><script>
+<head><script src="{{url_for('static', filename='notes.js')}}"></script></head><body><link href="https://cdn.quilljs.com/1.2.6/quill.snow.css" rel="stylesheet"><script src="https://cdn.quilljs.com/1.2.6/quill.min.js"></script><div class="toolbar ql-snow" id="toolbar"><button onclick="submit({{current_user.id}}); return false">submit</button></div><div class="editor" id="editor"></div><script>
     var quill = new Quill('#editor', {
         modules: {
             toolbar: [
@@ -11,4 +11,4 @@
           },
     theme: 'snow'
   });
-</script><script src="{{url_for('static', filename='notes.js')}}"></script></body>
+</script></body>
