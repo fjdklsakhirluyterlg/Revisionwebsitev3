@@ -59,7 +59,7 @@ function edit() {
     count += 1
 }
 
-var target = document.querySelector("#editor")[0]
+var target = document.querySelector("#editor")
 
 var observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
@@ -68,8 +68,6 @@ var observer = new MutationObserver(function(mutations) {
   });
 
   var config = {
-    childList: true,
-    subtree: true,
     characterData: true
   };
 
