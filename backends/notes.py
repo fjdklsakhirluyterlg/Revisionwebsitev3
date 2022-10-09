@@ -25,6 +25,7 @@ def edite_note_thing(id):
     note = Note.query.filter_by(id=id).first()
     note.text = text
     db.session.commit()
+    return {"id": id}
 
 @notes.route("/notes/delete/<id>")
 def delete_note(id):
