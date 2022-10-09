@@ -14,7 +14,7 @@ function submit(idx){
 
     data = {"text":text, "user_id":idx}
 
-    if (count < 1){
+    if (count === 0){
 
     const url = document.location.origin
 
