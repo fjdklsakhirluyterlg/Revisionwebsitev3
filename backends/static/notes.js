@@ -44,6 +44,11 @@ function increase_count(){
 }
 
 function edit() {
+
+    var text = document.getElementById("editor").innerHTML
+
+    data = {"text":text}
+    
     fetch(`/notes/edit/${id}`, {
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
