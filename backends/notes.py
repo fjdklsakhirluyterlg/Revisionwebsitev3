@@ -46,4 +46,6 @@ def view_note_thing(id):
 
 @notes.route("/api/notes/view/add")
 def view_all_notes():
-    pass
+    notes = Note.query.sort_by(Note.id)
+    length = len(notes)
+    dict = {}
