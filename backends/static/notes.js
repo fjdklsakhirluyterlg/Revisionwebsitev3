@@ -16,15 +16,18 @@ function submit(idx){
 
     if (count < 1){
 
+    const url = document.location.origin
+
     fetch("/api/notes/add", {
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
-    }).then(res => res.json()).then(obj => id = obj.id)
+    }).then(res => res.json()).then(obj => window.location.href = `${url}/notes/${obj.id}`)
 
     document.getElementById("editor").innerHTML = text
     count += 1
     } else {
+
         fetch(`/notes/edit/${id}`, {
             method : "POST",
             headers: {'Content-Type': 'application/json'}, 
