@@ -59,6 +59,7 @@ function edit() {
     count += 1
 }
 
+window.onload = function(){
 var target = document.querySelector('#editor');
 
 var observer = new MutationObserver(function(mutations) {
@@ -70,3 +71,4 @@ var observer = new MutationObserver(function(mutations) {
 var config = { attributes: true, childList: true, characterData: true };
 
 observer.observe(target, config);
+}
