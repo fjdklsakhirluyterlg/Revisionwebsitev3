@@ -20,7 +20,9 @@ def api_add_a_note_thing():
 
 @notes.route("/notes/edit/<id>")
 def edite_note_thing(id):
-    pass
+    data = request.get_json()
+    text = data["text"]
+    note = Note
 
 @notes.route("/notes/delete/<id>")
 def delete_note(id):
