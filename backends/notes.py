@@ -46,7 +46,7 @@ def view_note_thing(id):
 
 @notes.route("/api/notes/view/all")
 def view_all_notes():
-    notes = Note.query.order_by(Note.id)
+    notes = Note.query.order_by(Note.likes)[::-1]
     length = 0
     dict = {"length":length}
     for note in notes:
