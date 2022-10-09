@@ -2,6 +2,8 @@ count = 0
 
 id = 0
 
+urlid = window.location.href
+
 function submit(idx){
     var text = document.getElementById("editor").innerHTML
 
