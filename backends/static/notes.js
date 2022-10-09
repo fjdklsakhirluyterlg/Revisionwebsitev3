@@ -1,5 +1,3 @@
-count = 0
-
 urlid = window.location.href.split("")[window.location.href.split("").length - 1]
 
 if (Number.isInteger(urlid)){
@@ -7,6 +5,8 @@ if (Number.isInteger(urlid)){
     count = 1
 } else {
     id = 0
+
+    count = 0
 }
 
 function submit(idx){
