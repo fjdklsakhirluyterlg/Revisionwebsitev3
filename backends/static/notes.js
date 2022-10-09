@@ -16,6 +16,7 @@ function submit(id){
     }).then(res => res.json()).then(obj => id = obj.id)
 
     document.getElementById("editor").innerHTML = text
+    count += 1
     } else {
         fetch(`/notes/edit/${id}`, {
             method : "POST",
