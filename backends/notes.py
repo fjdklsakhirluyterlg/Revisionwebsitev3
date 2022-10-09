@@ -22,7 +22,9 @@ def api_add_a_note_thing():
 def edite_note_thing(id):
     data = request.get_json()
     text = data["text"]
-    note = Note
+    note = Note.query.filter_by(id=id).first()
+    note.text = text
+    db.session.commit()
 
 @notes.route("/notes/delete/<id>")
 def delete_note(id):
