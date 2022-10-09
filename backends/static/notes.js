@@ -59,8 +59,14 @@ function edit() {
     count += 1
 }
 
+var target = document.querySelector('#editor');
 
-window.onload = function(){
-var target = document.getElementById("editor")
-target.addEventListener("change", edit())
-}
+var observer = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    console.log(mutation.type);
+  });    
+});
+
+var config = { attributes: true, childList: true, characterData: true };
+
+observer.observe(target, config);
