@@ -363,7 +363,7 @@ def blog_view_add():
         try:
             URL = "http://localhost:5090/blogs/add"    
             title = request.form["title"].replace(" ", "-")
-            content = markdown.makrdown(request.form["content"])
+            content = markdown.markdown(request.form["content"])
             feature_image = "stuff"
             tags = request.form["tags"].split(" ")
             data = {"title": title, "content" : content, "feature_image": feature_image, "tags": tags}
