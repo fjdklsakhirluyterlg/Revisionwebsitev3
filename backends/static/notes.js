@@ -42,3 +42,14 @@ function submit(idx){
 function increase_count(){
     count += 1
 }
+
+function edit() {
+    fetch(`/notes/edit/${id}`, {
+        method : "POST",
+        headers: {'Content-Type': 'application/json'}, 
+        body: JSON.stringify(data)
+    }).then(res => res.json()).then(obj => id = obj.id)
+
+    document.getElementById("editor").innerHTML = text
+    count += 1
+}
