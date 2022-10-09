@@ -426,7 +426,7 @@ def edit_blog_view():
     xcontent = blog.content
     if request.method == "POST":
         ntitle = request.form["title"].replace(" ", "-")
-        content = request.form["content"]
+        content = markdown.markdown(request.form["content"])
         blog.title = ntitle
         blog.content = content
         db.session.commit()
