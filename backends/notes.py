@@ -44,7 +44,7 @@ def view_note_thing(id):
         return render_template("notes.html", data = note.text)
 
 
-@notes.route("/api/notes/view/add")
+@notes.route("/api/notes/view/all")
 def view_all_notes():
     notes = Note.query.sort_by(Note.id)
     length = len(notes)
