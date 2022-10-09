@@ -47,7 +47,7 @@ def view_note_thing(id):
 @notes.route("/api/notes/view/all")
 def view_all_notes():
     notes = db.session.query(Note).all()
-    dict = {}}
+    dict = {}
     for note in notes:
         dict[note.id] = note.text
 
