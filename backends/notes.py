@@ -35,4 +35,6 @@ def add_notes_view():
 @login_required
 @notes.route("/notes/view/<id>")
 def view_note_thing(id):
-    pass
+    note = Note.query.filter_by(id=id).first()
+    if note.user_id == current_user.id:
+        return render_template("notes.html", data = note.text)
