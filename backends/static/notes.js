@@ -59,7 +59,7 @@ function edit() {
     count += 1
 }
 
-var target = document.querySelector("#editor")
+var target = document.querySelector("div")
 
 var observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
