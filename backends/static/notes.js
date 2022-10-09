@@ -2,7 +2,7 @@ count = 0
 
 id = 0
 
-urlid = window.location.href
+urlid = window.location.href.split("")[window.location.href.split("").length - 1]
 
 function submit(idx){
     var text = document.getElementById("editor").innerHTML
