@@ -17,4 +17,11 @@ def api_add_a_note_thing():
     id = getattr(new, "id")
     return {"id": id}
 
+@notes.route("/notes/edit/<id>")
+def edite_note_thing(id):
+    pass
+
+@notes.route("/notes/delete/<id>")
+def delete_note(id):
+    pass
 
