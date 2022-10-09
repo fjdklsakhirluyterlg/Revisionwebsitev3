@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from .import db
 from .models import Note
+from flask_login import current_user, login_required
 
 notes = Blueprint("notes", __name__)
 
@@ -25,6 +26,7 @@ def edite_note_thing(id):
 def delete_note(id):
     pass
 
+@login_required
 @notes.route("/notes/add")
 def add_notes_view():
     return render_template("notes.html")
