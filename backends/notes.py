@@ -31,3 +31,8 @@ def delete_note(id):
 def add_notes_view():
     return render_template("notes.html")
 
+
+@login_required
+@notes.route("/notes/view/<id>")
+def view_note_thing(id):
+    
