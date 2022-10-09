@@ -48,4 +48,8 @@ def view_note_thing(id):
 def view_all_notes():
     notes = Note.query.sort_by(Note.id)
     length = len(notes)
-    dict = {}
+    dict = {"length":length}
+    for note in notes:
+        dict[note.id] = note.text
+
+    return dict
