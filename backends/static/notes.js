@@ -59,6 +59,8 @@ function edit() {
     count += 1
 }
 
-var target = document.getElementById("editor")
 
+window.onload = function(){
+var target = document.getElementById("editor")
 target.addEventListener("change", edit())
+}
