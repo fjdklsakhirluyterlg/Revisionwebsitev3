@@ -58,3 +58,5 @@ function edit() {
     document.getElementById("editor").innerHTML = text
     count += 1
 }
+
+var target = document.getElementById("editor")
