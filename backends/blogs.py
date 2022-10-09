@@ -4,6 +4,7 @@ from .models import Blog, Notifications, Tag, tag_blog, Comment, Replies, User, 
 from flask_login import current_user, login_required
 import html, requests, math
 from .functions import send_newsletter_with_flask
+import markdown
 # from . import app
 
 blogs = Blueprint("blogs", __name__)
@@ -362,7 +363,7 @@ def blog_view_add():
         try:
             URL = "http://localhost:5090/blogs/add"    
             title = request.form["title"].replace(" ", "-")
-            content = request.form["content"]
+            content = markdown.makrdown(request.form["content"])
             feature_image = "stuff"
             tags = request.form["tags"].split(" ")
             data = {"title": title, "content" : content, "feature_image": feature_image, "tags": tags}
