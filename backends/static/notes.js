@@ -60,3 +60,5 @@ function edit() {
 }
 
 var target = document.getElementById("editor")
+
+target.addEventListener("change", edit())
