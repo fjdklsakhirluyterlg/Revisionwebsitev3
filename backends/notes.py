@@ -18,7 +18,7 @@ def api_add_a_note_thing():
     id = getattr(new, "id")
     return {"id": id}
 
-@notes.route("/notes/edit/<id>")
+@notes.route("/notes/edit/<id>", methods=["POST"])
 def edite_note_thing(id):
     data = request.get_json()
     text = data["text"]
