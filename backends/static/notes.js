@@ -48,7 +48,7 @@ function edit() {
     var text = document.getElementById("editor").innerHTML
 
     data = {"text":text}
-    
+
     fetch(`/notes/edit/${id}`, {
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
@@ -58,3 +58,19 @@ function edit() {
     document.getElementById("editor").innerHTML = text
     count += 1
 }
+
+var target = document.getElementById("editor")
+
+var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      edit()
+    });
+  });
+
+  var config = {
+    childList: true,
+    subtree: true,
+    characterData: true
+  };
+
+  observer.observe(target, config);
