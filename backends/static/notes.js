@@ -15,3 +15,7 @@ function submit(id){
 
     document.getElementById("editor").innerHTML = text
 }
+
+function increase_count(){
+    count += 1
+}
