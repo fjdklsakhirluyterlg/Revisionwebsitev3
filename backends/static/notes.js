@@ -72,3 +72,7 @@ var config = { attributes: true, childList: true, characterData: true };
 
 observer.observe(target, config);
 }
+
+div.addEventListener("DOMNodeInserted", function (e) {
+    e.target 
+}, false);
