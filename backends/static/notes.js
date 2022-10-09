@@ -7,6 +7,8 @@ function submit(id){
 
     data = {"text":text, "user_id":id}
 
+    if (count >= 1){
+
     fetch("/api/notes/add", {
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
@@ -14,6 +16,15 @@ function submit(id){
     }).then(res => res.json()).then(obj => id = obj.id)
 
     document.getElementById("editor").innerHTML = text
+    } else {
+        fetch(`/notes/edit/${id}`, {
+            method : "POST",
+            headers: {'Content-Type': 'application/json'}, 
+            body: JSON.stringify(data)
+        }).then(res => res.json()).then(obj => id = obj.id)
+    
+        document.getElementById("editor").innerHTML = text
+    }
 }
 
 function increase_count(){
