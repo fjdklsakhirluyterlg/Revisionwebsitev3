@@ -1,3 +1,7 @@
+count = 0
+
+id = 0
+
 function submit(id){
     var text = document.getElementById("editor").innerHTML
 
@@ -7,8 +11,7 @@ function submit(id){
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
-    }).then(res => res.json()
-    )
+    }).then(res => res.json()).then(obj => id = obj.id)
 
     document.getElementById("editor").innerHTML = text
 }
