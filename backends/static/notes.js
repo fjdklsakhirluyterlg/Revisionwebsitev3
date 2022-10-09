@@ -1,7 +1,7 @@
 urlid = window.location.href.split("")[window.location.href.split("").length - 1]
 
-if (Number.isInteger(urlid)){
-    id = urlid
+if (Number.isInteger(parseInt(urlid))){
+    id = parseInt(urlid)
     count = 1
 } else {
     id = 0
