@@ -35,4 +35,4 @@ def add_notes_view():
 @login_required
 @notes.route("/notes/view/<id>")
 def view_note_thing(id):
-    
+    pass
