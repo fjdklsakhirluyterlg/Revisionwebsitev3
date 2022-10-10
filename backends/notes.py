@@ -55,3 +55,7 @@ def view_all_notes():
     # dict = {"hi":"bye"}
 
     return dict
+
+@notes.route("/api/notes/view/<id>")
+def view_single_note(id):
+    pass
