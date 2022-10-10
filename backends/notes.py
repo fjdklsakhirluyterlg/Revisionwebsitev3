@@ -63,3 +63,5 @@ def view_single_note(id):
     dict["id"] = note.id
     dict["text"] = note.text
     dict["user_id"] = note.user_id
+
+    return dict
