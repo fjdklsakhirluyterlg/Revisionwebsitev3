@@ -59,3 +59,5 @@ def view_all_notes():
 @notes.route("/api/notes/view/<id>")
 def view_single_note(id):
     note = Note.query.filter_by(id=id).first()
+    dict = {}
+    dict["id"] = note.id
