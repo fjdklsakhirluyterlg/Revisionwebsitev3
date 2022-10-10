@@ -61,3 +61,4 @@ def view_single_note(id):
     note = Note.query.filter_by(id=id).first()
     dict = {}
     dict["id"] = note.id
+    dict["text"] = note.text
