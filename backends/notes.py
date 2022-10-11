@@ -32,6 +32,7 @@ def delete_note(id):
     note = Note.query.filter_by(id=id).first()
     db.session.delete(note)
     db.session.commit()
+    return jsonify(msg="Deleted")
 
 @login_required
 @notes.route("/notes/add")
