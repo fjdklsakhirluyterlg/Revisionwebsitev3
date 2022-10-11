@@ -29,7 +29,7 @@ def edite_note_thing(id):
 
 @notes.route("/notes/delete/<id>")
 def delete_note(id):
-    pass
+    note = Note.query.filter_by(id=id).first()
 
 @login_required
 @notes.route("/notes/add")
