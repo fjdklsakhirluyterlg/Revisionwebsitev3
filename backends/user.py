@@ -37,6 +37,7 @@ def dashboard():
             
         posts = usern.posts
         awnsers = usern.awnsers
+        notes = usern.notes
         if usern.validated == False:
             ask = True
         else:
