@@ -59,20 +59,20 @@ function edit() {
     count += 1
 }
 
-window.onload = function(){
-var target = document.querySelector('#editor');
+// window.onload = function(){
+// var target = document.querySelector('#editor');
 
-var observer = new MutationObserver(function(mutations) {
-  mutations.forEach(function(mutation) {
-    console.log(mutation.type);
-  });    
-});
+// var observer = new MutationObserver(function(mutations) {
+//   mutations.forEach(function(mutation) {
+//     console.log(mutation.type);
+//   });    
+// });
 
-var config = { attributes: true, childList: true, characterData: true };
+// var config = { attributes: true, childList: true, characterData: true };
 
-observer.observe(target, config);
-}
+// observer.observe(target, config);
+// }
 
-div.addEventListener("DOMNodeInserted", function (e) {
-    e.target 
-}, false);
+// div.addEventListener("DOMNodeInserted", function (e) {
+//     e.target 
+// }, false);
