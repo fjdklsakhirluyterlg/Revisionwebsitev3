@@ -30,6 +30,8 @@ def edite_note_thing(id):
 @notes.route("/notes/delete/<id>")
 def delete_note(id):
     note = Note.query.filter_by(id=id).first()
+    db.session.delete(note)
+    db.session.commit()
 
 @login_required
 @notes.route("/notes/add")
