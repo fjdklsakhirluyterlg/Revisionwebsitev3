@@ -69,4 +69,3 @@ def view_single_note(id):
 
     return dict
 
-
