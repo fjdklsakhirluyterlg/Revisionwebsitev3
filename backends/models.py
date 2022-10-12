@@ -371,3 +371,5 @@ class Note(db.Model):
             return False
 
 
+class Song(db.Model):
+    id = db.column(db.Integer, primary_key=True)
