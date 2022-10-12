@@ -369,3 +369,5 @@ class Note(db.Model):
             return True
         else:
             return False
+
+
