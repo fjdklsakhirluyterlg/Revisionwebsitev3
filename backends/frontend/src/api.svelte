@@ -8,6 +8,6 @@
         data = await res.json()
     })
 
-    
+    const result = Object.values(data)
 </script>
 
