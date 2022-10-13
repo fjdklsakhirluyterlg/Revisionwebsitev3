@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    @import "https://cdn.quilljs.com/1.2.6/quill.min.js"
 
     var data = {}
 
