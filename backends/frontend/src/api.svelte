@@ -19,7 +19,7 @@
 	<h2>Loading....</h2>
 {:then notes}
     {#each {length: 6} as _, i}
-    <html lang="en">{notes[i]}</html>
+    {notes[i]}
     {/each}
 {:catch err}
 	<h2>Error while loading the data</h2>
