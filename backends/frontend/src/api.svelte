@@ -13,6 +13,6 @@
 </script>
 
 {#each result as res}
-    <div>{res}</div><br>
+    <div>{@html res}</div><br>
 {/each}
 
