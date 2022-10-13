@@ -13,5 +13,7 @@
 
 {#each result as res}
     <div>{res}</div>
+{:else}
+    <p>loading...</p>
 {/each}
 
