@@ -13,7 +13,9 @@
 {#await userPromise}
 	<h2>Loading....</h2>
 {:then notes}
-	<p>notes.1</p>
+    {#each {length: 6} as _, i}
+    <h2>notes.i</h2>
+    {/each}
 {:catch err}
 	<h2>Error while loading the data</h2>
 {/await}
