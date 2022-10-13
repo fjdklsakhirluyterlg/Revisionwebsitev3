@@ -2,19 +2,17 @@
     import { onMount } from 'svelte';
 
     var data = {}
+
+    const result = []
     
 	onMount(async () => {
         const res = await fetch("http://127.0.0.1:5090/api/notes/view/all");
         data = await res.json();
-        console.log(data)
+        result = Object.values(data);
     })
-
-    const result = Object.values(data)
 </script>
 
 {#each result as res}
     <div>{res}</div>
-{:else}
-    <p>loading...</p>
 {/each}
 
