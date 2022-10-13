@@ -1,4 +1,5 @@
 <script>
+    import { onMount } from 'svelte';
     
 	const getRandomUser = async () => {
 		var response = await fetch('http://127.0.0.1:5090/api/notes/view/all');
