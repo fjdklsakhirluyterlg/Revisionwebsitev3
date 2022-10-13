@@ -372,7 +372,7 @@ class Note(db.Model):
 
 
 class Song(db.Model):
-    id = db.column(db.Integer, primary_key=True)
-    title = db.column(db.String(255))
-    author = db.column(db.String(255))
-    lyrics = db.column(db.Text)
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(255))
+    author = db.Column(db.String(255))
+    lyrics = db.Column(db.Text)
