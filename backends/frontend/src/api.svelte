@@ -20,7 +20,9 @@
 {:then notes}
     {#each {length: 6} as _, i}
     <h2>{notes[i]}</h2>
+    <script>consolelogit(notes)</script>
     {/each}
 {:catch err}
 	<h2>Error while loading the data</h2>
+    <script>consolelogit(err)</script>
 {/await}
