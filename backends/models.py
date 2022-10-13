@@ -374,4 +374,4 @@ class Note(db.Model):
 class Song(db.Model):
     id = db.column(db.Integer, primary_key=True)
     title = db.column(db.String(255))
-    
+    author = db.column(db.String(255))
