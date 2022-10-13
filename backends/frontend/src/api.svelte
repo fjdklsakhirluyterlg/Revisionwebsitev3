@@ -11,3 +11,7 @@
     const result = Object.values(data)
 </script>
 
+{#each result as res}
+    <div>{res}</div>
+{/each}
+
