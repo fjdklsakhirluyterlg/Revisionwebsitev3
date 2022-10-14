@@ -227,4 +227,5 @@ def view_quiz_thing_please_work_api(id):
     dict["category"] = category
     dict["name"] = name
     dict["description"] = description
+    return dict
 # app.register_blueprint(quiz, url_prefix="/")
