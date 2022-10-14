@@ -208,5 +208,9 @@ def check_multiple_choice_quiz_if_correct():
         return jsonify({"message":"correct"})
     else: 
         return jsonify({"message":"incorrect"})
+
+@quiz.route("/api/categories/all")
+def api_see_all_categories():
+    pass
     
 # app.register_blueprint(quiz, url_prefix="/")
