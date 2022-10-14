@@ -218,5 +218,6 @@ def api_see_all_categories():
 @quiz.route("/api/quiz/view/<id>")
 def view_quiz_thing_please_work_api(id):
     quiz = Quiz.query.filter_by(id=id).first()
+    id = quiz.id
     
 # app.register_blueprint(quiz, url_prefix="/")
