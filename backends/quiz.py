@@ -231,5 +231,5 @@ def view_quiz_thing_please_work_api(id):
 
 @quiz.route("/quiz/add")
 def add_quiz_endpoint():
-    pass
+    return render_template("quizadd.html")
 # app.register_blueprint(quiz, url_prefix="/")
