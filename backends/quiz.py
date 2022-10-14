@@ -214,5 +214,9 @@ def api_see_all_categories():
     categories = db.session.query(Category).all()
     names = [c.name for c in categories]
     return {"categories":names}
+
+@quiz.route("/api/quiz/view/<id>")
+def view_quiz_thing_please_work_api():
+    pass
     
 # app.register_blueprint(quiz, url_prefix="/")
