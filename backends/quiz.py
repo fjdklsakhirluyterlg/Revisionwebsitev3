@@ -211,6 +211,6 @@ def check_multiple_choice_quiz_if_correct():
 
 @quiz.route("/api/categories/all")
 def api_see_all_categories():
-    pass
+    categories = db.session.query(Category).all()
     
 # app.register_blueprint(quiz, url_prefix="/")
