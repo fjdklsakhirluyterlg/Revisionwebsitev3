@@ -216,7 +216,7 @@ def api_see_all_categories():
     return {"categories":names}
 
 @quiz.route("/api/quiz/view/<id>")
-def view_quiz_thing_please_work_api():
-    pass
+def view_quiz_thing_please_work_api(id):
+    quiz = Quiz.query.filter_by(id=id).first()
     
 # app.register_blueprint(quiz, url_prefix="/")
