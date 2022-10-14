@@ -218,8 +218,12 @@ def api_see_all_categories():
 @quiz.route("/api/quiz/view/<id>")
 def view_quiz_thing_please_work_api(id):
     quiz = Quiz.query.filter_by(id=id).first()
+    dict = {}
     id = quiz.id
     category = quiz.category
     name = quiz.name
     description = quiz.description
+    dict["id"] = id
+    dict["category"] = category
+    dict["name"] = name
 # app.register_blueprint(quiz, url_prefix="/")
