@@ -219,5 +219,7 @@ def api_see_all_categories():
 def view_quiz_thing_please_work_api(id):
     quiz = Quiz.query.filter_by(id=id).first()
     id = quiz.id
-    
+    category = quiz.category
+    name = quiz.name
+    description = quiz.description
 # app.register_blueprint(quiz, url_prefix="/")
