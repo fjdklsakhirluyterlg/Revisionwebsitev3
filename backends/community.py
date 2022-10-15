@@ -240,6 +240,7 @@ def view_comments_on_post_stuff(id):
     post = Post.query.filter_by(id=id).first()
     comments = post.comments
     names = [c.text for c in comments]
+    return {"comments":names}
     
 
 # app.register_blueprint(community, url_prefix="/")
