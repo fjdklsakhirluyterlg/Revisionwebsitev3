@@ -1,3 +1,5 @@
+var quiz_id = 0;
+
 function sumbit_quiz(id){
     var name = document.getElementById("name")
     var description = document.getElementById("description")
@@ -8,5 +10,5 @@ function sumbit_quiz(id){
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
-    }).then(res => res.json())
+    }).then(res => res.json()).then(data => quiz_id = data.id)
 }
