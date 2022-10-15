@@ -247,7 +247,11 @@ def view_comments_on_post_stuff(id):
 def find_user_related_posts():
     following = current_user.following
     postid = []
+    postnames = []
     for tag in following:
         posts = tag.posts
+        for post in posts:
+            postid.append(post.id)
+            postnames.append(post.title)
 
 # app.register_blueprint(community, url_prefix="/")
