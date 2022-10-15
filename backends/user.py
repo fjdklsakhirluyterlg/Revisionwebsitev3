@@ -3,7 +3,7 @@ from . import db
 from .models import User
 from flask_login import current_user, login_required
 from .auth import mank_random_long_id, validate_user_with_email
-from .models import Blog, Notifications
+from .models import Blog, Notifications, Tag, Post
 from werkzeug.security import generate_password_hash, check_password_hash
 from .blogs import blogs_related_to_blog, related_tags_thingy
 # from . import app
