@@ -216,7 +216,7 @@ def user_home():
             if b.id not in blogids or otherblogs:
                 tag_blogs.append(b.title)
 
-    tagsxx = user.tags
+    tagsxx = user.following
     tagnames = [tagsxxx.name for tagsxxx in tagsxx]
 
     posts = find_user_related_posts()
