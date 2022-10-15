@@ -130,7 +130,7 @@ def posts_related_to_post(id):
         for post in tag.posts:
             if post.title in dict:
                 dict[post.title] += 1
-            elif post.name != current.name:
+            elif post.title != current.title:
                 dict[post.title] = 1
     
     return dict
