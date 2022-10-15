@@ -6,6 +6,7 @@ from .auth import mank_random_long_id, validate_user_with_email
 from .models import Blog, Notifications, Tag, Post
 from werkzeug.security import generate_password_hash, check_password_hash
 from .blogs import blogs_related_to_blog, related_tags_thingy
+from .community import find_user_related_posts
 # from . import app
 
 user = Blueprint("user", __name__)
@@ -215,7 +216,8 @@ def user_home():
             if b.id not in blogids or otherblogs:
                 tag_blogs.append(b.title)
 
-    quizzes = user.quizzes
+    posts = find_user_related_posts()
+    postnames = posts["names"]
 
     return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags, "tag_blogs": tag_blogs})
 
