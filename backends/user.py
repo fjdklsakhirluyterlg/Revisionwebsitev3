@@ -205,8 +205,12 @@ def user_home():
     otherblogs = []
     for blog in blogids:
         otherblogs.extend(list(blogs_related_to_blog(blog).keys()))
+    
+    for tagt in othertags:
+        blogggs = tagt.blogs_associated
 
     quizzes = user.quizzes
+
     return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags})
 
 @login_required
