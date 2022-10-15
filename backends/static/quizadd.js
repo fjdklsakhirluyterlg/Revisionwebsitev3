@@ -3,7 +3,7 @@ function sumbit_quiz(id){
     var description = document.getElementById("description")
     var user_id = id
     var categories = document.getElementById("categories").split(" ")
-    data = {"user_id":user_id, "description":description, "name":name, "categories":categories}
+    data = {"user_id":user_id, "description":description, "name":name, "category":categories}
     fetch("/api/quiz/add")
 
 }
