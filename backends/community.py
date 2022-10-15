@@ -246,5 +246,8 @@ def view_comments_on_post_stuff(id):
 @community.route("/community/posts/user/related")
 def find_user_related_posts():
     following = current_user.following
+    postid = []
+    for tag in following:
+        posts = tag.posts
 
 # app.register_blueprint(community, url_prefix="/")
