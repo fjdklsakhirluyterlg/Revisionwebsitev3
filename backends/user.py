@@ -216,7 +216,7 @@ def user_home():
 
     quizzes = user.quizzes
 
-    return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags})
+    return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags, "tag_blogs": tag_blogs})
 
 @login_required
 @user.route("/find/related/tags")
