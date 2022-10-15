@@ -206,8 +206,13 @@ def user_home():
     for blog in blogids:
         otherblogs.extend(list(blogs_related_to_blog(blog).keys()))
     
+
+    tag_blogs = []
     for tagt in othertags:
         blogggs = tagt.blogs_associated
+        for b in blogggs:
+            if b.id not in blogids or otherblogs:
+                tag_blogs.append(b)
 
     quizzes = user.quizzes
 
