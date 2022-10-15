@@ -212,7 +212,7 @@ def user_home():
         blogggs = tagt.blogs_associated
         for b in blogggs:
             if b.id not in blogids or otherblogs:
-                tag_blogs.append(b)
+                tag_blogs.append(b.title)
 
     quizzes = user.quizzes
 
