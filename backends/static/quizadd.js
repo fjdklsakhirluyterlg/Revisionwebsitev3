@@ -12,3 +12,4 @@ function sumbit_quiz(id){
         body: JSON.stringify(data)
     }).then(res => res.json()).then(data => quiz_id = data.id)
 }
+
