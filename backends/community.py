@@ -239,6 +239,7 @@ def api_community_add_comment_to_post():
 def view_comments_on_post_stuff(id):
     post = Post.query.filter_by(id=id).first()
     comments = post.comments
+    names = [c.text for c in comments]
     
 
 # app.register_blueprint(community, url_prefix="/")
