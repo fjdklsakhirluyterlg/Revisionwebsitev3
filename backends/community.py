@@ -123,7 +123,7 @@ def redirect_to_actual_post(id):
 
 @community.route("/community/posts/related/<id>")
 def posts_related_to_post(id):
-    pass
+    post = Post.query.filter_by(id=id).first()
 
 @community.route("/community/tags/<name>")
 def communtiy_tags(name):
