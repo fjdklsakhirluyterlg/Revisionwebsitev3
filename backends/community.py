@@ -126,6 +126,10 @@ def posts_related_to_post(id):
     post = Post.query.filter_by(id=id).first()
     tags = post.tags
     dict = {}
+    for tag in tags:
+        for post in tag.posts:
+            if post.name in dict:
+                dict[post.name] += 1
 
 @community.route("/community/tags/<name>")
 def communtiy_tags(name):
