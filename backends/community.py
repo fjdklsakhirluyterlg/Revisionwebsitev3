@@ -128,10 +128,10 @@ def posts_related_to_post(id):
     dict = {}
     for tag in tags:
         for post in tag.posts:
-            if post.name in dict:
-                dict[post.name] += 1
+            if post.title in dict:
+                dict[post.title] += 1
             elif post.name != current.name:
-                dict[post.name] = 1
+                dict[post.title] = 1
 
 @community.route("/community/tags/<name>")
 def communtiy_tags(name):
