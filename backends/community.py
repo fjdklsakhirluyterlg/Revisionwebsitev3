@@ -241,7 +241,8 @@ def view_comments_on_post_stuff(id):
     comments = post.comments
     names = [c.text for c in comments]
     return {"comments":names}
-    
+
+@login_required    
 @community.route("/community/posts/user/related")
 def find_user_related_posts():
     pass
