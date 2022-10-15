@@ -196,18 +196,16 @@ def user_home():
     
     ids = [tag.blogs_associated for tag in following]
     
-    diff  = 10 - len(blogs)
-    if diff > 0:
-        # otherblogs = Blog.query.order_by(Blog.views)
-        # otherblogt = [i.title for i in otherblogs]
-        # x = otherblogt[:diff]
-        # return jsonify({"following": blogs, "filler": x})
-        othertags = find_user_related_tags()
-        otherblogs = []
-        for blog in blogids:
-          otherblogs.extend(list(blogs_related_to_blog(blog).keys()))
-        return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags})
-    return jsonify({"following": blogs})
+    
+    # otherblogs = Blog.query.order_by(Blog.views)
+    # otherblogt = [i.title for i in otherblogs]
+    # x = otherblogt[:diff]
+    # return jsonify({"following": blogs, "filler": x})
+    othertags = find_user_related_tags()
+    otherblogs = []
+    for blog in blogids:
+        otherblogs.extend(list(blogs_related_to_blog(blog).keys()))
+    return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags})
 
 @login_required
 @user.route("/find/related/tags")
