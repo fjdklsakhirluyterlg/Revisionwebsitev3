@@ -121,6 +121,10 @@ def redirect_to_actual_post(id):
     title = post.title
     return redirect(f"/community/view/{title}")
 
+@community.route("/community/posts/related/<id>")
+def posts_related_to_post(id):
+    pass
+
 @community.route("/community/tags/<name>")
 def communtiy_tags(name):
     tag = Tag.query.filter_by(name=name).first()
