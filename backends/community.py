@@ -235,9 +235,10 @@ def api_community_add_comment_to_post():
     new.save()
     return jsonify({"message": new.level()})
 
-@community.route("/api/community/comments/view")
-def view_comments_on_post_stuff():
-    pass
+@community.route("/api/community/comments/view/<id>")
+def view_comments_on_post_stuff(id):
+    post = Post.query.filter_by(id=id).first()
+    comments = post.comments
     
 
 # app.register_blueprint(community, url_prefix="/")
