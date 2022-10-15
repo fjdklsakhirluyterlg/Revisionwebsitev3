@@ -222,7 +222,7 @@ def user_home():
     posts = find_user_related_posts()
     postnames = posts["names"]
 
-    return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags, "tag_blogs": tag_blogs})
+    return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags, "tag_blogs": tag_blogs, "tags":tagnames})
 
 @login_required
 @user.route("/find/related/tags")
