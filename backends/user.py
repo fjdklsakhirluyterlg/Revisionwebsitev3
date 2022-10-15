@@ -209,7 +209,8 @@ def user_home():
 
     tag_blogs = []
     for tagt in othertags:
-        blogggs = tagt.blogs_associated
+        tagtt = Tag.query.filter_by(title=tagt).first()
+        blogggs = tagtt.blogs_associated
         for b in blogggs:
             if b.id not in blogids or otherblogs:
                 tag_blogs.append(b.title)
