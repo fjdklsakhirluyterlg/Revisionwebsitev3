@@ -132,6 +132,8 @@ def posts_related_to_post(id):
                 dict[post.title] += 1
             elif post.name != current.name:
                 dict[post.title] = 1
+    
+    return dict
 
 @community.route("/community/tags/<name>")
 def communtiy_tags(name):
