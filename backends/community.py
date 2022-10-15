@@ -253,5 +253,7 @@ def find_user_related_posts():
         for post in posts:
             postid.append(post.id)
             postnames.append(post.title)
+    
+    return {"ids":postid, "names":postnames}
 
 # app.register_blueprint(community, url_prefix="/")
