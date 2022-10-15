@@ -221,6 +221,7 @@ def view_quiz_thing_please_work_api(id):
     dict = {}
     id = quiz.id
     category = quiz.category
+    categories = [c.name for c in category]
     name = quiz.name
     description = quiz.description
     dict["id"] = id
