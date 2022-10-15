@@ -123,13 +123,14 @@ def redirect_to_actual_post(id):
 
 @community.route("/community/posts/related/<id>")
 def posts_related_to_post(id):
-    post = Post.query.filter_by(id=id).first()
-    tags = post.tags
+    current = Post.query.filter_by(id=id).first()
+    tags = current.tags
     dict = {}
     for tag in tags:
         for post in tag.posts:
             if post.name in dict:
                 dict[post.name] += 1
+            elif post.name != current.name
 
 @community.route("/community/tags/<name>")
 def communtiy_tags(name):
