@@ -225,7 +225,7 @@ def view_quiz_thing_please_work_api(id):
     name = quiz.name
     description = quiz.description
     dict["id"] = id
-    dict["category"] = category
+    dict["category"] = categories
     dict["name"] = name
     dict["description"] = description
     return dict
