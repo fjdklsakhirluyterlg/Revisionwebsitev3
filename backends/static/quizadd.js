@@ -4,6 +4,9 @@ function sumbit_quiz(id){
     var user_id = id
     var categories = document.getElementById("categories").split(" ")
     data = {"user_id":user_id, "description":description, "name":name, "category":categories}
-    fetch("/api/quiz/add")
-
+    fetch("/api/quiz/add", {
+        method : "POST",
+        headers: {'Content-Type': 'application/json'}, 
+        body: JSON.stringify(data)
+    }).then(res => res.json())
 }
