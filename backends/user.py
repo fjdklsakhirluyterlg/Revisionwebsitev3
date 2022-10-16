@@ -230,7 +230,7 @@ def user_home():
             if postrecomnd not in postnames:
                 recposts.append(postrecomnd)
 
-    return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags, "tag_blogs": tag_blogs, "tags":tagnames, "posts":postnames})
+    return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags, "tag_blogs": tag_blogs, "tags":tagnames, "posts":postnames, "recomended_posts":recposts})
 
 @login_required
 @user.route("/find/related/tags")
