@@ -218,7 +218,7 @@ def user_home():
 
     tagsxx = user.following
     tagnames = [tagsxxx.name for tagsxxx in tagsxx]
-
+    
     posts = find_user_related_posts()
     postnames = posts["names"]
 
