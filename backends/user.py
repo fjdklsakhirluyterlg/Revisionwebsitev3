@@ -224,6 +224,8 @@ def user_home():
     postids = posts["ids"]
 
     recposts = []
+    for postid in postids:
+        postsrecommended = posts_related_to_post(postid)
 
     return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags, "tag_blogs": tag_blogs, "tags":tagnames, "posts":postnames})
 
