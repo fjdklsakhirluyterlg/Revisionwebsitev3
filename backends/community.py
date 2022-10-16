@@ -224,7 +224,7 @@ def user_unfollow_tag(id):
     notification = Notifications(user_id=user.id, text=text)
     db.session.add(notification)
     db.session.commit()
-    next = request.args.get("next", default="/dashboard")
+    next = request.args.get("next", default=request.referrer)
     return redirect(next)
 
 @login_required
