@@ -230,6 +230,7 @@ def view_quiz_thing_please_work_api(id):
     dict["description"] = description
     return dict
 
+
 @quiz.route("/quiz/add")
 def add_quiz_endpoint():
     return render_template("quizadd.html")
