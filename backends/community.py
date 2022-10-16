@@ -211,7 +211,7 @@ def user_follow_tag(id):
         db.session.add(notification)
         db.session.commit()
         next = request.args.get("next", default="/dashboard")
-        return redirect(request.full_path)
+        return redirect(f"{request.full_path}")
 
 
 @login_required
