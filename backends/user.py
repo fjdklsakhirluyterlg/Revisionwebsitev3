@@ -6,7 +6,7 @@ from .auth import mank_random_long_id, validate_user_with_email
 from .models import Blog, Notifications, Tag, Post
 from werkzeug.security import generate_password_hash, check_password_hash
 from .blogs import blogs_related_to_blog, related_tags_thingy
-from .community import find_user_related_posts
+from .community import find_user_related_posts, posts_related_to_post
 # from . import app
 
 user = Blueprint("user", __name__)
@@ -221,6 +221,9 @@ def user_home():
     
     posts = find_user_related_posts()
     postnames = posts["names"]
+    postids = posts["ids"]
+
+    recposts = []
 
     return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags, "tag_blogs": tag_blogs, "tags":tagnames, "posts":postnames})
 
