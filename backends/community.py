@@ -11,7 +11,7 @@ community = Blueprint("community", __name__)
 @community.route("/community")
 def community_posts():
     posts = Post.query.order_by(Post.views)[::-1]
-    
+    authorids = [post.user_id for post in posts]
     return render_template("communtiy.html", posts=posts)
     
 @community.route("/api/community/add", methods=["POST"])
