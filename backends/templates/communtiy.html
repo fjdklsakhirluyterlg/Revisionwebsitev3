@@ -1,8 +1,8 @@
 <body style="background-color: black; color: white">
     <p><a href="/community/viewadd">create</a></p>
-    {% for post in posts %}
+    {% for post, author  in posts %}
     <div style="background-color: #6B6B6B; border-radius: 25px; padding-left: 25px;">
-    <p><a href="/community/view/{{post.title}}"><h2>{{post.title}}</h2></a> written by <a href="/users/view/{{post.user_id}}">{{post.user_id}}</a></p>
+    <p><a href="/community/view/{{post.title}}"><h2>{{post.title}}</h2></a> written by <a href="/users/view/{{post.user_id}}">{{author}}</a></p>
     {% for tag in post.tags %}
     <span><a href="/community/tags/{{tag.name}}">{{tag.name}}</a></span>
     {% endfor %}
