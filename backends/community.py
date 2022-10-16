@@ -15,7 +15,7 @@ def community_posts():
     authors = []
     for authorx in authorids:
         user = User.query.filter_by(id=authorx).first()
-
+        authors.append(user.name)
     return render_template("communtiy.html", posts=posts)
     
 @community.route("/api/community/add", methods=["POST"])
