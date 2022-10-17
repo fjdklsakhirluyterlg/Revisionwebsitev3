@@ -232,8 +232,15 @@ def view_quiz_thing_please_work_api(id):
 
 @quiz.route("/quiz/related/<id>")
 def quiz_related_to_quiz(id):
-    quiz = Quiz.query.filter_by(id=id).first()
-    categories = quiz.category
+    quizx = Quiz.query.filter_by(id=id).first()
+    categories = quizx.category
+    dict = {}
+    for category in categories:
+        for quiz in category.quiz:
+            if quiz.title in dict:
+                dict[quiz.title] += 1
+            elif quiz.title != quizx.title:
+                dict[quiz.title] = 1
 
 @quiz.route("/quiz/add")
 def add_quiz_endpoint():
