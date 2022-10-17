@@ -21,5 +21,10 @@ function add_bookmark(user_id, blog_id){
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
-    }).then(res => res.json()).then(obj => console.log(obj.id)).catch(e => console.log(e))
+    }).then(resp => {
+        if (!resp.ok) {
+            throw new Error("HTTP status " + resp.status);
+        }
+        return resp.json();
+    })   
 }
