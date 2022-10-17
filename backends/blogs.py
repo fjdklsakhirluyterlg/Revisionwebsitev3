@@ -548,7 +548,7 @@ def make_blog_a_newsletter(id):
     else:
         return "not anyone to send to!"
 
-@login_required
+
 @blogs.route("/blog/addbookmark/<id>", methods=["POST", "GET"])
 def addbookmark_to_blog(id):
     if request.method == "POST":
@@ -560,7 +560,7 @@ def addbookmark_to_blog(id):
         db.session.commit()
         return redirect("/dashboard")
 
-@login_required
+
 @blogs.route("/blog/deletebookmark/<id>")
 def delete_bookmark(id):
     bookmark = db.session.query(Bookmark).filter(Bookmark.id == id).first()
