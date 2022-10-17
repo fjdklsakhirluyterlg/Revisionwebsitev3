@@ -241,6 +241,8 @@ def quiz_related_to_quiz(id):
                 dict[quiz.title] += 1
             elif quiz.title != quizx.title:
                 dict[quiz.title] = 1
+    
+    return dict
 
 @quiz.route("/quiz/add")
 def add_quiz_endpoint():
