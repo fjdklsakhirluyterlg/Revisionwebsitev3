@@ -154,6 +154,7 @@ def add_quiz_to_website():
             new_category = Category(name=c)
             new_category.quiz.append(new)
             db.session.add(new_category)
+    db.session.commit()
     id = getattr(new, "id")
     return jsonify({"id":id})
 
