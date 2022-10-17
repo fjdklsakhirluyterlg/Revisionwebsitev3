@@ -149,7 +149,7 @@ def add_quiz_to_website():
     for c in category:
         present = Category.query.filter_by(name=c).first()
         if present:
-            present.quiz.quiz.append(new)
+            present.quiz.append(new)
         else:
             new_category = Category(name=c)
             new_category.quiz.append(new)
