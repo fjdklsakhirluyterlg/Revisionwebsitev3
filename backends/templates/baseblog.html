@@ -41,7 +41,7 @@
         <form action="/blogs/addlike/{{id}}"><label>{{likes}}</label><button type="submit">likes</button></form>
         <form action="/blogs/adddislike/{{id}}"><label>{{dislikes}}</label><button type="submit">dislikes</button></form>
         {% if show %}
-            <form><label>Bookmark</label><input type="text" name="note" id="note"><button type="submit">Submit</button></form>
+            <form onsubmit="add_bookmark({{current_user.id}}, {{id}})"><label>Bookmark</label><input type="text" name="note" id="note"><button type="submit">Submit</button></form>
         {% endif %}
         <hr>
         <pre><div style="white-space: pre-line; overflow: auto;"><pre>{{content | safe}}</pre></div></pre>
