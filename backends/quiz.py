@@ -237,10 +237,10 @@ def quiz_related_to_quiz(id):
     dict = {}
     for category in categories:
         for quiz in category.quiz:
-            if quiz.title in dict:
-                dict[quiz.title] += 1
-            elif quiz.title != quizx.title:
-                dict[quiz.title] = 1
+            if quiz.name in dict:
+                dict[quiz.name] += 1
+            elif quiz.name != quizx.name:
+                dict[quiz.name] = 1
     
     return dict
 
