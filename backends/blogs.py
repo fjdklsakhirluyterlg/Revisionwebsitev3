@@ -584,7 +584,6 @@ def related_tags_thingy(id):
     
     return dict(sorted(dictx.items(), key=lambda item: item[1], reverse=True))
 
-@login_required
 @blogs.route("/api/blog/bookmark/add", methods=["POST"])
 def add_api_bookmark_things():
     data = request.get_json()
