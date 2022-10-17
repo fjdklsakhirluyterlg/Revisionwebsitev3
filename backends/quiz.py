@@ -232,7 +232,7 @@ def view_quiz_thing_please_work_api(id):
 
 @quiz.route("/quiz/related/<id>")
 def quiz_related_to_quiz(id):
-    pass
+    quiz = Quiz.query.filter_by(id=id).first()
 
 @quiz.route("/quiz/add")
 def add_quiz_endpoint():
