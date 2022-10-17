@@ -213,7 +213,8 @@ def check_multiple_choice_quiz_if_correct():
 def api_see_all_categories():
     categories = db.session.query(Category).all()
     names = [c.name for c in categories]
-    return {"categories":names}
+    items = len(categories)
+    return {"categories":names, "length":items}
 
 @quiz.route("/api/quiz/view/<id>")
 def view_quiz_thing_please_work_api(id):
