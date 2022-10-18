@@ -235,6 +235,8 @@ def user_home():
             if postrecomnd not in postnames:
                 recposts.append(postrecomnd)
 
+    user_followed_posts = user.followed_posts()
+
     return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags, "tag_blogs": tag_blogs, "tags":tagnames, "posts":postnames, "recomended_posts":recposts})
 
 @login_required
