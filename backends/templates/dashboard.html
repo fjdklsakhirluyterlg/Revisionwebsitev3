@@ -8,7 +8,7 @@
         <h1>Hello {{name}}! You have {{points}} points </h1>
         {% if ask %}
         <p>Please check your emails and validate your account from a link sent to you by drive1.banerjee.armaan@outlook.com</p>
-        {% endif %}
+        {% endif %}<a href="/logout"><button>logout</button></a>
         <h2>Notifications: <button style="text-align:rightl"><a href="/user/notification/allread/{{id}}">mark all as read</a></button></h2>
         {% if notifications %}
         <div style="max-height: 150px; scroll: auto; background-color: grey; border-radius: 25px; padding-left: 20px; overflow:auto;">
