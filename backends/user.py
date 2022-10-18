@@ -282,7 +282,10 @@ def unfollow_user():
     current = User.query.filter_by(id=current_user).first()
     current.unfollow(user)
     db.session.commit()
-
+    text = f"You are no longer following {user.name}"
+    new_notification = Notifications(user_id=current.id, text=text)
+    db.session.add(new_notification)
+    db.session.commit()
     return {"msg":"unfollowed"}
 
 @user.route("/api/user/info")
