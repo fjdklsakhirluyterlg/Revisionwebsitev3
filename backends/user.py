@@ -265,7 +265,7 @@ def follow_user():
     followed = data["followed"]
     user = User.query.filter_by(id=followed).first()
     current = User.query.filter_by(id=current_user).first()
-    user.followed.append(current)
+    user.follow(current)
     db.session.commit()
 
     return {"msg":"following"}
