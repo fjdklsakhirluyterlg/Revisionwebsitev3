@@ -132,6 +132,12 @@ class User(db.Model, UserMixin):
     quizzes = db.relationship("Quiz", backref="user")
     notes = db.relationship("Note", backref="user")
 
+    followed = db.relationship(
+        'User', secondary=followers,
+        primaryjoin=(followers.c.follower_id == id),
+        secondaryjoin=(followers.c.followed_id == id),
+        backref=db.backref('followers', lazy='dynamic'), lazy='dynamic')
+
 class Tag(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     name=db.Column(db.String(20))
