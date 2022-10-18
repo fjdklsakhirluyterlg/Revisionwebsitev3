@@ -237,8 +237,8 @@ def user_home():
 
     
     user_followed_posts = []
-    followers = user.followers
-    for folls in followed:
+    followers = user.followed
+    for folls in followers:
         posts = folls.posts
         for zsy in posts:
             user_followed_posts.append(zsy.name)
