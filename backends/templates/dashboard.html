@@ -53,7 +53,7 @@
         {% for bookmark , blog in bookmarks %}
         <p><a style="color: green;" href="/blogs/views/{{blog}}">{{blog}}</a> | {{ bookmark.note }}</p>
         {% endfor %}
-        {% for follower in followers %}<p>{{follwer}}</p>{%endfor%}
+        {% if followers %}{% for follower in followers %}<p>{{follwer}}</p>{%endfor%}{%endif%}
         <hr>
         <a style="color: green;" href="/users/delete/{{id}}">delete</a>
     </div>
