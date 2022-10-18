@@ -244,7 +244,7 @@ def user_home():
             if zsy.name not in recposts:
                 user_followed_posts.append(zsy.name)
 
-    return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags, "tag_blogs": tag_blogs, "tags":tagnames, "posts":postnames, "recomended_posts":recposts})
+    return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags, "tag_blogs": tag_blogs, "tags":tagnames, "posts":postnames, "recomended_posts":recposts, "user_followed_posts":user_followed_posts})
 
 @login_required
 @user.route("/find/related/tags")
