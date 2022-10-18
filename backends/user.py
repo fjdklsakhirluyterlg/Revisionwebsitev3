@@ -260,7 +260,7 @@ def find_user_related_tags():
     #         del sort[name]
     return sort 
 
-@user.route("/follow/user")
+@user.route("/follow/user", methods=["POST"])
 def follow_user():
     data = request.get_json()
     current_user = data["current_user"]
