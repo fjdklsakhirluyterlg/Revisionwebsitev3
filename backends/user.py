@@ -296,6 +296,10 @@ def unfollow_user():
     db.session.commit()
     return {"msg":"unfollowed"}
 
+@user.route("/user/related")
+def user_related_to_follow():
+    pass
+
 @user.route("/api/user/info")
 def show_me_user_info_thingy():
     id = request.args.get("id")
