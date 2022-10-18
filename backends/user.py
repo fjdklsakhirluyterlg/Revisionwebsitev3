@@ -268,7 +268,9 @@ def follow_user():
     current.follow(user)
     db.session.commit()
     text = f"You are now following {user.name}"
-    new_notification = Notifications(user_id=current.id)
+    new_notification = Notifications(user_id=current.id, text=text)
+    db.session.add(new_notification)
+    db.session.commit()
     return {"msg":"following"}
 
 @user.route("/unfollow/user", methods=["POST"])
