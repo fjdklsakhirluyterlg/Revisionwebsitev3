@@ -4,7 +4,7 @@
     <title>view {{name}}</title>
 </head>
 <body style="background-color: black; color: white">
-<p>you are viewing the profile of {{name}}. {% if show %}<button onclick="follow_user({{current_user.id}}, {{id}})"></button>{%endif%}</p>
+<p>you are viewing the profile of {{name}}. {% if show %}<button id="follow" onclick="follow_user({{current_user.id}}, {{id}}); return false">follow</button>{%endif%}</p>
 <p>activity: </p>
 {% for comment , blog in comments %}
     <div style="background-color: blue; border-radius: 25px; padding-left: 20px;">

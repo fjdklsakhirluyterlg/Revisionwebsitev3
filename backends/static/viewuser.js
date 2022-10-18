@@ -5,5 +5,5 @@ function follow_user(current, follow){
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
-    })
+    }).then(document.getElementById("follow").innerHTML = "Followed")
 }
