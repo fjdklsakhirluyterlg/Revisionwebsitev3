@@ -259,6 +259,7 @@ def follow_user():
     current_user = data["current_user"]
     followed = data["followed"]
     user = User.query.filter_by(id=followed).first()
+    current = User.query.filter_by(id=current_user).first()
 
 @user.route("/api/user/info")
 def show_me_user_info_thingy():
