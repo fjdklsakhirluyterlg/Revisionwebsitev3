@@ -277,4 +277,8 @@ def show_me_user_info_thingy():
     dict["key"] = user.security_key
     return dict
 
+@user.route("/api/user/followers/<id>")
+def user_followers_api_test(id):
+    pass
+
 # app.register_blueprint(user, url_prefix="/")
