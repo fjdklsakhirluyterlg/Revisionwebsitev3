@@ -158,7 +158,7 @@ class User(db.Model, UserMixin):
         return Post.query.join(
             followers, (followers.c.followed_id == Post.user_id)).filter(
                 followers.c.follower_id == self.id).order_by(
-                    Post.timestamp.desc())
+                    Post.views.desc())
 
 class Tag(db.Model):
     id=db.Column(db.Integer,primary_key=True)
