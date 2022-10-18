@@ -306,6 +306,8 @@ def user_related_to_follow(id):
         for user in users:
             if user.name in dict:
                 dict[user.name] += 1
+            else:
+                dict[user.name] = 1
 
 @user.route("/api/user/info")
 def show_me_user_info_thingy():
