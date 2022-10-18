@@ -299,6 +299,7 @@ def unfollow_user():
 @user.route("/user/related/<id>")
 def user_related_to_follow(id):
     userx = User.query.filter_by(id=id).first()
+    dict = {}
     following = userx.following
 
 @user.route("/api/user/info")
