@@ -264,6 +264,8 @@ def follow_user():
     current = User.query.filter_by(id=current_user).first()
     user.follow(current)
 
+    return {"msg":"following"}
+
 @user.route("/api/user/info")
 def show_me_user_info_thingy():
     id = request.args.get("id")
