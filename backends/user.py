@@ -296,8 +296,8 @@ def unfollow_user():
     db.session.commit()
     return {"msg":"unfollowed"}
 
-@user.route("/user/related")
-def user_related_to_follow():
+@user.route("/user/related/<id>")
+def user_related_to_follow(id):
     pass
 
 @user.route("/api/user/info")
