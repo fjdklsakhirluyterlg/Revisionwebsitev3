@@ -13,7 +13,8 @@ function change_state(id){
 
 }
 
-function add_bookmark(user_id, blog_id){
+async function add_bookmark(user_id, blog_id){
+    try{
     var note = document.getElementById("note").value
     var data = {"user_id":user_id, "blog_id":blog_id, "note":note}
 
@@ -22,4 +23,14 @@ function add_bookmark(user_id, blog_id){
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
     })
+
+    if (!response.ok) {
+        throw new Error(`Error! status: ${response.status}`);
+    }
+  
+    const result = await response.json();
+    return result;
+    } catch (err) {
+        console.log(err);
+    }
 }
