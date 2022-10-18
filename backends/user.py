@@ -255,7 +255,10 @@ def find_user_related_tags():
 
 @user.route("/follow/user")
 def follow_user():
-    pass
+    data = request.get_json()
+    current_user = data["current_user"]
+    followed = data["followed"]
+    user = User.query.filter_by(id=followed).first()
 
 @user.route("/api/user/info")
 def show_me_user_info_thingy():
