@@ -143,6 +143,11 @@ class Tag(db.Model):
         'name': self.name     
         }
 
+followers = db.Table('followers',
+    db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
+)
+
 
 # class follow(db.Model):
 #     id = db.Column(db.Integer, primary_key=True)
