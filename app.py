@@ -1,5 +1,8 @@
 from backends import create_app
 import os
+import ssl
+context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+context.load_cert_chain('certificate.crt', 'private.key')
 
 app = create_app()
 
