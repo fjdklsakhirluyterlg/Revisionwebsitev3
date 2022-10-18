@@ -235,6 +235,7 @@ def user_home():
             if postrecomnd not in postnames:
                 recposts.append(postrecomnd)
 
+    followers = user.followers
     user_followed_posts = user.followed_posts()
     user_followed_names_posts = [post.name for post in user_followed_posts if post.name not in recposts]
 
