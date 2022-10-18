@@ -240,6 +240,9 @@ def user_home():
     followers = user.followers
     for folls in followers:
         posts = folls.posts
+        for zsy in posts:
+            if zsy.name not in recposts:
+                user_followed_posts.append(zsy.name)
 
     return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags, "tag_blogs": tag_blogs, "tags":tagnames, "posts":postnames, "recomended_posts":recposts})
 
