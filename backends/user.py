@@ -107,7 +107,8 @@ def view_user(id):
     posts = user.posts
     awnsers = user.awnsers
     
-    return render_template("viewuser.html", name=name, comments=zip(comments, l), posts=posts, awnsers=awnsers)
+    if current_user.is_authenticated and id != current_user.id:
+        return render_template("viewuser.html", name=name, comments=zip(comments, l), posts=posts, awnsers=awnsers)
 
 @login_required
 @user.route("/user/validate/<securitykey>")
