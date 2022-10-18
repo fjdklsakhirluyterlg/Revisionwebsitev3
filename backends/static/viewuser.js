@@ -5,7 +5,7 @@ function follow_user(current, follow){
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
-    }).then(res => console.log(res.json())).then(obj => obj.msg === "following" ? document.getElementById("follow").innerHTML = obj.msg : documentgetElementById("follow").innerHTML="Error")
+    }).then(window.location.reload())
 }
 
 function unfollow_user(current, follow){
@@ -15,5 +15,5 @@ function unfollow_user(current, follow){
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
-    }).then(res => console.log(res.json())).then(obj => obj.msg === "unfollowed" ? document.getElementById("unfollow").innerHTML = obj.msg : documentgetElementById("follow").innerHTML="Error")
+    }).then(window.location.reload())
 }
