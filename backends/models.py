@@ -140,7 +140,7 @@ class User(db.Model, UserMixin):
         'User', secondary=followers,
         primaryjoin=(followers.c.follower_id == id),
         secondaryjoin=(followers.c.followed_id == id),
-        backref=db.backref('follower', lazy='dynamic'), lazy='dynamic')
+        backref=db.backref('followers', lazy='dynamic'), lazy='dynamic')
     
     def follow(self, user):
         if not self.is_following(user):
