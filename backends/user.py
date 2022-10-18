@@ -270,6 +270,18 @@ def follow_user():
 
     return {"msg":"following"}
 
+@user.route("/unfollow/user", methods=["POST"])
+def unfollow_user():
+    data = request.get_json()
+    current_user = data["current_user"]
+    followed = data["followed"]
+    user = User.query.filter_by(id=followed).first()
+    current = User.query.filter_by(id=current_user).first()
+    current.follow(user)
+    db.session.commit()
+
+    return {"msg":"following"}
+
 @user.route("/api/user/info")
 def show_me_user_info_thingy():
     id = request.args.get("id")
