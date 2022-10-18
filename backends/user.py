@@ -302,7 +302,7 @@ def user_related_to_follow(id):
     dict = {}
     following = userx.following
     for tag in following:
-        posts = tag.posts
+        users = tag.followers
 
 @user.route("/api/user/info")
 def show_me_user_info_thingy():
