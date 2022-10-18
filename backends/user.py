@@ -279,6 +279,8 @@ def show_me_user_info_thingy():
 
 @user.route("/api/user/followers/<id>")
 def user_followers_api_test(id):
-    pass
+    user = User.query.filter_by(id=id).first()
+    followers = len(user.followers)
+    return {"amount":followers}
 
 # app.register_blueprint(user, url_prefix="/")
