@@ -17,14 +17,9 @@ function add_bookmark(user_id, blog_id){
     var note = document.getElementById("note").value
     var data = {"user_id":user_id, "blog_id":blog_id, "note":note}
 
-    fetch("/api/blog/bookmark/add", {
+    const response = fetch("/api/blog/bookmark/add", {
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
-    }).then(resp => {
-        if (!resp.ok) {
-            throw new Error("HTTP status " + resp.status);
-        }
-        return resp.json();
-    })   
+    })
 }
