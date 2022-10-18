@@ -23,4 +23,4 @@
 <div style="background-color: blue; border-radius: 25px; padding-left: 20px;"><p>{{name}} awnsered at <a style="color: green" href="/community/views/{{awnser.post_id}}#{{awnser.title}}">{{awnser.title}}</a></p>
     <p>{{awnser.likes}} likes and {{awnser.dislikes}} dislikes </p></div>
 {% endfor %}
-<p>Chat with <a style="color: green" href="/chat/add?user={{name}}">{{name}}</a>.</p>
+<p>Chat with <a style="color: green" href="/chat/add?user={{name}}">{{name}}</a>.</p><script src="{{url_for('static', filename='viewuser.js')}}"></script>
