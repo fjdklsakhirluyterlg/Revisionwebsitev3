@@ -44,10 +44,10 @@ def dashboard():
         else:
             ask = False
         
-        followers = user.followers
+        followers = usern.followers
         follwernames = [foll.name for foll in followers]
 
-        followed = user.followed
+        followed = usern.followed
         followednames = [folln.name for folln in followed]
 
         return render_template('dashboard.html', name=name, email=email, joined=joined, id=id, comments=zip(comments, l), points=points, ask=ask, notifications=notifications, bookmarks=zip(bookmarks, blog_bookmarks), posts=posts, awnsers=awnsers, notes=notes, followers=follwernames, followed=followednames)  
