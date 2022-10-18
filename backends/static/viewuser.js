@@ -1,3 +1,4 @@
 function follow_user(current, follow){
-    datta = {}
+    data = {"current_user":current, "followed":follow}
+
 }
