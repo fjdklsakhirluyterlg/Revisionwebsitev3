@@ -109,6 +109,11 @@ user_tag = db.Table("user_tag",
     db.Column('user_id',db.Integer,db.ForeignKey('user.id'), primary_key=True)
 )
 
+followers = db.Table('followers',
+    db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
+)
+
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150), unique=True)
@@ -131,7 +136,6 @@ class User(db.Model, UserMixin):
     following = db.relationship("Tag", secondary=user_tag, backref=db.backref("followers", lazy="dynamic"))
     quizzes = db.relationship("Quiz", backref="user")
     notes = db.relationship("Note", backref="user")
-
     followed = db.relationship(
         'User', secondary=followers,
         primaryjoin=(followers.c.follower_id == id),
@@ -148,11 +152,6 @@ class Tag(db.Model):
         'id': self.id,
         'name': self.name     
         }
-
-followers = db.Table('followers',
-    db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
-    db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
-)
 
 
 # class follow(db.Model):
