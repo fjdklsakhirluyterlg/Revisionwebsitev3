@@ -76,7 +76,7 @@ extern "C" {
 
 extern void squarert(GoFloat64 inte);
 extern void helloworld();
-extern void hello(char* namePtr);
+extern GoString hello(char* namePtr);
 
 #ifdef __cplusplus
 }
