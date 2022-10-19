@@ -78,7 +78,7 @@ def view_add_community():
         db.session.add(new_post)
         db.session.commit()
         post_id = getattr(new_post, "title")
-        text = f"<p>you created a new post at <a href='/community/{post_id}'>{post_id}</a></p>"
+        text = f"<p>New post created at <a href='/community/{post_id}'>{post_id}</a> by <a href='/users/view/{user_id}'>{current_user.name}</a></p>"
         x = Notifications(user_id=user_id, text=text)
         
         for user in users:
