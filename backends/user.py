@@ -313,6 +313,8 @@ def user_related_to_follow(id):
                 dict[user.name] += 1
             else:
                 dict[user.name] = 1
+    
+    return dict
 
 @user.route("/api/user/info")
 def show_me_user_info_thingy():
