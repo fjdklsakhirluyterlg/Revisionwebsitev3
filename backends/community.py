@@ -87,7 +87,7 @@ def view_add_community():
             db.session.add(notification)
 
         users_following = current_user.followers
-        text_following = f"<p>a href='/users/view/{user_id}'>{current_user.name}</a> created a new post at <a href='/community/{post_id}'>{post_id}</a></p>"
+        text_following = f"<p><a href='/users/view/{user_id}'>{current_user.name}</a> created a new post at <a href='/community/{post_id}'>{post_id}</a></p>"
         for userx in users_following:
             notificationx = Notifications(user_id=userx.id, text=text_following)
             db.session.add(notificationx)
