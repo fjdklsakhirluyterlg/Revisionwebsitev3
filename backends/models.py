@@ -114,6 +114,11 @@ followers = db.Table('followers',
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
 )
 
+user_category = db.Table("user_category",
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('category_id', db.Integer, db.ForegnKey('category.id'))
+)
+
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150), unique=True)
