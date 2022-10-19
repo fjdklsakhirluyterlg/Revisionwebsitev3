@@ -17,7 +17,7 @@ func helloworld(){
 }
 
 //export hello
-func hello(namePtr *C.char){
+func hello(namePtr *C.char) string {
     name := C.GoString(namePtr)
     helloWorld := fmt.Sprintf("%s hello", name)
     return helloWorld
