@@ -13,9 +13,6 @@ library = ctypes.cdll.LoadLibrary(f'{dir}/go_stuff/test.so')
 hello_world = library.helloworld
 hello_world()
 
-hello = library.hello
-hello.argtypes = [ctypes.c_char_p]
-hello("everyone".encode('utf-8'))
 
 @go.route("/go/test/hello")
 def go_test_hello():
