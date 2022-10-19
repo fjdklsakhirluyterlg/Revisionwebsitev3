@@ -10,9 +10,6 @@ if "backends" not in dir:
     dir += "/backends"
 
 library = ctypes.cdll.LoadLibrary(f'{dir}/go_stuff/test.so')
-hello_world = library.helloworld
-hello_world()
-
 
 @go.route("/go/test/hello")
 def go_test_hello():
