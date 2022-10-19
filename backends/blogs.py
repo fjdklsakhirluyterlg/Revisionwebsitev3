@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
-from .models import Blog, Notifications, Tag, tag_blog, Comment, Replies, User, Bookmark
+from .models import Blog, Notifications, Post, Tag, tag_blog, Comment, Replies, User, Bookmark
 from flask_login import current_user, login_required
 import html, requests, math
 from .functions import send_newsletter_with_flask
@@ -577,10 +577,20 @@ def related_tags_thingy(id):
         tags = blog.tags
         if t in tags:
             for tag in tags:
-                if tag.name in dictx and tag != name:
+                if tag.name in dictx:
                     dictx[tag.name] += 1
                 elif tag.name != name:
                     dictx[tag.name] = 1
+    
+    posts = Post.query.order_by(Post.views)
+    for post in posts:
+        tagsp = post.tags
+        if t in tagsp:
+            for tagx in tagsp:
+                if tagx.name in dictx:
+                    dictx[tagx.name] += 1
+                elif tagx.name != name:
+                    dictx[tagx.name] = 1
     
     return dict(sorted(dictx.items(), key=lambda item: item[1], reverse=True))
 
