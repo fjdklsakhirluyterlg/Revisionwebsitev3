@@ -19,4 +19,4 @@ def go_test_hello():
     helloq = str(request.args.get("hello"))
     hello = library.hello
     hello.argtypes = [ctypes.c_char_p]
-    hello(helloq.encode('utf-8'))
+    return hello(helloq.encode('utf-8'))
