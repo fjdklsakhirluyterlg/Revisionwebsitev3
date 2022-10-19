@@ -116,7 +116,7 @@ followers = db.Table('followers',
 
 user_category = db.Table("user_category",
     db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
-    db.Column('category_id', db.Integer, db.ForegnKey('category.id'))
+    db.Column('category_id', db.Integer, db.ForeignKey('category.id'))
 )
 
 class User(db.Model, UserMixin):
