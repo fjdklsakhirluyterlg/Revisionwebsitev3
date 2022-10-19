@@ -13,7 +13,7 @@ hello("everyone".encode('utf-8'))
 
 @go.route("/go/test/hello")
 def go_test_hello():
-    helloq = request.args.get("hello")
+    helloq = str(request.args.get("hello"))
     hello = library.hello
     hello.argtypes = [ctypes.c_char_p]
     hello(helloq.encode('utf-8'))
