@@ -20,4 +20,4 @@ def go_test_hello():
     hello = library.hello
     hello.argtypes = [ctypes.c_char_p]
     x = hello(helloq.encode('utf-8'))
-    print(x)
+    return x
