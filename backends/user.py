@@ -313,7 +313,7 @@ def user_related_to_follow(id):
         for user in users:
             if user.name in dict:
                 dict[user.name] += 1
-            else:
+            elif user.name != userx.name:
                 dict[user.name] = 1
     
     return dict
