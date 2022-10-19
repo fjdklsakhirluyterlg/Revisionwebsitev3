@@ -1,3 +1,4 @@
+from csv import unregister_dialect
 from socket import IP_DEFAULT_MULTICAST_TTL, IP_DROP_MEMBERSHIP
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
@@ -78,7 +79,7 @@ def view_add_community():
         db.session.add(new_post)
         db.session.commit()
         post_id = getattr(new_post, "title")
-        text = f"<p>New post created at <a href='/community/{post_id}'>{post_id}</a> by <a href='/users/view/{user_id}'>{current_user.name}</a></p>"
+        text = f"<p>You created a new post at <a href='/community/{post_id}'>{post_id}</a></p>"
         x = Notifications(user_id=user_id, text=text)
         
         for user in users:
@@ -87,6 +88,8 @@ def view_add_community():
 
         users_following = current_user.followers
         text_following = f"<p>a href='/users/view/{user_id}'>{current_user.name}</a> created a new post at <a href='/community/{post_id}'>{post_id}</a></p>"
+        for userx in users_following:
+            notificationx = Notifications(user_id=userx.id, text=text_following)
             
         db.session.add(x)
         db.session.commit()
