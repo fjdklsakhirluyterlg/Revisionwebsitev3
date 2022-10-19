@@ -19,7 +19,8 @@ func helloworld(){
 //export hello
 func hello(namePtr *C.char){
     name := C.GoString(namePtr)
-    fmt.Println("Hello", name)
+    helloWorld := fmt.Sprintf("%s hello", name)
+    return helloWorld
 }
 
 func main() {
