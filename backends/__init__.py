@@ -56,6 +56,7 @@ def create_app():
     from .notes import notes
     # from .stream import stream
     from .svelte import svelte
+    from .go import go
     app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(home, url_prefix='/')
     app.register_blueprint(todo, url_prefix='/')
@@ -79,6 +80,7 @@ def create_app():
     app.register_blueprint(ide, url_prefix="/")
     app.register_blueprint(c, url_prefix="/")
     app.register_blueprint(notes, url_prefix="/")
+    app.register_blueprint(go, url_prefix="/")
     # app.register_blueprint(stream, url_prefix="/")
     
     from .apix import Randomz, top_bbc_news, HelloWorld, ftse100, GBPTOEUR, Banana, APIrickroll
