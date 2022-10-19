@@ -16,5 +16,11 @@ func helloworld(){
     fmt.Println("hi")
 }
 
+//export hello
+func hello(namePtr *C.char){
+    name := C.GoString(namePtr)
+    fmt.Println("Hello", name)
+}
+
 func main() {
 }
