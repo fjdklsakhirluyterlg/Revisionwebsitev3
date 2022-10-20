@@ -51,7 +51,7 @@
         {% endfor %}
         <h2>Bookmarks:</h2>
         {% for bookmark, blog in bookmarks %}
-        <p><a style="color: green;" href="/blog/view/{{bookmark.blog_id}}">{{blog}}</a> : {{ bookmark.note }}</p>
+        <p><a style="color: green;" href="/blogs/views/{{blog}}">{{blog}}</a> : {{ bookmark.note }}</p>
         {% endfor %}<h2>Followers: </h2><ul>{% for fol in followers %}<li><a href="/users/view/{{fol.id}}">{{fol.name}}</a></li>{%endfor%}</ul><h2>Followed: </h2><ul>{% for fold in followed%}<li><a href="/users/view/{{fold.id}}">{{fold.name}}</a></li>{%endfor%}</ul><h2>You are following :</h2><ul>{% for followerx in following %}<li><a href="/blogs/tags/{{followerx.name}}">{{followerx.name}}</a></li>{%endfor%}</ul>
         <hr>
         <a style="color: green;" href="/users/delete/{{id}}">delete</a>
