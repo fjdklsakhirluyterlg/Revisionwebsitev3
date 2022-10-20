@@ -16,6 +16,14 @@ func helloworld(){
     fmt.Println("hi")
 }
 
+func is_prime(number int){
+    sqarert = math.Sqrt((float64(number)))
+    count := 1
+    for {
+        if ()
+    }
+}
+
 //export hello
 func hello(namePtr *C.char) string {
     name := C.GoString(namePtr)
