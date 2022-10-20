@@ -261,6 +261,10 @@ def see_content_blog(title):
 
     current_bookmarks = [bookmark.blog_id for bookmark in current_user.bookmarks]
     bookmarked = True if id in current_bookmarks else False
+    note = ""
+    if bookmarked:
+        bookmark = Bookmark.query.filter_by(blog_id=id).first()
+        note += bookmark.note
 
     commentsx = []
     p = request.args.get("commentssort", default="likes")
