@@ -583,6 +583,10 @@ def delete_bookmark(id):
     bookmark = db.session.query(Bookmark).filter(Bookmark.id == id).first()
     db.session.delete(bookmark)
     db.session.commit()
+
+@blogs.route("/blog/bookmark/edit/<id>")
+def edit_bookmark(id):
+    pass
     
 @blogs.route("/blogs/find/related/<id>")
 def related_tags_thingy(id):
