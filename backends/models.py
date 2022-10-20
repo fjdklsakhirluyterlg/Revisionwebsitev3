@@ -165,6 +165,9 @@ class User(db.Model, UserMixin):
                 followers.c.follower_id == self.id).order_by(
                     Post.views.desc())
 
+class Like(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+
 class Tag(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     name=db.Column(db.String(20))
