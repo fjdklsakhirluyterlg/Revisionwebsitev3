@@ -18,9 +18,11 @@ func helloworld(){
 
 func is_prime(number int){
     sqarert = math.Sqrt((float64(number)))
-    count := 1
+    var count float64 = 1
     for {
-        if ()
+        if (count < sqarert){
+
+        }
     }
 }
 
