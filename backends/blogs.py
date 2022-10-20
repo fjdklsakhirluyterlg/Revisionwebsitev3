@@ -588,7 +588,8 @@ def delete_bookmark(id):
 def edit_bookmark(id):
     bookmark = Bookmark.query.filter_by(id=id).first()
     note = request.args.get("note")
-
+    bookmark.note = note
+    db.session.commit()
     
 @blogs.route("/blogs/find/related/<id>")
 def related_tags_thingy(id):
