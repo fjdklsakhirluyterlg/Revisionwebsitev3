@@ -584,7 +584,7 @@ def delete_bookmark(id):
     db.session.delete(bookmark)
     db.session.commit()
 
-@blogs.route("/blog/bookmark/edit/<id>")
+@blogs.route("/blog/bookmark/edit/<id>", methods=["POST"])
 def edit_bookmark(id):
     bookmark = Bookmark.query.filter_by(id=id).first()
     note = request.form.get("note")
