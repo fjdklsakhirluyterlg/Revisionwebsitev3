@@ -225,7 +225,7 @@ def user_home():
         tagtt = Tag.query.filter_by(name=tagt).first()
         blogggs = tagtt.blogs_associated
         for b in blogggs:
-            if b.id not in blogids or otherblogs and b.title not in tag_blogs:
+            if b.id not in blogids and b.title not in tag_blogs:
                 tag_blogs.append(b.title)
 
     tagsxx = user.following
