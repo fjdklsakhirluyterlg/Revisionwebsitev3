@@ -374,11 +374,10 @@ def blog_view_add():
                 for follower in followers:
                     if follower.id not in users:
                         users.append(follower.id)
-            
-        else:
-            new_tag=Tag(name=tag)
-            new_tag.blogs_associated.append(new_blog)
-            db.session.add(new_tag)
+            else:
+                new_tag=Tag(name=tag)
+                new_tag.blogs_associated.append(new_blog)
+                db.session.add(new_tag)
             
         text = f"""<p><a href='/blogs/views/{title}'>{title}</a> was created"""
         for user in users:
