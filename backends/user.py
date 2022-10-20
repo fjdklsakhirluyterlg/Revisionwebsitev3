@@ -34,7 +34,7 @@ def dashboard():
         for bookmark in bookmarks:
             bookmark_blog_id = bookmark.blog_id
             hog = Blog.query.filter_by(id=bookmark_blog_id).first()
-            # blog_bookmarks.append(hog.name)
+            blog_bookmarks.append(hog.title)
             
         posts = usern.posts
         awnsers = usern.awnsers
