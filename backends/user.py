@@ -239,8 +239,7 @@ def user_home():
     for postid in postids:
         postsrecommended = posts_related_to_post(postid).keys()
         for postrecomnd in postsrecommended:
-            if postrecomnd:
-                recposts.append(postrecomnd)
+            recposts.append(postrecomnd)
 
     
     user_followed_posts = []
