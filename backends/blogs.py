@@ -368,12 +368,12 @@ def blog_view_add():
         users = []
         for tag in tags:
             present_tag=Tag.query.filter_by(name=tag).first()
-        if(present_tag):
-            present_tag.blogs_associated.append(new_blog)
-            followers = present_tag.followers
-            for follower in followers:
-                if follower.id not in users:
-                    users.append(follower.id)
+            if(present_tag):
+                present_tag.blogs_associated.append(new_blog)
+                followers = present_tag.followers
+                for follower in followers:
+                    if follower.id not in users:
+                        users.append(follower.id)
             
         else:
             new_tag=Tag(name=tag)
