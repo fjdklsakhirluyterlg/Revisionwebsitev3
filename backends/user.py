@@ -30,11 +30,11 @@ def dashboard():
         
         notifications = db.session.query(Notifications).filter(Notifications.user_id == id).all()[::-1]
         bookmarks = usern.bookmarks
-        blog_bookmarks = []
-        for bookmark in bookmarks:
-            bookmark_blog_id = bookmark.blog_id
-            hog = Blog.query.filter_by(id=bookmark_blog_id).first()
-            blog_bookmarks.userend(hog.title)
+        # blog_bookmarks = []
+        # for bookmark in bookmarks:
+        #     bookmark_blog_id = bookmark.blog_id
+        #     hog = Blog.query.filter_by(id=bookmark_blog_id).first()
+        #     blog_bookmarks.userend(hog.title)
             
         posts = usern.posts
         awnsers = usern.awnsers
@@ -52,7 +52,7 @@ def dashboard():
 
         following = usern.following
 
-        return render_template('dashboard.html', name=name, email=email, joined=joined, id=id, comments=zip(comments, l), points=points, ask=ask, notifications=notifications, bookmarks=zip(bookmarks, blog_bookmarks), posts=posts, awnsers=awnsers, notes=notes, followers=followers, followed=followed, following=following)  
+        return render_template('dashboard.html', name=name, email=email, joined=joined, id=id, comments=zip(comments, l), points=points, ask=ask, notifications=notifications, bookmarks=bookmarks, posts=posts, awnsers=awnsers, notes=notes, followers=followers, followed=followed, following=following)  
     except:
         return redirect("/login")
 
