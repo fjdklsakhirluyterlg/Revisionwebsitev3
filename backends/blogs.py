@@ -564,7 +564,7 @@ def addbookmark_to_blog(id):
     if request.method == "POST":
         blog = db.session.query(Blog).filter(Blog.id == id).first()
         note = request.form.get("note")
-        cid = request.form.get("user_id")
+        cid = request.args.get("user_id")
         new = Bookmark(blog_id=blog.id, user_id=cid, note=note)
         db.session.add(new)
         db.session.commit()
