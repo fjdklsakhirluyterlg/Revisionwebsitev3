@@ -281,11 +281,11 @@ def see_content_blog(title):
             commentsx.append(comment)
     if current_user.is_authenticated:
         if current_user.points >= 0:
-            return render_template("baseblog.html", title=title, content=content, tags=tags, time=time, views=views, id=id, likes=likes, dislikes=dislikes, words=words, read_time=read_time, comments=commentsx, show=True, related=actrel[:10])
+            return render_template("baseblog.html", title=title, content=content, tags=tags, time=time, views=views, id=id, likes=likes, dislikes=dislikes, words=words, read_time=read_time, comments=commentsx, show=True, related=actrel[:10], bookmarked=bookmarked, note=note)
         else:
-            return render_template("baseblog.html", title=title, content=content, tags=tags, time=time, views=views, id=id, likes=likes, dislikes=dislikes, words=words, read_time=read_time, comments=commentsx, show=False, login=False, msg="You need to have a positive number of points", related=actrel[:10])
+            return render_template("baseblog.html", title=title, content=content, tags=tags, time=time, views=views, id=id, likes=likes, dislikes=dislikes, words=words, read_time=read_time, comments=commentsx, show=False, login=False, msg="You need to have a positive number of points", related=actrel[:10], bookmarked=bookmarked, note=note)
     else:
-        return render_template("baseblog.html", title=title, content=content, tags=tags, time=time, views=views, id=id, likes=likes, dislikes=dislikes, words=words, read_time=read_time, comments=commentsx, show=False, login=True, related=actrel[:10])
+        return render_template("baseblog.html", title=title, content=content, tags=tags, time=time, views=views, id=id, likes=likes, dislikes=dislikes, words=words, read_time=read_time, comments=commentsx, show=False, login=True, related=actrel[:10], bookmarked=bookmarked, note=note)
 
 @blogs.route("/blogs/tags/<name>")
 def see_tags_all(name):
