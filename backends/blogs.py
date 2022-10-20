@@ -359,11 +359,11 @@ def see_all_blogs():
 
 @blogs.route("/blogs/viewadd", methods=["GET", "POST"])
 def blog_view_add():
-    if request.method == "POST":
-        URL = "http://localhost:5090/blogs/add"    
+    if request.method == "POST":   
         title = request.form["title"].replace(" ", "-")
         content = markdown.markdown(request.form["content"])
         feature_image = "stuff"
+        new = Blog(title=title, content=content, feature_image=feature_image)
         tags = request.form["tags"].split(" ")
         return render_template("blogadd.html", message=f'<p>go to your blog at <a href="/blogs/views/{title}">{title}</a> the message is </p>')
     else:
