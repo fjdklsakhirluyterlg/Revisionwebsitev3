@@ -40,9 +40,9 @@
         <p>{{views}} views</p>
         <form action="/blogs/addlike/{{id}}"><label>{{likes}}</label><button type="submit">likes</button></form>
         <form action="/blogs/adddislike/{{id}}"><label>{{dislikes}}</label><button type="submit">dislikes</button></form>
-        {% if show %}
+        {% if show %}{% if not bookmarked %}
             <form action="/blog/addbookmark/{{id}}?user_id={{current_user.id}}" method="POST"><label>Bookmark</label><input type="text" name="note" id="note"><button type="submit">Submit</button></form>
-        {% endif %}
+        {% else %}{{note}}{%endif%}{% endif %}
         <hr>
         <pre><div style="white-space: pre-line; overflow: auto;"><pre>{{content | safe}}</pre></div></pre>
         <hr>
