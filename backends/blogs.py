@@ -590,6 +590,7 @@ def edit_bookmark(id):
     note = request.form.get("note")
     bookmark.note = note
     db.session.commit()
+    return "edited"
     
 @blogs.route("/blogs/find/related/<id>")
 def related_tags_thingy(id):
