@@ -2,7 +2,7 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
-from .models import Blog, User, Comment, Replies, User, Tag, Post, Awnser
+from .models import Blog, User, Comment, Replies, User, Tag, Post, Awnser, Card
 from sqlalchemy import or_
 # from . import app
 
@@ -83,6 +83,7 @@ def better_search():
     users = [user.name for user in resusers]
     resawnsers = Awnser.query.filter(or_(Awnser.title.like(f"%{q}%"), Awnser.content.like(f"%{q}%")))
     awnsers = [awnser.title for awnser in resawnsers]
+    cards = Card.query.filter(or_(Card.front.like(f"%{q}%"), Card.back.like(f"%{q}%")))
     return render_template("bettersearch.html", blogs=resblogs, tags=restags, comments=rescomments, posts=resposts, replies=resrelpies, users=resusers, awnsers=resawnsers)
 
 # app.register_blueprint(search, url_prefix="/")
