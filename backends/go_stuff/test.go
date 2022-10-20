@@ -16,15 +16,7 @@ func helloworld(){
     fmt.Println("hi")
 }
 
-func is_prime(number int){
-    sqarert = math.Sqrt((float64(number)))
-    var count float64 = 1
-    for {
-        if (count < sqarert){
 
-        }
-    }
-}
 
 //export hello
 func hello(namePtr *C.char) string {
