@@ -239,7 +239,7 @@ def user_home():
     for postid in postids:
         postsrecommended = posts_related_to_post(postid).keys()
         for postrecomnd in postsrecommended:
-            if postrecomnd not in postnames:
+            if postrecomnd:
                 recposts.append(postrecomnd)
 
     
