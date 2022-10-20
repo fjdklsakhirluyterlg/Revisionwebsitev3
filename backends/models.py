@@ -167,9 +167,9 @@ class User(db.Model, UserMixin):
 
 class Like(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    blog_id = db.Column(db.Integer, db.ForeignKey("blog.id"))
-    post_id = db.Column(db.Integer, db.ForeignKey("post.id"))
-
+    blog_id = db.Column(db.Integer, db.ForeignKey("blog.id"), nullable=True)
+    post_id = db.Column(db.Integer, db.ForeignKey("post.id"), nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
 
 class Tag(db.Model):
     id=db.Column(db.Integer,primary_key=True)
