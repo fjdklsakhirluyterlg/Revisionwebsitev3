@@ -42,7 +42,7 @@
         <form action="/blogs/adddislike/{{id}}"><label>{{dislikes}}</label><button type="submit">dislikes</button></form>
         {% if show %}{% if not bookmarked %}
             <form action="/blog/addbookmark/{{id}}?user_id={{current_user.id}}" method="POST"><label>Bookmark</label><input type="text" name="note" id="note"><button type="submit">Submit</button></form>
-        {% else %}<form action="/blog/bookmark/edit/{{id}}"><label>Note : </label><input name="note" type="text" value="{{note}}"></input><button type="submit">submit</button></form>{%endif%}{% endif %}
+        {% else %}<form action="/blog/bookmark/edit/{{id}}" method="POST"><label>Note : </label><input name="note" type="text" value="{{note}}"></input><button type="submit">submit</button></form>{%endif%}{% endif %}
         <hr>
         <pre><div style="white-space: pre-line; overflow: auto;"><pre>{{content | safe}}</pre></div></pre>
         <hr>
