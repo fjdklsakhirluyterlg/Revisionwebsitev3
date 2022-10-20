@@ -363,8 +363,31 @@ def blog_view_add():
         title = request.form["title"].replace(" ", "-")
         content = markdown.markdown(request.form["content"])
         feature_image = "stuff"
-        new = Blog(title=title, content=content, feature_image=feature_image)
+        new_blog = Blog(title=title, content=content, feature_image=feature_image)
         tags = request.form["tags"].split(" ")
+        users = []
+        for tag in tags:
+            present_tag=Tag.query.filter_by(name=tag).first()
+        if(present_tag):
+            present_tag.blogs_associated.append(new_blog)
+            followers = present_tag.followers
+            for follower in followers:
+                if follower.id not in users:
+                    users.append(follower.id)
+            
+        else:
+            new_tag=Tag(name=tag)
+            new_tag.blogs_associated.append(new_blog)
+            db.session.add(new_tag)
+            
+        text = f"""<p><a href='/blogs/views/{title}'>{title}</a> was created"""
+        for user in users:
+            notification = Notifications(user_id=user, text=text)
+            db.session.add(notification)    
+        
+        db.session.add(new_blog)
+        db.session.commit()
+
         return render_template("blogadd.html", message=f'<p>go to your blog at <a href="/blogs/views/{title}">{title}</a> the message is </p>')
     else:
         return render_template("blogadd.html")    
