@@ -365,9 +365,7 @@ def blog_view_add():
         content = markdown.markdown(request.form["content"])
         feature_image = "stuff"
         tags = request.form["tags"].split(" ")
-        data = {"title": title, "content" : content, "feature_image": feature_image, "tags": tags}
-        res = requests.post(URL, json=data)
-        return render_template("blogadd.html", message=f'<p>go to your blog at <a href="/blogs/views/{title}">{title}</a> the message is {res.json()}</p>')
+        return render_template("blogadd.html", message=f'<p>go to your blog at <a href="/blogs/views/{title}">{title}</a> the message is </p>')
     else:
         return render_template("blogadd.html")    
 
