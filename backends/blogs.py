@@ -387,7 +387,7 @@ def blog_view_add():
         db.session.add(new_blog)
         db.session.commit()
 
-        return render_template("blogadd.html", message=f'<p>go to your blog at <a href="/blogs/views/{title}">{title}</a> the message is </p>')
+        return redirect(f"/blogs/views/{title}")
     else:
         return render_template("blogadd.html")    
 
