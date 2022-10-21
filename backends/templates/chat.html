@@ -35,6 +35,7 @@
             console.log(data)
             socket.emit("message", data) || console.log("erro")
             console.log("clicked")
+            return false;
         })
     </script>
 </head>
