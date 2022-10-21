@@ -17,10 +17,8 @@
     <script>
         $(document).ready(function(){
         var socket = io.connect("http://localhost:5090");
-        var id = {{id}}
-        socket.on('connect', function(){
-            socket.send(`join room ${id}`)
-        })
+        var data = {'id': {{id}}}
+        socket.emit('join', data)
         socket.on('message', function(data){
             var name = {{current_user.name | tojson}};
             var date = new Date().toLocaleString()
