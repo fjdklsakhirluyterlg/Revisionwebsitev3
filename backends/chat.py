@@ -67,6 +67,7 @@ def messageReceived(message):
         socketio.send(message, broadcast=True)
     else:
         room = message[10:]
+        socketio.join_room(room)
     
 
 @socketio.on("left")
