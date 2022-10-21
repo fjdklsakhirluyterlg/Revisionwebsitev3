@@ -63,7 +63,7 @@ def chat_with_other_users(id):
 @socketio.on("message")
 def messageReceived(message):
     print(f'message : {message["message"]}')
-    socketio.send(message, broadcast=True)
+    socketio.send(message["message"], room=message["message"])
     
 
 @socketio.on("left")
