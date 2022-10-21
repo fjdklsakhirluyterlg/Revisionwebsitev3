@@ -60,7 +60,7 @@
                 {% endfor %}
                 <form action="/chat/add-reaction/{{text.id}}" method="POST"><label>♥</label><input type="radio" name="reaction" value="♥"><label>👍</label><input type="radio" name="reaction" value="👍"><label>😭</label><input type="radio" name="reaction" value="😭"><label>👎</label><input type="radio" name="reaction" value="👎"><button type="submit">submit</button></form>
                 </div>
-            {% else %}
+            {% else %}{% if text.authorname != "admin"%}
                 <br>
                 <div class="user">
                 <p>{{text.authorname}} | {{text.timestamp}}</p>
@@ -71,7 +71,7 @@
                     <span>{{reaction.icon}}</span>
                 {% endfor %}
                 </div>
-            {% endif %}
+            {%endif%}{% endif %}
         {% endfor %}
     {% endif %}</div>
     <form action="/chat/add-text/{{id}}" method="POST" id="form">
