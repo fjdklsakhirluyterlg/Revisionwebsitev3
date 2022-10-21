@@ -28,13 +28,12 @@
             }else{
                 $("#texts").append("<div class='nonuser'><p>" + data.name + " | " + date + "</p><p>" + date.message + "</p></div>")
             }
-        }
+        })
         $('#submit').on("click", function(){
             var name = {{current_user.name | tojson}}
             var data = {"name": name, "message": $('#message').val(), "room":{{id}}}
             socket.emit("message", data)
             console.log("clicked")
-        })
         })
     </script>
 </head>
