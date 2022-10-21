@@ -34,7 +34,7 @@
             var data = {"name": name, "message": $('#message').val(), "room":{{id}}}
             socket.emit("message", data) 
             console.log("sent?")
-        } function testmessage(name, message){var data = JSON.stringify({"message":message, "name":name, "id":"1"});socket.emit("message", data)}
+        } function testmessage(name, message){var data = JSON.parse({"message":message, "name":name, "id":"1"});socket.emit("message", data)}
     </script>
 </head>
 <body style="background-color: black; color:white;"><div id="main">
