@@ -63,11 +63,7 @@ def chat_with_other_users(id):
 @socketio.on("message")
 def messageReceived(message):
     print(f'message : {message}')
-    if "join room" not in message:
-        socketio.send(message, broadcast=True)
-    else:
-        room = message[10:]
-        socketio.join_room(room)
+    socketio.send(message, broadcast=True)
     
 
 @socketio.on("left")
