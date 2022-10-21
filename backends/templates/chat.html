@@ -31,7 +31,7 @@
         })
         function sendmessage() {
             try{
-            var name = {{current_user.name | tojson}}; var message = $('#message').val();
+            var name = {{current_user.name | tojson}}; var message = "please work";
             var data = {"name": name, "message": message, "room":{{id}}};
             socket.emit("message", data=data) 
             console.log("sent?")
