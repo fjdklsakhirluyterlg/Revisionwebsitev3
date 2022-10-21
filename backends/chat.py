@@ -78,7 +78,7 @@ def leftRecieved(message):
 @socketio.on("join")
 def joinRoom(message):
     socketio.join_room(message["id"])
-    socketio.send("Joined", room=message["id"])
+    socketio.send("Someone joined", room=message["id"])
     
 @login_required
 @chat.route('/chat/add-text/<id>', methods=["POST"])
