@@ -20,13 +20,13 @@
             var data = {'id': {{id}}}
             socket.emit('join', data)
         })
-        socket.on('message', function(data){ console.log(data.message)
+        socket.on('message', function(data){ message = data.message; namem = data.name;
             var name = {{current_user.name | tojson}};
             var date = new Date().toLocaleString()
             if (name == data.name) {
-                $("#texts").append("<br><div class='user'><p>" + data.name + " | " + date + "</p><p>" + data.message + "</p></div>")
+                $("#texts").append(`<br><div class='user'><p> ${namem} | ${date}</p><p> ${message} </p></div>`)
             }else{
-                $("#texts").append("<div class='nonuser'><p>" + data.name + " | " + date + "</p><p>" + date.message + "</p></div>")
+                $("#texts").append(`<br><div class='nonuser'><p> ${namem} | ${date}</p><p> ${message} </p></div>`)
             }
         })
         function sendmessage() {
