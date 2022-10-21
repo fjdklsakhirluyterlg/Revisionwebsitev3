@@ -33,7 +33,7 @@
             var name = {{current_user.name | tojson}}
             var data = {"name": name, "message": $('#message').val(), "room":{{id}}}
             console.log(data)
-            socket.emit("message", data)
+            socket.emit("message", data) || console.log("erro")
             console.log("clicked")
         })
     </script>
