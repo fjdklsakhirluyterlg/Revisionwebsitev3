@@ -34,7 +34,8 @@
             var data = {"name": name, "message": $('#message').val(), "room":{{id}}}
             console.log(data)
             socket.emit("message", data) 
-            console.log("clicked")}
+            console.log("clicked")
+        }
     </script>
 </head>
 <body style="background-color: black; color:white;"><div id="main">
@@ -74,7 +75,7 @@
             {%endif%}{% endif %}
         {% endfor %}
     {% endif %}</div>
-    <form action="/chat/add-text/{{id}}" method="POST" id="form" onsubmit="return false">
+    <form action="/chat/add-text/{{id}}" method="POST" id="form" onsubmit="sendmessage(); return false">
         <label>Enter text: </label>
         <input type="text" name="text" id="message">
         <button id="submit" type="submit">&spades;</button>
