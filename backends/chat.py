@@ -3,6 +3,7 @@ from . import db
 from flask_login import current_user, login_required
 from .models import Chat, Text, User, Notifications, Reaction
 from . import socketio
+from flask_socketio import join_room, send
 # from . import app
 
 chat = Blueprint("chat", __name__)
@@ -63,20 +64,20 @@ def chat_with_other_users(id):
 @socketio.on("message")
 def messageReceived(message):
     print(f'message : {message}')
-    socketio.send(message["message"], room=message["id"])
+    send(message["message"], room=message["id"])
     
 
 @socketio.on("left")
 def leftRecieved(message):
     print(f"{message=}")
-    socketio.send(message, broadcast=True)
+    send(message, broadcast=True)
 
 @socketio.on("join")
 def joinRoom(message):
     room = message["id"]
-    socketio.join_room(room)
+    join_room(room)
     print(f"joined room: {room}")
-    socketio.send("Someone joined", room=message["id"])
+    send("Someone joined", room=message["id"])
     
 @login_required
 @chat.route('/chat/add-text/<id>', methods=["POST"])
