@@ -19,8 +19,6 @@
         $(document).ready(function(){
             var data = {'id': {{id}}}
             socket.emit('join', data)
-            var name = {{current_user.name | tojson}}
-            console.log(name)
         })
         socket.on('message', function(data){
             var name = {{current_user.name | tojson}};
@@ -32,7 +30,8 @@
             }
         })
         $('#submit').on("click", function(){
-            var data = {"name": "test", "message": $('#message').val(), "room":{{id}}}
+            var name = {{current_user.name | tojson}}
+            var data = {"name": name, "message": $('#message').val(), "room":{{id}}}
             console.log(data)
             socket.emit("message", data)
             console.log("clicked")
