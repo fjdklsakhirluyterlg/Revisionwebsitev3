@@ -30,8 +30,7 @@
             }
         })
         $('#submit').on("click", function(){
-            var name = {{current_user.name}};
-            var data = {"name": name, "message": $('#message').val(), "room":{{id}}}
+            var data = {"name": {{current_user.name}}, "message": $('#message').val(), "room":{{id}}}
             console.log(data)
             socket.emit("message", data)
             console.log("clicked")
