@@ -65,6 +65,8 @@ def messageReceived(message):
     print(f'message : {message}')
     if "join room" not in message:
         socketio.send(message, broadcast=True)
+    else:
+        room = message[10:]
     
 
 @socketio.on("left")
