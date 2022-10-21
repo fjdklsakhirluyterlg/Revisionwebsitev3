@@ -73,8 +73,9 @@ def leftRecieved(message):
 
 @socketio.on("join")
 def joinRoom(message):
-    socketio.join_room(message["id"])
-    print(f"joined room: {message["id"]}")
+    room = message["id"]
+    socketio.join_room(room)
+    print(f"joined room: {room}")
     socketio.send("Someone joined", room=message["id"])
     
 @login_required
