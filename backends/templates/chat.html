@@ -30,10 +30,12 @@
             }
         })
         $('#submit').on("click", function(){
+            try{
             var name = {{current_user.name | tojson}}
             var data = {"name": name, "message": $('#message').val(), "room":{{id}}}
             socket.send("message", data)
             console.log("clicked")
+            } catch(err){console.log(err)}
         })
     </script>
 </head>
