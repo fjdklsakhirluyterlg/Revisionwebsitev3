@@ -78,7 +78,8 @@ def joinRoom(message):
     room = message["id"]
     join_room(room)
     print(f"joined room: {room}")
-    send("Someone joined", room=message["id"])
+    data = {"message":"someone joined","name":"admin"}
+    send(data, room=message["id"])
     
 @login_required
 @chat.route('/chat/add-text/<id>', methods=["POST"])
