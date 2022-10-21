@@ -32,7 +32,7 @@
         function sendmessage() {
             var name = {{current_user.name | tojson}}
             var data = {"name": name, "message": $('#message').val(), "room":{{id}}};
-            socket.emit("message", data) 
+            socket.emit("message", data=data) 
             console.log("sent?")
         } function testmessage(name, message){var data = {"message":message, "name":name, "id":"1"};socket.emit("message", data=data)}
     </script>
