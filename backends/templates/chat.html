@@ -19,7 +19,7 @@
         $(document).ready(function(){
             var data = {'id': {{id}}}
             socket.emit('join', data)
-            var name = {{current_user.name}}
+            var name = {{current_user.name | tojson}}
             console.log(name)
         })
         socket.on('message', function(data){
