@@ -15,7 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.min.js"></script>
     <script>
-        var socket = io.connect("5090");
+        var socket = io.connect("http://127.0.0.1:5090");
         $(document).ready(function(){
             var data = {'id': {{id}}}
             socket.emit('join', data)
