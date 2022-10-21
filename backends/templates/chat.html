@@ -15,7 +15,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.min.js"></script>
     <script>
-        const io = require("socket.io")();
         var socket = io.connect("http://localhost:5090");
         $(document).ready(function(){
             var data = {'id': {{id}}}
