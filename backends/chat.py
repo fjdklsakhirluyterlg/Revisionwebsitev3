@@ -65,6 +65,7 @@ def messageReceived(message):
     print(f'message : {message}')
     if message != "User connected":
         socketio.send(message, broadcast=True)
+    
 
 @socketio.on("left")
 def leftRecieved(message):

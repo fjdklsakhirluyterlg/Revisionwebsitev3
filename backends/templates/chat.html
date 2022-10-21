@@ -18,11 +18,8 @@
         $(document).ready(function(){
         var socket = io.connect("http://localhost:5090");
         socket.on('connect', function(){
-            socket.send("User connected")
+            socket.send(`join room `)
         })
-        socket.on('join', function(){
-            data: 'room1'
-        } )
         socket.on('message', function(data){
             var name = {{current_user.name | tojson}};
             var date = new Date().toLocaleString()
