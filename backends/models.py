@@ -369,7 +369,8 @@ class Card(db.Model):
     stack_id = db.Column(db.Integer, db.ForeignKey("stack.id"))
 
 class Cardcategory(db.Model):
-    id = db.Column(db.Integer, primery_key=True)
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Text)
 
 class Stack(db.Model):
     id = db.Column(db.Integer, primary_key=True)
