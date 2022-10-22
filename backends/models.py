@@ -362,7 +362,7 @@ class Category(db.Model):
 
 card_category = db.Table("card_category",
     db.Column("card_id", db.Integer, db.ForeignKey('card.id')),
-    db.Column()
+    db.Column("stacktype_id", db.Integer, db.ForeignKey('stacktype.id'))
 )
 
 
