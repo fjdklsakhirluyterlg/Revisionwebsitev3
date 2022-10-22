@@ -328,7 +328,9 @@ def show_me_user_info_thingy():
 
 @user.route("/api/user/followed/<id>")
 def user_followed_api_thing(id):
-    pass
+    user = User.query.filter_by(id=id).first()
+    followed = [i.name for i in user.followed]
+    return {"followed":followed}
 
 @user.route("/api/user/followers/<id>")
 def user_followers_api_test(id):
