@@ -138,8 +138,8 @@ def check_back_if_true():
         return jsonify({"msg": "correct"})
     return jsonify({"msg": "incorrect"})
 
-@card.route("/api/stack/delete")
-def delete_stack_from_id():
+@card.route("/api/stack/delete/<id>")
+def delete_stack_from_id(id):
     pass
     
 
