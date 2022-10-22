@@ -137,6 +137,10 @@ def check_back_if_true():
     if card.back == awnser:
         return jsonify({"msg": "correct"})
     return jsonify({"msg": "incorrect"})
+
+@card.route("/api/stack/delete")
+def delete_stack_from_id():
+    pass
     
 
 @card.route("/stack/add")
