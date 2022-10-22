@@ -360,6 +360,11 @@ class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200))
 
+card_category = db.Table("card_category",
+    db.Column("card_id", db.Integer, db.ForeignKey('card.id')),
+    db.Column()
+)
+
 
 class Card(db.Model):
     id = db.Column(db.Integer, primary_key=True)
