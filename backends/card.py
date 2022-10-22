@@ -145,7 +145,7 @@ def delete_stack_from_id(id):
         db.session.delete(card)
     db.session.delete(Stack)
     db.session.commit()
-    
+    return "deleted"
 
 @card.route("/stack/add")
 def view_stack_add():
