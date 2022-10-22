@@ -143,7 +143,7 @@ def delete_stack_from_id(id):
     stack = Stack.query.filter_by(id=id).first()
     for card in stack.cards:
         db.session.delete(card)
-    db.session.delete(Stack)
+    db.session.delete(stack)
     db.session.commit()
     return "deleted"
 
