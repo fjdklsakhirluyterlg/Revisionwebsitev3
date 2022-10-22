@@ -140,7 +140,11 @@ def check_back_if_true():
 
 @card.route("/api/stack/delete/<id>")
 def delete_stack_from_id(id):
-    pass
+    stack = Stack.query.filter_by(id=id).first()
+    for card in stack.cards:
+        db.session.delete(card)
+    db.session.delete(Stack)
+    db.session.commit()
     
 
 @card.route("/stack/add")
