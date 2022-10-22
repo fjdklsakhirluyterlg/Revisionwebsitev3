@@ -326,6 +326,10 @@ def show_me_user_info_thingy():
     dict["key"] = user.security_key
     return dict
 
+@user.route("/api/user/followed/<id>")
+def user_followed_api_thing(id):
+    pass
+
 @user.route("/api/user/followers/<id>")
 def user_followers_api_test(id):
     user = User.query.filter_by(id=id).first()
