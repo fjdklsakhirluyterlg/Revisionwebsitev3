@@ -163,8 +163,9 @@ def make_a_stack_a_quiz(id):
         backs.append(card.back)
 
 @card.route("/stack/fork/<id>")
-def fork_stack_of_cards():
-    pass
+def fork_stack_of_cards(id):
+    stack = Stack.query.filter_by(id=id).first()
+    new_stack = Stack()
 
 
 @card.route("/stack/add")
