@@ -1,4 +1,5 @@
 from multiprocessing import parent_process
+from urllib.parse import parse_qsl
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
@@ -160,7 +161,10 @@ def make_a_stack_a_quiz(id):
     for card in stack.cards:
         fronts.append(card.front)
         backs.append(card.back)
-    
+
+@card.route("/stack/fork/<id>")
+def fork_stack_of_cards():
+    pass
 
 
 @card.route("/stack/add")
