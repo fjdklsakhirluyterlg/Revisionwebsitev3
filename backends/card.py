@@ -152,6 +152,9 @@ def delete_stack_from_id(id):
 def make_a_stack_a_quiz(id):
     stack = Stack.query.filter_by(id=id).first()
     new = Quiz(user_id=stack.user_id, name=stack.name, description="Quiz")
+    db.session.add(new)
+    db.session.commit()
+    quiz_id = getattr(new, "id")
     fronts = []
     backs = []
     for card in stack.cards:
