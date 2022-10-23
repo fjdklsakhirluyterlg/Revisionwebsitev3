@@ -166,7 +166,7 @@ def make_a_stack_a_quiz(id):
 @card.route("/stack/fork/<id>")
 def fork_stack_of_cards(id):
     stack = Stack.query.filter_by(id=id).first()
-    new_stack = Stack(name=stack.name, user+id=current_user.id)
+    new_stack = Stack(name=stack.name, user_id=current_user.id)
 
 
 @card.route("/stack/add")
