@@ -153,6 +153,9 @@ def make_a_stack_a_quiz(id):
     stack = Stack.query.filter_by(id=id).first()
     fronts = []
     backs = []
+    for card in stack.cards:
+        fronts.append(card.front)
+        backs.append(card.back)
 
 
 @card.route("/stack/add")
