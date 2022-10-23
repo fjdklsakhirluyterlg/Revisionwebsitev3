@@ -2,7 +2,7 @@ from multiprocessing import parent_process
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
-from .models import Card, Stack
+from .models import Card, Stack, Quiz
 # from . import app
 
 card = Blueprint("card", __name__)
@@ -151,6 +151,9 @@ def delete_stack_from_id(id):
 @card.route("/api/stack/quiz/make/<id>")
 def make_a_stack_a_quiz(id):
     stack = Stack.query.filter_by(id=id).first()
+    fronts = []
+    backs = []
+
 
 @card.route("/stack/add")
 def view_stack_add():
