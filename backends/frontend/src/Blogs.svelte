@@ -11,3 +11,8 @@
 
     data.forEach(item => content.push(item.content))
 </script>
+
+<!-- svelte-ignore missing-declaration -->
+{#each content as con}
+    <div>{@html con}</div>
+{/each}
