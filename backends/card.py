@@ -149,7 +149,7 @@ def delete_stack_from_id(id):
     return "deleted"
 
 @card.route("/api/stack/quiz/make/<id>")
-def make_a_stack_a_quiz():
+def make_a_stack_a_quiz(id):
     pass
 
 @card.route("/stack/add")
