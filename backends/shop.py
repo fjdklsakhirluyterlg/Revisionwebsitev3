@@ -16,3 +16,5 @@ def add_an_item():
     new.create(int(stock))
     db.session.add(new)
     db.session.commit()
+
+    return "created"
