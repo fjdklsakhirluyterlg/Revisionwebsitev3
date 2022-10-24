@@ -12,3 +12,4 @@ def add_an_item():
     title = data["description"]
     price = data["price"]
     stock = data["stock"]
+    new = Item(description=description, title=title, price=price, stock=stock)
