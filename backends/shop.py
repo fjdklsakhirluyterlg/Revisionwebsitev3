@@ -21,4 +21,4 @@ def add_an_item():
 
 @shop.route("/api/items")
 def view_all_items():
-    pass
+    items = Item.query.all()
