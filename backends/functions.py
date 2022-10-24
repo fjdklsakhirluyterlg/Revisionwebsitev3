@@ -434,3 +434,6 @@ def convert_currency(amount, currency: str):
     if rate:
         act = amount / rate
         return f"${act}"
+
+def convert_symbol_to_currency():
+    pass
