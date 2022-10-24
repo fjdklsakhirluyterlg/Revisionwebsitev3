@@ -173,6 +173,7 @@ def fork_stack_of_cards(id):
     for card in stack.cards:
         new_card = Card(front=card.front, back=card.back, stack_id=stack_id)
         db.session.add(new_card)
+    db.session.commit()
 
 
 @card.route("/stack/add")
