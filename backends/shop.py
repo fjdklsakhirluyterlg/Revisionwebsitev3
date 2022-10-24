@@ -34,7 +34,7 @@ def buy_item_thing():
     data = request.get_json()
     user_id = data["user_id"]
     new = Checkout(user_id=user_id)
-    for object = data["objects"]:
+    for object in data["objects"]:
         obj = Object.query.filter_By(id=object)
 
     
