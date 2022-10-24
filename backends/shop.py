@@ -35,4 +35,8 @@ def buy_item_thing():
     user_id = data["user_id"]
     new = Checkout(user_id=user_id)
 
+@shop.route("/api/shop/checkout/object/add")
+def add_item_to_checkout():
+    pass
+
     
