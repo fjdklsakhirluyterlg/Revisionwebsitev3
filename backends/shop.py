@@ -35,7 +35,7 @@ def buy_item_thing():
     user_id = data["user_id"]
     new = Checkout(user_id=user_id)
     db.session.add(new)
-    db.session.commit9
+    db.session.commit()
     for object in data["objects"]:
         obj = Object.query.filter_By(id=object)
         item = obj.item
