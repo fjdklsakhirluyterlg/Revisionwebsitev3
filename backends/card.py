@@ -177,7 +177,9 @@ def fork_stack_of_cards(id):
     return "forked"
 
 
-
+@card.route("/cards/edit/<id>")
+def edit_a_card_pleas():
+    pass
 
 @card.route("/stack/add")
 def view_stack_add():
