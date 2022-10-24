@@ -432,3 +432,6 @@ class Item(db.Model):
     description = db.Column(db.Text)
     title = db.Column(db.String(250))
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+
+class Object(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
