@@ -434,8 +434,9 @@ class Item(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     objects = db.relationship("Object", backref="item")
 
-    def create(self, stock):
-        pass
+    def create(self, stock: int):
+        for i in range(stock):
+            new = Object(item_id=self.id)
 
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
