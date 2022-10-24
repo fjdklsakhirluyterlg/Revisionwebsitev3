@@ -181,6 +181,8 @@ def fork_stack_of_cards(id):
 def edit_a_card_please(id):
     card = Card.query.filter_by(id=id).first()
     data = request.get_json()
+    card.front = data["front"]
+    card.back = data["back"]
 
 @card.route("/stack/add")
 def view_stack_add():
