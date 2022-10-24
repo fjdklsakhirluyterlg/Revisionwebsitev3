@@ -431,3 +431,5 @@ def convert_currency(amount, currency: str):
     URL = "https://cdn.moneyconvert.net/api/latest.json"
     response = request.get(URL)
     rate = response["rates"][currency]
+    if rate:
+        act = amount / rate
