@@ -176,7 +176,6 @@ def fork_stack_of_cards(id):
     db.session.commit()
     return "forked"
 
-
 @card.route("/cards/edit/<id>")
 def edit_a_card_please(id):
     card = Card.query.filter_by(id=id).first()
