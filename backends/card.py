@@ -166,6 +166,8 @@ def make_a_stack_a_quiz(id):
 @card.route("/stack/fork/<id>")
 def fork_stack_of_cards(id):
     stack = Stack.query.filter_by(id=id).first()
+    if stack.user_id == current_user.id:
+        return "cannot fork"
     new_stack = Stack(name=stack.name, user_id=current_user.id)
     db.session.add(new_stack)
     db.session.commit()
