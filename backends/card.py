@@ -177,6 +177,8 @@ def fork_stack_of_cards(id):
     return "forked"
 
 
+
+
 @card.route("/stack/add")
 def view_stack_add():
     return render_template("cardadd.html")
