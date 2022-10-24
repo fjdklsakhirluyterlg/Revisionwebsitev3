@@ -171,7 +171,7 @@ def fork_stack_of_cards(id):
     db.session.commit()
     stack_id = getattr(new_stack, "id")
     for card in stack.cards:
-        new_card = Card(front=card.front, back=card.back)
+        new_card = Card(front=card.front, back=card.back, stack_id=stack_id)
 
 
 @card.route("/stack/add")
