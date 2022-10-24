@@ -435,5 +435,6 @@ def convert_currency(amount, currency: str):
         act = amount / rate
         return f"${act}"
 
-def convert_symbol_to_currency():
+def convert_symbol_to_currency(symbol):
     dictx = {"£":"GBP", "€":"EUR", "¥":"JPY"}
+    return dictx[symbol]
