@@ -441,14 +441,14 @@ class Item(db.Model):
             db.session.add(new)
         db.session.commit()
 
+class Checkout(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    objects = db.relationship("Object", backref="checkout")
+
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     item_id = db.Column(db.Integer, db.ForeignKey("item.id"))
     sold = db.Column(db.Boolean(), default=False)
     price = db.Column(db.String(5))
     checkout_id = db.Column(db.Integer, db.ForeignKey("checkout.id"), nullable=True, default=None)
-
-class Checkout(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
-    objects = db.relationship("Object", backref="checkout")
