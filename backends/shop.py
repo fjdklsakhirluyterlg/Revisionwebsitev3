@@ -41,6 +41,6 @@ def buy_item_thing():
         obj = Object.query.filter_By(id=object)
         item = obj.item
         item.stock -= 1
-        obj.checkout_id = new
+        obj.checkout_id = checkout_id
 
     
