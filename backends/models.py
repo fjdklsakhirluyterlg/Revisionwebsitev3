@@ -1,3 +1,4 @@
+from socketserver import ThreadingUnixDatagramServer
 from flask_login import UserMixin
 from sqlalchemy import or_
 from datetime import datetime
@@ -424,3 +425,6 @@ class Song(db.Model):
     title = db.Column(db.String(255))
     author = db.Column(db.String(255))
     lyrics = db.Column(db.Text)
+
+class Item(db.Model):
+    id = db.Column(db.Integer, primary_kay=True)
