@@ -22,7 +22,7 @@ def add_an_item():
 @shop.route("/api/items")
 def view_all_items():
     items = Item.query.all()
-    dictx = {}
+    dictx = []
     for item in items:
-        dictx[item.id] = {"title":item.title, "price":item.price, "description":item.description, "stock":item.stock}
+        dictx.append({"id":item.id, "title":item.title, "price":item.price, "description":item.description, "stock":item.stock})
     
