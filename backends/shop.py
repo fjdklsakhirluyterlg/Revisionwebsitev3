@@ -1,3 +1,4 @@
+from urllib.parse import parse_qs
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
@@ -44,6 +45,10 @@ def buy_item_thing():
         obj.checkout_id = checkout_id
     db.session.commit()
     return jsonify()
+
+@shop.route("/api/checkout/buy")
+def bu_the_checkout():
+    pass
 
 
     
