@@ -13,3 +13,5 @@ def add_an_item():
     price = data["price"]
     stock = data["stock"]
     new = Item(description=description, title=title, price=price, stock=stock)
+    db.session.add(new)
+    db.session.commit()
