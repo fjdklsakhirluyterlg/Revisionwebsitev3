@@ -182,6 +182,7 @@ def edit_a_card_please(id):
     data = request.get_json()
     card.front = data["front"]
     card.back = data["back"]
+    db.session.commit()
 
 @card.route("/stack/add")
 def view_stack_add():
