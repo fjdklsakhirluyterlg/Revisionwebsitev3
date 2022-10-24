@@ -24,4 +24,4 @@ def view_all_items():
     items = Item.query.all()
     dictx = {}
     for item in items:
-        dict[item.id]
+        dict[item.id] = {"title":item.title, "price":item.price, "description":item.description, "stock":item.stock}
