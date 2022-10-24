@@ -22,3 +22,6 @@ def add_an_item():
 @shop.route("/api/items")
 def view_all_items():
     items = Item.query.all()
+    dictx = {}
+    for item in items:
+        dict[item.id]
