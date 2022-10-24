@@ -456,4 +456,4 @@ class Object(db.Model):
     sold = db.Column(db.Boolean(), default=False)
     price = db.Column(db.String(5))
     checkout_id = db.Column(db.Integer, db.ForeignKey("checkout.id"), nullable=True, default=None)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True, default=None)
