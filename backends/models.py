@@ -431,3 +431,6 @@ class Item(db.Model):
     stock = db.Column(db.Integer)
     description = db.Column(db.Text)
     title = db.Column(db.String(250))
+
+    def increase_stock(self):
+        self.stock += 1
