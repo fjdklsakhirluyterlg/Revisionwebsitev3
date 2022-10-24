@@ -26,3 +26,5 @@ def view_all_items():
     for item in items:
         listx.append({"id":item.id, "title":item.title, "price":item.price, "description":item.description, "stock":item.stock})
     
+    return jsonify(listx)
+    
