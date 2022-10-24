@@ -19,7 +19,7 @@ def add_an_item():
     id = getattr(new, "id")
     return {"id":id}
 
-@shop.route("/api/items")
+@shop.route("/api/shop/items")
 def view_all_items():
     items = Item.query.all()
     listx = []
