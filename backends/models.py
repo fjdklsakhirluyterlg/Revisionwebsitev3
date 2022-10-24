@@ -430,4 +430,4 @@ class Item(db.Model):
     id = db.Column(db.Integer, primary_kay=True)
     stock = db.Column(db.Integer)
     description = db.Column(db.Text)
-    
+    title = db.Column(db.String(250))
