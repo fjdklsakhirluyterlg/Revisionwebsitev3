@@ -42,5 +42,6 @@ def buy_item_thing():
         item = obj.item
         item.stock -= 1
         obj.checkout_id = checkout_id
+        
 
     
