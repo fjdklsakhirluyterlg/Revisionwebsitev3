@@ -16,5 +16,5 @@ def add_an_item():
     new.create(stock)
     db.session.add(new)
     db.session.commit()
-
-    return "created"
+    id = getattr(new, "id")
+    return {"id":id}
