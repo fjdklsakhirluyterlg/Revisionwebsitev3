@@ -37,5 +37,6 @@ def buy_item_thing():
     for object in data["objects"]:
         obj = Object.query.filter_By(id=object)
         item = obj.item
+        item.stock -= 1
 
     
