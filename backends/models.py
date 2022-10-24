@@ -443,6 +443,7 @@ class Item(db.Model):
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     item_id = db.Column(db.Integer, db.ForeignKey("item.id"))
+    sold = db.Column(db.Boolean(), default=False)
 
 class Checkout(db.Model):
     id = db.Column(db.Integer, primary_key=True)
