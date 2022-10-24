@@ -130,7 +130,7 @@ class User(db.Model, UserMixin):
     security_key = db.Column(db.String(65))
     validated = db.Column(db.Boolean(), default=False)
     newsletter = db.Column(db.Boolean(), default=False)
-    description = db.Column(db.String(500), nullable=True, default="N/A")
+    description = db.Column(db.Text, nullable=True, default="N/A")
     notifications = db.relationship('Notifications', backref="user")
     snake = db.relationship("Snake_leaderboard", backref="user")
     bookmarks = db.relationship('Bookmark', backref="user")
