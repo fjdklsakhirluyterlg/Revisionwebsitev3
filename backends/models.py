@@ -449,6 +449,7 @@ class Checkout(db.Model):
     def sell(self):
         for obj in self.objects:
             obj.sold = True
+            obj.user_id = self.user_id
 
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
