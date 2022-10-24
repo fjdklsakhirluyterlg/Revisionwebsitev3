@@ -444,6 +444,7 @@ class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     item_id = db.Column(db.Integer, db.ForeignKey("item.id"))
     sold = db.Column(db.Boolean(), default=False)
+    checkout_id = db.Column(db.Integer, db.ForeignKey("checkout.id"), nullable=True, default=None)
 
 class Checkout(db.Model):
     id = db.Column(db.Integer, primary_key=True)
