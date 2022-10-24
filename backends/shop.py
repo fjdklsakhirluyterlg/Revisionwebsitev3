@@ -5,7 +5,7 @@ from .models import Item
 
 shop = Blueprint("shop", __name__)
 
-@shop.route("/api/shop/item/add")
+@shop.route("/api/shop/item/add", methods=["POST"])
 def add_an_item():
     data = request.get_json()
     description = data["description"]
