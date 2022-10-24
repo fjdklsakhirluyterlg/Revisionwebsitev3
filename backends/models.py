@@ -433,6 +433,7 @@ class Item(db.Model):
     title = db.Column(db.String(250))
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     objects = db.relationship("Object", backref="item")
+    price = db.Column(db.String(10))
 
     def create(self, stock: int):
         for i in range(stock):
@@ -449,4 +450,4 @@ class Object(db.Model):
 class Checkout(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
-    objects = db.relationship("Object", backref="chekout")
+    objects = db.relationship("Object", backref="checkout")
