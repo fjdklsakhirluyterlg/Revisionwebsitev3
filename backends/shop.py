@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
-from .models import Item
+from .models import Item, Object
 
 shop = Blueprint("shop", __name__)
 
@@ -32,5 +32,6 @@ def view_all_items():
 @shop.route("/api/shop/checkout/add", methods=["POST"])
 def buy_item_thing():
     data = request.get_json()
+    user_id = data["user_id"]
 
     
