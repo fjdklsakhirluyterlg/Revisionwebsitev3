@@ -427,7 +427,7 @@ class Song(db.Model):
     lyrics = db.Column(db.Text)
 
 class Item(db.Model):
-    id = db.Column(db.Integer, primary_kay=True)
+    id = db.Column(db.Integer, primary_key=True)
     stock = db.Column(db.Integer)
     description = db.Column(db.Text)
     title = db.Column(db.String(250))
