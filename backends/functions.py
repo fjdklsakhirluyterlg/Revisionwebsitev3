@@ -433,3 +433,4 @@ def convert_currency(amount, currency: str):
     rate = response["rates"][currency]
     if rate:
         act = amount / rate
+        return f"${act}"
