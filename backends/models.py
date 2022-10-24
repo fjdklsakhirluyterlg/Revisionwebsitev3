@@ -434,3 +434,6 @@ class Item(db.Model):
 
     def increase_stock(self):
         self.stock += 1
+    
+    def decrease_stock(self):
+        self.stock -= 1
