@@ -425,3 +425,6 @@ def send_email_newsletter(address, content):
         return "Success"
     except Exception as e:
         return e
+
+def convert_currency():
+    pass
