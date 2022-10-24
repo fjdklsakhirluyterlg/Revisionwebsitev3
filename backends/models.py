@@ -437,6 +437,8 @@ class Item(db.Model):
     def create(self, stock: int):
         for i in range(stock):
             new = Object(item_id=self.id)
+            db.session.add(new)
+        db.session.commit()
 
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
