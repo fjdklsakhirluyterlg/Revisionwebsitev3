@@ -18,3 +18,7 @@ def add_an_item():
     db.session.commit()
     id = getattr(new, "id")
     return {"id":id}
+
+@shop.route("/api/items")
+def ciew_all_items():
+    pass
