@@ -7,4 +7,4 @@ shop = Blueprint("shop", __name__)
 
 @shop.route("/api/shop/item/add")
 def add_an_item():
-    pass
+    data = request.get_json()
