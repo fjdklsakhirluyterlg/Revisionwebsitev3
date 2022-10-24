@@ -428,4 +428,6 @@ def send_email_newsletter(address, content):
         return e
 
 def convert_currency(amount, currency: str):
-    pass
+    URL = "https://cdn.moneyconvert.net/api/latest.json"
+    response = request.get(URL)
+    rate = response[""]
