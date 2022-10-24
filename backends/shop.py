@@ -37,6 +37,6 @@ def buy_item_thing():
 
 @shop.route("/api/shop/checkout/object/add")
 def add_item_to_checkout():
-    pass
+    data = request.get_json()
 
     
