@@ -29,7 +29,8 @@ def view_all_items():
     return jsonify(listx)
 
 
-@shop.route("/api/shop/buy", methods=["POST"])
+@shop.route("/api/shop/add", methods=["POST"])
 def buy_item_thing():
     data = request.get_json()
+
     

@@ -446,6 +446,10 @@ class Checkout(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     objects = db.relationship("Object", backref="checkout")
 
+    def sell(self):
+        for obj in self.objects:
+            obj.sold = True
+
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     item_id = db.Column(db.Integer, db.ForeignKey("item.id"))
