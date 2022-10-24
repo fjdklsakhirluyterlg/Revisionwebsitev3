@@ -11,6 +11,7 @@ import ssl
 from email.message import EmailMessage
 from flask_mail import Mail, Message
 from . import mail
+import requests
 
 def is_integer_num(n):
     if isinstance(n, int):
@@ -426,5 +427,5 @@ def send_email_newsletter(address, content):
     except Exception as e:
         return e
 
-def convert_currency():
+def convert_currency(amount, currency: str):
     pass
