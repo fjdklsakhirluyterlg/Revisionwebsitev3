@@ -20,5 +20,5 @@ def add_an_item():
     return {"id":id}
 
 @shop.route("/api/items")
-def ciew_all_items():
+def view_all_items():
     pass
