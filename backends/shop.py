@@ -56,6 +56,7 @@ def bu_the_checkout():
     checkout = Checkout.query.filter_by(id=id).first()
     for object in checkout.objects:
         total_price += object.price
+        object.sold = True
 
 
     
