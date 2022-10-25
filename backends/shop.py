@@ -42,7 +42,7 @@ def buy_item_thing():
     db.session.commit()
     checkout_id = getattr(new, "id")
     for object in data["objects"]:
-        obj = Object.query.filter_By(id=object).first()
+        obj = Object.query.filter_by(id=object).first()
         item = obj.item
         item.stock -= 1
         obj.checkout_id = checkout_id
