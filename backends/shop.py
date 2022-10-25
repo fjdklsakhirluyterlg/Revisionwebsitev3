@@ -51,7 +51,7 @@ def buy_item_thing():
 
 @shop.route("/api/checkout/buy")
 def bu_the_checkout():
-    pass
+    id = request.args.get("id")
 
 
     
