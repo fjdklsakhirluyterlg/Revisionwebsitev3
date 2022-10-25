@@ -62,5 +62,7 @@ def bu_the_checkout():
 
     return f"You apyed for {total_price}"
 
-
+@shop.route("/api/shop/delete/item")
+def delete_item_from_shop():
+    pass
     
