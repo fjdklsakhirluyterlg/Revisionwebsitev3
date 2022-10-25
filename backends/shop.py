@@ -43,9 +43,10 @@ def buy_item_thing():
     checkout_id = getattr(new, "id")
     for object in data["objects"]:
         obj = Object.query.filter_by(id=int(object)).first()
-        # item = obj.item
-        # item.stock -= 1
-        # obj.checkout_id = checkout_id
+        itemx = obj.item_id
+        item = Item.query.filter_by(id=itemx).first()
+        item.stock -= 1
+        obj.checkout_id = checkout_id
     db.session.commit()
     out = getattr(new, "id")
     return jsonify({"id": out})
