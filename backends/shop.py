@@ -68,7 +68,10 @@ def bu_the_checkout():
 @shop.route("/api/object/view/<id>")
 def view_object(id):
     object = Object.query.filter_by(id=id).first()
-    
+    dic = {}
+    dic["id"] = object.id
+    dic["item_id"] = object.item_id
+    dic["price"] = object.price
 
 @shop.route("/api/shop/delete/item")
 def delete_item_from_shop():
