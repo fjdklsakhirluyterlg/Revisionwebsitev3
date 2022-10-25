@@ -462,3 +462,4 @@ class Object(db.Model):
 class Shopaccount(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    credit_card = db.Column(db.Text)
