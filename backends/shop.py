@@ -55,8 +55,7 @@ def bu_the_checkout():
     total_price = 0
     checkout = Checkout.query.filter_by(id=id).first()
     for object in checkout.objects:
-        item = object.id
-        total_price += item.price
+        total_price += object.price
 
 
     
