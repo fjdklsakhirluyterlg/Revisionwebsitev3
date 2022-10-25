@@ -46,7 +46,6 @@ def buy_item_thing():
         # item = obj.item
         # item.stock -= 1
         # obj.checkout_id = checkout_id
-        print(obj.price)
     db.session.commit()
     out = getattr(new, "id")
     return jsonify({"id": out})
