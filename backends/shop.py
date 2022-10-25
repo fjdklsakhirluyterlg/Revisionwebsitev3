@@ -1,3 +1,4 @@
+from ssl import _PasswordType
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
@@ -27,6 +28,10 @@ def view_all_items():
         listx.append({"id":item.id, "title":item.title, "price":item.price, "description":item.description, "stock":item.stock})
     
     return jsonify(listx)
+
+@shop.route("/api/shopp/account/create")
+def create_shop_acconut():
+    pass
 
 
 @shop.route("/api/shop/checkout/add", methods=["POST"])
