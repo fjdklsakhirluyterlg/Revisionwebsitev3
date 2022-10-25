@@ -67,7 +67,8 @@ def bu_the_checkout():
 
 @shop.route("/api/object/view/<id>")
 def view_object(id):
-    pass
+    object = Object.query.filter_by(id=id).first()
+    
 
 @shop.route("/api/shop/delete/item")
 def delete_item_from_shop():
