@@ -28,7 +28,7 @@ def view_all_items():
     
     return jsonify(listx)
 
-@shop.route("/api/shopp/account/create")
+@shop.route("/api/shop/account/create")
 def create_shop_acconut():
     pass
 
