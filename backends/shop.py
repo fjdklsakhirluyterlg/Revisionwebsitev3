@@ -64,5 +64,5 @@ def bu_the_checkout():
 
 @shop.route("/api/shop/delete/item")
 def delete_item_from_shop():
-    pass
+    id = request.args.get("id")
     
