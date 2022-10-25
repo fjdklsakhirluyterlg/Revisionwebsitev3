@@ -66,5 +66,9 @@ def bu_the_checkout():
 def delete_item_from_shop():
     id = request.args.get("id")
     item = Item.query.filter_by(id=id).first()
-    objects = Object.query.filter_by(item_id=item.id)
+    objects = Object.query.filter_by(item_id=item.id).all()
+    for obj in objects:
+        db.session.delete(obj)
+    db.session.delete(item)
+    db.session.commit()
     
