@@ -65,4 +65,5 @@ def bu_the_checkout():
 @shop.route("/api/shop/delete/item")
 def delete_item_from_shop():
     id = request.args.get("id")
+    item = Item.query.filter_by(id=id).first()
     
