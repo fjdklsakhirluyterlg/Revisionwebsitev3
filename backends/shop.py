@@ -72,6 +72,7 @@ def view_object(id):
     dic["id"] = object.id
     dic["item_id"] = object.item_id
     dic["price"] = object.price
+    return dic
 
 @shop.route("/api/shop/delete/item")
 def delete_item_from_shop():
