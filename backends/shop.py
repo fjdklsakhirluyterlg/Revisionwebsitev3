@@ -53,6 +53,8 @@ def buy_item_thing():
 def bu_the_checkout():
     id = request.args.get("id")
     checkout = Checkout.query.filter_by(id=id).first()
+    for object in checkout.objects:
+        item = object.id
 
 
     
