@@ -44,8 +44,9 @@ def buy_item_thing():
     for object in data["objects"]:
         obj = Object.query.filter_by(id=int(object)).first()
         itemx = obj.item_id
-        item = Item.query.filter_by(id=itemx).first()
-        item.stock -= 1
+        print(itemx)
+        # item = Item.query.filter_by(id=itemx).first()
+        # item.stock -= 1
         obj.checkout_id = checkout_id
     db.session.commit()
     out = getattr(new, "id")
