@@ -65,8 +65,8 @@ def bu_the_checkout():
 
     return f"You apyed for {total_price}"
 
-@shop.route("/api/object/view/")
-def view_object():
+@shop.route("/api/object/view/<id>")
+def view_object(id):
     pass
 
 @shop.route("/api/shop/delete/item")
