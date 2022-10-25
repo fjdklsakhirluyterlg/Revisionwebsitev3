@@ -52,6 +52,7 @@ def buy_item_thing():
 @shop.route("/api/checkout/buy")
 def bu_the_checkout():
     id = request.args.get("id")
+    total_price = -
     checkout = Checkout.query.filter_by(id=id).first()
     for object in checkout.objects:
         item = object.id
