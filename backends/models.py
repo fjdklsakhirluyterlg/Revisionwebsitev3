@@ -458,3 +458,7 @@ class Object(db.Model):
     price = db.Column(db.String(5))
     checkout_id = db.Column(db.Integer, db.ForeignKey("checkout.id"), nullable=True, default=None)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True, default=None)
+
+class Shopaccount(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    
