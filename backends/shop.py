@@ -60,6 +60,7 @@ def bu_the_checkout():
         object.sold = True
         object.user_id = userd_id
 
+    return total_price
 
 
     
