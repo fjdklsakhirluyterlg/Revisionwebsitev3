@@ -131,8 +131,8 @@ def view_object(id):
     dic["price"] = object.price
     return dic
 
-@shop.route("/shop/view/")
-def view_item():
+@shop.route("/shop/view/<title>")
+def view_item(title):
     pass
 
 @shop.route("/api/shop/delete/item")
