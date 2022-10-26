@@ -147,7 +147,8 @@ def view_item(title):
     images = os.listdir(f"./backends/shop/{item.id}")
     images.sort()
     mainimage = images[0]
-    
+    id=item.id
+    return render_template("item.html", files=images, mainimage=mainimage, title=title, description=description, id=id)
 
 
 @shop.route("/api/shop/delete/item")
