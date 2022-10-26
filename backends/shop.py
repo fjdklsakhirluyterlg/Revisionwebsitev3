@@ -132,6 +132,10 @@ def view_object(id):
     dic["price"] = object.price
     return dic
 
+@shop.route("/shop/images/<filename>")
+def see_image_thing(filename):
+    pass
+
 @shop.route("/shop/view/<title>")
 def view_item(title):
     item = Item.query.filter_by(title=title).first()
