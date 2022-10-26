@@ -33,7 +33,8 @@ def view_all_items():
 
 @shop.route("/shop/add", methods=["POST", "GET"])
 def view_add_for_shopadd():
-    pass
+    if request.method == "POST":
+        name = request.form.get("name")
 
 @shop.route("/api/shop/account/create")
 def create_shop_acconut():
