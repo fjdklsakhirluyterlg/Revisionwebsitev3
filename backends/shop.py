@@ -44,7 +44,7 @@ def create_shop_acconut():
     telephon = ""
     if "telephone" in data:
         telephon += data["telephone"]
-    new = Shopaccount(user_id=user_id, credit_card=credit_card)
+    new = Shopaccount(user_id=user_id, credit_card=credit_card, telephone=telephon)
 
 
 @shop.route("/api/shop/checkout/add", methods=["POST"])
