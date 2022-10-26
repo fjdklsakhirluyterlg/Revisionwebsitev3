@@ -70,6 +70,7 @@ def view_add_for_shopadd():
                 name = os.path.join(f"{curdir}/backends/shop/{id}", namex)
                 file.save(name)
 
+        return "added"
 
 @shop.route("/api/shop/account/create")
 def create_shop_acconut():
