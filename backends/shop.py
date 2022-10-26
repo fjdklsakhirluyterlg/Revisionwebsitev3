@@ -66,6 +66,7 @@ def view_add_for_shopadd():
                 return redirect(request.url)
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
+                namex = f"{count}.{filename}"
 
 
 @shop.route("/api/shop/account/create")
