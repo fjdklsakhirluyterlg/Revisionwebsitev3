@@ -13,10 +13,13 @@ def add_an_item():
     price = data["price"]
     stock = int(data["stock"])
     new = Item(description=description, title=title, price=price, stock=stock)
-    new.create(stock)
     db.session.add(new)
     db.session.commit()
     id = getattr(new, "id")
+    for i in range(stock):
+        new_object = Object(item_id=id, price=price)
+        db.session.add(new_object)
+    db.session.commit()
     return {"id":id}
 
 @shop.route("/api/shop/items")
