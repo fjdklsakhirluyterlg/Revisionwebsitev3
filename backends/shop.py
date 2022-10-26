@@ -1,3 +1,4 @@
+from pydoc import describe
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
@@ -37,6 +38,7 @@ def view_add_for_shopadd():
         title = request.form.get("title")
         price = request.form.get("price")
         stock = int(request.form.get("stock"))
+        description = request.form.get("description")
         new = Item(description=description, title=title, price=price, stock=stock)
         db.session.add(new)
         db.session.commit()
@@ -45,6 +47,7 @@ def view_add_for_shopadd():
             new_object = Object(item_id=id, price=price)
             db.session.add(new_object)
         db.session.commit()
+
 
 @shop.route("/api/shop/account/create")
 def create_shop_acconut():
