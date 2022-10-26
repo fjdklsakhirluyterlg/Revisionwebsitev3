@@ -31,7 +31,7 @@ def view_all_items():
     
     return jsonify(listx)
 
-@shop.route("/shop/item/add", methods=["POST"])
+@shop.route("/shop/add", methods=["POST", "GET"])
 def view_add_for_shopadd():
     pass
 
