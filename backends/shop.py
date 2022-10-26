@@ -6,6 +6,7 @@ from .models import Item, Object, Checkout, User, Shopaccount
 
 shop = Blueprint("shop", __name__)
 
+UPLOAD_FOLDER = './shop/'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 def allowed_file(filename):
