@@ -140,6 +140,7 @@ def view_item(title):
     name = user.name
     description = item.description
     images = os.listdir(f"./backends/shop/{item.id}")
+    images.sort()
     mainimage = ""
 
 
