@@ -57,6 +57,8 @@ def view_add_for_shopadd():
             db.session.add(new_object)
         db.session.commit()
 
+        curdir = os.getcwd()
+        os.mkdir(f"{curdir}/backends/shop/{id}")
         for file in request.files.getlist('file'):
             if file.filename == '':
                 flash('No selected file')
