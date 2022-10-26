@@ -41,8 +41,11 @@ def create_shop_acconut():
         user.description = description
         db.session.commit()
     credit_card = data["credit_card"]
-    
+    telephon = ""
+    if "telephone" in data:
+        telephon += data["telephone"]
     new = Shopaccount(user_id=user_id, credit_card=credit_card)
+
 
 @shop.route("/api/shop/checkout/add", methods=["POST"])
 def buy_item_thing():
