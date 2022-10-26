@@ -61,6 +61,7 @@ def view_add_for_shopadd():
         count = 1
         os.mkdir(f"{curdir}/backends/shop/{id}")
         for file in request.files.getlist('file'):
+            count += 1
             if file.filename == '':
                 flash('No selected file')
                 return redirect(request.url)
@@ -69,7 +70,6 @@ def view_add_for_shopadd():
                 namex = f"{count}.{filename}"
                 name = os.path.join(f"{curdir}/backends/shop/{id}", namex)
                 file.save(name)
-                count += 1
 
         return "added"
     else:
