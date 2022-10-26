@@ -33,7 +33,7 @@ def view_all_items():
 
 @shop.route("/api/shop/account/create")
 def create_shop_acconut():
-    pass
+    data = request.get_json()
 
 
 @shop.route("/api/shop/checkout/add", methods=["POST"])
