@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
-from .models import Item, Object, Checkout, User
+from .models import Item, Object, Checkout, User, Shopaccount
 
 shop = Blueprint("shop", __name__)
 
@@ -42,6 +42,7 @@ def create_shop_acconut():
         db.session.commit()
     credit_card = data["credit_card"]
     
+    new = Shopaccount(user_id=user_id, credit_card=credit_card)
 
 @shop.route("/api/shop/checkout/add", methods=["POST"])
 def buy_item_thing():
