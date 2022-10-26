@@ -137,6 +137,8 @@ def view_item(title):
     userid = item.user_id
     user = User.query.filter_by(id=userid).first()
     name = user.name
+    description = item.description
+    images = os.listdir(f"./backends/shop/{item.id}")
 
 
 @shop.route("/api/shop/delete/item")
