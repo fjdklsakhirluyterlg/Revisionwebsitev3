@@ -136,6 +136,7 @@ def view_item(title):
     item = Item.query.filter_by(title=title).first()
     userid = item.user_id
     user = User.query.filter_by(id=userid).first()
+    name = user.name
 
 
 @shop.route("/api/shop/delete/item")
