@@ -34,7 +34,7 @@ def view_all_items():
 @shop.route("/api/shop/account/create")
 def create_shop_acconut():
     data = request.get_json()
-
+    user_id = data["user_id"]
 
 @shop.route("/api/shop/checkout/add", methods=["POST"])
 def buy_item_thing():
