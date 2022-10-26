@@ -132,7 +132,7 @@ def view_object(id):
     dic["price"] = object.price
     return dic
 
-@shop.route("/images/<filename>")
+@shop.route("/images/<filename>/<id>")
 def see_image_thing(filename, id):
     curdir = os.getcwd()
     return send_from_directory(f"{curdir}/backends/shop/{id}/", filename)
