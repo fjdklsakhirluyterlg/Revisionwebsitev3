@@ -37,6 +37,14 @@ def view_add_for_shopadd():
         title = request.form.get("title")
         price = request.form.get("price")
         stock = int(request.form.get("stock"))
+        new = Item(description=description, title=title, price=price, stock=stock)
+        db.session.add(new)
+        db.session.commit()
+        id = getattr(new, "id")
+        for i in range(stock):
+            new_object = Object(item_id=id, price=price)
+            db.session.add(new_object)
+        db.session.commit()
 
 @shop.route("/api/shop/account/create")
 def create_shop_acconut():
