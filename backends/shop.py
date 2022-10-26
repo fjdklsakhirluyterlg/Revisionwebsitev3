@@ -3,6 +3,8 @@ from flask import Flask, render_template, url_for, request, redirect, send_from_
 from . import db
 from flask_login import current_user, login_required
 from .models import Item, Object, Checkout, User, Shopaccount
+from werkzeug.utils import secure_filename
+import os
 
 shop = Blueprint("shop", __name__)
 
@@ -54,6 +56,13 @@ def view_add_for_shopadd():
             new_object = Object(item_id=id, price=price)
             db.session.add(new_object)
         db.session.commit()
+
+        for file in request.files.getlist('file'):
+            if file.filename == '':
+                flash('No selected file')
+                return redirect(request.url)
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
 
 
 @shop.route("/api/shop/account/create")
