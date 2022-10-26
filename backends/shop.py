@@ -139,6 +139,7 @@ def view_item(title):
     name = user.name
     description = item.description
     images = os.listdir(f"./backends/shop/{item.id}")
+    mainimage = ""
 
 
 @shop.route("/api/shop/delete/item")
