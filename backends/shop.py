@@ -58,6 +58,7 @@ def view_add_for_shopadd():
         db.session.commit()
 
         curdir = os.getcwd()
+        count = 1
         os.mkdir(f"{curdir}/backends/shop/{id}")
         for file in request.files.getlist('file'):
             if file.filename == '':
