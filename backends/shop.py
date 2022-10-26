@@ -67,6 +67,7 @@ def view_add_for_shopadd():
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 namex = f"{count}.{filename}"
+                name = os.path.join(f"{curdir}/backends/shop/{id}", namex)
 
 
 @shop.route("/api/shop/account/create")
