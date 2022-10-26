@@ -69,6 +69,7 @@ def view_add_for_shopadd():
                 namex = f"{count}.{filename}"
                 name = os.path.join(f"{curdir}/backends/shop/{id}", namex)
                 file.save(name)
+                count += 1
 
         return "added"
     else:
