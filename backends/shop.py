@@ -6,6 +6,12 @@ from .models import Item, Object, Checkout, User, Shopaccount
 
 shop = Blueprint("shop", __name__)
 
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 @shop.route("/api/shop/item/add", methods=["POST"])
 def add_an_item():
     data = request.get_json()
