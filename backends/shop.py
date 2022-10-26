@@ -40,6 +40,8 @@ def create_shop_acconut():
     if not user.description:
         user.description = description
         db.session.commit()
+    credit_card = data["credit_card"]
+    
 
 @shop.route("/api/shop/checkout/add", methods=["POST"])
 def buy_item_thing():
