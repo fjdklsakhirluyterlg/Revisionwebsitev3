@@ -148,7 +148,9 @@ def view_item(title):
     images.sort()
     mainimage = images[0]
     id=item.id
-    return render_template("item.html", files=images, mainimage=mainimage, title=title, description=description, id=id)
+    price=item.price
+    stock=item.stock
+    return render_template("item.html", files=images, mainimage=mainimage, title=title, description=description, id=id, price=price, stock=stock)
 
 
 @shop.route("/api/shop/delete/item")
