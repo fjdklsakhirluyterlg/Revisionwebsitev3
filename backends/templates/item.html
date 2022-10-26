@@ -1,0 +1,1 @@
+<body><h2>{{title}}</h2><img src="{{url_for('shop.see_image_thing', filename=mainimage, id=id)}}"></img><p>{{description}}</p><p>stock: {{stock}}| price: {{price}}</p><div class="wrap">{%for file in files%}<div class="box"><div class="boxInner"><img src="{{ url_for('shop.see_image_thing', filename=file, id=id) }}"></div></div>{%endfor%}</div></body>

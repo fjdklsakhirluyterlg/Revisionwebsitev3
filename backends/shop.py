@@ -147,6 +147,7 @@ def view_item(title):
     images = os.listdir(f"./backends/shop/{item.id}")
     images.sort()
     mainimage = images[0]
+    
 
 
 @shop.route("/api/shop/delete/item")
