@@ -35,7 +35,7 @@ def view_all_items():
 def create_shop_acconut():
     data = request.get_json()
     user_id = data["user_id"]
-    user = User.query.filter_by(id=id).first()
+    user = User.query.filter_by(id=user_id).first()
 
 @shop.route("/api/shop/checkout/add", methods=["POST"])
 def buy_item_thing():
