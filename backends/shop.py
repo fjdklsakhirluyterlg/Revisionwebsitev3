@@ -133,7 +133,8 @@ def view_object(id):
 
 @shop.route("/shop/view/<title>")
 def view_item(title):
-    pass
+    item = Item.query.filter_by(title=title).first()
+
 
 @shop.route("/api/shop/delete/item")
 def delete_item_from_shop():
