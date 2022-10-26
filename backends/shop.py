@@ -44,7 +44,7 @@ def view_all_items():
 @shop.route("/shop/add", methods=["POST", "GET"])
 def view_add_for_shopadd():
     if request.method == "POST":
-        title = request.form.get("title")
+        title = request.form.get("title").replace(" ", "-")
         price = request.form.get("price")
         stock = int(request.form.get("stock"))
         description = request.form.get("description")
