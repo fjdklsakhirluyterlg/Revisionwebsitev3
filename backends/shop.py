@@ -5,6 +5,7 @@ from flask_login import current_user, login_required
 from .models import Item, Object, Checkout, User, Shopaccount
 from werkzeug.utils import secure_filename
 import os
+import markdown
 
 shop = Blueprint("shop", __name__)
 
@@ -47,7 +48,7 @@ def view_add_for_shopadd():
         title = request.form.get("title").replace(" ", "-")
         price = request.form.get("price")
         stock = int(request.form.get("stock"))
-        description = request.form.get("description")
+        description = markdown.markdown(request.form.get("description"))
         new = Item(description=description, title=title, price=price, stock=stock)
         db.session.add(new)
         db.session.commit()
