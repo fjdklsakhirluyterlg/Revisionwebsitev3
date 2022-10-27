@@ -91,6 +91,14 @@ def create_shop_acconut():
         telephon += data["telephone"]
     new = Shopaccount(user_id=user_id, credit_card=credit_card, telephone=telephon)
 
+def quick_sort(array):
+    if len(array) < 2:
+        return array
+    else:
+        pivot = array[0]
+        less = [i for i in array[1:] if i <= pivot]
+        greater = [i for i in array[1:] if i > pivot]
+        return quick_sort(less) + [pivot] + quick_sort(greater)
 
 @shop.route("/api/shop/checkout/add", methods=["POST"])
 def buy_item_thing():
