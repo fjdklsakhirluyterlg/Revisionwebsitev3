@@ -100,7 +100,7 @@ def buy_item_thing():
     check = Checkout.query.filter_by(user_id=user_id).all()
     for itm in check:
         if not itm.sold:
-            things.apeend(itm)
+            things.append(itm)
     new = Checkout(user_id=user_id)
     db.session.add(new)
     db.session.commit()
