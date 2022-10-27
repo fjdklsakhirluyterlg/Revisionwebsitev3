@@ -110,6 +110,7 @@ def buy_item_thing():
     for itm in check:
         if not itm.sold:
             things.append(itm)
+    stuff = quick_sort(things)
     new = Checkout(user_id=user_id)
     db.session.add(new)
     db.session.commit()
