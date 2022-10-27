@@ -150,6 +150,7 @@ def view_item(title):
     id=item.id
     price=item.price
     stock=item.stock
+    objects=item.objects
     return render_template("item.html", files=images, mainimage=mainimage, title=title, description=description, id=id, price=price, stock=stock)
 
 
