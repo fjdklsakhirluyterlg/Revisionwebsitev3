@@ -154,7 +154,7 @@ def view_item(title):
     objects=item.objects
     for obj in objects:
         if not obj.sold:
-            stuff.append(obj)
+            stuff.append(obj.id)
     return render_template("item.html", files=images, mainimage=mainimage, title=title, description=description, id=id, price=price, stock=stock)
 
 
