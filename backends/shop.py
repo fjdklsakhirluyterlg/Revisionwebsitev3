@@ -113,10 +113,11 @@ def buy_item_thing():
     if len(things) > 0:
         stuff = quick_sort(things)[-1]
         checkout_id = stuff.id
-    new = Checkout(user_id=user_id)
-    db.session.add(new)
-    db.session.commit()
-    checkout_id = getattr(new, "id")
+    else:
+        new = Checkout(user_id=user_id)
+        db.session.add(new)
+        db.session.commit()
+        checkout_id = getattr(new, "id")
     for object in data["objects"]:
         obj = Object.query.filter_by(id=int(object)).first()
         itemx = obj.item_id
