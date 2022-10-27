@@ -104,7 +104,7 @@ def quick_sort(array):
 @shop.route("/api/shop/checkout/add", methods=["POST"])
 def buy_item_thing():
     data = request.get_json()
-    user_id = data["user_id"]
+    user_id = int(data["user_id"])
     things = []
     check = Checkout.query.filter_by(user_id=user_id).all()
     for itm in check:
