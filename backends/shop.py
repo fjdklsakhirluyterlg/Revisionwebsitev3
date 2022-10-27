@@ -96,6 +96,7 @@ def create_shop_acconut():
 def buy_item_thing():
     data = request.get_json()
     user_id = data["user_id"]
+    check = Checkout.query.filter_by(user_id=user_id).first()
     new = Checkout(user_id=user_id)
     db.session.add(new)
     db.session.commit()
