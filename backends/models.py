@@ -143,7 +143,7 @@ class User(db.Model, UserMixin):
     quizzes = db.relationship("Quiz", backref="user")
     notes = db.relationship("Note", backref="user")
     # objects = db.relationship("Object", backref="user")
-    # 
+    # items = db.relationship("Item", backref="user")
     followed = db.relationship(
         'User', secondary=followers,
         primaryjoin=(followers.c.follower_id == id),
