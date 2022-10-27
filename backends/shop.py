@@ -97,8 +97,8 @@ def quick_sort(array):
     else:
         item = array[0]
         pivot = item.created_at
-        less = [i for i in array[1:] if i <= pivot]
-        greater = [i for i in array[1:] if i > pivot]
+        less = [i for i in array[1:] if i.created_at <= pivot]
+        greater = [i for i in array[1:] if i.created_at > pivot]
         return quick_sort(less) + [pivot] + quick_sort(greater)
 
 @shop.route("/api/shop/checkout/add", methods=["POST"])
