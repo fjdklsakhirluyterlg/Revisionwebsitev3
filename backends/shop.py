@@ -118,6 +118,7 @@ def buy_item_thing():
         db.session.add(new)
         db.session.commit()
         checkout_id = getattr(new, "id")
+    
     for object in data["objects"]:
         obj = Object.query.filter_by(id=int(object)).first()
         itemx = obj.item_id
