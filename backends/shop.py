@@ -126,8 +126,7 @@ def buy_item_thing():
         item.stock -= 1
         obj.checkout_id = checkout_id
     db.session.commit()
-    out = getattr(new, "id")
-    return jsonify({"id": out})
+    return jsonify({"id": checkout_id})
 
 @shop.route("/api/checkout/buy")
 def bu_the_checkout():
