@@ -71,7 +71,7 @@ def view_add_for_shopadd():
                 name = os.path.join(f"{curdir}/backends/shop/{id}", namex)
                 file.save(name)
 
-        return "added"
+        return redirect(f"/shop/view/{title}")
     else:
         return render_template("itemadd.html")
 
