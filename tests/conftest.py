@@ -32,4 +32,4 @@ def app_thingy():
 
 @pytest.fixture()
 def client(app_thingy):
-    return app.test_client()
+    return app_thingy.test_client()
