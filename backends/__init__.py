@@ -85,6 +85,7 @@ def create_app():
     app.register_blueprint(shop, url_prefix="/")
     # app.register_blueprint(stream, url_prefix="/")
     
+    api.init_app(app)
     from .apix import Randomz, top_bbc_news, HelloWorld, ftse100, GBPTOEUR, Banana, APIrickroll
     
     api.add_resource(Randomz, '/api/random')
@@ -95,7 +96,6 @@ def create_app():
     api.add_resource(APIrickroll, '/api/test/dQw4w9WgXcQ')
     api.add_resource(Banana, '/api/test/food')
     
-    api.init_app(app)
     
     from .models import User
     
