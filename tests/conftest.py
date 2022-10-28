@@ -35,5 +35,5 @@ def client(app_thingy):
     return app_thingy.test_client()
 
 @pytest.fixture(scope="module")
-def new_blog(new_user):
-    pass
+def new_blog():
+    blog = Blog(title="test", feature_image="stuff", content="content")
