@@ -28,7 +28,5 @@ def test_user_with_fixtures(new_user):
     assert check_password_hash(new_user.password, "password")
 
 def test_blog(new_blog):
-    assert new_blog.views == 0
-    assert new_blog.likes == 0
     assert new_blog.title == "test"
     assert new_blog.content == "content"
