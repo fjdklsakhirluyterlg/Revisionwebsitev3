@@ -26,3 +26,6 @@ def test_user_with_fixtures(new_user):
     assert new_user.email == "test@test.com"
     assert new_user.password != "password"
     assert check_password_hash(new_user.password, "password")
+
+def test_blog(new_blog):
+    assert new_blog.views == 0
