@@ -28,4 +28,6 @@ def test_home_page_post_with_fixture(client):
     assert b"wrong method" in response.data
 
 def test_todo_application(client):
-    response = client.post("/")
+    response = client.post("/todo/add", data={
+        "title": "test"
+    })
