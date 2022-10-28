@@ -21,10 +21,15 @@ def new_user():
     user = User(name=name, email=email, password=generate_password_hash(password, method='sha256'), security_key=security_key)
     return user
 
+@pytest.fixture()
+def app():
+    app = create_app()
+    app.config.update({
+        "TESTING": True,
+    })
+
+    yield app
+
 @pytest.fixture(scope='module')
-def test_client():
-    flask_app = create_app()
-    flask_app.config.from_object('config.TestingConfig')
-    with flask_app.test_client() as testing_client:
-        with flask_app.app_context():
-            yield testing_client 
+def test_client(app):
+    return app.test_client()
