@@ -1,5 +1,6 @@
 from backends.models import User
 import random
+from werkzeug.security import generate_password_hash, check_password_hash
 
 def mank_random_long_id(length):
     characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
@@ -10,4 +11,7 @@ def mank_random_long_id(length):
     return result
 
 def test_user_model():
-    pass
+    name = "test"
+    password = "password"
+    secrutiy_key = mank_random_long_id(64)
+    
