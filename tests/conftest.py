@@ -21,7 +21,7 @@ def new_user():
     user = User(name=name, email=email, password=generate_password_hash(password, method='sha256'), security_key=security_key)
     return user
 
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def app_thingy():
     app = create_app()
     app.config.update({
