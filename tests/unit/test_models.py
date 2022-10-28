@@ -32,4 +32,5 @@ def test_blog(new_blog):
     assert new_blog.content == "content"
 
 def test_post(new_post):
-    assert new_post.title == "test"
+    assert new_post.title == "title"
+    assert new_post.content == "this is a test"
