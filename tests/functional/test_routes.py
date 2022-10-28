@@ -47,7 +47,7 @@ def test_community_post(client):
     response = client.post("/api/community/add", json={
         "title":"a title",
         "content":"a contnet",
-        "user_id":1,
+        "userid":1,
         "tags":["test", "stuff"]
     })
     assert response.json
