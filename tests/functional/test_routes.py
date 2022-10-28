@@ -41,3 +41,4 @@ def test_blog_post(client):
         "tags":["test", "stuff"]
     })
     assert b"id" in response.json
+    assert response.status_code == 200
