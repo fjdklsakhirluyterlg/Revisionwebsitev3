@@ -31,4 +31,4 @@ def test_todo_application(client):
     response = client.post("/todo/add", data={
         "title": "test"
     })
-    assert response.status_code == 300
+    assert response.status_code == 302
