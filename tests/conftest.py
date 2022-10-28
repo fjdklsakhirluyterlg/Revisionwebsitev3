@@ -37,3 +37,4 @@ def client(app_thingy):
 @pytest.fixture(scope="module")
 def new_blog():
     blog = Blog(title="test", feature_image="stuff", content="content")
+    return blog
