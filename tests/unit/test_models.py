@@ -13,5 +13,4 @@ def mank_random_long_id(length):
 def test_user_model():
     name = "test"
     password = "password"
-    secrutiy_key = mank_random_long_id(64)
-    
+    security_key = mank_random_long_id(64)
