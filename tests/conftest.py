@@ -43,3 +43,4 @@ def new_blog():
 def new_post(new_user):
     user_id = new_user.id
     post = Post(title="title", content="this is a test", user_id=user_id)
+    return post
