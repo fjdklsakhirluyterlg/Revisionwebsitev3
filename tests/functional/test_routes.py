@@ -40,4 +40,4 @@ def test_blog_post(client):
         "feature_image":"stuff",
         "tags":["test", "stuff"]
     })
-    
+    assert b"id" in response.json
