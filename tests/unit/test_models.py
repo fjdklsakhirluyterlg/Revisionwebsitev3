@@ -20,3 +20,4 @@ def test_user_model():
     assert user.email == "test@test.com"
     assert user.password != "password"
     assert check_password_hash(user.password) == "password"
+    assert user.is_authenticated
