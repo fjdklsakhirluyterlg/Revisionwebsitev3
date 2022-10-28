@@ -32,3 +32,12 @@ def test_todo_application(client):
         "title": "test"
     })
     assert response.status_code == 302
+
+def test_blog_post(client):
+    response = client.post("/blogs/add", json={
+        "title":"test",
+        "content":"content test",
+        "feature_image":"stuff",
+        "tags":["test", "stuff"]
+    })
+    
