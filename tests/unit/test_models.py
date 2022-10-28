@@ -19,10 +19,10 @@ def test_user_model():
 
     assert user.email == "test@test.com"
     assert user.password != "password"
-    assert check_password_hash(user.password) == "password"
+    assert check_password_hash(user.password, "password")
     assert user.is_authenticated
 
 def test_user_with_fixtures(new_user):
     assert new_user.email == "test@test.com"
     assert new_user.password != "password"
-    assert check_password_hash(new_user.password) == "password"
+    assert check_password_hash(new_user.password, "password")
