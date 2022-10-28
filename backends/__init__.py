@@ -118,7 +118,7 @@ def create_app():
             
             return jsonify(message="Method Not Allowed"), 405
         else:
-            return "wrong method!"
+            return "wrong method!" , 405
 
     @app.errorhandler(404)
     def page_not_found(e):
