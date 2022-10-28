@@ -1,5 +1,5 @@
 import pytest
-from backends.models import User
+from backends.models import User, Blog
 from werkzeug.security import generate_password_hash
 import random
 from backends import create_app
@@ -33,3 +33,7 @@ def app_thingy():
 @pytest.fixture()
 def client(app_thingy):
     return app_thingy.test_client()
+
+@pytest.fixture(scope="module")
+def new_blog(new_user):
+    pass
