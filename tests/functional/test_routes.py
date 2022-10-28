@@ -31,3 +31,4 @@ def test_todo_application(client):
     response = client.post("/todo/add", data={
         "title": "test"
     })
+    assert "test" in response.data
