@@ -88,7 +88,7 @@ def create_app():
     api.init_app(app)
     from .apix import Randomz, top_bbc_news, HelloWorld, ftse100, GBPTOEUR, Banana, APIrickroll
     
-    api.add_resource(Randomz, '/api/random')
+    api.add_resource(Randomz, '/api/random', endpoint="get_random_thingy")
     api.add_resource(top_bbc_news, "/api/news/bbc/top")
     api.add_resource(HelloWorld, '/api/test')
     api.add_resource(GBPTOEUR, '/api/convert/EURTOGBP')
