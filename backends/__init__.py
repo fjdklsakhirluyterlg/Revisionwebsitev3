@@ -10,11 +10,13 @@ from os import path
 
 DB_NAME = "database.db"
 db = SQLAlchemy()
-api = Api()
 mail = Mail()
 socketio = SocketIO()
 
 def create_app():
+    api = Blueprint("api", __name__)
+    api = Api(api)
+
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] =f'sqlite:///{DB_NAME}'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -83,6 +85,7 @@ def create_app():
     app.register_blueprint(notes, url_prefix="/")
     app.register_blueprint(go, url_prefix="/")
     app.register_blueprint(shop, url_prefix="/")
+    app.register_blueprint(api, url_prfix="/")
     # app.register_blueprint(stream, url_prefix="/")
     
     api.init_app(app)
