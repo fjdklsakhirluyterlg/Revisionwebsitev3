@@ -42,3 +42,9 @@ def test_blog_post(client):
     })
     assert response.json
     assert response.status_code == 200
+
+def test_community_post(client):
+    response = client.post("/api/community/add", json={
+        "title":"a title",
+        "content":"a contnet"
+    })
