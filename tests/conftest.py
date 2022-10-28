@@ -22,7 +22,7 @@ def new_user():
     return user
 
 @pytest.fixture()
-def app():
+def app_thingy():
     app = create_app()
     app.config.update({
         "TESTING": True,
@@ -31,5 +31,5 @@ def app():
     yield app
 
 @pytest.fixture()
-def client(app):
+def client(app_thingy):
     return app.test_client()
