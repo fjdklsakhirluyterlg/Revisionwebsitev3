@@ -16,7 +16,7 @@ def todo_add():
     new_todo = Todo(title=title, complete=False)
     db.session.add(new_todo)
     db.session.commit()
-    return redirect(url_for("show_todo"))
+    return redirect(url_for("todo.show_todo"))
 
 @todo.get("/todo/update/<int:todo_id>")
 def update(todo_id):
@@ -24,7 +24,7 @@ def update(todo_id):
     todo = db.session.query(Todo).filter(Todo.id == todo_id).first()
     todo.complete = not todo.complete
     db.session.commit()
-    return redirect(url_for("show_todo"))
+    return redirect(url_for("todo.show_todo"))
 
 @todo.get("/todo/delete/<int:todo_id>")
 def deletet(todo_id):
@@ -32,7 +32,7 @@ def deletet(todo_id):
     todo = db.session.query(Todo).filter(Todo.id == todo_id).first()
     db.session.delete(todo)
     db.session.commit()
-    return redirect(url_for("show_todo"))
+    return redirect(url_for("todo.show_todo"))
 
 @todo.route("/api/todo/add")
 def api_add_todo():
