@@ -86,15 +86,15 @@ def create_app():
     # app.register_blueprint(stream, url_prefix="/")
     
     api.init_app(app)
-    # from .apix import Randomz, top_bbc_news, HelloWorld, ftse100, GBPTOEUR, Banana, APIrickroll
+    from .apix import Randomz, top_bbc_news, HelloWorld, ftse100, GBPTOEUR, Banana, APIrickroll
     
-    # api.add_resource(Randomz, '/api/random', endpoint="get_random_thingy")
-    # api.add_resource(top_bbc_news, "/api/news/bbc/top")
-    # api.add_resource(HelloWorld, '/api/test')
-    # api.add_resource(GBPTOEUR, '/api/convert/EURTOGBP')
-    # api.add_resource(ftse100, '/api/ecenomics/ftse100')
-    # api.add_resource(APIrickroll, '/api/test/dQw4w9WgXcQ')
-    # api.add_resource(Banana, '/api/test/food')
+    api.add_resource(Randomz, '/api/random', endpoint="get_random_thingy")
+    api.add_resource(top_bbc_news, "/api/news/bbc/top")
+    api.add_resource(HelloWorld, '/api/test')
+    api.add_resource(GBPTOEUR, '/api/convert/EURTOGBP')
+    api.add_resource(ftse100, '/api/ecenomics/ftse100')
+    api.add_resource(APIrickroll, '/api/test/dQw4w9WgXcQ')
+    api.add_resource(Banana, '/api/test/food')
     
     
     from .models import User
