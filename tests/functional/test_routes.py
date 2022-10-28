@@ -46,5 +46,7 @@ def test_blog_post(client):
 def test_community_post(client):
     response = client.post("/api/community/add", json={
         "title":"a title",
-        "content":"a contnet"
+        "content":"a contnet",
+        "user_id":1,
+        "tags":["test", "stuff"]
     })
