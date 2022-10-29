@@ -1,6 +1,6 @@
 <script>
 	export let name;
-	var time
+	var time = ""
 	function get_time(){
 		fetch("/time").then(res => res.json()).then(data => time = data.time)
 	}
@@ -8,7 +8,8 @@
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<p>{time}</p>
+	<button on:click={get_time}>get time</button>
 </main>
 
 <style>
