@@ -200,4 +200,10 @@ def get_current_basket():
         if not check.sold:
             basket.append(check)
 
-    
+    actual = basket[0]
+    dict = {"objects":[]}
+    for obj in actual.objects:
+        dict["objects"].append(obj.id)
+    dict["creatted_at"] = actual.created_at
+
+    return dict
