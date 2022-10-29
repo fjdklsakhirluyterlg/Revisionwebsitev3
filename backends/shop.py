@@ -191,3 +191,7 @@ def delete_item_from_shop():
     db.session.delete(item)
     db.session.commit()
     
+@login_required
+@shop.route("/shop/user/basket")
+def get_current_basket():
+    pass
