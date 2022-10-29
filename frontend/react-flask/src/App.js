@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect } from 'react/cjs/react.production.min';
+import { useState } from 'react';
 
 function App() {
+  const [data, setDate] = useState(" ")
+  useEffect(() => {
+    fetch("/api/day-of-the-year")
+  })
   return (
     <div className="App">
       <header className="App-header">
