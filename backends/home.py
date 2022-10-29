@@ -28,6 +28,10 @@ def get_bitcoin():
     x = data["bpi"]["GBP"]["rate"]
     return f"<p>The bitcoin price is {x}, probably dont buy it unless youre in el salvador</p>"
 
+@home.route("/time")
+def get_the_time():
+    return {'time': time.time()}
+
 @home.route('/tfl')
 def get_tfl():
     def is_tube_on():
