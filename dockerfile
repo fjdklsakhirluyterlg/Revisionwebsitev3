@@ -1,7 +1,11 @@
-FROM python:3.8-slim-buster
-COPY . /Revisionwebsitev3
+FROM python:3.10.5
+
 WORKDIR /Revisionwebsitev3
-RUN pip install -r requirements.txt
-EXPOSE 5090 
-ENTRYPOINT [ "python" ] 
-CMD [ "app.py" ]
+
+COPY requirements.txt requirements.txt
+
+RUN pip3 install -r requirements.txt
+
+COPY . .
+
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
