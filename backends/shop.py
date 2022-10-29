@@ -194,4 +194,10 @@ def delete_item_from_shop():
 @login_required
 @shop.route("/shop/user/basket")
 def get_current_basket():
-    pass
+    checkouts = current_user.checkouts
+    basket = []
+    for check in checkouts:
+        if not check.sold:
+            basket.append(check)
+
+    
