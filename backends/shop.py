@@ -174,7 +174,7 @@ def view_item(title):
     for obj in objects:
         if not obj.sold:
             stuff.append(obj.id)
-    return render_template("item.html", files=images, mainimage=mainimage, title=title, description=description, id=id, price=price, stock=stock)
+    return render_template("item.html", files=images, mainimage=mainimage, title=title, description=description, id=id, price=price, stock=stock, items=stuff)
 
 
 @shop.route("/api/shop/delete/item")
