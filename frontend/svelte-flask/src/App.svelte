@@ -8,7 +8,8 @@
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>{time}</p>
+	<p>hi?</p>
+	<p>{time}</p> 
 	<button on:click={get_time}>get time</button>
 </main>
 
