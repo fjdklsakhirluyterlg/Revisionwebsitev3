@@ -209,5 +209,5 @@ def get_current_basket():
         item = Item.query.filter_by(id=itemx).first()
         items.append(item.title)
     dict["created_at"] = actual.created_at
-    dict["items"] = items
+    dict["items"] = list(set(items))
     return dict
