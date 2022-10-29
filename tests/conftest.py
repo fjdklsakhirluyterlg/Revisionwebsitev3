@@ -21,6 +21,7 @@ def new_user():
     user = User(name=name, email=email, password=generate_password_hash(password, method='sha256'), security_key=security_key)
     return user
 
+@pytest.mark.database_access
 @pytest.fixture(scope='module')
 def app_thingy():
     app = create_app()
@@ -34,11 +35,13 @@ def app_thingy():
 def client(app_thingy):
     return app_thingy.test_client()
 
+@pytest.mark.database_access
 @pytest.fixture(scope="module")
 def new_blog():
     blog = Blog(title="test", feature_image="stuff", content="content")
     return blog
 
+@pytest.mark.database_access
 @pytest.fixture(scope="module")
 def new_post(new_user):
     user_id = new_user.id
