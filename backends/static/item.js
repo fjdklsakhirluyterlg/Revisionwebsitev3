@@ -1,4 +1,5 @@
 function checkout(user_id, objects){
+    var amount = document.getElementById("amount")
     var act = objects.slice(0, amount)
     var data = {"user_id":user_id, "objects":act}
     fetch("/api/shop/checkout/add", {
