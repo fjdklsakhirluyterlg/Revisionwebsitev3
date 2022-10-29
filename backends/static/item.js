@@ -6,5 +6,5 @@ function checkout(user_id, objects){
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
-    }).then(console.log("done"))
+    }).then(res => res.json()).then(data => console.log(data))
 }
