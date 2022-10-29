@@ -1,5 +1,9 @@
 <script>
 	export let name;
+	var time
+	function get_time(){
+		fetch("/time").then(res => res.json()).then(data => time = data.time)
+	}
 </script>
 
 <main>
