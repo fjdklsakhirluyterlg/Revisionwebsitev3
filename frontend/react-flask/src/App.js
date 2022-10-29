@@ -4,10 +4,13 @@ import { useEffect } from 'react/cjs/react.production.min';
 import { useState } from 'react';
 
 function App() {
-  const [data, setDate] = useState(" ")
+  const [currentTime, setCurrentTime] = useState(0);
+
   useEffect(() => {
-    fetch("/api/day-of-the-year")
-  })
+    fetch('/time').then(res => res.json()).then(data => {
+      setCurrentTime(data.time);
+    });
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
