@@ -202,8 +202,12 @@ def get_current_basket():
 
     actual = basket[0]
     dict = {"objects":[]}
+    items = []
     for obj in actual.objects:
         dict["objects"].append(obj.id)
+        itemx = obj.item_id
+        item = Item.query.filter_by(id=itemx).first()
+        items.append(item.title)
     dict["creatted_at"] = actual.created_at
 
     return dict
