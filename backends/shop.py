@@ -220,3 +220,4 @@ def get_current_basket():
 @shop.route("/shop/search")
 def search_shop():
     query = request.args.get("q")
+    items = Item.query.filter_by()
