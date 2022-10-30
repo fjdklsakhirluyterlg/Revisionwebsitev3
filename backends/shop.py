@@ -217,7 +217,7 @@ def get_current_basket():
         dict["sold"] = False
     return dict
 
-@shop.route("/shop/search")
+@shop.route("/api/shop/search")
 def search_shop():
     q = request.args.get("q")
     items = Item.query.filter(or_(Item.title.like(f"%{q}%"), Item.description.like(f"%{q}%"), Item.price.like(f"%{q}%")))
