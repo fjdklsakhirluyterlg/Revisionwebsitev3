@@ -229,6 +229,8 @@ def search_shop():
         for item in items:
             if not minm <= item <= maxm:
                 items.remove(item)
+    
+    
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
