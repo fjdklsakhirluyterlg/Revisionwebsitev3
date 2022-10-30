@@ -219,4 +219,4 @@ def get_current_basket():
 
 @shop.route("/shop/search")
 def search_shop():
-    pass
+    query = request.args.get("q")
