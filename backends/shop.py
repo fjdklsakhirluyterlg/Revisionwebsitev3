@@ -220,4 +220,4 @@ def get_current_basket():
 @shop.route("/shop/search")
 def search_shop():
     q = request.args.get("q")
-    items = Item.query.filter(or_(Item.title.like(f"%{q}%"), Item.description.like()))
+    items = Item.query.filter(or_(Item.title.like(f"%{q}%"), Item.description.like(f"%{q}%"), Item.price.like(f"%{q}%")))
