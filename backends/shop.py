@@ -226,9 +226,12 @@ def search_shop():
         act = price_range.split(",")
         minm = act[0]
         maxm = act[1]
+        act_itmes = []
         for item in items:
-            if not minm <= item.price <= maxm:
-                items.remove(item)
+            if minm <= item.price <= maxm:
+                act_itmes.append(item.title)
+        
+        return jsonify({"results":act_itmes})
     
     names = []
     for itm in items:
