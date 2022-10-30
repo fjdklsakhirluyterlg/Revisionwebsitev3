@@ -216,3 +216,7 @@ def get_current_basket():
     else:
         dict["sold"] = False
     return dict
+
+@shop.route("/shop/search")
+def search_shop():
+    pass
