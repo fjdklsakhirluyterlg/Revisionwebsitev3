@@ -230,7 +230,11 @@ def search_shop():
             if not minm <= item <= maxm:
                 items.remove(item)
     
+    names = []
+    for itm in items:
+        names.append(itm.title)
     
+    return jsonify({"results":names})
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
