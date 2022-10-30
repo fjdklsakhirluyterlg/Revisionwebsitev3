@@ -1,4 +1,5 @@
 from pydoc import describe
+from xml.sax.handler import feature_external_ges
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
@@ -211,5 +212,7 @@ def get_current_basket():
     dict["created_at"] = actual.created_at
     dict["items"] = list(set(items))
     if actual.sold:
-        dict["sold"] = 
+        dict["sold"] = True
+    else:
+        dict["sold"] = False
     return dict
