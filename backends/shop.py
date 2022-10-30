@@ -222,4 +222,7 @@ def search_shop():
     q = request.args.get("q")
     items = Item.query.filter(or_(Item.title.like(f"%{q}%"), Item.description.like(f"%{q}%"), Item.price.like(f"%{q}%")))
     price_range = request.args.get("price", default="all")
-    
+
+@shop.route("/api/test/multiple/list")
+def multiple_list_test():
+    pass
