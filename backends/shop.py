@@ -1,4 +1,4 @@
-from pydoc import describe
+from sqlalchemy import or_
 from xml.sax.handler import feature_external_ges
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
@@ -219,5 +219,5 @@ def get_current_basket():
 
 @shop.route("/shop/search")
 def search_shop():
-    query = request.args.get("q")
-    items = Item.query.filter_by()
+    q = request.args.get("q")
+    items = Item.query.filter(or_(Item.title.like(f"%{q}%"), Item.description.like()))
