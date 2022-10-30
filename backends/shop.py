@@ -210,4 +210,6 @@ def get_current_basket():
         items.append(item.title)
     dict["created_at"] = actual.created_at
     dict["items"] = list(set(items))
+    if actual.sold:
+        dict["sold"] = 
     return dict
