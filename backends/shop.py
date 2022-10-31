@@ -227,10 +227,12 @@ def search_shop():
         minm = act[0]
         maxm = act[1]
         act_itmes = []
+        other = []
         for item in items:
             if minm <= item.price <= maxm:
                 act_itmes.append(item.title)
-        
+            else:    
+                other.append(item.title)
         return jsonify({"results":act_itmes})
     
     names = []
