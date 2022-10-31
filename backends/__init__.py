@@ -125,7 +125,7 @@ def create_app():
 
     @app.errorhandler(404)
     def page_not_found(e):
-        return f"<h1>404!</h1><p></p><p>Sorry could not find this, please try again!!</p>"
+        return f"<h1>404!</h1><p>We couldn't find the requested route on the website</p><p>Sorry could not find this, please try again!!</p>"
 
     @app.after_request
     def add_header(response):
