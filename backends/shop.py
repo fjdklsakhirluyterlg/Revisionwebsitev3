@@ -233,7 +233,7 @@ def search_shop():
                 act_itmes.append(item.title)
             else:    
                 other.append(item.title)
-        return jsonify({"results":act_itmes})
+        return jsonify({"results":act_itmes, "others":other})
     
     names = []
     for itm in items:
