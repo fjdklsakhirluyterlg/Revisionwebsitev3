@@ -221,23 +221,21 @@ def search_shop():
     items = Item.query.filter(or_(Item.title.like(f"%{q}%"), Item.description.like(f"%{q}%"), Item.price.like(f"%{q}%")))
     price_range = request.args.get("price", default="all")
     other = []
+    names = []
     if price_range != "all":
         act = price_range.split(",")
         minm = act[0]
         maxm = act[1]
-        act_itmes = []
         for item in items:
             if minm <= item.price <= maxm:
-                act_itmes.append(item.title)
+                names.append(item.title)
             else:    
                 other.append(item.title)
-        return jsonify({"results":act_itmes, "others":other})
+    else:
+        for itm in items:
+            names.append(itm.title)
     
-    names = []
-    for itm in items:
-        names.append(itm.title)
-    
-    return jsonify({"results":names})
+    return jsonify({"results":names, "others":other})
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
