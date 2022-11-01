@@ -227,7 +227,7 @@ def search_shop():
         minm = act[0]
         maxm = act[1]
         for item in items:
-            if minm <= item.price <= maxm:
+            if int(minm) <= int(item.price) <= int(maxm):
                 names.append(item.title)
             else:    
                 other.append(item.title)
