@@ -220,12 +220,12 @@ def search_shop():
     q = request.args.get("q")
     items = Item.query.filter(or_(Item.title.like(f"%{q}%"), Item.description.like(f"%{q}%"), Item.price.like(f"%{q}%")))
     price_range = request.args.get("price", default="all")
+    other = []
     if price_range != "all":
         act = price_range.split(",")
         minm = act[0]
         maxm = act[1]
         act_itmes = []
-        other = []
         for item in items:
             if minm <= item.price <= maxm:
                 act_itmes.append(item.title)
