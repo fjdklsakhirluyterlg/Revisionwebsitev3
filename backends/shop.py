@@ -38,7 +38,7 @@ def view_all_items():
     listx = []
     for item in items:
         listx.append({"id":item.id, "title":item.title, "price":item.price, "description":item.description, "stock":item.stock})
-    
+
     return jsonify(listx)
 
 @shop.route("/shop/add", methods=["POST", "GET"])
@@ -117,7 +117,7 @@ def buy_item_thing():
         db.session.add(new)
         db.session.commit()
         checkout_id = getattr(new, "id")
-    
+
     for object in data["objects"]:
         obj = Object.query.filter_by(id=int(object)).first()
         itemx = obj.item_id
@@ -173,7 +173,7 @@ def view_item(title):
     for obj in objects:
         if not obj.sold:
             stuff.append(obj.id)
-    
+
     user_id = None
     if current_user.is_authenticated:
         user_id = current_user.id
@@ -189,7 +189,7 @@ def delete_item_from_shop():
         db.session.delete(obj)
     db.session.delete(item)
     db.session.commit()
-    
+
 @login_required
 @shop.route("/shop/user/basket")
 def get_current_basket():
@@ -229,12 +229,12 @@ def search_shop():
         for item in items:
             if int(minm) <= int(item.price) <= int(maxm):
                 names.append(item.title)
-            else:    
+            else:
                 other.append(item.title)
     else:
         for itm in items:
             names.append(itm.title)
-    
+
     return jsonify({"results":names, "others":other})
 
 @shop.route("/api/test/multiple/list")
