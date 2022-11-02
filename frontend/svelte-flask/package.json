@@ -2,7 +2,7 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "private": true,
-
+  "proxy":"http://localhost:5090",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
