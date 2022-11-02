@@ -239,6 +239,5 @@ def search_shop():
 
 @shop.route("/api/test/multiple/list") 
 def multiple_list_test():
-    
     items = request.args.get("q")
     return jsonify({"items":items})
