@@ -623,7 +623,7 @@ def quizzes_simple():
 def python_explainer():
     return "I built this website with it."
 
-@home.route("/caculators/quadratic")
+@home.route("/caculators/quadratic" , methods=["POST". "GET"])
 def complex_quadratic_thing():
     if request.method == "POST":
         a = request.form.get("a")
