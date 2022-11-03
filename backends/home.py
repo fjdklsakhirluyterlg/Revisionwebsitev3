@@ -625,7 +625,11 @@ def python_explainer():
 
 @home.route("/caculators/quadratic")
 def complex_quadratic_thing():
-    pass
+    if request.method == "POST":
+        a = request.form.get("a")
+        b = request.form.get("b")
+        c = request.form.get("c")
+
 
 @home.route("/test/tracker")
 def test_tracker():
