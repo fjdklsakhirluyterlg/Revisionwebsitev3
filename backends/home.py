@@ -3,7 +3,7 @@ import requests
 from .models import Snake_leaderboard
 from flask_login import login_user, login_required, logout_user, current_user, LoginManager, UserMixin
 from . import db
-from .functions import is_integer_num, coefficient, fib, send_email, get_ecenomic_stuff, get_day_of_the_year, get_user_ip_address, collatz, generateπfrom_random, get_loc_from_ip
+from .functions import is_integer_num, coefficient, fib, send_email, get_ecenomic_stuff, get_day_of_the_year, get_user_ip_address, collatz, generateπfrom_random, get_loc_from_ip, quadratic_solver
 import os
 from itertools import permutations
 import shutil
@@ -623,12 +623,15 @@ def quizzes_simple():
 def python_explainer():
     return "I built this website with it."
 
-@home.route("/caculators/quadratic" , methods=["POST". "GET"])
+@home.route("/caculators/quadratic" , methods=["POST", "GET"])
 def complex_quadratic_thing():
     if request.method == "POST":
         a = request.form.get("a")
         b = request.form.get("b")
         c = request.form.get("c")
+
+        res = quadratic_solver(a, b, c)
+        
 
 
 @home.route("/test/tracker")
