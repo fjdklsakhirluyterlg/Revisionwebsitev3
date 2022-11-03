@@ -240,6 +240,8 @@ def search_shop():
 @shop.route("/shop/user/<name>")
 def see_user_shop_account_name(name):
     account = Shopaccount.queyr.filter_by(name=name).first()
+    if account:
+        return "ues"
 
 @shop.route("/api/test/multiple/list") 
 def multiple_list_test():
