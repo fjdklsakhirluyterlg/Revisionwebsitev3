@@ -237,6 +237,10 @@ def search_shop():
 
     return jsonify({"results":names, "others":other})
 
+@shop.route("/shop/user/<name>")
+def see_user_shop_account_name(name):
+    pass
+
 @shop.route("/api/test/multiple/list") 
 def multiple_list_test():
     items = request.args.get("q")
