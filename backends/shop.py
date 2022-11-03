@@ -241,7 +241,7 @@ def search_shop():
 def see_user_shop_account_name(name):
     account = Shopaccount.queyr.filter_by(name=name).first()
     if account:
-        return "ues"
+        return "yes"
 
 @shop.route("/api/test/multiple/list") 
 def multiple_list_test():
