@@ -623,6 +623,10 @@ def quizzes_simple():
 def python_explainer():
     return "I built this website with it."
 
+@home.route("/caculators/quadratic")
+def complex_quadratic_thing():
+    pass
+
 @home.route("/test/tracker")
 def test_tracker():
     return render_template("tracker.html")
