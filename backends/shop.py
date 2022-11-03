@@ -242,7 +242,7 @@ def see_user_shop_account_name(name):
     account = Shopaccount.queyr.filter_by(name=name).first()
     if account:
         user = User.query.filter_by(id=account.user_id).first()
-        return "yes"
+        itmes = Item.query.filter_by()
 
 @shop.route("/api/test/multiple/list") 
 def multiple_list_test():
