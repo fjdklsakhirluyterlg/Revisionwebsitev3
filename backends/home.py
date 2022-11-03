@@ -635,13 +635,13 @@ def complex_quadratic_thing():
         sol2 = res[1]
         return f"""
         <h1>Quadratic</h1>
-        <form action="/caculators/quadratic" method=POST><input type="text" name="a"><label>x<sup>2</sup></label><input type="text" name="b"><label>x</label><input type="text" name="c"><button type="submit"submit</button>></form>
+        <form action="/caculators/quadratic" method=POST><input type="text" name="a"><label>x<sup>2</sup></label><input type="text" name="b"><label>x</label><input type="text" name="c"><button type="submit">submit</button></form>
         <p>roots: {sol1}, {sol2}</p>
         """
     else:
         return """
         <h1>Quadratic</h1>
-        <form action="/caculators/quadratic" method=POST><input type="text" name="a"><label>x<sup>2</sup></label><input type="text" name="b"><label>x</label><input type="text" name="c"><button type="submit"submit</button>></form>
+        <form action="/caculators/quadratic" method=POST><input type="text" name="a"><label>x<sup>2</sup></label><input type="text" name="b"><label>x</label><input type="text" name="c"><button type="submit">submit</button></form>
         
         """
 
