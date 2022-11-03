@@ -626,13 +626,18 @@ def python_explainer():
 @home.route("/caculators/quadratic" , methods=["POST", "GET"])
 def complex_quadratic_thing():
     if request.method == "POST":
-        a = request.form.get("a")
-        b = request.form.get("b")
-        c = request.form.get("c")
+        b = int(request.form.get("b"))
+        c = int(request.form.get("c"))
+        a = int(request.form.get("a"))
 
         res = quadratic_solver(a, b, c)
-        
-
+        sol1 = res[0]
+        sol2 = res[1]
+        return f"""
+        <h1>Quadratic</h1>
+        <form action="/caculators/quadratic" method=POST><input type="text" name="a"><label>x<sup>2</sup></label><input type="text" name="b"><label>x</label><input type="text" name="c"><button type="submit"submit</button>></form>
+        <p>roots: {sol1}, {sol2}</p>
+        """
 
 @home.route("/test/tracker")
 def test_tracker():
