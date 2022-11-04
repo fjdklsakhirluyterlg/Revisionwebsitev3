@@ -243,7 +243,9 @@ def see_user_shop_account_name(name):
     if account:
         user = User.query.filter_by(id=account.user_id).first()
         itmes = Item.query.filter_by(user_id=user.id).all()
-        
+        names = []
+        for item in items:
+            names.append(item.title)
 
 
 @shop.route("/api/test/multiple/list") 
