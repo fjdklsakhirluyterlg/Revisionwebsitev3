@@ -246,6 +246,7 @@ def see_user_shop_account_name(name):
         names = []
         for item in itmes:
             names.append(item.title)
+        description = user.description
 
 
 @shop.route("/api/test/multiple/list") 
