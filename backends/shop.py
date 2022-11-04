@@ -244,7 +244,7 @@ def see_user_shop_account_name(name):
         user = User.query.filter_by(id=account.user_id).first()
         itmes = Item.query.filter_by(user_id=user.id).all()
         names = []
-        for item in items:
+        for item in itmes:
             names.append(item.title)
 
 
