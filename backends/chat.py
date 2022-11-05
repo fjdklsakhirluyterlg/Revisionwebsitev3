@@ -108,16 +108,16 @@ def add_text_to_hcat_api(id):
     text = data["text"]
     authorname = data["name"]
     new_text = Text(text=text, authorname=authorname, chat_id=id)
-        db.session.add(new_text)
+    db.session.add(new_text)
+    db.session.commit()
+    c_id = getattr(new_text, "id")
+    users = chat.users
+    for i in users:
+        text = f"<p>{authorname} sent a message in <a href='/chats/{id}'>{chat.name}</a>"
+        x = Notifications(text=text, user_id=i.id)
+        db.session.add(x)
         db.session.commit()
-        c_id = getattr(new_text, "id")
-        users = chat.users
-        for i in users:
-            text = f"<p>{authorname} sent a message in <a href='/chats/{id}'>{chat.name}</a>"
-            x = Notifications(text=text, user_id=i.id)
-            db.session.add(x)
-            db.session.commit()
-        return redirect(f"/chats/{id}")
+    return redirect(f"/chats/{id}")
 
         
 @login_required
