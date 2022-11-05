@@ -3,7 +3,7 @@ from . import db
 from flask_login import current_user, login_required
 from .models import Chat, Text, User, Notifications, Reaction
 from . import socketio
-from flask_socketio import join_room, send
+from flask_socketio import join_room, send, emit
 # from . import app
 
 chat = Blueprint("chat", __name__)
@@ -65,7 +65,7 @@ def chat_with_other_users(id):
 def messageReceived(message):
     room = message["id"]
     print(room)
-    socketio.emit(message, room=message["id"])
+    emit(message, room=message["id"])
     
 
 @socketio.on("left")
