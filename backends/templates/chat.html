@@ -25,8 +25,7 @@
                     method: "POST", 
                     headers: {'Content-Type': 'application/json'}, 
                     body: JSON.stringify(data)
-                })
-                socket.emit("message", data=data) 
+                }).then(socket.emit("message", data=data))
             })
             var data = {'id': {{id}}}
             socket.emit('join', data);
