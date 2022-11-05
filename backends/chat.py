@@ -63,15 +63,14 @@ def chat_with_other_users(id):
 
 @socketio.on("message")
 def messageReceived(message):
-    text = message["message"]
-    print(f'message : {text}')
+
     send(message, room=message["id"])
     
 
 @socketio.on("left")
 def leftRecieved(message):
     print(f"{message=}")
-    send(jsonify(message), broadcast=True)
+    socketio.emit(jsonify(message), broadcast=True)
 
 @socketio.on("join")
 def joinRoom(message):
