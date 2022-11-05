@@ -66,7 +66,7 @@ def messageReceived(message):
     room = message["id"]
     text = message["message"]
     name = message["name"]
-    data = {"name":name, "message":message}
+    data = {"name":name, "message":text}
     print(f"sending: {data}")
     socketio.emit("message", data, room=room)
     
