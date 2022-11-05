@@ -102,8 +102,9 @@ def add_text(id):
         return redirect(f"/chats/{id}")
 
 @chat.route("/api/chats/add/text/<id>", methods=["POST"])
-def add_text_to_hcat_api():
-    pass      
+def add_text_to_hcat_api(id):
+    data = request.get_json()
+
         
 @login_required
 @chat.route("/chat/add-reaction/<id>", methods=["POST"])
