@@ -27,8 +27,8 @@
                     body: JSON.stringify(data)
                 }).then(socket.emit("message", data=data))
             })
-            var data = {'id': {{id}}}
-            socket.emit('join', data);
+            var datax = {'id': {{id}}}
+            socket.emit('join', datax);
 
         })
         socket.on('message', function(data){ message = data.message; namem = data.name;
