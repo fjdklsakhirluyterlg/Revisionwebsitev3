@@ -20,8 +20,8 @@
             $("#form").submit(function(e){
                 e.preventDefault();
                 var name = {{current_user.name | tojson}}; var message = $('#message').val();
-                var data = {"name":name, "message":message, "id":id.toString()}; console.log(data);
                 var id={{id}};
+                var data = {"name":name, "message":message, "id":id.toString()}; console.log(data);
                 fetch(`/api/chats/add/text/${id}`, {
                     method: "POST", 
                     headers: {'Content-Type': 'application/json'}, 
