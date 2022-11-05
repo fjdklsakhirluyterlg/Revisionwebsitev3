@@ -78,7 +78,9 @@ def leftRecieved(message):
 
 @socketio.on("reaction")
 def recieved_message_reaction(message):
-    pass
+    room = message["room"]
+    reaction = message["reaction"]
+    
 
 @socketio.on("join")
 def joinRoom(message):
