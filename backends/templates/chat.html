@@ -19,7 +19,9 @@
         $(document).ready(function(){
             $("#form").submit(function(e){
                 var id={{id}};
-                fetch(`/chat/add-text/${id}`)
+                fetch(`/chat/add-text/${id}`, {
+                    method: "POST"
+                })
                 var name = {{current_user.name | tojson}}; var message = $('#message').val();
                 var data = {"name":name, "message":message, "id":id.toString()}; console.log(data);
                 socket.emit("message", data=data) 
