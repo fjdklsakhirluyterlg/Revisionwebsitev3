@@ -39,7 +39,7 @@
             if (name == data.name) {
                 $("#texts").append(`<br><div class='user'><p> ${namem} | ${date}</p><p> ${message} </p></div>`)
             }else{
-                if (namem != "admin") {$("#texts").append(`<br><div class='nonuser'><p> ${namem} | ${date}</p><p> ${message} </p></div>`)}else {}
+                {$("#texts").append(`<br><div class='nonuser'><p> ${namem} | ${date}</p><p> ${message} </p></div>`)}
             }
         })
         function testmessage(name, message){var data = {"message":message, "name":name, "id":"1"};console.log(data);socket.emit("message", data=data)}
