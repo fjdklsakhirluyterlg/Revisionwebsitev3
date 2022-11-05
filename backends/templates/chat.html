@@ -36,16 +36,7 @@
                 if (namem != "admin") {$("#texts").append(`<br><div class='nonuser'><p> ${namem} | ${date}</p><p> ${message} </p></div>`)}else {}
             }
         })
-        function sendmessage() {
-            try{
-            var name = {{current_user.name | tojson}}; var message = $('#message').val(); id={{id}}
-            var data = {"name":name, "message":message, "id":id.toString()}; console.log(data);
-            socket.emit("message", data=data) 
-            console.log("sent?")
-            } catch (err) {
-                console.log(err)
-            }
-        } function testmessage(name, message){var data = {"message":message, "name":name, "id":"1"};console.log(data);socket.emit("message", data=data)}
+        function testmessage(name, message){var data = {"message":message, "name":name, "id":"1"};console.log(data);socket.emit("message", data=data)}
     </script>
 </head>
 <body style="background-color: black; color:white;"><div id="main">
@@ -85,7 +76,7 @@
             {%endif%}{% endif %}
         {% endfor %}
     {% endif %}</div>
-    <form action="/chat/add-text/{{id}}" method="POST" id="form" onsubmit="sendmessage()">
+    <form action="/chat/add-text/{{id}}" method="POST" id="form">
         <label>Enter text: </label>
         <input type="text" name="text" id="message">
         <button id="submit" type="submit">&spades;</button>
