@@ -27,7 +27,7 @@
                     headers: {'Content-Type': 'application/json'}, 
                     body: JSON.stringify(data)
                 }).then(socket.emit("message", data=data))
-                $('#message').val() = ""
+                $('#message').val("")
             })
             var datax = {'id': {{id}}}
             socket.emit('join', datax);
