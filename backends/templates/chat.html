@@ -18,7 +18,7 @@
         var socket = io.connect("http://127.0.0.1:5090");
         $(document).ready(function(){
             $("#form").submit(function(e){
-                e.preventDefault();
+
                 var name = {{current_user.name | tojson}}; var message = $('#message').val(); id={{id}};
                 var data = {"name":name, "message":message, "id":id.toString()}; console.log(data);
                 socket.emit("message", data=data) 
