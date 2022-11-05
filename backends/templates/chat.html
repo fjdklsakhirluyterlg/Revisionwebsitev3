@@ -28,7 +28,7 @@
                     body: JSON.stringify(data)
                 }).then(socket.emit("message", data=data))
                 $('#message').val("")
-                scrollToBottom()
+                window.scrollTo(0, document.body.scrollHeight);
             })
             var datax = {'id': {{id}}}
             socket.emit('join', datax);
