@@ -25,9 +25,9 @@
             var date = new Date().toLocaleString()
             if (name == data.name) {
                 $("#texts").append(`<br><div class='user'><p> ${namem} | ${date}</p><p> ${message} </p></div>`)
-            }else{
+            }elif (name != "admin"){
                 $("#texts").append(`<br><div class='nonuser'><p> ${namem} | ${date}</p><p> ${message} </p></div>`)
-            }
+            }else {console.log(namem)}
         })
         function sendmessage() {
             try{
