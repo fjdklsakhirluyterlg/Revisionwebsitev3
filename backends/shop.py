@@ -249,6 +249,7 @@ def see_user_shop_account_name(name):
         description = user.description
         dict = {}
         dict["description"] = description
+        dict["selling"] = names
 
 
 @shop.route("/api/test/multiple/list") 
