@@ -79,7 +79,7 @@ def joinRoom(message):
     join_room(room)
     print(f"joined room: {room}")
     data = {"message":"someone joined","name":"admin"}
-    send(data, room=message["id"])
+    socketio.send(data, room=message["id"])
     
 @login_required
 @chat.route('/chat/add-text/<id>', methods=["POST"])
