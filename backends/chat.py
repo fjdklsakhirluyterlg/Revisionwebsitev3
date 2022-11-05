@@ -67,7 +67,6 @@ def messageReceived(message):
     text = message["message"]
     name = message["name"]
     data = {"name":name, "message":text}
-    print(f"sending: {data}")
     join_room(room)
     socketio.emit("message", data, room=room)
     
@@ -85,7 +84,6 @@ def recieved_message_reaction(message):
 def joinRoom(message):
     room = message["id"]
     join_room(room)
-    print(f"joined room: {room}")
     data = {"message":"someone joined","name":"admin"}
     socketio.emit("joined", data, room=message["id"])
     
