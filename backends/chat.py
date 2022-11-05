@@ -99,7 +99,11 @@ def add_text(id):
             x = Notifications(text=text, user_id=i.id)
             db.session.add(x)
             db.session.commit()
-        return redirect(f"/chats/{id}")      
+        return redirect(f"/chats/{id}")
+
+@chat.route("/api/chats/add/text/<id>", methods=["POST"])
+def add_text_to_hcat_api():
+    pass      
         
 @login_required
 @chat.route("/chat/add-reaction/<id>", methods=["POST"])
