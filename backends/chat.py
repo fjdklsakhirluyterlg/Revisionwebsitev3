@@ -105,7 +105,7 @@ def add_text(id):
 def add_text_to_hcat_api(id):
     data = request.get_json()
     chat = db.session.query(Chat).filter(Chat.id == id).first()
-    text = data["text"]
+    text = data["message"]
     authorname = data["name"]
     new_text = Text(text=text, authorname=authorname, chat_id=id)
     db.session.add(new_text)

@@ -19,7 +19,7 @@
         $(document).ready(function(){
             $("#form").submit(function(e){
                 var id={{id}};
-                fetch(`/chat/add-text/${id}`, {
+                fetch(`/api/chats/add/text/${id}`, {
                     method: "POST"
                 })
                 var name = {{current_user.name | tojson}}; var message = $('#message').val();
