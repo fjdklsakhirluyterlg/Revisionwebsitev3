@@ -250,6 +250,7 @@ def see_user_shop_account_name(name):
         dict = {}
         dict["description"] = description
         dict["selling"] = names
+        return dict
 
 
 @shop.route("/api/test/multiple/list") 
