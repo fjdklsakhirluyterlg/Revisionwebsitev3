@@ -18,12 +18,12 @@
         var socket = io.connect("http://127.0.0.1:5090");
         $(document).ready(function(){
             $("#form").submit(function(e){
+                var name = {{current_user.name | tojson}}; var message = $('#message').val();
+                var data = {"name":name, "message":message, "id":id.toString()}; console.log(data);
                 var id={{id}};
                 fetch(`/api/chats/add/text/${id}`, {
                     method: "POST"
                 })
-                var name = {{current_user.name | tojson}}; var message = $('#message').val();
-                var data = {"name":name, "message":message, "id":id.toString()}; console.log(data);
                 socket.emit("message", data=data) 
             })
             var data = {'id': {{id}}}
