@@ -17,8 +17,11 @@
     <script>
         var socket = io.connect("http://127.0.0.1:5090");
         $(document).ready(function(){
-            var message = $('#message').val();
-            
+            $("#form").submit(function(e){
+                e.preventDefault();
+                var message = $('#message').val();
+                
+            })
             var data = {'id': {{id}}}
             socket.emit('join', data);
 
