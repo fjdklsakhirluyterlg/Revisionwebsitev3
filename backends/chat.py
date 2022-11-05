@@ -77,6 +77,10 @@ def leftRecieved(message):
     print(f"{message=}")
     socketio.emit(jsonify(message), broadcast=True)
 
+@socketio.on("reaction")
+def recieved_message_reaction(message):
+    pass
+
 @socketio.on("join")
 def joinRoom(message):
     room = message["id"]
