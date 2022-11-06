@@ -1,5 +1,5 @@
 import pytest
-from backends.models import User, Blog, Post
+from backends.models import User, Blog, Post, Chat
 from werkzeug.security import generate_password_hash
 import random
 from backends import create_app
@@ -47,3 +47,7 @@ def new_post(new_user):
     user_id = new_user.id
     post = Post(title="title", content="this is a test", user_id=user_id)
     return post
+
+@pytest.fixture(scope="module")
+def new_chat():
+    new = Chat()
