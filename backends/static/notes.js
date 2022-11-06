@@ -12,7 +12,7 @@ if (Number.isInteger(parseInt(urlid))){
 function submit(idx){
     var text = document.getElementById("editor").innerHTML
 
-    data = {"text":text, "user_id":idx}
+    var data = {"text":text, "user_id":idx}
 
     if (count === 0){
 
@@ -47,7 +47,7 @@ function edit() {
 
     var text = document.getElementById("editor").innerHTML
 
-    data = {"text":text}
+    var data = {"text":text}
 
     fetch(`/notes/edit/${id}`, {
         method : "POST",
