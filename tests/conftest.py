@@ -50,4 +50,6 @@ def new_post(new_user):
 
 @pytest.fixture(scope="module")
 def new_chat():
-    new = Chat()
+    description = "description"
+    name = "name"
+    new = Chat(description=description, name=name)
