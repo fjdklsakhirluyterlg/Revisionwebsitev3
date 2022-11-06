@@ -78,7 +78,7 @@ def leftRecieved(message):
     socketio.emit(jsonify(message), broadcast=True)
 
 @socketio.on("reaction")
-def reaction_thing_recieved():
+def reaction_thing_recieved(message):
     pass
 
 
