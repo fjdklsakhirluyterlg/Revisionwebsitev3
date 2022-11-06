@@ -35,6 +35,7 @@ def test_post(new_post):
     assert new_post.title == "title"
     assert new_post.content == "this is a test"
 
-def test_chat(new_chat):
+def test_chat(new_chat, new_user):
     assert new_chat.description == "description"
     assert new_chat.name == "name"
+    assert new_user in new_chat.users
