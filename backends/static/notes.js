@@ -41,7 +41,7 @@ function submit(idx){
     }
 }
 
-socket.on("note-change", function(message){
+socket.on("note-changed", function(message){
     text = message.text
     document.getElementById("editor").innerHTML = text
     console.log("changed")
