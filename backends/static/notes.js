@@ -43,6 +43,7 @@ function submit(idx){
 
 socket.on("note-change", function(message){
     text = message.text
+    document.getElementById("editor").innerHTML = text
 })
 
 function increase_count(){
