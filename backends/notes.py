@@ -72,3 +72,8 @@ def view_single_note(id):
 
     return dict
 
+@socketio.on("note-change")
+def note_change(message):
+    room = message["id"]
+    join_room(room)
+    socketio.emit("note-changed", message, room=room)

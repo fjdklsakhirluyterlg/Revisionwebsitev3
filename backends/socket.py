@@ -4,7 +4,7 @@ from flask_socketio import join_room
 
 socket = Blueprint("socket", __name__)
 
-@socketio.on("note-change")
+@socketio.on("note-changes")
 def note_change(message):
     room = message["id"]
     join_room(room)
