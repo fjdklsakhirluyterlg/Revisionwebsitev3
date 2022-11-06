@@ -27,7 +27,7 @@ function submit(idx){
     document.getElementById("editor").innerHTML = text
     count += 1
     } else {
-
+        data.id = id
         fetch(`/notes/edit/${id}`, {
             method : "POST",
             headers: {'Content-Type': 'application/json'}, 
