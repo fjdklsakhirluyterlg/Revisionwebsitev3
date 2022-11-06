@@ -1,4 +1,4 @@
-<head><script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.min.js"></script><script src="{{url_for('static', filename='notes.js')}}"></script></head><body><link href="https://cdn.quilljs.com/1.2.6/quill.snow.css" rel="stylesheet"><script src="https://cdn.quilljs.com/1.2.6/quill.min.js"></script><div class="toolbar ql-snow" id="toolbar"><button onclick="submit({{current_user.id}}); return false">save</button></div><div class="editor" id="editor">{{data | safe}}</div><script>
+<head><script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.min.js"></script><script src="{{url_for('static', filename='notes.js')}}"></script></head><body><link href="https://cdn.quilljs.com/1.2.6/quill.snow.css" rel="stylesheet"><script src="https://cdn.quilljs.com/1.2.6/quill.min.js"></script><div class="toolbar ql-snow" id="toolbar"><button onclick="submit({{current_user.id}}); return false">save</button></div><form oninput="submit({{current_user.id}})"><div class="editor" id="editor">{{data | safe}}</div></form><script>
     var quill = new Quill('#editor', {
         modules: {
             toolbar: [
