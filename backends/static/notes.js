@@ -34,6 +34,7 @@ function submit(idx){
             headers: {'Content-Type': 'application/json'}, 
             body: JSON.stringify(data)
         }).then(res => res.json()).then(obj => id = obj.id)
+        socket.emit("note-change", data=data)
     
         document.getElementById("editor").innerHTML = text
         count += 1
