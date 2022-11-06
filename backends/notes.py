@@ -2,6 +2,9 @@ from flask import Flask, render_template, url_for, request, redirect, send_from_
 from .import db
 from .models import Note
 from flask_login import current_user, login_required
+from . import socketio
+from flask_socketio import join_room
+
 
 notes = Blueprint("notes", __name__)
 
