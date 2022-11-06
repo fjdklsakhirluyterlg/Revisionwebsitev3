@@ -37,3 +37,4 @@ def test_post(new_post):
 
 def test_chat(new_chat):
     assert new_chat.description == "description"
+    assert new_chat.name == "name"
