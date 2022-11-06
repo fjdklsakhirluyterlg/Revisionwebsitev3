@@ -48,7 +48,7 @@ def add_notes_view():
 def view_note_thing(id):
     note = Note.query.filter_by(id=id).first()
     if note.user_id == current_user.id:
-        return render_template("notes.html", data = note.text)
+        return render_template("notes.html", data = note.text, id=note.id)
 
 
 @notes.route("/api/notes/view/all")
