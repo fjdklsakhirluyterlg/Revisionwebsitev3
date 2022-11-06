@@ -72,7 +72,7 @@ function edit() {
 
 window.onload = function(){
     var editor = document.getElementById("editor")
-    editor.addEventListener("change", edit)
+    editor.addEventListener("change", console.log("changed"))
 }
 
 // window.onload = function(){
