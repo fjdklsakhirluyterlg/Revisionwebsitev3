@@ -70,11 +70,6 @@ function edit() {
     count += 1
 }
 
-window.onload = function(){
-    var editor = document.getElementById("editor")
-    editor.addEventListener("change", console.log("changed"))
-}
-
 // window.onload = function(){
 // var target = document.querySelector('#editor');
 
