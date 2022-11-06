@@ -5,4 +5,5 @@ socket = Blueprint("socket", __name__)
 
 @socketio.on("note-change")
 def note_change(message):
-    pass
+    room = message["id"]
+    
