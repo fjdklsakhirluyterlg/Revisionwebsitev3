@@ -74,7 +74,9 @@ def view_single_note(id):
 
 @socketio.on("note-add")
 def user_on_notes(message):
-    pass
+    room = message["id"]
+
+    socketio.emit("note-add", room=room)
 
 @socketio.on("note-change")
 def note_change(message):
