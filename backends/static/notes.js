@@ -70,6 +70,10 @@ function edit() {
     count += 1
 }
 
+window.onload() = function(){
+    
+}
+
 // window.onload = function(){
 // var target = document.querySelector('#editor');
 
