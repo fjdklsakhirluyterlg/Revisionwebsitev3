@@ -9,10 +9,10 @@ if (Number.isInteger(parseInt(urlid))){
     count = 0
 }
 
-function submit(idx, id){
+function submit(idx){
     var text = document.getElementById("editor").innerHTML
 
-    data = {"text":text, "user_id":idx, "id":id}
+    data = {"text":text, "user_id":idx}
 
     if (count === 0){
 
