@@ -81,6 +81,6 @@ def user_on_notes(message):
 @socketio.on("note-change")
 def note_change(message):
     room = message["id"]
-    print(room)
+    # print(room)
     join_room(room)
     socketio.emit("note-changed", message, room=room)
