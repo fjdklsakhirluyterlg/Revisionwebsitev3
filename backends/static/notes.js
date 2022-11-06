@@ -42,7 +42,7 @@ function submit(idx){
 }
 
 socket.on("note-change", function(message){
-    
+    text = message.text
 })
 
 function increase_count(){
