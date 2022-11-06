@@ -49,8 +49,9 @@ def new_post(new_user):
     return post
 
 @pytest.fixture(scope="module")
-def new_chat():
+def new_chat(new_user):
     description = "description"
     name = "name"
     new = Chat(description=description, name=name)
+    new_user.chats.append(new)
     return new
