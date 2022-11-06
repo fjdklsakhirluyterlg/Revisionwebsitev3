@@ -57,7 +57,7 @@ function edit() {
 
     var text = document.getElementById("editor").innerHTML
 
-    var data = {"text":text}
+    var data = {"text":text, "id":id}
 
     fetch(`/notes/edit/${id}`, {
         method : "POST",
