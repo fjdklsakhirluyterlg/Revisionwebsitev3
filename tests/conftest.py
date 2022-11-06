@@ -53,3 +53,4 @@ def new_chat():
     description = "description"
     name = "name"
     new = Chat(description=description, name=name)
+    return new
