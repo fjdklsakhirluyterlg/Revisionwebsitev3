@@ -80,7 +80,7 @@ def leftRecieved(message):
 @socketio.on("reaction")
 def reaction_thing_recieved(message):
     room = message["id"]
-    
+    socketio.emit("reaction", message, room=room)
 
 
 @socketio.on("join")
