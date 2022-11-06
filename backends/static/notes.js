@@ -39,6 +39,8 @@ function submit(idx){
         document.getElementById("editor").innerHTML = text
         count += 1
     }
+
+    return false;
 }
 
 socket.on("note-changed", function(message){
