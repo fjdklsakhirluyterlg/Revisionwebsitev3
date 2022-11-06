@@ -66,6 +66,7 @@ function edit() {
     }).then(res => res.json()).then(obj => id = obj.id)
 
     document.getElementById("editor").innerHTML = text
+    socket.emit("note-change", data=data)
     count += 1
 }
 
