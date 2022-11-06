@@ -71,7 +71,8 @@ function edit() {
 }
 
 window.onload() = function(){
-    
+    var editor = document.getElementById("editor")
+    editor.addEventListener("change", edit())
 }
 
 // window.onload = function(){
