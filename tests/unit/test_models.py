@@ -34,3 +34,6 @@ def test_blog(new_blog):
 def test_post(new_post):
     assert new_post.title == "title"
     assert new_post.content == "this is a test"
+
+def test_chat(new_chat):
+    assert new_chat.description == "description"
