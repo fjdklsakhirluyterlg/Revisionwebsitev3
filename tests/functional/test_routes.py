@@ -50,6 +50,5 @@ def test_community_post(client):
         "userid":1,
         "tags":["test", "stuff"]
     })
-    
     assert response.json
     assert response.status_code == 200
