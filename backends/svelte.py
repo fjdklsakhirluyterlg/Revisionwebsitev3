@@ -8,5 +8,5 @@ def base(path):
 
 @svelte.route("/f/svelte/i")
 def maybe_it_returns_the_index():
-    # why
+    # why doen't it work?????
     return send_from_directory('fontend/public', 'index.html')
