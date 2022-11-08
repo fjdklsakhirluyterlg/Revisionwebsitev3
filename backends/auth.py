@@ -71,7 +71,7 @@ def login():
         usern = db.session.query(User).filter(or_(User.name == name, User.email == name)).first()
         eid = usern.id
         if not usern:
-            return redirect(url_for("signup"))
+            return redirect("/signup")
         elif check_password_hash(usern.password, password):
             login_user(usern, remember=True)
             return redirect(f"/dashboard")
