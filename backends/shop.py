@@ -6,6 +6,7 @@ from .models import Item, Object, Checkout, User, Shopaccount
 from werkzeug.utils import secure_filename
 import os
 import markdown
+from . import mail
 shop = Blueprint("shop", __name__)
 
 UPLOAD_FOLDER = './shop/'
