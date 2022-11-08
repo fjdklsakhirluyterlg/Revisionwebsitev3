@@ -468,7 +468,7 @@ class Object(db.Model):
 
 class urlshortner(db.Model):
     id = db.Column(db.String, primary_key=True)
-    
+    actual = db.Column(db.Text)
 
 class Shopaccount(db.Model):
     id = db.Column(db.Integer, primary_key=True)
