@@ -68,7 +68,7 @@ def login():
     if request.method == 'POST':
         name = request.form["name"]
         password = request.form["password"]
-        usern = db.session.query(User).filter(User.name == name).first_or_404()
+        usern = db.session.query(User).filter(or_(User.name == name)).first_or_404()
         eid = usern.id
         if not usern:
             return redirect(url_for("signup"))
