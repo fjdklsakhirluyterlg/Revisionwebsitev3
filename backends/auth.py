@@ -6,6 +6,7 @@ from . import db
 from flask_mail import Mail, Message
 import random
 from . import mail
+from sqlalchemy import or_
 # from . import app
 
 auth = Blueprint('auth', __name__)
