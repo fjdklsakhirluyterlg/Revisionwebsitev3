@@ -4,3 +4,6 @@ from backends import db
 
 add_url = Blueprint("add_url", __name__)
 
+@add_url.route("/api/urls/shortner/test")
+def test_thingy():
+    pass
