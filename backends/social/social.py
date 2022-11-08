@@ -1,1 +1,1 @@
-from backends import create_app
+from flask import Flask, request
