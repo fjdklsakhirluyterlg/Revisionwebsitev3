@@ -466,6 +466,10 @@ class Object(db.Model):
     checkout_id = db.Column(db.Integer, db.ForeignKey("checkout.id"), nullable=True, default=None)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True, default=None)
 
+class urlshortner(db.Model):
+    id = db.Column(db.String, primary_key=True)
+    
+
 class Shopaccount(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
