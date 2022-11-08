@@ -56,6 +56,7 @@ def create_app():
     from .ide import ide
     from .c import c
     from .notes import notes
+    from url_shortener.add import add_url
     # from .stream import stream
     from .svelte import svelte
     from .go import go
@@ -86,6 +87,7 @@ def create_app():
     app.register_blueprint(go, url_prefix="/")
     app.register_blueprint(shop, url_prefix="/")
     app.register_blueprint(apibp, url_prfix="/")
+    app.register_blueprint(add_url, url_prefix="/")
     # app.register_blueprint(stream, url_prefix="/")
     
     api.init_app(app)
