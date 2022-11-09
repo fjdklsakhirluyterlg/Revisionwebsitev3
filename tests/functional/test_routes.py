@@ -55,6 +55,7 @@ def test_community_post(client):
 
 def test_url_shotener_create_id(client):
     response = client.post("/api/urls/shortner/add", json={
-        "actual":"https://www.google.com"
+        "actual":"https://www.google.com",
+        "user_id":1
     })
     assert response.status_code == 200
