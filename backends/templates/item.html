@@ -2,9 +2,6 @@
 <body><h2>{{title}}</h2><div class="row">
     <div class="column" style="display:inline-block;vertical-align:top;width:50%"><img style="width:100%;" src="{{url_for('shop.see_image_thing', filename=mainimage, id=id)}}" /><p id="stock">stock: {{stock}}| price: {{price}}</p><form onsubmit="checkout({{user_id}}, {{items}}); return false"><input type="number" id="amount"><button type="submit"> add to basket</button></form><script>
         var quill = new Quill('#description', {
-        modules: {
-            
-          },
         theme: 'snow',
         readOnly: true,
   });</script></div>
