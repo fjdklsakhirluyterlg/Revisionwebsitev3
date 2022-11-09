@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
-from backends.models import urlshortner
+from backends.models import Urlshortner
 from backends import db
 import random
 
@@ -10,7 +10,7 @@ def test_thingy():
     return "here"
 
 def check_if_id_exists(id):
-    url = urlshortner.query.filter_by(id=id).first()
+    url = Urlshortner.query.filter_by(id=id).first()
     if url:
         return True
     else:
