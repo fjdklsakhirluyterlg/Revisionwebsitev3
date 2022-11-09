@@ -22,8 +22,13 @@ def generate_random_id():
     charactersLength = len(characters) - 1
     for i in range(16):
         result += characters[random.randint(0, charactersLength)]
+    
+    return result
 
 
 @add_url.route('/api/urls/shortner/add')
 def add_url_to_shortenere():
     data = request.get_json()
+    free = False
+    while not free:
+        id - generate_random_id()
