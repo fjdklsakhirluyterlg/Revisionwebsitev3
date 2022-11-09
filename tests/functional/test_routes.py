@@ -54,4 +54,6 @@ def test_community_post(client):
     assert response.status_code == 200
 
 def test_url_shotener_create_id(client):
-    response = client.get()
+    response = client.get("/api/urls/shortner/add")
+    assert response.status_code == 200
+    print(response.data)
