@@ -3,14 +3,10 @@
     <div class="column" style="display:inline-block;vertical-align:top;width:50%"><img style="width:100%;" src="{{url_for('shop.see_image_thing', filename=mainimage, id=id)}}" /><p id="stock">stock: {{stock}}| price: {{price}}</p><form onsubmit="checkout({{user_id}}, {{items}}); return false"><input type="number" id="amount"><button type="submit"> add to basket</button></form><script>
         var quill = new Quill('#description', {
         modules: {
-            toolbar: [
-            [{ header: [1, 2, 3, 4, 5, 6, false] }],
-              ['bold', 'italic', 'underline'],
-              ['blockquote', 'code-block', 'link'], 
-              [{ color: [] }, { background: [] }]
-            ]
+            
           },
-    theme: 'snow'
+        theme: 'snow',
+        readOnly: true,
   });</script></div>
     <div class="column" style="display:inline-block;"><p id="description">{{description | safe}}</p></div>
 </div><div class="wrap">{%for file in files%}<div class="box"><div class="boxInner"><img src="{{ url_for('shop.see_image_thing', filename=file, id=id) }}"></div></div>{%endfor%}</div><script src="{{url_for("static", filename="item.js")}}"></script></body>
