@@ -37,4 +37,6 @@ def add_url_to_shortenere():
             free = True
             act_id = id
             break
+    
+    return act_id
         
