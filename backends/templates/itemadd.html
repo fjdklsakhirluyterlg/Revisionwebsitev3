@@ -1,3 +1,15 @@
 <head><script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.min.js"></script></head><body>
-    <form enctype="multipart/form-data" action="/shop/add" method="POST"><label>Title</label><input type="text" name="title"><br><label>Price</label><input type="text" name="price"><br><label>Description</label><textarea name="description" style="width:100%" id="description"></textarea><br><label>Stock</label><input type="stock" name="stock"><br><input type="file" name="file" multiple accept="image/*"><button type="submit">submit</button></form>
+    <form enctype="multipart/form-data" action="/shop/add" method="POST"><label>Title</label><input type="text" name="title"><br><label>Price</label><input type="text" name="price"><br><label>Description</label><textarea name="description" style="width:100%" id="description"></textarea><br><label>Stock</label><input type="stock" name="stock"><br><input type="file" name="file" multiple accept="image/*"><button type="submit">submit</button></form><script>
+        var quill = new Quill('#description', {
+            modules: {
+                toolbar: [
+                [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                  ['bold', 'italic', 'underline'],
+                  ['blockquote', 'code-block', 'link'], 
+                  [{ color: [] }, { background: [] }]
+                ]
+              },
+        theme: 'snow'
+      });
+    </script>
 </body>
