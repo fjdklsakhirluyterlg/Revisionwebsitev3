@@ -33,10 +33,11 @@ def add_url_to_shortenere():
     act_id = 0
     while not free:
         id = generate_random_id()
-        if check_if_id_exists(id):
+        if not check_if_id_exists(id):
             free = True
             act_id = id
             break
+
     
     return act_id
         
