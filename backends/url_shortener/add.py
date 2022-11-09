@@ -10,7 +10,11 @@ def test_thingy():
     return "here"
 
 def generate_random_id():
-    pass
+    characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+    result = ""
+    charactersLength = len(characters) - 1
+    for i in range(16):
+        result += characters[random.randint(0, charactersLength)]
 
 @add_url.route('/api/urls/shortner/add')
 def add_url_to_shortenere():
