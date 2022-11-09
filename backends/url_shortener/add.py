@@ -38,5 +38,6 @@ def add_url_to_shortenere():
             act_id = id
             break
 
-    
+    actual = data["actual"]
+    user_id = int(data["user_id"])
         
