@@ -31,4 +31,4 @@ def add_url_to_shortenere():
     data = request.get_json()
     free = False
     while not free:
-        id - generate_random_id()
+        id = generate_random_id()
