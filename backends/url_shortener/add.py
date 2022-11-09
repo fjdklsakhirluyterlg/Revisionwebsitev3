@@ -7,3 +7,7 @@ add_url = Blueprint("add_url", __name__)
 @add_url.route("/api/urls/shortner/test")
 def test_thingy():
     return "here"
+
+@add_url.route('/api/urls/shortner/add')
+def add_url_to_shortenere():
+    pass
