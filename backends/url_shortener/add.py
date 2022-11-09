@@ -40,7 +40,7 @@ def add_url_to_shortenere():
 
     actual = data["actual"]
     user_id = int(data["user_id"])
-    new = Urlshortner(actual=actual, id=id, user_id=user_id)
+    new = Urlshortner(actual=actual, id=act_id, user_id=user_id)
     db.session.add(new)
     db.session.commit()
         
