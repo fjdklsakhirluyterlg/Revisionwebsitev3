@@ -38,6 +38,6 @@ def add_url_to_shortenere():
             act_id = id
             break
 
-    
+    print(act_id)
     return act_id
         
