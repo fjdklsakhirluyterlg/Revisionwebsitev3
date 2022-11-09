@@ -87,7 +87,7 @@ def create_app():
     app.register_blueprint(go, url_prefix="/")
     app.register_blueprint(shop, url_prefix="/")
     app.register_blueprint(apibp, url_prfix="/")
-    # app.register_blueprint(add_url, url_prefix="/")
+    app.register_blueprint(add_url, url_prefix="/")
     # app.register_blueprint(stream, url_prefix="/")
     
     api.init_app(app)
