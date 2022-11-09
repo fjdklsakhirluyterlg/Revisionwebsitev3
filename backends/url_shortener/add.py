@@ -9,12 +9,16 @@ add_url = Blueprint("add_url", __name__)
 def test_thingy():
     return "here"
 
+def check_if_id_exists():
+    pass
+
 def generate_random_id():
     characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
     result = ""
     charactersLength = len(characters) - 1
     for i in range(16):
         result += characters[random.randint(0, charactersLength)]
+
 
 @add_url.route('/api/urls/shortner/add')
 def add_url_to_shortenere():
