@@ -8,6 +8,9 @@ add_url = Blueprint("add_url", __name__)
 def test_thingy():
     return "here"
 
+def generate_random_id():
+    pass
+
 @add_url.route('/api/urls/shortner/add')
 def add_url_to_shortenere():
-    pass
+    data = request.get_json()
