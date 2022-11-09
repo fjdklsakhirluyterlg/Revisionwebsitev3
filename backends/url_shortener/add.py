@@ -43,4 +43,6 @@ def add_url_to_shortenere():
     new = Urlshortner(actual=actual, id=act_id, user_id=user_id)
     db.session.add(new)
     db.session.commit()
+
+    return {"id":act_id}
         
