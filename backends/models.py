@@ -146,6 +146,7 @@ class User(db.Model, UserMixin):
     items = db.relationship("Item", backref="user")
     checkouts = db.relationship("Checkout", backref="user")
     shopaccount = db.relationship("Shopaccount", backref="user")
+    urls = db.relationship("Urlshortner", backref="user")
     followed = db.relationship(
         'User', secondary=followers,
         primaryjoin=(followers.c.follower_id == id),
@@ -466,7 +467,7 @@ class Object(db.Model):
     checkout_id = db.Column(db.Integer, db.ForeignKey("checkout.id"), nullable=True, default=None)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True, default=None)
 
-class urlshortner(db.Model):
+class Urlshortner(db.Model):
     id = db.Column(db.String, primary_key=True)
     actual = db.Column(db.Text)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
