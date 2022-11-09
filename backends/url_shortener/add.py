@@ -26,7 +26,7 @@ def generate_random_id():
     return result
 
 
-@add_url.route('/api/urls/shortner/add', emthods=["POST"])
+@add_url.route('/api/urls/shortner/add', methods=["POST"])
 def add_url_to_shortenere():
     data = request.get_json()
     free = False
