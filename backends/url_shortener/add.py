@@ -30,6 +30,7 @@ def generate_random_id():
 def add_url_to_shortenere():
     # data = request.get_json()
     free = False
+    act_id = id
     while not free:
         id = generate_random_id()
         if check_if_id_exists(id):
