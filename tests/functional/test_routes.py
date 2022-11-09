@@ -52,3 +52,6 @@ def test_community_post(client):
     })
     assert response.json
     assert response.status_code == 200
+
+def test_url_shotener_create_id(client):
+    response = client.get()
