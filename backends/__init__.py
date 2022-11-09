@@ -56,7 +56,7 @@ def create_app():
     from .ide import ide
     from .c import c
     from .notes import notes
-    # from url_shortener.add import add_url
+    from backends.url_shortener.add import add_url
     # from .stream import stream
     from .svelte import svelte
     from .go import go
