@@ -34,4 +34,5 @@ def add_url_to_shortenere():
         id = generate_random_id()
         if check_if_id_exists(id):
             found = True
+            break
         
