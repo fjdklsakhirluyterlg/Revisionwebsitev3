@@ -10,7 +10,7 @@ def test_thingy():
     return "here"
 
 def check_if_id_exists(id):
-    url = urlshortner.query.filter_by(id=id).first()
+    url = urlshortner.query().filter_by(id=id).first()
     if url:
         return True
     else:
