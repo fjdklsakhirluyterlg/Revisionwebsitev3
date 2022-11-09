@@ -9,8 +9,12 @@ add_url = Blueprint("add_url", __name__)
 def test_thingy():
     return "here"
 
-def check_if_id_exists():
-    pass
+def check_if_id_exists(id):
+    url = db.session.query(urlshortner).filter_by(id=id).first()
+    if url:
+        return True
+    else:
+        return False
 
 def generate_random_id():
     characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
