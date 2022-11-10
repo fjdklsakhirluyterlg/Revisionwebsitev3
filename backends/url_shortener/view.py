@@ -6,5 +6,5 @@ view_url = Blueprint("view_url", __name__)
 def view_url(name):
     url = Urlshortner.query.filter_by(id=id).first()
     return f"""
-    <head><script>window.location.href="{url}}"</script></head>
+    <head><script>window.location.href="{url}"</script></head>
     """
