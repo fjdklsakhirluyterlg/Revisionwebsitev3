@@ -16,7 +16,7 @@ function sumbit_quiz(id){
 function add_multi(){
     var multi = documnet.getElementById("multi")
     var clone = multi.content.cloneNode(true);
-    
+    document.append(clone)
 
 }
 
