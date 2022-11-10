@@ -1,5 +1,5 @@
 <head><script src="{{url_for('static', filename='quizadd.js')}}"></script></head>
-<body>
+<body><div id="main">
     <form>
         <label>Name:</label><input type="text" id="name">
         <label>Description:</label><input type="text" id="description">
@@ -8,4 +8,4 @@
     <button onclick="add_multi()"> add multiple choice</button><button>add single choice</button>
     <template id="multi"><div class="multi"><label>question</label><input type="text"><label>awnser:</label><input type="text"><button>add awnser</button></div></template>
     <template id="single"></template>
-</body>
+</div></body>
