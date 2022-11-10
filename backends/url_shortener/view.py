@@ -3,7 +3,7 @@ from backends.models import Urlshortner
 view_url = Blueprint("view_url", __name__)
 
 @view_url.route("/urls/<name>")
-def view_url(name):
+def view_url_thing(name):
     url = Urlshortner.query.filter_by(id=id).first()
     return f"""
     <head><script>window.location.href="{url}"</script></head>
