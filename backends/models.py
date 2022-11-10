@@ -474,7 +474,7 @@ class Urlshortner(db.Model):
 
 class ImageCard(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    
+    card_id = db.Column(db.Integer, db.ForeignKey("card.id"))
 
 class Shopaccount(db.Model):
     id = db.Column(db.Integer, primary_key=True)
