@@ -13,3 +13,7 @@ function sumbit_quiz(id){
     }).then(res => res.json()).then(data => quiz_id = data.id)
 }
 
+function add_multi(){
+    
+}
+
