@@ -57,6 +57,7 @@ def create_app():
     from .c import c
     from .notes import notes
     from backends.url_shortener.add import add_url
+    from backends.url_shortener.view add view_urk
     # from .stream import stream
     from .svelte import svelte
     from .go import go
@@ -88,6 +89,7 @@ def create_app():
     app.register_blueprint(shop, url_prefix="/")
     app.register_blueprint(apibp, url_prfix="/")
     app.register_blueprint(add_url, url_prefix="/")
+    app.register_blueprint(view_url, url_prfix="/")
     # app.register_blueprint(stream, url_prefix="/")
     
     api.init_app(app)
