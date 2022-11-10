@@ -18,6 +18,5 @@ function add_multi(){
     var clone = multi.content.cloneNode(true);
     var div = document.getElementById("main")
     div.append(clone)
-    console.log("adding??")
 }
 
