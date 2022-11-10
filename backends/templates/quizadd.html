@@ -4,7 +4,8 @@
         <label>Description:</label><input type="text" id="description">
         <label>Categories:</label><input type="text" id="categories">
     </form>
-    <button> add multiple choice</button><button>add single choice</button>
+    <button onclick="add_multi"> add multiple choice</button><button>add single choice</button>
     <template id="multi"><div class="multi"><label>question</label><input type="text"><label>awnser:</label><input type="text"><button>add awnser</button></div></template>
     <template id="single"></template>
+    <script src="{{url_for('static', filename='quizadd.js')}}"></script>
 </body>
