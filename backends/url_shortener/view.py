@@ -4,7 +4,7 @@ view_url = Blueprint("view_url", __name__)
 
 @view_url.route("/urls/<name>")
 def view_url_thing(name):
-    url = Urlshortner.query.filter_by(id=id).first()
+    url = Urlshortner.query.filter_by(id=name).first()
     return f"""
     <head><script>window.location.href="{url}"</script></head>
     """
