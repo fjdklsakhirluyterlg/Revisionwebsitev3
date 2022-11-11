@@ -17,7 +17,7 @@ def todo_add():
     db.session.add(new_todo)
     db.session.commit()
     return redirect(url_for("todo.show_todo"))
-
+ 
 @todo.get("/todo/update/<int:todo_id>")
 def update(todo_id):
     # todo = Todo.query.filter_by(id=todo_id).first()
