@@ -25,5 +25,7 @@ func hello(namePtr *C.char) string {
     return helloWorld
 }
 
+func root(inte float64)
+
 func main() {
 }
