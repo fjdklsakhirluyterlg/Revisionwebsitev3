@@ -42,6 +42,7 @@ def view_all_items():
 
     return jsonify(listx)
 
+@login_required
 @shop.route("/shop/add", methods=["POST", "GET"])
 def view_add_for_shopadd():
     if request.method == "POST":
@@ -50,7 +51,7 @@ def view_add_for_shopadd():
         price = request.form.get("price")
         stock = int(request.form.get("stock"))
         description = markdown.markdown(request.form.get("description"))
-        new = Item(description=description, title=title, price=price, stock=stock)
+        new = Item(description=description, title=title, price=price, stock=stock, user_id=user_id)
         db.session.add(new)
         db.session.commit()
         id = getattr(new, "id")
@@ -75,6 +76,7 @@ def view_add_for_shopadd():
 
         return redirect(f"/shop/view/{title}")
     else:
+        user_id = current_user.id
         return render_template("itemadd.html")
 
 @shop.route("/api/shop/account/create")
