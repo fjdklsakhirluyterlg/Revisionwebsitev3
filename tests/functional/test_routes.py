@@ -60,5 +60,5 @@ def test_url_shotener_create_id(client):
     })
     assert response.status_code == 200
 
-def test_url_shortener(client):
-    pass
+def test_url_shortener(client, new_url):
+    response = client.get(f"/urls/{new_url.id}")
