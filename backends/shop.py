@@ -184,7 +184,7 @@ def view_item(title):
         user_id = current_user.id
         if current_user.id == user.id:
             editable = True
-    return render_template("item.html", files=images, mainimage=mainimage, title=title, description=description, id=id, price=price, stock=stock, items=stuff, user_id=user_id, name=name)
+    return render_template("item.html", files=images, mainimage=mainimage, title=title, description=description, id=id, price=price, stock=stock, items=stuff, user_id=user_id, name=name, editable=editable)
 
 
 @shop.route("/api/shop/delete/item")
