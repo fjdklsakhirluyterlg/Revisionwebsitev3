@@ -48,6 +48,7 @@ def new_post(new_user):
     post = Post(title="title", content="this is a test", user_id=user_id)
     return post
 
+@pytest.mark.database_access
 @pytest.fixture(scope="module")
 def new_chat(new_user):
     description = "description"
@@ -55,3 +56,8 @@ def new_chat(new_user):
     new = Chat(description=description, name=name)
     new_user.chats.append(new)
     return new
+
+@pytest.mark.database_access
+@pytest.fixture(scope="module")
+def new_url(new_user):
+    pass
