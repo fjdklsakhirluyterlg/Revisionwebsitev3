@@ -160,9 +160,9 @@ def see_image_thing(filename, id):
 @shop.route("/shop/view/<title>")
 def view_item(title):
     item = Item.query.filter_by(title=title).first()
-    userid = item.user_id
-    user = User.query.filter_by(id=userid).first()
-    name = user.name
+    # userid = item.user_id
+    # user = User.query.filter_by(id=userid).first()
+    # name = user.name
     description = item.description
     images = os.listdir(f"./backends/shop/{item.id}")
     images.sort()
