@@ -59,3 +59,6 @@ def test_url_shotener_create_id(client):
         "user_id":1
     })
     assert response.status_code == 200
+
+def test_url_shortener(client):
+    pass
