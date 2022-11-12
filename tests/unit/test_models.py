@@ -39,3 +39,7 @@ def test_chat(new_chat, new_user):
     assert new_chat.description == "description"
     assert new_chat.name == "name"
     assert new_user in new_chat.users
+
+def test_urls(new_url):
+    assert new_url.actual == "https://www.google.com"
+    assert new_url.id != 0
