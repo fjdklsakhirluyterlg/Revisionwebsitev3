@@ -77,7 +77,7 @@ def view_add_for_shopadd():
         return redirect(f"/shop/view/{title}")
     else:
         user_id = current_user.id
-        return render_template("itemadd.html")
+        return render_template("itemadd.html", user_id=user_id)
 
 @shop.route("/api/shop/account/create")
 def create_shop_acconut():
