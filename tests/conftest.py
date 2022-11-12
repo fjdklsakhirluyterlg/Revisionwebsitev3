@@ -1,8 +1,9 @@
 import pytest
-from backends.models import User, Blog, Post, Chat
+from backends.models import User, Blog, Post, Chat, Urlshortner
 from werkzeug.security import generate_password_hash
 import random
 from backends import create_app
+from backends.url_shortener.add import generate_random_id
 
 def mank_random_long_id(length):
     characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
@@ -60,4 +61,6 @@ def new_chat(new_user):
 @pytest.mark.database_access
 @pytest.fixture(scope="module")
 def new_url(new_user):
-    pass
+    actual = "https://www.google.com"
+    id = generate_random_id()
+    new = Urlshortner(actual=actual, id=id, user_id=new_user.id)
