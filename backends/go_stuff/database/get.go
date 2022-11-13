@@ -8,8 +8,13 @@ import (
 
 func main() {
 	db, err := sql.Open("sqlite3", "../../database.db")
-	rows, err := db.Query("SELECT * FROM User")
-    
+	rows, errs := db.Query("SELECT * FROM User")
+    if err != nil{
+		fmt.Print("error")
+	}
+	if errs != nil{
+		fmt.Print("error")
+	}
 	var count int
 
 	for rows.Next() {
