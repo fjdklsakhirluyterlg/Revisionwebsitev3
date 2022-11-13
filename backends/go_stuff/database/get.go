@@ -1,8 +1,8 @@
 package main
 
 import (
-	"database/sql"
 	"fmt"
+	"database/sql"
 	_ "github.com/mattn/go-sqlite3"
 )
 
@@ -15,9 +15,10 @@ func main() {
 	var count int
 
 	for rows.Next() {
-		count += 1
+		count++
 	}
 
+	rows.Close()
 	fmt.Print(count)
 
 }
