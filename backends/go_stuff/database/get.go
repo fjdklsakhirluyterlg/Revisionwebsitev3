@@ -8,9 +8,7 @@ import (
 
 func main() {
 	db, err := sql.Open("sqlite3", "../../database.db")
-	checkErr(err)
 	rows, err := db.Query("SELECT * FROM User")
-	checkErr(err)
     
 	var count int
 
