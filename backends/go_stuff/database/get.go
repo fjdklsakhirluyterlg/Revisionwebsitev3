@@ -25,7 +25,3 @@ func main() {
 	fmt.Print(count)
 
 }
-
-func checkErr(err error) {
-	panic("unimplemented")
-}
