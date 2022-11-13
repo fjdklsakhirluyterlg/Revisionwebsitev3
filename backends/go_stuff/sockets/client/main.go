@@ -15,6 +15,10 @@ const (
 )
 
 func main() {
+	type messe struct{
+		username string
+		message string 
+	}
 
 	fmt.Println("Connecting to", connType, "server", connHost+":"+connPort)
 	conn, err := net.Dial(connType, connHost+":"+connPort)
@@ -30,8 +34,10 @@ func main() {
 		fmt.Print("Text to send: ")
 
 		input, _ := reader.ReadString('\n')
-
-		conn.Write([]byte(input))
+		fmt.Print("User name")
+		user, _ := reader.ReadString('\n')
+		mess := messe{user, input}
+		conn.Write([]byte(mess))
 
 		message, _ := bufio.NewReader(conn).ReadString('\n')
 
