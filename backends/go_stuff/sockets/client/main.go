@@ -6,6 +6,7 @@ import (
 	"log"
 	"net"
 	"os"
+	"encoding/json"
 )
 
 const (
@@ -36,8 +37,12 @@ func main() {
 		input, _ := reader.ReadString('\n')
 		fmt.Print("User name")
 		user, _ := reader.ReadString('\n')
-		mess := messe{user, input}
-		conn.Write([]byte(mess))
+		js := &messe{user, input}
+		out, err := json.Marshal(js)
+		if err != nil {
+			panic (err)
+		}
+		conn.Write([]byte(string(out)))
 
 		message, _ := bufio.NewReader(conn).ReadString('\n')
 
