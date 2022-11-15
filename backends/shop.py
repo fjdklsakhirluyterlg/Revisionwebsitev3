@@ -141,6 +141,7 @@ def bu_the_checkout():
     checkout = Checkout.query.filter_by(id=id).first()
     userd_id = checkout.user_id
     user = User.query.filter_by(id=userd_id).first()
+    user_name = user.name
     for object in checkout.objects:
         seller_id = object.seller()
         text = f""""""
