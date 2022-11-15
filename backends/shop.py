@@ -145,7 +145,7 @@ def bu_the_checkout():
     user_name = user.name
     for object in checkout.objects:
         seller_id = object.seller()
-        item_name = object.item_name
+        item_name = object.item_name()
         if item_name not in items:
             items[item_name] = 1
         else:
