@@ -90,3 +90,18 @@ class AhoCorasick:
                     word = self.words[j]
                     result[word].append(i-len(word)+1)
         return result
+
+if __name__ == "__main__":
+    words = ["he", "she", "hers", "his"]
+    text = "ahishers"
+ 
+    # Create an Object to initialize the Trie
+    aho_chorasick = AhoCorasick(words)
+ 
+    # Get the result
+    result = aho_chorasick.search_words(text)
+ 
+    # Print the result
+    for word in result:
+        for i in result[word]:
+            print("Word", word, "appears from", i, "to", i+len(word)-1)
