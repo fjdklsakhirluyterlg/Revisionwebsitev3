@@ -96,5 +96,14 @@ def does_user_exist_api():
     else:
         return jsonify({"message":"user available"})
     
-
+@auth.route("/api/auth/user/email/exists", methods=["POST"])
+def does_user_email_exist_api():
+    data = request.get_json()
+    name = data["name"]
+    user = User.query.filter_by(name=name).first()
+    if user:
+        return jsonify({"message":f"{name} already exists"})
+    else:
+        return jsonify({"message":"user available"})
+    
 # app.register_blueprint(auth, url_prefix="/")
