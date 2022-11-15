@@ -162,8 +162,11 @@ def bu_the_checkout():
         new = Notifications(user_id=seller_id, text=text)
         db.session.add(new)
         db.session.commit()
+    
+    out = "".join(str(e) for e in names)
+    new_text = f"You want to buy "
 
-    return f"You payed for {total_price}"
+    return f"You paid for {total_price}"
 
 @shop.route("/api/object/view/<id>")
 def view_object(id):
