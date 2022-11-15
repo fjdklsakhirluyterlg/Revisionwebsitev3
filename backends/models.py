@@ -471,6 +471,11 @@ class Object(db.Model):
         item = Item.query.filter_by(id=self.item_id).first()
         if item:
             return item.user_id
+    
+    def item_name(self):
+        item = Item.query.filter_by(id=self.item_id).first()
+        if item:
+            return item.title
 
 class Urlshortner(db.Model):
     id = db.Column(db.String, primary_key=True)
