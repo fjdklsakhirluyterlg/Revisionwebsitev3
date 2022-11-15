@@ -7,6 +7,7 @@ from flask_mail import Mail, Message
 import random
 from . import mail
 from sqlalchemy import or_
+from backends.supplementary.Aho-Corasick import Aho-Corasick
 # from . import app
 
 auth = Blueprint('auth', __name__)
