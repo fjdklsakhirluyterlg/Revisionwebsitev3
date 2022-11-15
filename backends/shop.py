@@ -154,8 +154,10 @@ def bu_the_checkout():
         object.sold = True
         object.user_id = userd_id
     
-    text = f"""{user_name} wants to but your product: """
-    new = Notifications(user_id=seller_id)
+    for i in items:
+
+        text = f"""{user_name} wants to but your product: {i} """
+        new = Notifications(user_id=seller_id)
 
     return f"You apyed for {total_price}"
 
