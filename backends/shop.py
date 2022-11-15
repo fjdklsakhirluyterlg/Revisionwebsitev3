@@ -161,7 +161,7 @@ def bu_the_checkout():
         db.session.add(new)
         db.session.commit()
 
-    return f"You apyed for {total_price}"
+    return f"You payed for {total_price}"
 
 @shop.route("/api/object/view/<id>")
 def view_object(id):
