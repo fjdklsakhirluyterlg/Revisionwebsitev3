@@ -439,7 +439,7 @@ def convert_symbol_to_currency(symbol):
     dictx = {"£":"GBP", "€":"EUR", "¥":"JPY"}
     return dictx[symbol]
 
-def send_bying_request_thing(content, addresses):
-    msg = Message(f"", sender="drive1.banerjee.armaan@outlook.com", recipients=addresses)
+def send_bying_request_thing(title, content, addresses):
+    msg = Message(f"Buying {title}", sender="drive1.banerjee.armaan@outlook.com", recipients=addresses)
     msg.html = content
     mail.send(msg)
