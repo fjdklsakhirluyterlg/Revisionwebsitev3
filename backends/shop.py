@@ -165,6 +165,8 @@ def bu_the_checkout():
     
     out = "".join(str(e) for e in names)
     new_text = f"You have purchased {out}"
+    db.session.add(new_text)
+    db.session.commit()
 
     return f"You paid for {total_price}"
 
