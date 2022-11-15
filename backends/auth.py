@@ -98,7 +98,8 @@ def does_user_exist_api():
 
 @auth.route("/api/auth/user/name/reccomend", methods=["POST"])
 def reccomend_user_names():
-    pass
+    data = request.get_json()
+    
 
 
     
