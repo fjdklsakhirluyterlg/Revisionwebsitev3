@@ -101,6 +101,7 @@ def does_user_exist_api():
 def reccomend_user_names():
     data = request.get_json()
     name = data["name"]
+    
 
 
     
