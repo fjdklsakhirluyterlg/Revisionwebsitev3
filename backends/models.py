@@ -467,6 +467,9 @@ class Object(db.Model):
     checkout_id = db.Column(db.Integer, db.ForeignKey("checkout.id"), nullable=True, default=None)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True, default=None)
 
+    def seller(self):
+        item = Item.query.filter_by(id=self.item_id)
+
 class Urlshortner(db.Model):
     id = db.Column(db.String, primary_key=True)
     actual = db.Column(db.Text)
