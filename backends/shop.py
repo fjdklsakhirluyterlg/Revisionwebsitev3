@@ -140,9 +140,11 @@ def bu_the_checkout():
     total_price = 0
     checkout = Checkout.query.filter_by(id=id).first()
     userd_id = checkout.user_id
+    user = User.query.filter_by(id=user_id).first()
     for object in checkout.objects:
         seller_id = object.seller()
-
+        text = f""""""
+        new = Notifications(user_id=seller_id)
         total_price += int(object.price)
         object.sold = True
         object.user_id = userd_id
