@@ -144,7 +144,7 @@ def bu_the_checkout():
     user_name = user.name
     for object in checkout.objects:
         seller_id = object.seller()
-        text = f""""""
+        text = f"""{user_name} wants """
         new = Notifications(user_id=seller_id)
         total_price += int(object.price)
         object.sold = True
