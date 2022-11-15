@@ -153,6 +153,7 @@ def bu_the_checkout():
         total_price += int(object.price)
         object.sold = True
         object.user_id = userd_id
+        db.session.commit()
     
     names = []
     
