@@ -2,7 +2,7 @@ from sqlalchemy import or_
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
-from .models import Item, Object, Checkout, User, Shopaccount
+from .models import Item, Object, Checkout, User, Shopaccount, Notifications
 from werkzeug.utils import secure_filename
 import os
 import markdown
@@ -141,6 +141,8 @@ def bu_the_checkout():
     checkout = Checkout.query.filter_by(id=id).first()
     userd_id = checkout.user_id
     for object in checkout.objects:
+        seller_id = object.seller()
+
         total_price += int(object.price)
         object.sold = True
         object.user_id = userd_id
