@@ -91,9 +91,8 @@ def does_user_exist_api():
     data = request.get_json()
     name = data["name"]
     user = User.query.filter_by(name=name).first()
-    found = False
     if user:
-        found = True
+        return jsonify({"message":f"{name} already exists"})
     
 
 # app.register_blueprint(auth, url_prefix="/")
