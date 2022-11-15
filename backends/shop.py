@@ -158,6 +158,8 @@ def bu_the_checkout():
 
         text = f"""{user_name} wants to but your product: {i} """
         new = Notifications(user_id=seller_id, text=text)
+        db.session.add(new)
+        db.session.commit()
 
     return f"You apyed for {total_price}"
 
