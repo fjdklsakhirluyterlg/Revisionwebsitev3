@@ -136,7 +136,7 @@ def buy_item_thing():
 
 @shop.route("/api/checkout/buy")
 def bu_the_checkout():
-    id = request.args.get("id")
+    id = int(request.args.get("id"))
     total_price = 0
     checkout = Checkout.query.filter_by(id=id).first()
     userd_id = checkout.user_id
