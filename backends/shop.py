@@ -148,6 +148,8 @@ def bu_the_checkout():
         item_name = object.item_name
         if item_name not in items:
             items[item_name] = 1
+        else:
+            items[item_name] += 1
         total_price += int(object.price)
         object.sold = True
         object.user_id = userd_id
