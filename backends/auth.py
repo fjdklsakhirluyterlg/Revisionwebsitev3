@@ -86,4 +86,8 @@ def logout():
     logout_user()
     return redirect("/login")
 
+@auth.route("/api/auth/user/exists")
+def does_user_exist_api():
+    pass
+
 # app.register_blueprint(auth, url_prefix="/")
