@@ -154,8 +154,10 @@ def bu_the_checkout():
         object.sold = True
         object.user_id = userd_id
     
+    names = []
+    
     for i in items:
-
+        names.append(i)
         text = f"""{user_name} wants to but your product: {i} """
         new = Notifications(user_id=seller_id, text=text)
         db.session.add(new)
