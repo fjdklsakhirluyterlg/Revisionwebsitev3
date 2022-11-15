@@ -234,23 +234,25 @@ def get_current_basket():
     for check in checkouts:
         if not check.sold:
             basket.append(check)
-
-    actual = basket[0]
-    dict = {"objects":[]}
-    items = []
-    for obj in actual.objects:
-        dict["objects"].append(obj.id)
-        itemx = obj.item_id
-        item = Item.query.filter_by(id=itemx).first()
-        items.append(item.title)
-    dict["created_at"] = actual.created_at
-    dict["items"] = list(set(items))
-    if actual.sold:
-        dict["sold"] = True
+    if len(basket) > 0:
+        actual = basket[0]
+        dict = {"objects":[]}
+        items = []
+        for obj in actual.objects:
+            dict["objects"].append(obj.id)
+            itemx = obj.item_id
+            item = Item.query.filter_by(id=itemx).first()
+            items.append(item.title)
+        dict["created_at"] = actual.created_at
+        dict["items"] = list(set(items))
+        if actual.sold:
+            dict["sold"] = True
+        else:
+            dict["sold"] = False
+        dict["id"] = actual.id
+        return dict
     else:
-        dict["sold"] = False
-    dict["id"] = actual.id
-    return dict
+        return "You have no active baskets"
 
 @shop.route("/api/shop/search")
 def search_shop():
