@@ -96,5 +96,10 @@ def does_user_exist_api():
     else:
         return jsonify({"message":"user available"})
 
+@auth.route("/api/auth/user/name/reccomend", methods=["POST"])
+def reccomend_user_names():
+    pass
+
+
     
 # app.register_blueprint(auth, url_prefix="/")
