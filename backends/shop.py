@@ -245,6 +245,7 @@ def get_current_basket():
         dict["sold"] = True
     else:
         dict["sold"] = False
+    dict["id"] = actual.id
     return dict
 
 @shop.route("/api/shop/search")
