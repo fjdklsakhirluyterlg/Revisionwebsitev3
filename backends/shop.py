@@ -157,7 +157,7 @@ def bu_the_checkout():
     for i in items:
 
         text = f"""{user_name} wants to but your product: {i} """
-        new = Notifications(user_id=seller_id)
+        new = Notifications(user_id=seller_id, text=text)
 
     return f"You apyed for {total_price}"
 
