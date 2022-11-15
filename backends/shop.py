@@ -141,14 +141,19 @@ def bu_the_checkout():
     checkout = Checkout.query.filter_by(id=id).first()
     userd_id = checkout.user_id
     user = User.query.filter_by(id=userd_id).first()
+    items = {}
     user_name = user.name
     for object in checkout.objects:
         seller_id = object.seller()
-        text = f"""{user_name} wants to but your product: """
-        new = Notifications(user_id=seller_id)
+        item_name = object.item_name
+        if item_name not in items:
+            items[item_name] = 1
         total_price += int(object.price)
         object.sold = True
         object.user_id = userd_id
+    
+    text = f"""{user_name} wants to but your product: """
+    new = Notifications(user_id=seller_id)
 
     return f"You apyed for {total_price}"
 
