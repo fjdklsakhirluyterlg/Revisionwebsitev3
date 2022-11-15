@@ -7,7 +7,7 @@ from werkzeug.utils import secure_filename
 import os
 import markdown
 from . import mail
-
+from backends.functions import send_bying_request_thing
 
 shop = Blueprint("shop", __name__)
 
