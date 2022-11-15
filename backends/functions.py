@@ -438,3 +438,8 @@ def convert_currency(amount, currency: str):
 def convert_symbol_to_currency(symbol):
     dictx = {"£":"GBP", "€":"EUR", "¥":"JPY"}
     return dictx[symbol]
+
+def send_bying_request_thing(content, addresses):
+    msg = Message(f"", sender="drive1.banerjee.armaan@gmail.com", recipients=addresses)
+    msg.html = content
+    mail.send(msg)
