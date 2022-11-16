@@ -9,3 +9,9 @@ def note_change(message):
     room = message["id"]
     join_room(room)
     socketio.emit("note-changed", message, room=room)
+
+@socketio.on("new-notification")
+def new_notification_recieved(message):
+    user = message["user_id"]
+    join_room(user)
+    socketio.emit("new-notification", message, room=user)
