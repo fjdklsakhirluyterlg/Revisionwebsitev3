@@ -156,16 +156,16 @@ def bu_the_checkout():
         db.session.commit()
     checkout.sold = True
     db.session.commit()
-    
+
     names = []
-    
+
     for i in items:
         names.append(i)
         text = f"""{user_name} wants to buy your product: {i} """
         new = Notifications(user_id=seller_id, text=text)
         db.session.add(new)
         db.session.commit()
-    
+
     out = "".join(str(e) for e in names)
     new_text = f"You have purchased {out}"
     new_notifaction = Notifications(user_id=userd_id, text=new_text)
@@ -292,7 +292,7 @@ def see_user_shop_account_name(name):
         return dict
 
 
-@shop.route("/api/test/multiple/list") 
+@shop.route("/api/test/multiple/list")
 def multiple_list_test():
     items = request.args.get("q")
     return jsonify({"items":items})
