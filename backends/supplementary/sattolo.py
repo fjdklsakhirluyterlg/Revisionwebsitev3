@@ -7,4 +7,6 @@ def sattolo_cycle(items) -> None:
         j = randrange(i) 
         items[j], items[i] = items[i], items[j]
 
-print(sattolo_cycle([2, 3, 4, 5, 1, 4]))
+list = [1, 2, 3, 5, 6, 7, 9, 2]
+sattolo_cycle(list)
+print(list)
