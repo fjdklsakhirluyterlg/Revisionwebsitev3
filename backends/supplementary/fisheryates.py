@@ -8,3 +8,4 @@ def randomise (arr):
 
 array = [1, 2, 7, 4, 3, 9, 8, 6]
 randomise(array)
+print(array)
