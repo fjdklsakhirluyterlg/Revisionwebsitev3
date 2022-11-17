@@ -1,4 +1,4 @@
-from .fisheryates import randomize
+from .fisheryates import randomise
 
 def quick_sort(array):
     if len(array) < 2:
@@ -42,7 +42,7 @@ def mergeSort(arr):
 
 def bogosort(array):
     while not arraySorted(array):
-        randomize(array)
+        randomise(array)
 
 def arraySortedOrNot(arr):
     n = len(arr)
