@@ -1,4 +1,4 @@
-from .fisheryates import randomise
+from backends.supplementary.fisheryates import randomise
 
 def quick_sort(array):
     if len(array) < 2:
