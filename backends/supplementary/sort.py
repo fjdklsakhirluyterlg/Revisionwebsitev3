@@ -60,3 +60,7 @@ def arraySorted(arr):
         if (arr[i-1] > arr[i]):
             return False
     return True
+
+array = [9, 8, 3, 4, 5, 2]
+bogosort(array)
+print(array)
