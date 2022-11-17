@@ -1,3 +1,5 @@
+from fisheryates import randomise
+
 def quick_sort(array):
     if len(array) < 2:
         return array
@@ -37,3 +39,28 @@ def mergeSort(arr):
             j += 1
             k += 1
 
+
+def bogosort(array):
+    while not arraySorted(array):
+        randomise(array)
+
+def arraySortedOrNot(arr):
+    n = len(arr)
+    if n == 1 or n == 0:
+        return True
+
+    return arr[0] <= arr[1] and arraySortedOrNot(arr[1:])
+
+def arraySorted(arr):
+    n = len(arr)
+    if (n == 0 or n == 1):
+        return True
+ 
+    for i in range(1, n):
+        if (arr[i-1] > arr[i]):
+            return False
+    return True
+
+array = [9, 8, 3, 4, 5, 2]
+bogosort(array)
+print(array)
