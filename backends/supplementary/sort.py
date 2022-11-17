@@ -43,6 +43,7 @@ def mergeSort(arr):
 def bogosort(array):
     while not arraySorted(array):
         randomise(array)
+    
 
 def arraySortedOrNot(arr):
     n = len(arr)
