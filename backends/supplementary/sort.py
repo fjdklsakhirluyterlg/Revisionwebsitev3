@@ -54,10 +54,6 @@ def arraySorted(arr):
         return True
  
     for i in range(1, n):
- 
-        # Unsorted pair found
         if (arr[i-1] > arr[i]):
             return False
- 
-    # No unsorted pair found
     return True
