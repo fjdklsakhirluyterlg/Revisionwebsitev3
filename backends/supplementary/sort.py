@@ -38,5 +38,5 @@ def mergeSort(arr):
             k += 1
 
 
-def bogosort():
+def bogosort(array):
     pass
