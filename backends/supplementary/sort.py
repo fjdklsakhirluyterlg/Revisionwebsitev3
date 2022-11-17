@@ -40,3 +40,4 @@ def mergeSort(arr):
 
 def bogosort(array):
     pass
+
