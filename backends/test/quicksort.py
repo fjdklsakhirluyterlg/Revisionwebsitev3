@@ -10,4 +10,4 @@ def quick_sort(array):
 
 arr1 = [9, 3, 4, 2, 1, 8]
 arr2 = ["amin", "boo", "see", "go", "zi", "lift", "hhh", "nee"]
-print(quick_sort(arr1)) 
+print(quick_sort(arr2))
