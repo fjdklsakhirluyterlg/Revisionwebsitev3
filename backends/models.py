@@ -451,7 +451,7 @@ class Item(db.Model):
         items = self.objects
         for itm in items:
             user_id = itm.user_id
-            if user_id == user:
+            if user_id == user or user_id == self.user_id:
                 return True
         else:
             return False
