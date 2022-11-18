@@ -448,7 +448,7 @@ class Item(db.Model):
         db.session.commit()
 
     def userbought(self):
-        items = self.items
+        items = self.objects
 
 class Checkout(db.Model):
     id = db.Column(db.Integer, primary_key=True)
