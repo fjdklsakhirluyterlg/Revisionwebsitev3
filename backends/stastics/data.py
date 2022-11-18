@@ -11,3 +11,4 @@ for q in query:
 with open('users.csv', 'w', newline='') as file:
     fieldnames = ["name", "timestamp", "points", "email"]
     writer = csv.writer(file)
+    writer.writerows(users)
