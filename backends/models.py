@@ -388,6 +388,7 @@ class Stack(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     name = db.Column(db.Text)
     cards = db.relationship("Card", backref="stack")
+    
 
 class Help(db.Model):
     id = db.Column(db.Integer, primary_key=True)
