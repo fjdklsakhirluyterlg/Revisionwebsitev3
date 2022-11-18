@@ -432,6 +432,9 @@ class Song(db.Model):
     author = db.Column(db.String(255))
     lyrics = db.Column(db.Text)
 
+itme_tags = db.Table("item_tags",
+    db.Column("item_id",db.Integer, db.ForeignKey("item.id")))
+
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     stock = db.Column(db.Integer)
