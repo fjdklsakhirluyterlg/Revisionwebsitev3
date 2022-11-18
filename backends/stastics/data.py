@@ -5,5 +5,8 @@ import csv
 users = []
 query = User.query.all()
 for q in query:
-    data = [q.name, q.timestamp, q.points]
+    data = [q.name, q.timestamp, q.points, q.email]
     users.append(data)
+
+with open('users.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
