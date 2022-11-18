@@ -296,7 +296,7 @@ def delete_item_thingy(id):
     item = Item.query.filter_by(id=id).first()
     for object in item.objects:
         if not object.sold:
-            checkout_id = object.sheckout_Id
+            checkout_id = object.sheckout_id
 
 
 @shop.route("/api/test/multiple/list")
