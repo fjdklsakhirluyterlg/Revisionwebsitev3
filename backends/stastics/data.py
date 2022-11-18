@@ -2,7 +2,7 @@ from backends.models import User
 import csv
 
 users = []
-query = backends.models.User.query.all()
+query = User.query.all()
 for q in query:
     data = [q.name, q.timestamp, q.points, q.email]
     users.append(data)
