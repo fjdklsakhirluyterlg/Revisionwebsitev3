@@ -293,7 +293,7 @@ def see_user_shop_account_name(name):
     
 @shop.route("/api/shop/delete/<id>")
 def delete_item_thingy(id):
-    pass
+    item = Item.query.filter_by(id=id).first()
 
 
 @shop.route("/api/test/multiple/list")
