@@ -7,6 +7,7 @@ from werkzeug.utils import secure_filename
 import os
 import markdown
 from . import mail
+import shutil
 from backends.functions import send_bying_request_thing
 
 shop = Blueprint("shop", __name__)
@@ -303,6 +304,8 @@ def delete_item_thingy(id):
             db.session.commit()
         object.user_id = None
         db.session.commit()
+    curdir = os.getcwd()
+    
     db.session.delete(item)
     db.session.commit()
 
