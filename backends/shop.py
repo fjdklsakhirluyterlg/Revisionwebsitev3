@@ -300,7 +300,9 @@ def delete_item_thingy(id):
             checkout = Checkout.query.filter_by(id=checkout_id).first()
             checkout.objects.remove(object)
             db.session.delete(object)
-        
+            db.session.commit()
+        object.user_id = None
+        db.session.commit()
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
