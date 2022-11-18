@@ -306,6 +306,8 @@ def delete_item_thingy(id):
     db.session.delete(item)
     db.session.commit()
 
+    return jsonify({"msg":"deleted"})
+
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
     items = request.args.get("q")
