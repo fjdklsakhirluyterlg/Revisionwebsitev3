@@ -504,3 +504,4 @@ class Shopaccount(db.Model):
 
 class Review(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    stars = db.Column(db.Float)
