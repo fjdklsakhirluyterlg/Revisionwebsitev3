@@ -506,3 +506,4 @@ class Review(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     stars = db.Column(db.Float)
     text = db.Column(db.Text)
+    item_id = db.Column(db.Integer, db.ForeignKey("item.id"))
