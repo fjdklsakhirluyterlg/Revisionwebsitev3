@@ -290,6 +290,10 @@ def see_user_shop_account_name(name):
         dict["description"] = description
         dict["selling"] = names
         return dict
+    
+@shop.route("/api/shop/delete")
+def delete_item_thingy():
+    pass
 
 
 @shop.route("/api/test/multiple/list")
