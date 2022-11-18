@@ -451,6 +451,10 @@ class Item(db.Model):
         items = self.objects
         for itm in items:
             user_id = itm.user_id
+            if user_id == user:
+                return True
+        else:
+            return False
 
 class Checkout(db.Model):
     id = db.Column(db.Integer, primary_key=True)
