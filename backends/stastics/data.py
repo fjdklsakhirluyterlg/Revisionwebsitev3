@@ -9,4 +9,5 @@ for q in query:
     users.append(data)
 
 with open('users.csv', 'w', newline='') as file:
+    fieldnames = ["name", "timestamp", "points", "email"]
     writer = csv.writer(file)
