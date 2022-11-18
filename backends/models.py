@@ -440,7 +440,7 @@ class Item(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     objects = db.relationship("Object", backref="item")
     price = db.Column(db.String(10))
-
+    reviews = db.relationship("review", backref="item")
     def create(self, stock: int):
         for i in range(stock):
             new = Object(item_id=self.id, price=self.price)
