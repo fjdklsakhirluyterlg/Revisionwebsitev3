@@ -1,6 +1,3 @@
-import sys
-sys.path.append('../backends')
-
 from backends.models import User
 import csv
 
