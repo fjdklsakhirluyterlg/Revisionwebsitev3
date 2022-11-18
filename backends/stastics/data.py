@@ -1,7 +1,5 @@
-import os, sys
-currentdir = os.path.dirname(os.path.realpath(__file__))
-parentdir = os.path.dirname(currentdir)
-sys.path.append(parentdir)
+import sys
+sys.path.append('../backends')
 
 from backends.models import User
 import csv
