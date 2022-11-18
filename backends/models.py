@@ -447,7 +447,7 @@ class Item(db.Model):
             db.session.add(new)
         db.session.commit()
 
-    def userbought(self):
+    def userbought(self, user):
         items = self.objects
         for itm in items:
             user_id = itm.user_id
