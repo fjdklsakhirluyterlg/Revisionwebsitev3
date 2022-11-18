@@ -303,6 +303,8 @@ def delete_item_thingy(id):
             db.session.commit()
         object.user_id = None
         db.session.commit()
+    db.session.delete(item)
+    db.session.commit()
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
