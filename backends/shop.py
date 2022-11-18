@@ -312,6 +312,10 @@ def delete_item_thingy(id):
 
     return redirect("/dashboard")
 
+@shop.route("/api/review/add")
+def add_review_to_item():
+    pass
+
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
     items = request.args.get("q")
