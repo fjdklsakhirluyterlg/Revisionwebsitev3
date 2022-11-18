@@ -291,8 +291,8 @@ def see_user_shop_account_name(name):
         dict["selling"] = names
         return dict
     
-@shop.route("/api/shop/delete")
-def delete_item_thingy():
+@shop.route("/api/shop/delete/<id>")
+def delete_item_thingy(id):
     pass
 
 
