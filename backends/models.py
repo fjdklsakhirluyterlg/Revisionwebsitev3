@@ -516,3 +516,4 @@ class Review(db.Model):
 class Newssource(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text)
+    url = db.Column(db.Text)
