@@ -45,7 +45,7 @@ def make_security_key():
             out += id
             found = True
 
-
+    return out
 
 @auth.route("/signup", methods=["GET", "POST"])
 def signup():
