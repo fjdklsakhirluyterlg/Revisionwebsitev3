@@ -42,7 +42,7 @@ def make_security_key():
     while not found:
         id = mank_random_long_id(64)
         if id not in security_keys:
-            out = id
+            out += id
             found = True
 
 
