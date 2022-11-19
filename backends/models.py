@@ -1,7 +1,7 @@
 from flask_login import UserMixin
 from sqlalchemy import or_
 from datetime import datetime
-from . import db
+from backends import db
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
