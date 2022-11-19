@@ -59,6 +59,6 @@ def get_the_verge():
     URL = "https://www.theverge.com/rss/index.xml"
     pattern = ["title", "id"]
     rss = RssFetcher(URL, pattern)
-    return rss.get_data()
+    return rss.return_data()
 
 print(get_the_verge())
