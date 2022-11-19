@@ -169,6 +169,7 @@ class User(db.Model, UserMixin):
                 followers.c.follower_id == self.id).order_by(
                     Post.views.desc())
 
+
 class Like(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     blog_id = db.Column(db.Integer, db.ForeignKey("blog.id"), nullable=True)
@@ -533,3 +534,16 @@ class Headline(db.Model):
     title = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     news_id = db.Column(db.Integer, db.ForeignKey("newssource.id"))
+
+class Calendar(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    events = db.relationship("Event")
+
+class Event(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    date_scheduled = db.Column(db.DateTime)
+    title = db.Column(db.Text)
+    description = db.Column(db.Text)
+    creator_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    users = db.relationship("User", backref="event")

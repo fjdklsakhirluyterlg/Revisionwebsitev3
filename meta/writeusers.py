@@ -1,14 +1,14 @@
-from backends.models import User
 import csv
+from sql import get_users
 
 def write_users():
     users = []
-    query = User.query.all()
-    for q in query:
-        data = [q.name, q.timestamp, q.points, q.email]
-        users.append(data)
+    users = get_users()
 
     with open('users.csv', 'w', newline='') as file:
-        fieldnames = ["name", "timestamp", "points", "email"]
         writer = csv.writer(file)
+        fieldnames = ["name", "timestamp", "points", "email"]
+        writer.writerow(fieldnames)
         writer.writerows(users)
+
+write_users()

@@ -326,6 +326,20 @@ def add_review_to_item():
     db.session.add(new)
     db.session.commit()
 
+@shop.route("/api/review/edit", methods=["POST"])
+def edit_review_thing():
+    data = request.get_json()
+    reviewid = data["review_id"]
+    text = data["text"]
+    review = Review.query.filter_by(id=reviewid).first()
+    review.text = text
+    db.session.commit()
+
+@shop.route("/api/review/delete/<id>")
+def delete_review_thing(id):
+    review = Review.query.filter_by(id=id).first()
+    review.text = "deleted"
+    db.session.commit()
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
