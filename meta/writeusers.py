@@ -6,8 +6,9 @@ def write_users():
     users = get_users()
 
     with open('users.csv', 'w', newline='') as file:
-        fieldnames = ["name", "timestamp", "points", "email"]
         writer = csv.writer(file)
+        fieldnames = ["name", "timestamp", "points", "email"]
+        writer.writerow(fieldnames)
         writer.writerows(users)
 
 write_users()
