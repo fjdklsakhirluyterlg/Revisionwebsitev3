@@ -12,7 +12,10 @@ class UrlFetcher:
 
         soup = BeautifulSoup(response.content, "html.parser")
         result = soup.find_all(self.tag, class_=self.pattern)
-        return result
+        out = []
+        for i in result:
+            out.append(i.get_text())
+        return out
 
 class RssFetcher:
     def __init__(self, url, pattern):
