@@ -74,6 +74,8 @@ def get_the_guardian():
     pattern = "u-faux-block-link__overlay js-headline-text"
     url = UrlFetcher(URL, tag, pattern)
     data = url.get_data()
-    return data
+    return data[-10:]
 
-print(get_the_guardian())
+def get_reuteurs():
+    URL = ""
+
