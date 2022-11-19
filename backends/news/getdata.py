@@ -61,5 +61,8 @@ def get_cnn():
     URL = "https://edition.cnn.com/"
     tag = "span"
     pattern = "cd__headline-text vid-left-enabled"
+    url = UrlFetcher(URL, tag, pattern)
+    data = url.get_data()
+    return data
 
 print(get_the_verge())
