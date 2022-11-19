@@ -316,6 +316,8 @@ def delete_item_thingy(id):
 def add_review_to_item():
     data = request.get_json()
     stars = data["stars"]
+    text = data["text"]
+    
 
 
 @shop.route("/api/test/multiple/list")
