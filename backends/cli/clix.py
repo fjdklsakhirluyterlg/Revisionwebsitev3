@@ -16,4 +16,5 @@ def get_useres():
     users = User.query.all()
     dict = {}
     for user in users:
-        dict[user.id] = {"name":user.name, "email":user.email}
+        dict[user.id] = {"name":user.name, "email":user.email, "points":user.points}
+    return dict
