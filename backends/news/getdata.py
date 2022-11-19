@@ -16,4 +16,6 @@ class UrlFetcher:
         return result
 
 def get_simple_flying():
-    pass
+    URL = "https://simpleflying.com/"
+    tag = "h3"
+    pattern = "bc-title"
