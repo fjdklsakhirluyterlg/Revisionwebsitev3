@@ -27,6 +27,7 @@ class RssFetcher:
         soup = BeautifulSoup(response.text, features="xml")
         for p in self.pattern:
             data = soup.find_all(p)
+            list.append(data)
         return list
 
 def get_simple_flying():
