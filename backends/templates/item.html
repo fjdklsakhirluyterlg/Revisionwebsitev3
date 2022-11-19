@@ -5,5 +5,5 @@
         theme: 'snow',
         readOnly: true,
   });</script></div>
-    <div class="column" style="display:inline-block;"><p id="description">{{description | safe}}</p></div>
+    <div class="column" style="display:inline-block;"><p id="description">{{description | safe}}</p><div class="ratings"><span class="rating__result"></span> <i class="rating__star far fa-star"></i><i class="rating__star far fa-star"></i><i class="rating__star far fa-star"></i><i class="rating__star far fa-star"></i><i class="rating__star far fa-star"></i></div></div>
 </div><div class="wrap">{%for file in files%}<div class="box"><div class="boxInner"><img src="{{ url_for('shop.see_image_thing', filename=file, id=id) }}"></div></div>{%endfor%}</div><script src="{{url_for("static", filename="item.js")}}"></script></body>
