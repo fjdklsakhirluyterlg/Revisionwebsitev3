@@ -331,7 +331,9 @@ def edit_review_thing():
     data = request.get_json()
     reviewid = data["review_id"]
     text = data["text"]
-    
+    review = Review.query.filter_by(id=reviewid).first()
+    review.text = text
+    db.session.commit()
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
