@@ -22,3 +22,7 @@ def get_simple_flying():
     data = url.get_data()
     return data
 
+def get_bbc_news():
+    URL = "https://bbc.co.uk"
+    tag = "a"
+    pattern = "s-o-faux-block-link"
