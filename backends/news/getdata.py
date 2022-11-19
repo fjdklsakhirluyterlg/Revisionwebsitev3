@@ -57,4 +57,9 @@ def get_the_verge():
     rss = RssFetcher(URL, pattern)
     return rss.return_data()
 
+def get_cnn():
+    URL = "https://edition.cnn.com/"
+    tag = "span"
+    pattern = "cd__headline-text vid-left-enabled"
+
 print(get_the_verge())
