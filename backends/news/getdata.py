@@ -65,4 +65,10 @@ def get_cnn():
     data = url.get_data()
     return data
 
-print(get_cnn())
+def get_the_guardian():
+    URL = "https://theguardian.com"
+    tag = "div"
+    pattern = "most-popular__link"
+    url = UrlFetcher(URL, tag, pattern)
+    data = url.get_data()
+    return data
