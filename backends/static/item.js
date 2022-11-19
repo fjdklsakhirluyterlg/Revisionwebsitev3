@@ -13,3 +13,7 @@ function checkout(user_id, objects){
 function increment_counter(){
 
 }
+
+function submit_review(){
+    
+}

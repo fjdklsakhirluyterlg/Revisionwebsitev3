@@ -217,7 +217,7 @@ def view_item(title):
     
     reviews = item.reviews
     average_review = item.average_review()
-    return render_template("item.html", files=images, mainimage=mainimage, title=title, description=description, id=id, price=price, stock=stock, items=stuff, user_id=user_id, name=name, editable=editable)
+    return render_template("item.html", files=images, mainimage=mainimage, title=title, description=description, id=id, price=price, stock=stock, items=stuff, user_id=user_id, name=name, editable=editable, reviews=reviews, average_review=average_review)
 
 
 @shop.route("/api/shop/delete/item")
