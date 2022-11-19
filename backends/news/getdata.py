@@ -30,4 +30,4 @@ def get_bbc_news():
     data = url.get_data()
     return data
 
-get_bbc_news()
+print(get_bbc_news())
