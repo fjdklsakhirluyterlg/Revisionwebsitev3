@@ -328,7 +328,10 @@ def add_review_to_item():
 
 @shop.route("/api/review/edit", methods=["POST"])
 def edit_review_thing():
-    pass
+    data = request.get_json()
+    reviewid = data["review_id"]
+    text = data["text"]
+    
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
