@@ -168,9 +168,7 @@ class User(db.Model, UserMixin):
             followers, (followers.c.followed_id == Post.user_id)).filter(
                 followers.c.follower_id == self.id).order_by(
                     Post.views.desc())
-    
-    def secuirty_key_exists():
-        pass
+
 
 class Like(db.Model):
     id = db.Column(db.Integer, primary_key=True)
