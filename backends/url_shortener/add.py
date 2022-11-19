@@ -44,5 +44,4 @@ def add_url_to_shortenere():
     db.session.add(new)
     db.session.commit()
 
-    return {"id":act_id}
-        
+    return {"id":act_id}   
