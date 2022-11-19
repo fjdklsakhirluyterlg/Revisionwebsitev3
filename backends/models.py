@@ -458,6 +458,15 @@ class Item(db.Model):
                 return True
         else:
             return False
+    
+    def average_review(self):
+        reviews = self.reviews
+        stars = 0
+        for rev in reviews:
+            star = rev.stars
+            stars += star
+        
+        return stars/len(reviews)
 
 class Checkout(db.Model):
     id = db.Column(db.Integer, primary_key=True)

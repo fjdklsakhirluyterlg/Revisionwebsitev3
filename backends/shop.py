@@ -214,6 +214,9 @@ def view_item(title):
         user_id = current_user.id
         if current_user.id == user.id:
             editable = True
+    
+    reviews = item.reviews
+    average_review = item.average_review()
     return render_template("item.html", files=images, mainimage=mainimage, title=title, description=description, id=id, price=price, stock=stock, items=stuff, user_id=user_id, name=name, editable=editable)
 
 
@@ -318,7 +321,10 @@ def add_review_to_item():
     stars = data["stars"]
     text = data["text"]
     itme_id = data["item_id"]
-
+    user_id = data["user_id"]
+    new = Review(stars=stars, text=text, item_id=itme_id, user_id=user_id)
+    db.session.add(new)
+    db.session.commit()
 
 
 @shop.route("/api/test/multiple/list")
