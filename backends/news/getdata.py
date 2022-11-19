@@ -15,15 +15,16 @@ class UrlFetcher:
         return result
 
 class RssFetcher:
-    def __init__(self, url):
+    def __init__(self, url, pattern):
         headers = {"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"}
         self.url = url
         self.headers = headers
+        self.pattern = pattern
     
     def get_data(self):
         response = requests.get(self.url)
         soup = BeautifulSoup(response.text, 'lxml')
-        data = soup.find_all("title")
+        data = soup.find_all(self.pattern)
         return data
 
 def get_simple_flying():
@@ -44,6 +45,7 @@ def get_bbc_news():
 
 def get_the_verge():
     URL = "https://www.theverge.com/rss/index.xml"
+    pattern = "title"
     rss = RssFetcher(URL)
     return rss.get_data()
 
