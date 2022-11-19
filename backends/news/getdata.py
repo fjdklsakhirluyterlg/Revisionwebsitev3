@@ -104,7 +104,7 @@ def get_reuteurs():
 
 def get_wsj():
     URL = "https://www.wsj.com/"
-    tag = "a"
+    tag = "article"
     url = UrlFetcher(URL, tag)
     data = url.get_data(textmode=False)
     return data
