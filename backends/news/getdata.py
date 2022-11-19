@@ -23,7 +23,7 @@ class RssFetcher:
     
     def get_data(self):
         response = requests.get(self.url)
-        soup = BeautifulSoup(response.text, 'lxml')
+        soup = BeautifulSoup(response.text, features="xml")
         data = soup.find_all(self.pattern)
         return data
 
