@@ -6,7 +6,7 @@ crsr = connection.cursor()
 
 def get_users():
     sql_query = """
-    SELECT * FROM USER        
+    SELECT name, timestamp, points, email FROM USER        
     """
     crsr.execute(sql_query)
     ans = crsr.fetchall()
