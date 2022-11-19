@@ -317,7 +317,8 @@ def add_review_to_item():
     data = request.get_json()
     stars = data["stars"]
     text = data["text"]
-    itme_id = data["item_id"]
+    itmem_id = data["item_id"]
+
 
 
 @shop.route("/api/test/multiple/list")
