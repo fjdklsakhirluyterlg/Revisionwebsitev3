@@ -538,6 +538,7 @@ class Headline(db.Model):
 class Calendar(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    events = db.relationship("Event")
 
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -545,4 +546,4 @@ class Event(db.Model):
     title = db.Column(db.Text)
     description = db.Column(db.Text)
     creator_id = db.Column(db.Integer, db.ForeignKey("user.id"))
-    users = db.Relationship("User", backref="event")
+    users = db.relationship("User", backref="event")
