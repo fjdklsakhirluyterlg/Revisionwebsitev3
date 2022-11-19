@@ -14,6 +14,10 @@ class UrlFetcher:
         result = soup.find_all(self.tag, class_=self.pattern)
         return result
 
+class RssFetcher:
+    def __init__(self, url):
+        self.url = url
+
 def get_simple_flying():
     URL = "https://simpleflying.com/"
     tag = "h3"
@@ -30,4 +34,5 @@ def get_bbc_news():
     data = url.get_data()
     return data
 
-print(get_simple_flying())
+def get_the_verge():
+    URL = "https://www.theverge.com/rss/index.xml"
