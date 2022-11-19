@@ -335,6 +335,10 @@ def edit_review_thing():
     review.text = text
     db.session.commit()
 
+@shop.route("/api/review/delete/<id>")
+def delete_review_thing(id):
+    pass
+
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
     items = request.args.get("q")
