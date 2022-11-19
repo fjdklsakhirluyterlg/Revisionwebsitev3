@@ -63,6 +63,7 @@ def create_app():
     from .svelte import svelte
     from .go import go
     from .shop import shop
+    from backends.cli.
     app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(home, url_prefix='/')
     app.register_blueprint(todo, url_prefix='/')
