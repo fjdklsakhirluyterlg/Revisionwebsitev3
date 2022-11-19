@@ -9,3 +9,4 @@ def get_users():
     SELECT * FROM USER        
     """
     crsr.execute(sql_query)
+    ans = crsr.fetchall()
