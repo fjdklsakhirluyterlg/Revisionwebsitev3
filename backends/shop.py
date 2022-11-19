@@ -326,6 +326,9 @@ def add_review_to_item():
     db.session.add(new)
     db.session.commit()
 
+@shop.route("/api/review/edit", methods=["POST"])
+def edit_review_thing():
+    pass
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
