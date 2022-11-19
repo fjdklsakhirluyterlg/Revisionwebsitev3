@@ -26,3 +26,6 @@ def get_bbc_news():
     URL = "https://bbc.co.uk"
     tag = "a"
     pattern = "s-o-faux-block-link"
+    url = UrlFetcher(URL, tag, pattern)
+    data = url.get_data()
+    return data
