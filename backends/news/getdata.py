@@ -19,3 +19,4 @@ def get_simple_flying():
     URL = "https://simpleflying.com/"
     tag = "h3"
     pattern = "bc-title"
+    url = UrlFetcher(URL, tag, pattern)
