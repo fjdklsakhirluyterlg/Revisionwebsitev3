@@ -63,7 +63,7 @@ def signup():
         #     return render_template("signup.html", msg="user already exists")
         if password != password2:
             return render_template("signup.html", msg="pasword does not match")
-        security_key = mank_random_long_id(64)
+        security_key = make_security_key()
         news = User(name=name, email=email, password=generate_password_hash(password, method='sha256'), security_key=security_key)
         db.session.add(news)
         db.session.commit()
