@@ -114,4 +114,3 @@ def get_wsj():
         out.append(new)
     return out
 
-print(get_wsj())
