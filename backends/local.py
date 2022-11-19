@@ -1,4 +1,4 @@
-from .models import User
+from models import User
 import csv
 
 def write_users():
