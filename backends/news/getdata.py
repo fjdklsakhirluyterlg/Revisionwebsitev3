@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 class UrlFetcher:
-    def __init__(self, url, tag, pattern):
+    def __init__(self, url, tag, pattern: None):
         self.url = url
         self.pattern = pattern
         self.tag = tag
@@ -11,14 +11,24 @@ class UrlFetcher:
         response = requests.get(self.url)
 
         soup = BeautifulSoup(response.content, "html.parser")
-        result = soup.find_all(self.tag, class_=self.pattern)
-        if textmode:
-            out = []
-            for i in result:
-                out.append(i.get_text())
-            return out
+        if self.pattern:
+            result = soup.find_all(self.tag, class_=self.pattern)
+            if textmode:
+                out = []
+                for i in result:
+                    out.append(i.get_text())
+                return out
+            else:
+                return result
         else:
-            return result
+            result = soup.find_all(self.tag)
+            if textmode:
+                out = []
+                for i in result:
+                    out.append(i.get_text())
+                return out
+            else:
+                return result
 
 class RssFetcher:
     def __init__(self, url, pattern):
@@ -94,8 +104,10 @@ def get_reuteurs():
 
 def get_wsj():
     URL = "https://www.wsj.com/"
-    tag = "span"
-    pattern = "WSJTheme--headlineText--He1ANr9C"
+    tag = "a"
+    pattern = ""
     url = UrlFetcher(URL, tag, pattern)
     data = url.get_data(textmode=False)
     return data
+
+print(get_wsj())
