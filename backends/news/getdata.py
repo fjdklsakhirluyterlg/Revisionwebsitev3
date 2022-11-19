@@ -46,7 +46,7 @@ def get_bbc_news():
 def get_the_verge():
     URL = "https://www.theverge.com/rss/index.xml"
     pattern = "title"
-    rss = RssFetcher(URL)
+    rss = RssFetcher(URL, pattern)
     return rss.get_data()
 
 print(get_the_verge())
