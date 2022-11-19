@@ -12,4 +12,4 @@ class UrlFetcher:
         response = requests.get(URL)
 
         soup = BeautifulSoup(response.content, "html.parser")
-        result = soup.find_all("div", class_="gel-paragon nw-c-md-currency-summary__value")
+        result = soup.find_all(self.tag, class_=self.pattern)
