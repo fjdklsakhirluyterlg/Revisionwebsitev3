@@ -12,3 +12,6 @@ def get_users():
     ans = crsr.fetchall()
     return ans
 
+def get_blogs():
+    sql_query = """
+    """
