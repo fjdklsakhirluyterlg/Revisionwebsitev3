@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import itertools
 
 class UrlFetcher:
     def __init__(self, url, tag, pattern):
