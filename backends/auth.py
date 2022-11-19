@@ -35,7 +35,10 @@ def validate_user_with_email(address, securitykey, name):
     return {"msg": "sent"}
 
 def make_security_key():
-    pass
+    found = False
+    while not found:
+        id = mank_random_long_id(64)
+
 
 @auth.route("/signup", methods=["GET", "POST"])
 def signup():
