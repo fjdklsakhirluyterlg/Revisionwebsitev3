@@ -20,3 +20,5 @@ def get_simple_flying():
     tag = "h3"
     pattern = "bc-title"
     url = UrlFetcher(URL, tag, pattern)
+    data = url.get_data()
+    return data
