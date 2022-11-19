@@ -518,3 +518,6 @@ class Newssource(db.Model):
     name = db.Column(db.Text)
     url = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+class Headline(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
