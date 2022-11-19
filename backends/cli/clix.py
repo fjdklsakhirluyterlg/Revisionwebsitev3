@@ -12,6 +12,8 @@ clix = Blueprint("cli", __name__, cli_group=None)
 def create(name):
     email = "admin@admin.com"
     new = User(name=name, email=email, password=generate_password_hash("password", method="sha256"), security_key=make_security_key())
+    db.session.add(new)
+    db.session.commit()
 
 @clix.cli.command("get")
 @click.argument("users")
