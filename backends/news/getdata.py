@@ -80,14 +80,15 @@ def get_the_guardian():
     return data[-10:]
 
 def get_reuteurs():
-    URL = "https://www.reuters.com/"
+    URL = "https://www.reuters.com"
     tag = "a"
     pattern = "text__text__1FZLe text__dark-grey__3Ml43 text__medium__1kbOh text__heading_5_and_half__3YluN heading__base__2T28j heading_5_half media-story-card__heading__eqhp9"
     url = UrlFetcher(URL, tag, pattern)
     data = url.get_data(textmode=False)
     out = []
     for i in data:
-        new = [i.get_text(), i.get("href")]
+        href = i.get("href")
+        new = [i.get_text(), f"{URL}{href}"]
         out.append(new)
     return out
 
