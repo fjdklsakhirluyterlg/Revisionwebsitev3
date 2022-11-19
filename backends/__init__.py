@@ -7,6 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Resource, Api
 from flask_socketio import SocketIO, send
 from os import path
+import click
 
 DB_NAME = "database.db"
 db = SQLAlchemy()
