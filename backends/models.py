@@ -544,3 +544,4 @@ class Event(db.Model):
     date_scheduled = db.Column(db.Datetime)
     title = db.Column(db.Text)
     description = db.Column(db.Text)
+    creator_id = db.Column(db.Integer, db.ForeignKey("user.id"))
