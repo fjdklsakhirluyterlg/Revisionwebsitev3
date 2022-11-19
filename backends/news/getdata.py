@@ -84,7 +84,11 @@ def get_reuteurs():
     tag = "a"
     pattern = "text__text__1FZLe text__dark-grey__3Ml43 text__medium__1kbOh text__heading_5_and_half__3YluN heading__base__2T28j heading_5_half media-story-card__heading__eqhp9"
     url = UrlFetcher(URL, tag, pattern)
-    data = url.get_data()
-    return data
+    data = url.get_data(textmode=False)
+    out = []
+    for i in data:
+        new = [i.get_text(), i.href]
+        out.append(new)
+    return out
 
 print(get_reuteurs())
