@@ -337,7 +337,9 @@ def edit_review_thing():
 
 @shop.route("/api/review/delete/<id>")
 def delete_review_thing(id):
-    pass
+    review = Review.query.filter_by(id=id).first()
+    review.text = "deleted"
+    db.session.commit()
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
