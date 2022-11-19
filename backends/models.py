@@ -545,3 +545,4 @@ class Event(db.Model):
     title = db.Column(db.Text)
     description = db.Column(db.Text)
     creator_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    users = db.Relationship("User", backref="user")
