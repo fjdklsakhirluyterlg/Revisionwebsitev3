@@ -319,7 +319,7 @@ def add_review_to_item():
     text = data["text"]
     itme_id = data["item_id"]
     user_id = data["user_id"]
-    new = Review(stars=stars, text=text, item_id=itme_id)
+    new = Review(stars=stars, text=text, item_id=itme_id, user_id=user_id)
 
 
 @shop.route("/api/test/multiple/list")
