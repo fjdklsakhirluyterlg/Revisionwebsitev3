@@ -107,6 +107,11 @@ def get_wsj():
     tag = "article"
     url = UrlFetcher(URL, tag)
     data = url.get_data(textmode=False)
-    return data
+    out = []
+    for i in data:
+        href = i.get("href")
+        new = [i.get_text(), f"{URL}{href}"]
+        out.append(new)
+    return out
 
 print(get_wsj())
