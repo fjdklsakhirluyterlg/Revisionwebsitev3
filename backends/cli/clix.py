@@ -17,4 +17,4 @@ def get_useres(users):
     dict = {}
     for user in users:
         dict[user.id] = {"name":user.name, "email":user.email, "points":user.points}
-    return dict
+    print(dict)
