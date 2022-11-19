@@ -22,10 +22,12 @@ class RssFetcher:
         self.pattern = pattern
     
     def get_data(self):
+        list = []
         response = requests.get(self.url)
         soup = BeautifulSoup(response.text, features="xml")
-        data = soup.find_all(self.pattern)
-        return data
+        for p in self.pattern:
+            data = soup.find_all(p)
+        return list
 
 def get_simple_flying():
     URL = "https://simpleflying.com/"
