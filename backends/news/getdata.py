@@ -22,3 +22,5 @@ def get_simple_flying():
     url = UrlFetcher(URL, tag, pattern)
     data = url.get_data()
     return data
+
+print(get_simple_flying())
