@@ -59,8 +59,8 @@ def get_the_verge():
 
 def get_cnn():
     URL = "https://edition.cnn.com/"
-    tag = "span"
-    pattern = "cd__headline-text vid-left-enabled"
+    tag = "h3"
+    pattern = "cd__headline"
     url = UrlFetcher(URL, tag, pattern)
     data = url.get_data()
     return data
