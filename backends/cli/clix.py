@@ -9,3 +9,8 @@ clix = Blueprint("cli", __name__, cli_group=None)
 @click.argument('name')
 def create(name):
     print(name)
+
+@clix.cli.command("get")
+@click.argument("users")
+def get_useres():
+    pass
