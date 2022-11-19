@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import itertools
 
 class UrlFetcher:
     def __init__(self, url, tag, pattern):
@@ -32,7 +33,9 @@ class RssFetcher:
     
     def return_data(self):
         data = self.get_data()
-        things = zip(data)
+        out = []
+        for i in itertools.chain(data):
+            out.append(i)
 
 def get_simple_flying():
     URL = "https://simpleflying.com/"
