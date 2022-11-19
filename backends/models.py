@@ -541,3 +541,4 @@ class Calendar(db.Model):
 
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    date_scheduled = db.Column(db.Datetime)
