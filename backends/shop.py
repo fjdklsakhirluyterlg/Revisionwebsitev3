@@ -214,6 +214,8 @@ def view_item(title):
         user_id = current_user.id
         if current_user.id == user.id:
             editable = True
+    
+    reviews = item.reviews
     return render_template("item.html", files=images, mainimage=mainimage, title=title, description=description, id=id, price=price, stock=stock, items=stuff, user_id=user_id, name=name, editable=editable)
 
 
