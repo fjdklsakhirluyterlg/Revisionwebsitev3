@@ -92,4 +92,10 @@ def get_reuteurs():
         out.append(new)
     return out
 
-print(get_reuteurs())
+def get_wsj():
+    URL = "https://www.wsj.com/"
+    tag = "span"
+    pattern = "WSJTheme--headlineText--He1ANr9C"
+    url = UrlFetcher(URL, tag, pattern)
+    data = url.get_data(textmode=False)
+    return data
