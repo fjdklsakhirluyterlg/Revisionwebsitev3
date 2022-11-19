@@ -317,7 +317,7 @@ def add_review_to_item():
     data = request.get_json()
     stars = data["stars"]
     text = data["text"]
-    itmem_id = data["item_id"]
+    itme_id = data["item_id"]
 
 
 
