@@ -34,6 +34,7 @@ class RssFetcher:
     def return_data(self):
         data = self.get_data()
         out = zip(*data)
+        return list(out)
 
 def get_simple_flying():
     URL = "https://simpleflying.com/"
