@@ -26,3 +26,5 @@ def test():
     url = "https://www.bbc.co.uk"
     data = requests.get(url)
     print(data)
+
+test()
