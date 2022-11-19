@@ -534,3 +534,6 @@ class Headline(db.Model):
     title = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     news_id = db.Column(db.Integer, db.ForeignKey("newssource.id"))
+
+class Calendar(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
