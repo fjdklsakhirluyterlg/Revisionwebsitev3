@@ -1,4 +1,4 @@
 name,timestamp,points,email
-1,armaan,banerjee.armaan@gmail.com,sha256$i3WLM5DbZTAoOtwZ$c50a0c06ca2c5f0a5094bce14ba41fef37c8ab31746fc9d6ea67a98d0d4070f9,1,2022-11-09 19:56:21.585923,bvxuWfHxscALZOR4xl8sXRzQOwZOMSJEtjNehChO7KhRbk02BvmQGkA1IcOGeMlX,1,0,N/A,0,0
-2,john,drive1.banerjee.armaan@gmail.com,sha256$G9Sm78oj3qtCRCKv$01f145535fb966a39fbd1210aa2a2f9374db7435ed3ab626f6d5cb8701920c26,1,2022-11-09 20:09:37.562011,W7ZtRPiTOoadA4IFj73BsLO9oQl6BQELhTy25KfEUx4OND0f9GzIWUIi0tp4oeBV,0,0,N/A,0,0
-3,admin,admin@admin.com,sha256$eDT3joMWk9i39J5y$7b707e1443b7b72fdf7528e0dcd032839b7890ab3645c14d19cf7242d94332ff,1,2022-11-19 21:32:04.681216,nQ9UTyhTw9lkbPiB2xsSAEue8a0kI2oIgOaluqmetIOBCnNV2Pd1K0pWBCwj2hN9,0,0,N/A,0,0
+armaan,2022-11-09 19:56:21.585923,1,banerjee.armaan@gmail.com
+john,2022-11-09 20:09:37.562011,1,drive1.banerjee.armaan@gmail.com
+admin,2022-11-19 21:32:04.681216,1,admin@admin.com
