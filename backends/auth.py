@@ -38,7 +38,7 @@ def make_security_key():
     found = False
     while not found:
         id = mank_random_long_id(64)
-
+        
 
 @auth.route("/signup", methods=["GET", "POST"])
 def signup():
