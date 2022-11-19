@@ -2,20 +2,33 @@ import requests
 from bs4 import BeautifulSoup
 
 class UrlFetcher:
-    def __init__(self, url, tag, pattern):
+    def __init__(self, url, tag, pattern=None):
         self.url = url
         self.pattern = pattern
         self.tag = tag
     
-    def get_data(self):
+    def get_data(self, textmode=True):
         response = requests.get(self.url)
 
         soup = BeautifulSoup(response.content, "html.parser")
-        result = soup.find_all(self.tag, class_=self.pattern)
-        out = []
-        for i in result:
-            out.append(i.get_text())
-        return out
+        if self.pattern:
+            result = soup.find_all(self.tag, class_=self.pattern)
+            if textmode:
+                out = []
+                for i in result:
+                    out.append(i.get_text())
+                return out
+            else:
+                return result
+        else:
+            result = soup.find_all(self.tag)
+            if textmode:
+                out = []
+                for i in result:
+                    out.append(i.get_text())
+                return out
+            else:
+                return result
 
 class RssFetcher:
     def __init__(self, url, pattern):
@@ -77,11 +90,28 @@ def get_the_guardian():
     return data[-10:]
 
 def get_reuteurs():
-    URL = "https://www.reuters.com/"
+    URL = "https://www.reuters.com"
     tag = "a"
     pattern = "text__text__1FZLe text__dark-grey__3Ml43 text__medium__1kbOh text__heading_5_and_half__3YluN heading__base__2T28j heading_5_half media-story-card__heading__eqhp9"
     url = UrlFetcher(URL, tag, pattern)
-    data = url.get_data()
-    return data
+    data = url.get_data(textmode=False)
+    out = []
+    for i in data:
+        href = i.get("href")
+        new = [i.get_text(), f"{URL}{href}"]
+        out.append(new)
+    return out
 
-print(get_reuteurs())
+def get_wsj():
+    URL = "https://www.wsj.com"
+    tag = "article"
+    url = UrlFetcher(URL, tag)
+    data = url.get_data(textmode=False)
+    out = []
+    for i in data:
+        href = i.get("href")
+        new = [i.get_text(), f"{URL}{href}"]
+        out.append(new)
+    return out
+
+print(get_wsj())
