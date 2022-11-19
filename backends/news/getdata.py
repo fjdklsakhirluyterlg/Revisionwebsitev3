@@ -87,7 +87,7 @@ def get_reuteurs():
     data = url.get_data(textmode=False)
     out = []
     for i in data:
-        new = [i.get_text(), i.href]
+        new = [i.get_text(), i.get("href")]
         out.append(new)
     return out
 
