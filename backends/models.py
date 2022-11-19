@@ -542,7 +542,7 @@ class Calendar(db.Model):
 
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    date_scheduled = db.Column(db.Datetime)
+    date_scheduled = db.Column(db.DateTime)
     title = db.Column(db.Text)
     description = db.Column(db.Text)
     creator_id = db.Column(db.Integer, db.ForeignKey("user.id"))
