@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 class UrlFetcher:
-    def __init__(self, url, tag, pattern: None):
+    def __init__(self, url, tag, pattern=None):
         self.url = url
         self.pattern = pattern
         self.tag = tag
