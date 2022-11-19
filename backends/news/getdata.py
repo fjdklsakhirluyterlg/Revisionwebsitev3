@@ -29,3 +29,5 @@ def get_bbc_news():
     url = UrlFetcher(URL, tag, pattern)
     data = url.get_data()
     return data
+
+get_bbc_news()
