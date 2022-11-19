@@ -13,3 +13,7 @@ class UrlFetcher:
 
         soup = BeautifulSoup(response.content, "html.parser")
         result = soup.find_all(self.tag, class_=self.pattern)
+        return result
+
+def get_simple_flying():
+    pass
