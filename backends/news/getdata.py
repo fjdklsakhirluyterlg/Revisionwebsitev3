@@ -33,11 +33,8 @@ class RssFetcher:
     
     def return_data(self):
         data = self.get_data()
-        out = []
-        for i in itertools.chain(data):
-            out.append(i)
-        
-        return out
+        for i in data:
+            length = len(i)
 
 def get_simple_flying():
     URL = "https://simpleflying.com/"
