@@ -216,6 +216,7 @@ def view_item(title):
             editable = True
     
     reviews = item.reviews
+    average_review = item.average_reviews()
     return render_template("item.html", files=images, mainimage=mainimage, title=title, description=description, id=id, price=price, stock=stock, items=stuff, user_id=user_id, name=name, editable=editable)
 
 
