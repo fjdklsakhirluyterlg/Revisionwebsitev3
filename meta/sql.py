@@ -10,6 +10,5 @@ def get_users():
     """
     crsr.execute(sql_query)
     ans = crsr.fetchall()
-    print(ans)
+    return ans
 
-get_users()
