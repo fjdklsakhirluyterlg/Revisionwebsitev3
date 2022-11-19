@@ -389,6 +389,7 @@ class Stack(db.Model):
     name = db.Column(db.Text)
     cards = db.relationship("Card", backref="stack")
 
+
 class Help(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     subject = db.Column(db.String(1000))
@@ -431,6 +432,9 @@ class Song(db.Model):
     author = db.Column(db.String(255))
     lyrics = db.Column(db.Text)
 
+itme_tags = db.Table("item_tags",
+    db.Column("item_id",db.Integer, db.ForeignKey("item.id")))
+
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     stock = db.Column(db.Integer)
@@ -439,12 +443,21 @@ class Item(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     objects = db.relationship("Object", backref="item")
     price = db.Column(db.String(10))
-
+    reviews = db.relationship("Review", backref="item")
     def create(self, stock: int):
         for i in range(stock):
             new = Object(item_id=self.id, price=self.price)
             db.session.add(new)
         db.session.commit()
+
+    def userbought(self, user):
+        items = self.objects
+        for itm in items:
+            user_id = itm.user_id
+            if user_id == user or user_id == self.user_id:
+                return True
+        else:
+            return False
 
 class Checkout(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -491,3 +504,24 @@ class Shopaccount(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     credit_card = db.Column(db.Text)
     telephone = db.Column(db.Text, nullable=True)
+
+class Review(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    stars = db.Column(db.Float)
+    text = db.Column(db.Text)
+    item_id = db.Column(db.Integer, db.ForeignKey("item.id"))
+    likes = db.Column(db.Integer, default=0)
+    dislikes = db.Column(db.Integer, default=0)
+
+class Newssource(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Text)
+    url = db.Column(db.Text)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    headlines = db.relationship("Headline", backref="news")
+
+class Headline(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.Text)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    news_id = db.Column(db.Integer, db.ForeignKey("newssource.id"))

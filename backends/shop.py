@@ -2,11 +2,12 @@ from sqlalchemy import or_
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
-from .models import Item, Object, Checkout, User, Shopaccount, Notifications
+from .models import Item, Object, Checkout, User, Shopaccount, Notifications, Review
 from werkzeug.utils import secure_filename
 import os
 import markdown
 from . import mail
+import shutil
 from backends.functions import send_bying_request_thing
 
 shop = Blueprint("shop", __name__)
@@ -290,7 +291,31 @@ def see_user_shop_account_name(name):
         dict["description"] = description
         dict["selling"] = names
         return dict
+    
+@shop.route("/api/shop/delete/<id>")
+def delete_item_thingy(id):
+    item = Item.query.filter_by(id=id).first()
+    for object in item.objects:
+        if not object.sold:
+            checkout_id = object.checkout_id
+            if checkout_id:
+                checkout = Checkout.query.filter_by(id=checkout_id).first()
+                checkout.objects.remove(object)
+            db.session.delete(object)
+            db.session.commit()
+        object.user_id = None
+        db.session.commit()
+    curdir = os.getcwd()
+    shutil.rmtree(f"{curdir}/backends/shop/{id}")
+    db.session.delete(item)
+    db.session.commit()
 
+    return redirect("/dashboard")
+
+@shop.route("/api/review/add", methods=["POST"])
+def add_review_to_item():
+    data = request.get_json()
+    
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
