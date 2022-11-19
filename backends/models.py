@@ -521,3 +521,4 @@ class Newssource(db.Model):
 
 class Headline(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.Text)
