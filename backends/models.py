@@ -512,3 +512,6 @@ class Review(db.Model):
     item_id = db.Column(db.Integer, db.ForeignKey("item.id"))
     likes = db.Column(db.Integer)
     dislikes = db.Column(db.Integer)
+
+class Newssource(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
