@@ -65,4 +65,4 @@ def get_cnn():
     data = url.get_data()
     return data
 
-print(get_the_verge())
+print(get_cnn())
