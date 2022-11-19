@@ -13,4 +13,7 @@ def create(name):
 @clix.cli.command("get")
 @click.argument("users")
 def get_useres():
-    pass
+    users = User.query.all()
+    dict = {}
+    for user in users:
+        dict[user.id] = {"name":user.name, "email":user.email}
