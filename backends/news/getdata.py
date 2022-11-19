@@ -22,9 +22,3 @@ def get_simple_flying():
     data = url.get_data()
     return data
 
-def test():
-    url = "https://www.bbc.co.uk"
-    data = requests.get(url)
-    print(data)
-
-test()
