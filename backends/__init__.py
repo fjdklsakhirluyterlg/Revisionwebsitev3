@@ -63,7 +63,7 @@ def create_app():
     from .svelte import svelte
     from .go import go
     from .shop import shop
-    from backends.cli.
+    from backends.cli.clix import clix
     app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(home, url_prefix='/')
     app.register_blueprint(todo, url_prefix='/')
@@ -89,6 +89,7 @@ def create_app():
     app.register_blueprint(notes, url_prefix="/")
     app.register_blueprint(go, url_prefix="/")
     app.register_blueprint(shop, url_prefix="/")
+    app.register_blueprint(clix, url_prfix="/")
     app.register_blueprint(apibp, url_prfix="/")
     app.register_blueprint(add_url, url_prefix="/")
     app.register_blueprint(view_url, url_prfix="/")
