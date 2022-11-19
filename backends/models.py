@@ -510,8 +510,8 @@ class Review(db.Model):
     stars = db.Column(db.Float)
     text = db.Column(db.Text)
     item_id = db.Column(db.Integer, db.ForeignKey("item.id"))
-    likes = db.Column(db.Integer)
-    dislikes = db.Column(db.Integer)
+    likes = db.Column(db.Integer, default=0)
+    dislikes = db.Column(db.Integer, default=0)
 
 class Newssource(db.Model):
     id = db.Column(db.Integer, primary_key=True)
