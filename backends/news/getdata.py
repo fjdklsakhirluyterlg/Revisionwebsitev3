@@ -8,8 +8,7 @@ class UrlFetcher:
         self.tag = tag
     
     def get_data(self):
-        URL = self.url
-        response = requests.get(URL)
+        response = requests.get(self.url)
 
         soup = BeautifulSoup(response.content, "html.parser")
         result = soup.find_all(self.tag, class_=self.pattern)
