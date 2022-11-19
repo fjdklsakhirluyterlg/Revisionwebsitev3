@@ -3,6 +3,7 @@ from flask import Blueprint
 from backends import db
 from backends.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
+from backends.auth import make_security_key
 
 clix = Blueprint("cli", __name__, cli_group=None)
 
@@ -10,6 +11,7 @@ clix = Blueprint("cli", __name__, cli_group=None)
 @click.argument('name')
 def create(name):
     email = "admin@admin.com"
+    new = User(name=name, email=email, password=generate_password_hash("password", method="sha256"), security_key=make_security_key())
 
 @clix.cli.command("get")
 @click.argument("users")
