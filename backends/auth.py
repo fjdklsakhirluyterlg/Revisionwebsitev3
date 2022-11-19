@@ -8,6 +8,7 @@ import random
 from . import mail
 from sqlalchemy import or_
 from backends.supplementary.Ahocorasick import AhoCorasick
+import random
 # from . import app
 
 auth = Blueprint('auth', __name__)
@@ -115,7 +116,11 @@ def reccomend_user_names():
     name = data["name"]
     if len(name) <= 0:
         return "bad"
-
+    thing = random.randint(0, 1)
+    if thing == 0:
+        number = random.randint(10, 99)
+    else:
+        number = random.randint(1970, 2022)
 
     
 # app.register_blueprint(auth, url_prefix="/")
