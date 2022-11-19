@@ -22,6 +22,7 @@ class RssFetcher:
     
     def get_data(self):
         response = requests.get(self.url)
+        soup = BeautifulSoup(response.text, 'lxml')
 
 def get_simple_flying():
     URL = "https://simpleflying.com/"
