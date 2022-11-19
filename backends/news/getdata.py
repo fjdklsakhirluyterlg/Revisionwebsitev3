@@ -19,6 +19,9 @@ class RssFetcher:
         headers = {"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"}
         self.url = url
         self.headers = headers
+    
+    def get_data(self):
+        response = requests.get(self.url)
 
 def get_simple_flying():
     URL = "https://simpleflying.com/"
