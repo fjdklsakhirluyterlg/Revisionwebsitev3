@@ -8,5 +8,6 @@ class UrlFetcher:
     
     def get_data(self):
         URL = self.url
-        data = requests.get(URL)
-        
+        response = requests.get(URL)
+
+        soup = BeautifulSoup(response.content, "html.parser")
