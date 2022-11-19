@@ -67,8 +67,10 @@ def get_cnn():
 
 def get_the_guardian():
     URL = "https://theguardian.com"
-    tag = "div"
-    pattern = "most-popular__link"
+    tag = "a"
+    pattern = "u-faux-block-link__overlay js-headline-text"
     url = UrlFetcher(URL, tag, pattern)
     data = url.get_data()
     return data
+
+print(get_the_guardian())
