@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-def get_simpleflying():
-    pass
+class UrlFetcher:
+    def __init__(self, url, pattern):
+        self.url = url
+        self.pattern = pattern
