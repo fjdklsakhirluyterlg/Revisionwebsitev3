@@ -29,6 +29,9 @@ class RssFetcher:
             data = soup.find_all(p)
             list.append(data)
         return list
+    
+    def return_data(self):
+        data = self.get_data()
 
 def get_simple_flying():
     URL = "https://simpleflying.com/"
