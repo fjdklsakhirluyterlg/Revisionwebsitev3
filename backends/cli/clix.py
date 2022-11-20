@@ -3,7 +3,8 @@ from flask import Blueprint
 from backends import db
 from backends.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
-from backends.auth import make_security_key
+from backends.auth import login, make_security_key
+from flask_login import logout_user, login_user
 
 clix = Blueprint("cli", __name__, cli_group=None)
 
@@ -27,4 +28,4 @@ def get_useres(users):
 @clix.cli.command("login")
 @click.argument("name")
 def cli_login_user(name):
-    pass
+    login_user(name, remember=True)
