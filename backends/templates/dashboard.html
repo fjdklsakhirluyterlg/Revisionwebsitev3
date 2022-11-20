@@ -5,7 +5,7 @@
     </head>
 <body style="background-color: black; color: white">
     <div id="content">
-        {% if banner %}<img style="width: 100%; height: 20px; border: 5px red solid"src="/banners/{{files}}">{%else%}<form enctype="multipart/form-data" method="POST" action="/upload/banner"><label>Enter banner:</label><input type="file" name="file"  accept="image/*"><button type="submit">submit</button></form>{%endif%}
+        {% if banner %}<img style="width: 100%; height: 20%; border: 5px red solid"src="/banners/{{files}}">{%else%}<form enctype="multipart/form-data" method="POST" action="/upload/banner"><label>Enter banner:</label><input type="file" name="file"  accept="image/*"><button type="submit">submit</button></form>{%endif%}
         <h1>Hello {{name}}! You have {{points}} points </h1>
         {% if ask %}
         <p>Please check your emails and validate your account from a link sent to you by drive1.banerjee.armaan@outlook.com</p>
