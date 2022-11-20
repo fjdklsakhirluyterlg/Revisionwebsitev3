@@ -547,3 +547,6 @@ class Event(db.Model):
     description = db.Column(db.Text)
     creator_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     users = db.relationship("User", backref="event")
+
+class ScamPhone(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
