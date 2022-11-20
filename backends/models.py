@@ -535,11 +535,6 @@ class Headline(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     news_id = db.Column(db.Integer, db.ForeignKey("newssource.id"))
 
-class Calendar(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
-    events = db.relationship("Event", backref="calendar")
-
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date_scheduled = db.Column(db.DateTime)
@@ -548,6 +543,12 @@ class Event(db.Model):
     creator_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     users = db.relationship("User", backref="event")
     calendar_id = db.Column(db.Integer, db.ForeignKey("calendar.id"))
+    
+class Calendar(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    events = db.relationship("Event", backref="calendar")
+
 
 class ScamPhone(db.Model):
     id = db.Column(db.Integer, primary_key=True)
