@@ -83,7 +83,7 @@ def upload_banner_to_server():
 
         return "banner uploaded"
     else:
-        return render_template("upload.html")
+        return render_template("dashboard")
 
 
 # app.register_blueprint(upload, url_prefix="/")
