@@ -10,3 +10,5 @@ class tax:
     def calculate_annual_from_weekly(self):
         self.amount * 52.1429
     
+    def calculate_uk_tax(self):
+        ALLOWANCE = 12750
