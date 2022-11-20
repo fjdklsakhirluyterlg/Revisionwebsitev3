@@ -28,6 +28,6 @@ def get_useres(users):
 @clix.cli.command("login")
 @click.argument("name")
 def cli_login_user(name):
-    user = User.query.filter_By(name=name).first()
+    user = User.query.filter_by(name=name).first()
     login_user(user, remember=True)
     print("logged in")
