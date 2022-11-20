@@ -1,5 +1,5 @@
 class tax:
-    def __init__(self, country, amount self_employed=False):
+    def __init__(self, country, amount, self_employed=False):
         self.country = country
         self.amount = amount
         self.self_employed = False
@@ -9,5 +9,4 @@ class tax:
 
     def calculate_annual_from_weekly(self):
         self.amount * 52.1429
-    
     
