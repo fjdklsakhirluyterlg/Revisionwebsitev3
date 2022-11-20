@@ -6,4 +6,6 @@ class tax:
     def calculate_annual_from_monthy(self):
         self.amount * 12
 
+    def calculate_annual_from_weekly(self):
+        self.amount * 52.1429
     
