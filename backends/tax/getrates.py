@@ -3,7 +3,7 @@ class tax:
         self.country = country
         self.amount = amount
     
-    def calculate_annual_from_monthy(self, amount):
-        return amount*12
+    def calculate_annual_from_monthy(self):
+        self.amount * 12
 
     
