@@ -550,3 +550,5 @@ class Event(db.Model):
 
 class ScamPhone(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    telephone_code = db.Column(db.Text)
+    area_code = db.Column(db.Text)
