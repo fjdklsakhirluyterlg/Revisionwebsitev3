@@ -338,4 +338,8 @@ def user_followers_api_test(id):
     followers = [i.name for i in user.followers]
     return {"amount":followers}
 
+@user.route("/api/user/banner/add")
+def add_user_banner_thing():
+    pass
+
 # app.register_blueprint(user, url_prefix="/")
