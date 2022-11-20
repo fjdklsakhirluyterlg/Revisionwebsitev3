@@ -25,6 +25,11 @@ def get_useres(users):
         dict[user.id] = {"name":user.name, "email":user.email, "points":user.points}
     print(dict)
 
+@clix.cli.command("man")
+@click.argument("feature")
+def man_pages_for_app():
+    pass
+
 @clix.cli.command("login")
 @click.argument("name")
 def cli_login_user(name):
