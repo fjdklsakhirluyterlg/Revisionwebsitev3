@@ -29,3 +29,4 @@ def get_useres(users):
 @click.argument("name")
 def cli_login_user(name):
     login_user(name, remember=True)
+    print("logged in")
