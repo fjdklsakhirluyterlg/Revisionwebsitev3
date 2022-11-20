@@ -146,6 +146,8 @@ class User(db.Model, UserMixin):
     shopaccount = db.relationship("Shopaccount", backref="user")
     urls = db.relationship("Urlshortner", backref="user")
     reviews = db.relationship("Review", backref="user")
+    calendar = db.relationship("Calendar", backref="user")	
+    events = db.relationship("Event", backref="user")
     followed = db.relationship(
         'User', secondary=followers,
         primaryjoin=(followers.c.follower_id == id),
@@ -537,19 +539,19 @@ class Headline(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     news_id = db.Column(db.Integer, db.ForeignKey("newssource.id"))
 
-# class Event(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     date_scheduled = db.Column(db.DateTime)
-#     title = db.Column(db.Text)
-#     description = db.Column(db.Text)
-#     creator_id = db.Column(db.Integer, db.ForeignKey("user.id"))
-#     users = db.relationship("User", backref="event")
-#     calendar_id = db.Column(db.Integer, db.ForeignKey("calendar.id"))
+class Event(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    date_scheduled = db.Column(db.DateTime)
+    title = db.Column(db.Text)
+    description = db.Column(db.Text)
+    creator_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    users = db.relationship("User", backref="event")
+    calendar_id = db.Column(db.Integer, db.ForeignKey("calendar.id"))
 
-# class Calendar(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
-#     events = db.relationship("Event", backref="calendar")
+class Calendar(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    events = db.relationship("Event", backref="calendar")
 
 class ScamPhone(db.Model):
     id = db.Column(db.Integer, primary_key=True)
