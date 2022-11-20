@@ -86,7 +86,7 @@ def upload_banner_to_server():
                 name = os.path.join(f"{curdir}/backends/banners/", namex)
                 file.save(name)
 
-        return "banner uploaded"
+        return render_template("dashboard")
     else:
         return render_template("dashboard")
 
