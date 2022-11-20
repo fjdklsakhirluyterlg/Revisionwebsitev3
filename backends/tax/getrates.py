@@ -11,4 +11,6 @@ class tax:
         self.amount * 52.1429
     
     def calculate_uk_tax(self):
-        ALLOWANCE = 12750
+        ALLOWANCE = 12570
+        TAXABLE = self.amount - ALLOWANCE
+        
