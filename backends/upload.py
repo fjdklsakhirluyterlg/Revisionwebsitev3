@@ -47,7 +47,7 @@ def see_upload(filename):
 @upload.route("/banners/<filename>")
 def see_banner(filename):
     curdir = os.getcwd()
-    return send_from_directory(f"{curdir}/backends/images/", filename)
+    return send_from_directory(f"{curdir}/backends/banners/", filename)
 
 @upload.route("/uploaded/all")
 def see_all_files():
