@@ -10,3 +10,5 @@ def check_if_databse_has_data():
     crsr.execute(sql_query)
     ans = crsr.fetchall()
     return ans
+
+print(check_if_databse_has_data())
