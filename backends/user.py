@@ -53,7 +53,12 @@ def dashboard():
 
         following = usern.following
         curdir = os.getcwd()
-        filer = os.listdir(f"{curdir}/backends/images")
+        count = 0
+        filer = os.listdir(f"{curdir}/backends/banners")
+        for f in filer:
+            z = f.split(".")
+            if z[1] == str(current_user.id):
+                count += 1
         return render_template('dashboard.html', name=name, email=email, joined=joined, id=id, comments=zip(comments, l), points=points, ask=ask, notifications=notifications, bookmarks=zip(bookmarks, blog_bookmarks), posts=posts, awnsers=awnsers, notes=notes, followers=followers, followed=followed, following=following)  
     except:
         return redirect("/login")
