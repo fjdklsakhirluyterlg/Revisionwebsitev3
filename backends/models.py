@@ -145,6 +145,7 @@ class User(db.Model, UserMixin):
     checkouts = db.relationship("Checkout", backref="user")
     shopaccount = db.relationship("Shopaccount", backref="user")
     urls = db.relationship("Urlshortner", backref="user")
+    reviews = db.relationship("Review", backref="user")
     followed = db.relationship(
         'User', secondary=followers,
         primaryjoin=(followers.c.follower_id == id),
@@ -487,6 +488,7 @@ class Object(db.Model):
     price = db.Column(db.String(5))
     checkout_id = db.Column(db.Integer, db.ForeignKey("checkout.id"), nullable=True, default=None)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True, default=None)
+    added_to_checkout = db.Column(db.DateTime, nullable=True, default=None)
 
     def seller(self):
         item = Item.query.filter_by(id=self.item_id).first()
@@ -535,11 +537,6 @@ class Headline(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     news_id = db.Column(db.Integer, db.ForeignKey("newssource.id"))
 
-class Calendar(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
-    events = db.relationship("Event")
-
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date_scheduled = db.Column(db.DateTime)
@@ -547,6 +544,12 @@ class Event(db.Model):
     description = db.Column(db.Text)
     creator_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     users = db.relationship("User", backref="event")
+    calendar_id = db.Column(db.Integer, db.ForeignKey("calendar.id"))
+
+class Calendar(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    events = db.relationship("Event", backref="calendar")
 
 class ScamPhone(db.Model):
     id = db.Column(db.Integer, primary_key=True)

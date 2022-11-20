@@ -1,3 +1,4 @@
+from tkinter import filedialog
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from .models import User
@@ -7,6 +8,7 @@ from .models import Blog, Notifications, Tag, Post
 from werkzeug.security import generate_password_hash, check_password_hash
 from .blogs import blogs_related_to_blog, related_tags_thingy
 from .community import find_user_related_posts, posts_related_to_post
+import os
 # from . import app
 
 user = Blueprint("user", __name__)
@@ -52,7 +54,19 @@ def dashboard():
 
         following = usern.following
 
-        return render_template('dashboard.html', name=name, email=email, joined=joined, id=id, comments=zip(comments, l), points=points, ask=ask, notifications=notifications, bookmarks=zip(bookmarks, blog_bookmarks), posts=posts, awnsers=awnsers, notes=notes, followers=followers, followed=followed, following=following)  
+        curdir = os.getcwd()
+        count = 0
+        files = ""
+        filer = os.listdir(f"{curdir}/backends/banners")
+        for f in filer:
+            z = f.split(".")
+            if z[1] == str(current_user.id):
+                count += 1
+                files += f
+        banner = False
+        if count > 0:
+            banner += True
+        return render_template('dashboard.html', name=name, email=email, joined=joined, id=id, comments=zip(comments, l), points=points, ask=ask, notifications=notifications, bookmarks=zip(bookmarks, blog_bookmarks), posts=posts, awnsers=awnsers, notes=notes, followers=followers, followed=followed, following=following, banner=banner, files=files)  
     except:
         return redirect("/login")
 
@@ -337,5 +351,11 @@ def user_followers_api_test(id):
     user = User.query.filter_by(id=id).first()
     followers = [i.name for i in user.followers]
     return {"amount":followers}
+
+@user.route("/banners/<filename>")
+def see_banner(filename):
+    curdir = os.getcwd()
+    return send_from_directory(f"{curdir}/backends/banners/", filename)
+
 
 # app.register_blueprint(user, url_prefix="/")
