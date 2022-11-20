@@ -538,7 +538,7 @@ class Headline(db.Model):
 class Calendar(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
-    events = db.relationship("Event")
+    events = db.relationship("Event", backref="calendar")
 
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -547,6 +547,7 @@ class Event(db.Model):
     description = db.Column(db.Text)
     creator_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     users = db.relationship("User", backref="event")
+    calendar_id = db.Column(db.Integer, db.ForeignKey("calendar.id"))
 
 class ScamPhone(db.Model):
     id = db.Column(db.Integer, primary_key=True)
