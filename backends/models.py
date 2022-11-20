@@ -145,7 +145,7 @@ class User(db.Model, UserMixin):
     checkouts = db.relationship("Checkout", backref="user")
     shopaccount = db.relationship("Shopaccount", backref="user")
     urls = db.relationship("Urlshortner", backref="user")
-    calendars = db.relationship("Calendar", backref="user")
+    calendar = db.relationship("Calendar", backref="user")
     events = db.relationship("Event", backref="user")
     followed = db.relationship(
         'User', secondary=followers,
