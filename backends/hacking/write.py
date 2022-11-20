@@ -15,7 +15,7 @@ def check_if_databse_has_data():
 
 def create_and_write_tables():
     sql_statement = """
-    CREATE table Users 
+    CREATE TABLE user  
     
     """
 
