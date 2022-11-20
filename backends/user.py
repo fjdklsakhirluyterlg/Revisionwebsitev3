@@ -52,6 +52,7 @@ def dashboard():
         followednames = [folln.name for folln in followed]
 
         following = usern.following
+        
         curdir = os.getcwd()
         count = 0
         files = ""
