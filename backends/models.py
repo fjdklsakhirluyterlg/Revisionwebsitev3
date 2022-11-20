@@ -145,6 +145,7 @@ class User(db.Model, UserMixin):
     checkouts = db.relationship("Checkout", backref="user")
     shopaccount = db.relationship("Shopaccount", backref="user")
     urls = db.relationship("Urlshortner", backref="user")
+    reviews = db.relationship("Review", backref="user")
     followed = db.relationship(
         'User', secondary=followers,
         primaryjoin=(followers.c.follower_id == id),
