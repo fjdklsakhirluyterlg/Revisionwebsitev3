@@ -5,7 +5,7 @@
     </head>
 <body style="background-color: black; color: white">
     <div id="content">
-        {% if banner %}<img src="{{url_for('banner', filename=file)}}">{%endif%}
+        {% if banner %}<img src="{{url_for('banner', filename=file)}}">{%else%}<form enctype="multipart/form-data"></form>{%endif%}
         <h1>Hello {{name}}! You have {{points}} points </h1>
         {% if ask %}
         <p>Please check your emails and validate your account from a link sent to you by drive1.banerjee.armaan@outlook.com</p>
