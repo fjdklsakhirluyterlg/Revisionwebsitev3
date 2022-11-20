@@ -59,6 +59,9 @@ def dashboard():
             z = f.split(".")
             if z[1] == str(current_user.id):
                 count += 1
+        banner = False
+        if count > 0:
+            banner = True
         return render_template('dashboard.html', name=name, email=email, joined=joined, id=id, comments=zip(comments, l), points=points, ask=ask, notifications=notifications, bookmarks=zip(bookmarks, blog_bookmarks), posts=posts, awnsers=awnsers, notes=notes, followers=followers, followed=followed, following=following)  
     except:
         return redirect("/login")
