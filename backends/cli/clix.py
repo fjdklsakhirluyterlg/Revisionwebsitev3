@@ -27,8 +27,12 @@ def get_useres(users):
 
 @clix.cli.command("man")
 @click.argument("feature")
-def man_pages_for_app():
-    pass
+def man_pages_for_app(feature):
+    if feature == "user":
+        out = """
+        The user feautre allows people to do many services and access other feautures 
+        """
+        print(out)
 
 @clix.cli.command("login")
 @click.argument("name")
