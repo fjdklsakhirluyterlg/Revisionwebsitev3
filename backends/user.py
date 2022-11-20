@@ -7,6 +7,7 @@ from .models import Blog, Notifications, Tag, Post
 from werkzeug.security import generate_password_hash, check_password_hash
 from .blogs import blogs_related_to_blog, related_tags_thingy
 from .community import find_user_related_posts, posts_related_to_post
+import os
 # from . import app
 
 user = Blueprint("user", __name__)
@@ -51,7 +52,8 @@ def dashboard():
         followednames = [folln.name for folln in followed]
 
         following = usern.following
-
+        curdir = os.getcwd()
+        filer = os.listdir(f"{curdir}/backends/images")
         return render_template('dashboard.html', name=name, email=email, joined=joined, id=id, comments=zip(comments, l), points=points, ask=ask, notifications=notifications, bookmarks=zip(bookmarks, blog_bookmarks), posts=posts, awnsers=awnsers, notes=notes, followers=followers, followed=followed, following=following)  
     except:
         return redirect("/login")
