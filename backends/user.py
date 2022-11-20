@@ -352,7 +352,7 @@ def user_followers_api_test(id):
     followers = [i.name for i in user.followers]
     return {"amount":followers}
 
-@upload.route("/banners/<filename>")
+@user.route("/banners/<filename>")
 def see_banner(filename):
     curdir = os.getcwd()
     return send_from_directory(f"{curdir}/backends/banners/", filename)
