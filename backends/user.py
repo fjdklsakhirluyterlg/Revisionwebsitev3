@@ -60,7 +60,7 @@ def dashboard():
             z = f.split(".")
             if z[1] == str(current_user.id):
                 count += 1
-                files = f
+                files += f
         banner = False
         if count > 0:
             banner = True
