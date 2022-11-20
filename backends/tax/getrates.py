@@ -12,9 +12,4 @@ class tax:
     
     def calculate_uk_tax(self):
         ALLOWANCE = 12570
-        TAXABLE = self.amount - ALLOWANCE
-        larger_than_basic = 37700 - TAXABLE
-        if larger_than_basic < 0:
-            larger_than_higher = 99729 - TAXABLE
-            if larger_than_higher < 0:
-                return 37700*
+        
