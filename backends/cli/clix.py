@@ -31,6 +31,13 @@ def man_pages_for_app(feature):
     if feature == "user":
         out = """
         The user feautre allows people to do many services and access other feautures 
+
+        Users have access to the 
+        - shop
+        - commenting
+        - notes
+        - chat
+        - bookmarks
         """
         print(out)
 
