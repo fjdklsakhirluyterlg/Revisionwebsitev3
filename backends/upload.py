@@ -86,9 +86,9 @@ def upload_banner_to_server():
                 name = os.path.join(f"{curdir}/backends/banners/", namex)
                 file.save(name)
 
-        return redirect("dashboard")
+        return redirect("/dashboard")
     else:
-        return redirect("dashboard")
+        return redirect("/dashboard")
 
 
 # app.register_blueprint(upload, url_prefix="/")
