@@ -33,7 +33,7 @@ def man_pages_for_app(feature):
         The user feautre allows people to do many services and access other feautures 
 
         Users have access to the 
-        
+
         - shop
         - commenting
         - notes
