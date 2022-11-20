@@ -13,4 +13,7 @@ def check_if_databse_has_data():
     except:
         return 0
 
+def create_and_write_tables():
+    pass
+
 print(check_if_databse_has_data())
