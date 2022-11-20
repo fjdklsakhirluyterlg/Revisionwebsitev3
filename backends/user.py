@@ -54,13 +54,13 @@ def dashboard():
         following = usern.following
         curdir = os.getcwd()
         count = 0
-        files = []
+        files = ""
         filer = os.listdir(f"{curdir}/backends/banners")
         for f in filer:
             z = f.split(".")
             if z[1] == str(current_user.id):
                 count += 1
-                files.append(f)
+                files = f
         banner = False
         if count > 0:
             banner = True
