@@ -9,6 +9,7 @@ import markdown
 from . import mail
 import shutil
 from backends.functions import send_bying_request_thing
+import datetime
 
 shop = Blueprint("shop", __name__)
 
@@ -132,6 +133,7 @@ def buy_item_thing():
         item = Item.query.filter_by(id=itemx).first()
         item.stock -= 1
         obj.checkout_id = checkout_id
+        obj.added_to_checkout = datetime.utcnow
     db.session.commit()
     return jsonify({"id": checkout_id})
 
