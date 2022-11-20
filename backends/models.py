@@ -488,7 +488,7 @@ class Object(db.Model):
     price = db.Column(db.String(5))
     checkout_id = db.Column(db.Integer, db.ForeignKey("checkout.id"), nullable=True, default=None)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True, default=None)
-    added_to_checkout = db.Column(db.DateTime)
+    added_to_checkout = db.Column(db.DateTime, nullable=True, default=None)
 
     def seller(self):
         item = Item.query.filter_by(id=self.item_id).first()
