@@ -15,7 +15,10 @@ def check_if_databse_has_data():
 
 def create_and_write_tables():
     sql_statement = """
-    CREATE TABLE user()  
+    CREATE TABLE user(
+        id INT AUTO_INCREMENT PRIMARY KEY
+        email 
+    )  
     
     """
 
