@@ -1,3 +1,4 @@
+from tkinter import filedialog
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from .models import User
@@ -52,7 +53,7 @@ def dashboard():
         followednames = [folln.name for folln in followed]
 
         following = usern.following
-        
+
         curdir = os.getcwd()
         count = 0
         files = ""
@@ -65,7 +66,7 @@ def dashboard():
         banner = False
         if count > 0:
             banner += True
-        return render_template('dashboard.html', name=name, email=email, joined=joined, id=id, comments=zip(comments, l), points=points, ask=ask, notifications=notifications, bookmarks=zip(bookmarks, blog_bookmarks), posts=posts, awnsers=awnsers, notes=notes, followers=followers, followed=followed, following=following)  
+        return render_template('dashboard.html', name=name, email=email, joined=joined, id=id, comments=zip(comments, l), points=points, ask=ask, notifications=notifications, bookmarks=zip(bookmarks, blog_bookmarks), posts=posts, awnsers=awnsers, notes=notes, followers=followers, followed=followed, following=following, banner=banner, files=files)  
     except:
         return redirect("/login")
 
