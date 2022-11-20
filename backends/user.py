@@ -63,7 +63,7 @@ def dashboard():
                 files += f
         banner = False
         if count > 0:
-            banner = True
+            banner += True
         return render_template('dashboard.html', name=name, email=email, joined=joined, id=id, comments=zip(comments, l), points=points, ask=ask, notifications=notifications, bookmarks=zip(bookmarks, blog_bookmarks), posts=posts, awnsers=awnsers, notes=notes, followers=followers, followed=followed, following=following)  
     except:
         return redirect("/login")
