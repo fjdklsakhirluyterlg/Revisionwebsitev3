@@ -351,6 +351,12 @@ def delete_item_from_checkout(id):
     objects = items[item_id]
     for obj in objects:
         object = Object.query.filter_by(id=obj).first()
+        object.checkout_id = None
+        object.added_to_checkout = None
+
+    item = Item.query.filter_by(id=item_id).first()
+    item.stock += 1
+    db.session.commit()
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
