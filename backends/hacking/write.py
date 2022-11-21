@@ -11,15 +11,19 @@ def check_if_databse_has_data():
         ans = crsr.fetchall()
         return ans
     except:
-        return 0
+        create_and_write_tables()
 
 def create_and_write_tables():
     sql_statement = """
     CREATE TABLE user(
-        id INT AUTO_INCREMENT PRIMARY KEY
-        email 
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        email VARCHAR(65),
+        password VARCHAR(60),
+        name VARCHAR(40)
     )  
     
     """
+    crsr.execute(sql_statement)
+    ans = crsr.fetchall()
+    print(ans)
 
-print(check_if_databse_has_data())

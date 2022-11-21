@@ -169,6 +169,15 @@ class User(db.Model, UserMixin):
             followers, (followers.c.followed_id == Post.user_id)).filter(
                 followers.c.follower_id == self.id).order_by(
                     Post.views.desc())
+    
+    def current_checkout(self):
+        checkouts = self.checkouts
+        list = []
+        for check in checkouts:
+            if not check.sold:
+                list.append(check)
+        
+        return list[0]
 
 
 class Like(db.Model):
@@ -469,6 +478,16 @@ class Item(db.Model):
             return stars/len(reviews)
         else:
             return "no reviews"
+    
+    def free_objects(self):
+        objects = self.objects
+        list = []
+        for obj in objects:
+            if not obj.sold:
+                list.append(obj)
+        
+        return list
+    
 
 class Checkout(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -476,6 +495,7 @@ class Checkout(db.Model):
     objects = db.relationship("Object", backref="checkout")
     sold = db.Column(db.Boolean(), default=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    
     def sell(self):
         for obj in self.objects:
             obj.sold = True
@@ -494,6 +514,17 @@ class Checkout(db.Model):
                 dict[item_id] = [obj.id]
         
         return dict
+    
+    def current_checkout(self, user_id):
+        user = User.query.filter_by(id=user_id).first()
+        checkouts = user.checkouts
+        list = []
+        for check in checkouts:
+            if not check.sold:
+                list.append(check)
+        
+        return list[0]
+
 
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)

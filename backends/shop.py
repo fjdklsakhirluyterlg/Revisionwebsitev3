@@ -355,7 +355,7 @@ def delete_item_from_checkout(id):
         object.added_to_checkout = None
 
     item = Item.query.filter_by(id=item_id).first()
-    item.stock += 1
+    item.stock += len(objects)
     db.session.commit()
 
     return jsonify("deleted")
@@ -363,8 +363,50 @@ def delete_item_from_checkout(id):
 @shop.route("/api/checkout/remove/<id>")
 def remove_objects_from_chekcout(id):
     checkout = Checkout.query.filter_by(id=id).first()
-    item_id = request.args.get("item_id")
-    amount = request.args.get("amount")
+    item_id = int(request.args.get("item_id"))
+    amount = int(request.args.get("amount"))
+    items = checkout.show_items()
+    objects = items[item_id]
+    remove = objects[:amount]
+    for obj in remove:
+        object = Object.query.filter_by(id=obj).first()
+        object.checkout_id = None
+        object.added_to_checkout = None
+    
+    item = Item.query.filter_by(id=item_id).first()
+    item.stock += amount
+
+    db.session.commit()
+
+    return jsonify(f"removed {amount} items from checkout")
+
+@shop.route("/api/checkout/add/<id>")
+def add_objects_from_chekcout(id):
+    checkout = Checkout.query.filter_by(id=id).first()
+    item_id = int(request.args.get("item_id"))
+    amount = int(request.args.get("amount"))
+    item = Item.query.filter_by(id=item_id).first()
+    item.stock -= amount
+    objects = item.free_objects()[:amount]
+    for obj in objects:
+        obj.checkout_id = checkout.id
+        obj.added_to_checkout = datetime.utcnow()
+
+    db.session.commit()
+
+    return jsonify(f"added {amount} items to checkout")
+
+@login_required
+@shop.route("/user/baskets")
+def user_baskets():
+    current_scheckout = current_user.current_checkout()
+    items = current_scheckout.show_items()
+    names = [i for i in items.keys()]
+    objects = current_scheckout.objects
+    price = 0
+    for obj in objects:
+        price += obj.price
+
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
