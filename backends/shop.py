@@ -380,6 +380,20 @@ def remove_objects_from_chekcout(id):
 
     return jsonify(f"removed {amount} items from checkout")
 
+@shop.route("/api/checkout/add/<id>")
+def add_objects_from_chekcout(id):
+    checkout = Checkout.query.filter_by(id=id).first()
+    item_id = int(request.args.get("item_id"))
+    amount = int(request.args.get("amount"))
+    
+    
+    item = Item.query.filter_by(id=item_id).first()
+    item.stock += amount
+
+    db.session.commit()
+
+    return jsonify(f"added {amount} items from checkout")
+
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
     items = request.args.get("q")
