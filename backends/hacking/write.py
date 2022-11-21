@@ -17,7 +17,9 @@ def create_and_write_tables():
     sql_statement = """
     CREATE TABLE user(
         id INT AUTO_INCREMENT PRIMARY KEY
-        email 
+        email varchar(65)
+        password varchar(60)
+        name varchar(40)
     )  
     
     """
