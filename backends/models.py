@@ -506,7 +506,7 @@ class Checkout(db.Model):
         return dict
     
     def current_basket(self, user_id):
-        pass
+        user = User.query.filter_by(id=user_id).first()
 
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
