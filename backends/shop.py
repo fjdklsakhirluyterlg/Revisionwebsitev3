@@ -385,10 +385,9 @@ def add_objects_from_chekcout(id):
     checkout = Checkout.query.filter_by(id=id).first()
     item_id = int(request.args.get("item_id"))
     amount = int(request.args.get("amount"))
-    
-    
     item = Item.query.filter_by(id=item_id).first()
-    item.stock += amount
+    item.stock -= amount
+    objects = item.objects
 
     db.session.commit()
 
