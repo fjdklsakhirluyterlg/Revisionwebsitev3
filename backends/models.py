@@ -484,7 +484,7 @@ class Checkout(db.Model):
         db.session.commit()
     
     def show_items(self):
-        pass
+        objects = self.objects
 
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
