@@ -404,6 +404,8 @@ def user_baskets():
     names = [i for i in items.keys()]
     objects = current_scheckout.objects
     price = 0
+    for obj in objects:
+        price += obj.price
 
 
 @shop.route("/api/test/multiple/list")
