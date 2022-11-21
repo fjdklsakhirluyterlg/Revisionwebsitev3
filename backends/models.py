@@ -465,8 +465,10 @@ class Item(db.Model):
         for rev in reviews:
             star = rev.stars
             stars += star
-        
-        return stars/len(reviews)
+        if len(reviews) > 0:
+            return stars/len(reviews)
+        else:
+            return "no reviews"
 
 class Checkout(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -480,6 +482,18 @@ class Checkout(db.Model):
             obj.user_id = self.user_id
         self.sold = True
         db.session.commit()
+    
+    def show_items(self):
+        dict = {}
+        objects = self.objects
+        for obj in objects:
+            item_id = obj.item_id
+            if item_id in dict:
+                dict[item_id].append(obj.id)
+            else:
+                dict[item_id] = [obj.id]
+        
+        return dict
 
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)

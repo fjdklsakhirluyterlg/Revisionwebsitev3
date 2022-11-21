@@ -9,7 +9,7 @@ import markdown
 from . import mail
 import shutil
 from backends.functions import send_bying_request_thing
-import datetime
+from datetime import datetime
 
 shop = Blueprint("shop", __name__)
 
@@ -133,7 +133,7 @@ def buy_item_thing():
         item = Item.query.filter_by(id=itemx).first()
         item.stock -= 1
         obj.checkout_id = checkout_id
-        obj.added_to_checkout = datetime.utcnow
+        obj.added_to_checkout = datetime.utcnow()
     db.session.commit()
     return jsonify({"id": checkout_id})
 
@@ -342,6 +342,29 @@ def delete_review_thing(id):
     review = Review.query.filter_by(id=id).first()
     review.text = "deleted"
     db.session.commit()
+
+@shop.route("/api/checkout/delete/<id>")
+def delete_item_from_checkout(id):
+    item_id = int(request.args.get("item_id"))
+    checkout = Checkout.query.filter_by(id=id).first()
+    items = checkout.show_items()
+    objects = items[item_id]
+    for obj in objects:
+        object = Object.query.filter_by(id=obj).first()
+        object.checkout_id = None
+        object.added_to_checkout = None
+
+    item = Item.query.filter_by(id=item_id).first()
+    item.stock += 1
+    db.session.commit()
+
+    return jsonify("deleted")
+
+@shop.route("/api/checkout/remove/<id>")
+def remove_objects_from_chekcout(id):
+    checkout = Checkout.query.filter_by(id=id).first()
+    item_id = request.args.get("item_id")
+    amount = request.args.get("amount")
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
