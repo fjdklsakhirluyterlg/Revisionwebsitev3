@@ -169,6 +169,15 @@ class User(db.Model, UserMixin):
             followers, (followers.c.followed_id == Post.user_id)).filter(
                 followers.c.follower_id == self.id).order_by(
                     Post.views.desc())
+    
+    def current_checkout(self):
+        checkouts = self.checkouts
+        list = []
+        for check in checkouts:
+            if not check.sold:
+                list.append(check)
+        
+        return list[0]
 
 
 class Like(db.Model):
