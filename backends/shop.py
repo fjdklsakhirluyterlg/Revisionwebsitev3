@@ -343,6 +343,10 @@ def delete_review_thing(id):
     review.text = "deleted"
     db.session.commit()
 
+@shop.route("/api/checkout/delete")
+def delete_item_from_checkout():
+    pass
+
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
     items = request.args.get("q")
