@@ -345,9 +345,11 @@ def delete_review_thing(id):
 
 @shop.route("/api/checkout/delete/<id>")
 def delete_item_from_checkout(id):
-    item_id = request.args.get("item_id")
+    item_id = int(request.args.get("item_id"))
     checkout = Checkout.query.filter_by(id=id).first()
-    
+    items = checkout.show_items()
+
+
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
