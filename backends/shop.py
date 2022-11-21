@@ -396,6 +396,10 @@ def add_objects_from_chekcout(id):
 
     return jsonify(f"added {amount} items to checkout")
 
+@shop.route("/user/baskets")
+def user_baskets():
+    pass
+
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
     items = request.args.get("q")
