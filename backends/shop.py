@@ -358,6 +358,8 @@ def delete_item_from_checkout(id):
     item.stock += 1
     db.session.commit()
 
+    return "deleted"
+
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
     items = request.args.get("q")
