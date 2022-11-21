@@ -9,7 +9,7 @@ import markdown
 from . import mail
 import shutil
 from backends.functions import send_bying_request_thing
-import datetime
+from datetime import datetime
 
 shop = Blueprint("shop", __name__)
 
