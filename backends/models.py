@@ -505,7 +505,7 @@ class Checkout(db.Model):
         
         return dict
     
-    def current_basket():
+    def current_basket(self, user_id):
         pass
 
 class Object(db.Model):
