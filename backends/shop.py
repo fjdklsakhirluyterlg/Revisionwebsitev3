@@ -390,7 +390,7 @@ def add_objects_from_chekcout(id):
     objects = item.free_objects()[:amount]
     for obj in objects:
         obj.checkout_id = checkout.id
-        
+        obj.added_to_checkout = datetime.utcnow()
 
     db.session.commit()
 
