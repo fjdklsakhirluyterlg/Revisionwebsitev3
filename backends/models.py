@@ -469,6 +469,14 @@ class Item(db.Model):
             return stars/len(reviews)
         else:
             return "no reviews"
+    
+    def free_objects(self):
+        objects = self.objects
+        list = []
+        for obj in objects:
+            if not obj.sold:
+                list.append(obj)
+    
 
 class Checkout(db.Model):
     id = db.Column(db.Integer, primary_key=True)
