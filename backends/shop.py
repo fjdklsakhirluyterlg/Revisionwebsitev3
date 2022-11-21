@@ -401,6 +401,7 @@ def add_objects_from_chekcout(id):
 def user_baskets():
     current_scheckout = current_user.current_checkout()
     items = current_scheckout.show_items()
+    names = [i for i in items.keys()]
 
 
 @shop.route("/api/test/multiple/list")
