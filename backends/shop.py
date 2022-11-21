@@ -367,6 +367,11 @@ def remove_objects_from_chekcout(id):
     amount = request.args.get("amount")
     items = checkout.show_items()
     objects = items[item_id]
+    remove = objects[:amount]
+    for obj in remove:
+        object = Object.query.filter_by(id=obj).first()
+        object.checkout_id = None
+        object.added_to_checkout = None
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
