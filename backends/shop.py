@@ -399,7 +399,8 @@ def add_objects_from_chekcout(id):
 @login_required
 @shop.route("/user/baskets")
 def user_baskets():
-    pass
+    current_scheckout = current_user.current_checkout()
+    
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
