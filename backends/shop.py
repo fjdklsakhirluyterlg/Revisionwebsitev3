@@ -360,6 +360,10 @@ def delete_item_from_checkout(id):
 
     return jsonify("deleted")
 
+@shop.route("/api/checkout/remove")
+def remove_objects_from_chekcout():
+    pass
+
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
     items = request.args.get("q")
