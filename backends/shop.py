@@ -360,8 +360,8 @@ def delete_item_from_checkout(id):
 
     return jsonify("deleted")
 
-@shop.route("/api/checkout/remove")
-def remove_objects_from_chekcout():
+@shop.route("/api/checkout/remove/<id>")
+def remove_objects_from_chekcout(id):
     pass
 
 @shop.route("/api/test/multiple/list")
