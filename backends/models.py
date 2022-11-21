@@ -504,6 +504,9 @@ class Checkout(db.Model):
                 dict[item_id] = [obj.id]
         
         return dict
+    
+    def current_basket():
+        pass
 
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
