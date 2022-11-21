@@ -482,6 +482,9 @@ class Checkout(db.Model):
             obj.user_id = self.user_id
         self.sold = True
         db.session.commit()
+    
+    def show_items(self):
+        pass
 
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
