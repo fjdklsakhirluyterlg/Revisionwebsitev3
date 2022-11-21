@@ -476,6 +476,8 @@ class Item(db.Model):
         for obj in objects:
             if not obj.sold:
                 list.append(obj)
+        
+        return list
     
 
 class Checkout(db.Model):

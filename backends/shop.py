@@ -387,7 +387,10 @@ def add_objects_from_chekcout(id):
     amount = int(request.args.get("amount"))
     item = Item.query.filter_by(id=item_id).first()
     item.stock -= amount
-    objects = item.objects
+    objects = item.free_objects()[:amount]
+    for obj in objects:
+        obj.checkout_id = checkout.id
+        
 
     db.session.commit()
 
