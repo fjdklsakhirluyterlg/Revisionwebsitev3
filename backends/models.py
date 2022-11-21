@@ -465,8 +465,10 @@ class Item(db.Model):
         for rev in reviews:
             star = rev.stars
             stars += star
-        
-        return stars/len(reviews)
+        if len(reviews) > 0:
+            return stars/len(reviews)
+        else:
+            return "no reviews"
 
 class Checkout(db.Model):
     id = db.Column(db.Integer, primary_key=True)
