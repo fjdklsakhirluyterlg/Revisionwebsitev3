@@ -484,7 +484,13 @@ class Checkout(db.Model):
         db.session.commit()
     
     def show_items(self):
+        dict = {}
         objects = self.objects
+        for obj in objects:
+            item_id = obj.item_id
+            if item_id in dict:
+                dict[item_id].append(obj.id)
+                
 
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
