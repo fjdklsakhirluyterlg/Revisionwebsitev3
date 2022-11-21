@@ -355,7 +355,7 @@ def delete_item_from_checkout(id):
         object.added_to_checkout = None
 
     item = Item.query.filter_by(id=item_id).first()
-    item.stock += 1
+    item.stock += len(objects)
     db.session.commit()
 
     return jsonify("deleted")
