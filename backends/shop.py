@@ -394,7 +394,7 @@ def add_objects_from_chekcout(id):
 
     db.session.commit()
 
-    return jsonify(f"added {amount} items from checkout")
+    return jsonify(f"added {amount} items to checkout")
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
