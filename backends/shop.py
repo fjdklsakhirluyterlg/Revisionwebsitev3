@@ -362,7 +362,9 @@ def delete_item_from_checkout(id):
 
 @shop.route("/api/checkout/remove/<id>")
 def remove_objects_from_chekcout(id):
-    pass
+    checkout = Checkout.query.filter_by(id=id).first()
+    item_id = request.args.get("item_id")
+    amount = request.args.get("amount")
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
