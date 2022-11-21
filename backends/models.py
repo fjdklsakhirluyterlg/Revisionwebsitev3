@@ -505,8 +505,16 @@ class Checkout(db.Model):
         
         return dict
     
-    def current_basket(self, user_id):
+    def current_checkout(self, user_id):
         user = User.query.filter_by(id=user_id).first()
+        checkouts = user.checkouts
+        list = []
+        for check in checkouts:
+            if not check.sold:
+                list.append(check)
+        
+        return list[0]
+
 
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
