@@ -402,6 +402,7 @@ def user_baskets():
     current_scheckout = current_user.current_checkout()
     items = current_scheckout.show_items()
     names = [i for i in items.keys()]
+    objects = current_scheckout.objects
 
 
 @shop.route("/api/test/multiple/list")
