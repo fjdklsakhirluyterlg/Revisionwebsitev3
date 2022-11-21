@@ -345,7 +345,7 @@ def delete_review_thing(id):
 
 @shop.route("/api/checkout/delete/<id>")
 def delete_item_from_checkout(id):
-    pass
+    ktem_id = request.args.get("item_id")
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
