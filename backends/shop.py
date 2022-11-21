@@ -378,6 +378,8 @@ def remove_objects_from_chekcout(id):
 
     db.session.commit()
 
+    return jsonify(f"removed {amount} items from checkout")
+
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
     items = request.args.get("q")
