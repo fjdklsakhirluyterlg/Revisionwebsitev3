@@ -376,6 +376,8 @@ def remove_objects_from_chekcout(id):
     item = Item.query.filter_by(id=item_id).first()
     item.stock += amount
 
+    db.session.commit()
+
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
     items = request.args.get("q")
