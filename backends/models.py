@@ -492,6 +492,8 @@ class Checkout(db.Model):
                 dict[item_id].append(obj.id)
             else:
                 dict[item_id] = [obj.id]
+        
+        return dict
 
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
