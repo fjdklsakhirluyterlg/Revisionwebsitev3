@@ -490,7 +490,8 @@ class Checkout(db.Model):
             item_id = obj.item_id
             if item_id in dict:
                 dict[item_id].append(obj.id)
-                
+            else:
+                dict[item_id] = [obj.id]
 
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
