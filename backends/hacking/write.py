@@ -11,7 +11,7 @@ def check_if_databse_has_data():
         ans = crsr.fetchall()
         return ans
     except:
-        return 0
+        create_and_write_tables()
 
 def create_and_write_tables():
     sql_statement = """
@@ -23,5 +23,6 @@ def create_and_write_tables():
     )  
     
     """
-
-print(check_if_databse_has_data())
+    crsr.execute(sql_statement)
+    ans = crsr.fetchall()
+    
