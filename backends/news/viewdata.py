@@ -5,4 +5,5 @@ news = Blueprint("news", __name__)
 
 @news.route("/news/source/<name>")
 def return_news_source(name):
-    pass
+    if name == "bbc":
+        results = get_bbc_news()
