@@ -358,7 +358,7 @@ def delete_item_from_checkout(id):
     item.stock += 1
     db.session.commit()
 
-    return "deleted"
+    return jsonify("deleted")
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
