@@ -365,6 +365,8 @@ def remove_objects_from_chekcout(id):
     checkout = Checkout.query.filter_by(id=id).first()
     item_id = request.args.get("item_id")
     amount = request.args.get("amount")
+    items = checkout.show_items()
+    objects = items[item_id]
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
