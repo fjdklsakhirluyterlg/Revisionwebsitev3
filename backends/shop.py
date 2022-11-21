@@ -396,6 +396,7 @@ def add_objects_from_chekcout(id):
 
     return jsonify(f"added {amount} items to checkout")
 
+@login_required
 @shop.route("/user/baskets")
 def user_baskets():
     pass
