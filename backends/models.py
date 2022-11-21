@@ -495,6 +495,7 @@ class Checkout(db.Model):
     objects = db.relationship("Object", backref="checkout")
     sold = db.Column(db.Boolean(), default=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    
     def sell(self):
         for obj in self.objects:
             obj.sold = True

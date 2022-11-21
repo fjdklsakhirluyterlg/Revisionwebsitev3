@@ -400,7 +400,8 @@ def add_objects_from_chekcout(id):
 @shop.route("/user/baskets")
 def user_baskets():
     current_scheckout = current_user.current_checkout()
-    
+    items = current_scheckout.show_items()
+
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
