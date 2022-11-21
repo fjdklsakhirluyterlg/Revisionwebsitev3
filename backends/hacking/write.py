@@ -19,7 +19,7 @@ def create_and_write_tables():
         id INT AUTO_INCREMENT PRIMARY KEY,
         email VARCHAR(65),
         password VARCHAR(60),
-        name VARCHAR(40);
+        name VARCHAR(40)
     )  
     
     """
@@ -27,4 +27,3 @@ def create_and_write_tables():
     ans = crsr.fetchall()
     print(ans)
 
-check_if_databse_has_data()
