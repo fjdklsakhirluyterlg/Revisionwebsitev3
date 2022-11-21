@@ -1,5 +1,5 @@
 import pytest
-from backends.models import User, Blog, Post, Chat, Urlshortner
+from backends.models import User, Blog, Post, Chat, Urlshortner, Item, Object
 from werkzeug.security import generate_password_hash
 import random
 from backends import create_app
@@ -65,3 +65,8 @@ def new_url(new_user):
     id = generate_random_id()
     new = Urlshortner(actual=actual, id=id, user_id=new_user.id)
     return new
+
+@pytest.mark.database_access
+@pytest.fixture(scope="module")
+def new_item():
+    new = Item(user_id=1, title="item")

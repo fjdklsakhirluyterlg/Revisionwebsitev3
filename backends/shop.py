@@ -349,6 +349,8 @@ def delete_item_from_checkout(id):
     checkout = Checkout.query.filter_by(id=id).first()
     items = checkout.show_items()
     objects = items[item_id]
+    for obj in objects:
+        object = Object.query.filter_by(id=obj).first()
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
