@@ -495,7 +495,7 @@ class Checkout(db.Model):
     objects = db.relationship("Object", backref="checkout")
     sold = db.Column(db.Boolean(), default=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    
+
     def sell(self):
         for obj in self.objects:
             obj.sold = True
@@ -553,6 +553,7 @@ class Urlshortner(db.Model):
 class ImageCard(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     card_id = db.Column(db.Integer, db.ForeignKey("card.id"))
+    filename = db.Column(db.Text)
 
 class Shopaccount(db.Model):
     id = db.Column(db.Integer, primary_key=True)
