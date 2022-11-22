@@ -2,9 +2,17 @@ from flask import Flask, render_template, url_for, request, redirect, send_from_
 from . import db
 from flask_login import current_user, login_required
 from .models import Card, Stack, Quiz, ImageCard
+from werkzeug.utils import secure_filename
 # from . import app
 
 card = Blueprint("card", __name__)
+
+UPLOAD_FOLDER = './images/'
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @card.route("/api/stack/add", methods=["POST"])
 def api_add_stack():
@@ -89,17 +97,17 @@ def api_card_add_stuff():
     db.session.commit()
     id = getattr(new, "id")
     names = []
-        for file in request.files.getlist('file'):
-            if file.filename == '':
-                flash('No selected file')
-                return redirect(request.url)
-            if file and allowed_file(file.filename):
-                filename = secure_filename(file.filename)
-                names.append(filename)
-                curdir = os.getcwd()
-                namex = f"{current_user.name}.{current_user.id}.{filename}"
-                name = os.path.join(f"{curdir}/backends/banners/", namex)
-                file.save(name)
+    for file in request.files.getlist('file'):
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            names.append(filename)
+            curdir = os.getcwd()
+            namex = f"{current_user.name}.{current_user.id}.{filename}"
+            name = os.path.join(f"{curdir}/backends/banners/", namex)
+            file.save(name)
     return jsonify({"id": id})
     
 @card.route("/api/stack/cards/delete")
