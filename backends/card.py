@@ -1,9 +1,7 @@
-from multiprocessing import parent_process
-from urllib.parse import parse_qsl
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
-from .models import Card, Stack, Quiz
+from .models import Card, Stack, Quiz, ImageCard
 # from . import app
 
 card = Blueprint("card", __name__)
@@ -90,6 +88,18 @@ def api_card_add_stuff():
     db.session.add(new)
     db.session.commit()
     id = getattr(new, "id")
+    names = []
+        for file in request.files.getlist('file'):
+            if file.filename == '':
+                flash('No selected file')
+                return redirect(request.url)
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                names.append(filename)
+                curdir = os.getcwd()
+                namex = f"{current_user.name}.{current_user.id}.{filename}"
+                name = os.path.join(f"{curdir}/backends/banners/", namex)
+                file.save(name)
     return jsonify({"id": id})
     
 @card.route("/api/stack/cards/delete")
