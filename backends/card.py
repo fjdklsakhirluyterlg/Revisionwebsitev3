@@ -3,6 +3,7 @@ from . import db
 from flask_login import current_user, login_required
 from .models import Card, Stack, Quiz, ImageCard
 from werkzeug.utils import secure_filename
+import os
 # from . import app
 
 card = Blueprint("card", __name__)
@@ -98,9 +99,6 @@ def api_card_add_stuff():
     id = getattr(new, "id")
     names = []
     for file in request.files.getlist('file'):
-        if file.filename == '':
-            flash('No selected file')
-            return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             names.append(filename)
