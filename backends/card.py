@@ -101,8 +101,10 @@ def api_card_add_stuff():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             curdir = os.getcwd()
-            new_image = ImageCard(card_id=id)
-            namex = f"{filename}"
+            new_image = ImageCard(card_id=id, filename=filename)
+            db.session.add(new_image)
+            db.session.commit()
+            namex = getattr(new_image, "id")
             name = os.path.join(f"{curdir}/backends/cards/", namex)
             file.save(name)
     return jsonify({"id": id})
