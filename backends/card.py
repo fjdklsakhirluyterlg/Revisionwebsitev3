@@ -101,8 +101,9 @@ def api_card_add_stuff():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             curdir = os.getcwd()
+            new_image = ImageCard(card_id=id)
             namex = f"{filename}"
-            name = os.path.join(f"{curdir}/backends/banners/", namex)
+            name = os.path.join(f"{curdir}/backends/cards/", namex)
             file.save(name)
     return jsonify({"id": id})
     
