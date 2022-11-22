@@ -1,12 +1,19 @@
-from multiprocessing import parent_process
-from urllib.parse import parse_qsl
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
 from flask_login import current_user, login_required
-from .models import Card, Stack, Quiz
+from .models import Card, Stack, Quiz, ImageCard
+from werkzeug.utils import secure_filename
+import os
 # from . import app
 
 card = Blueprint("card", __name__)
+
+UPLOAD_FOLDER = './images/'
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @card.route("/api/stack/add", methods=["POST"])
 def api_add_stack():
@@ -90,6 +97,16 @@ def api_card_add_stuff():
     db.session.add(new)
     db.session.commit()
     id = getattr(new, "id")
+    for file in request.files.getlist('file'):
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            curdir = os.getcwd()
+            new_image = ImageCard(card_id=id, filename=filename)
+            db.session.add(new_image)
+            db.session.commit()
+            namex = getattr(new_image, "id")
+            name = os.path.join(f"{curdir}/backends/cards/", f"{namex}.{filename}")
+            file.save(name)
     return jsonify({"id": id})
     
 @card.route("/api/stack/cards/delete")
