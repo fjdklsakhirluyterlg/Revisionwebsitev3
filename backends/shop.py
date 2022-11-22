@@ -407,8 +407,8 @@ def user_baskets():
     for obj in objects:
         price += obj.price
 
-@shop.route("/api/shop/reccomended/")
-def reccomended_items():
+@shop.route("/api/shop/reccomended/<id>")
+def reccomended_items(id):
     pass
 
 
