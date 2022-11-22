@@ -554,6 +554,7 @@ class ImageCard(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     card_id = db.Column(db.Integer, db.ForeignKey("card.id"))
     filename = db.Column(db.Text)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
 class Shopaccount(db.Model):
     id = db.Column(db.Integer, primary_key=True)
