@@ -495,10 +495,11 @@ class Item(db.Model):
             items = check.show_items()
             if self.id in items:
                 for itm in items:
+                    item = item.query.filter_by(id=itm).first()
                     if itm.title in dict:
-                        dict[itm.title] += 1
+                        dict[item.title] += 1
                     else:
-                        dict[itm.title] = 1
+                        dict[item.title] = 1
 
         return dict
     
