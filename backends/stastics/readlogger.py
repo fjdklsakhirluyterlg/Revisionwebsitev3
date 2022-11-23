@@ -8,7 +8,6 @@ def read_logger():
     for line in f:
         if "(process_request_thread)" in f:
             list.append(line)
-    f.close()
 
     print(list)
 
