@@ -11,3 +11,6 @@ async def get(url, method):
 
 async def main_run():
     status, reason = asyncio.gather(get())
+    print(status)
+
+asyncio.run(main_def())
