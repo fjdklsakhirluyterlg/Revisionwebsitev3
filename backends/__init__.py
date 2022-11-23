@@ -36,6 +36,7 @@ def create_app():
     mail.init_app(app)
     db.init_app(app)
     migrate.init_app(app, db)
+    redis_client.init_app(app)
     CORS(app, resources={r"*": {"origins": "*"}})
     socketio.init_app(app, cors_allowed_origins="*")
     
