@@ -1,22 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-import { useEffect } from 'react/cjs/react.production.min';
-import { useState } from 'react';
+import './components/hi.js'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
-  const [currentTime, setCurrentTime] = useState(0);
-
-  useEffect(() => {
-    fetch('/time').then(res => res.json()).then(data => {
-      setCurrentTime(data.time);
-    });
-  }, []);
   return (
+    <Router>
+    <Routes>
+      <Route path="/" element={<hi />}/>
     <div className="App">
-      <header className="App-header">
-        <p>{currentTime}</p>
-      </header>
+      <p>My name is joe</p>
     </div>
+    </Routes>
+    </Router>
   );
 }
 

@@ -5,6 +5,7 @@ from flask_login import current_user, login_required
 import html, requests, math
 from .functions import send_newsletter_with_flask
 import markdown
+from .socket import emit_new_notification
 # from . import app
 
 blogs = Blueprint("blogs", __name__)
@@ -32,6 +33,7 @@ def create_blog():
     text = f"""<p><a href='/blogs/views/{data["title"]}'>{data["title"]}</a> was created"""
     for user in users:
         notification = Notifications(user_id=user, text=text)
+        emit_new_notification(text, user_id=user)
         db.session.add(notification)    
     
     db.session.add(new_blog)

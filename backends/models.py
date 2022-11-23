@@ -1,9 +1,7 @@
-from socketserver import ThreadingUnixDatagramServer
 from flask_login import UserMixin
 from sqlalchemy import or_
 from datetime import datetime
-from . import db
-from flask_sqlalchemy import SQLAlchemy
+from backends import db
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -147,6 +145,7 @@ class User(db.Model, UserMixin):
     checkouts = db.relationship("Checkout", backref="user")
     shopaccount = db.relationship("Shopaccount", backref="user")
     urls = db.relationship("Urlshortner", backref="user")
+    reviews = db.relationship("Review", backref="user")
     followed = db.relationship(
         'User', secondary=followers,
         primaryjoin=(followers.c.follower_id == id),
@@ -170,6 +169,16 @@ class User(db.Model, UserMixin):
             followers, (followers.c.followed_id == Post.user_id)).filter(
                 followers.c.follower_id == self.id).order_by(
                     Post.views.desc())
+    
+    def current_checkout(self):
+        checkouts = self.checkouts
+        list = []
+        for check in checkouts:
+            if not check.sold:
+                list.append(check)
+        
+        return list[0]
+
 
 class Like(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -458,6 +467,42 @@ class Item(db.Model):
                 return True
         else:
             return False
+    
+    def average_review(self):
+        reviews = self.reviews
+        stars = 0
+        for rev in reviews:
+            star = rev.stars
+            stars += star
+        if len(reviews) > 0:
+            return stars/len(reviews)
+        else:
+            return "no reviews"
+    
+    def free_objects(self):
+        objects = self.objects
+        list = []
+        for obj in objects:
+            if not obj.sold:
+                list.append(obj)
+        
+        return list
+    
+    def checkouts(self):
+        dict = {}
+        checkouts = Checkout.query.all()
+        for check in checkouts:
+            items = check.show_items()
+            if self.id in items:
+                for itm in items:
+                    item = Item.query.filter_by(id=itm).first()
+                    if item.title in dict:
+                        dict[item.title] += 1
+                    elif item.title != self.title:
+                        dict[item.title] = 1
+
+        return dict
+    
 
 class Checkout(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -465,12 +510,36 @@ class Checkout(db.Model):
     objects = db.relationship("Object", backref="checkout")
     sold = db.Column(db.Boolean(), default=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
     def sell(self):
         for obj in self.objects:
             obj.sold = True
             obj.user_id = self.user_id
         self.sold = True
         db.session.commit()
+    
+    def show_items(self):
+        dict = {}
+        objects = self.objects
+        for obj in objects:
+            item_id = obj.item_id
+            if item_id in dict:
+                dict[item_id].append(obj.id)
+            else:
+                dict[item_id] = [obj.id]
+        
+        return dict
+    
+    def current_checkout(self, user_id):
+        user = User.query.filter_by(id=user_id).first()
+        checkouts = user.checkouts
+        list = []
+        for check in checkouts:
+            if not check.sold:
+                list.append(check)
+        
+        return list[0]
+
 
 class Object(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -479,6 +548,7 @@ class Object(db.Model):
     price = db.Column(db.String(5))
     checkout_id = db.Column(db.Integer, db.ForeignKey("checkout.id"), nullable=True, default=None)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=True, default=None)
+    added_to_checkout = db.Column(db.DateTime, nullable=True, default=None)
 
     def seller(self):
         item = Item.query.filter_by(id=self.item_id).first()
@@ -498,6 +568,8 @@ class Urlshortner(db.Model):
 class ImageCard(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     card_id = db.Column(db.Integer, db.ForeignKey("card.id"))
+    filename = db.Column(db.Text)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
 class Shopaccount(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -526,3 +598,31 @@ class Headline(db.Model):
     title = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     news_id = db.Column(db.Integer, db.ForeignKey("newssource.id"))
+
+calendar_event = db.Table("calendar_event",
+    db.Column("event_id", db.Integer, primary_key=True),
+    db.Column("calendar_id", db.Integer, primary_key=True)
+)
+
+class Event(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    date_scheduled = db.Column(db.DateTime)
+    title = db.Column(db.Text)
+    description = db.Column(db.Text)
+    creator_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    users = db.relationship("User", backref="event")
+    calendar_id = db.Column(db.Integer, db.ForeignKey("calendar.id"))
+
+class Calendar(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    events = db.relationship("Event", backref="calendar")
+
+class ScamPhone(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    telephone_code = db.Column(db.Text)
+    area_code = db.Column(db.Text)
+
+class ScamEmail(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.Text)

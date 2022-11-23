@@ -8,6 +8,7 @@ import random
 from . import mail
 from sqlalchemy import or_
 from backends.supplementary.Ahocorasick import AhoCorasick
+import random
 # from . import app
 
 auth = Blueprint('auth', __name__)
@@ -34,6 +35,19 @@ def validate_user_with_email(address, securitykey, name):
     mail.send(msg)
     return {"msg": "sent"}
 
+def make_security_key():
+    found = False
+    users = User.query.all()
+    security_keys = [user.security_key for user in users]
+    out = ""
+    while not found:
+        id = mank_random_long_id(64)
+        if id not in security_keys:
+            out += id
+            found = True
+
+    return out
+
 @auth.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
@@ -50,8 +64,7 @@ def signup():
         #     return render_template("signup.html", msg="user already exists")
         if password != password2:
             return render_template("signup.html", msg="pasword does not match")
-        
-        security_key = mank_random_long_id(64)
+        security_key = make_security_key()
         news = User(name=name, email=email, password=generate_password_hash(password, method='sha256'), security_key=security_key)
         db.session.add(news)
         db.session.commit()
@@ -103,7 +116,11 @@ def reccomend_user_names():
     name = data["name"]
     if len(name) <= 0:
         return "bad"
-
+    thing = random.randint(0, 1)
+    if thing == 0:
+        number = random.randint(10, 99)
+    else:
+        number = random.randint(1970, 2022)
 
     
 # app.register_blueprint(auth, url_prefix="/")

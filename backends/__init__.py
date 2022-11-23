@@ -6,12 +6,17 @@ from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Resource, Api
 from flask_socketio import SocketIO, send
+from flask_migrate import Migrate
 from os import path
+from flask_redis import FlaskRedis
+import logging
 
 DB_NAME = "database.db"
 db = SQLAlchemy()
 mail = Mail()
 socketio = SocketIO()
+migrate = Migrate()
+redis_client = FlaskRedis()
 
 def create_app():
     apibp = Blueprint("api", __name__)
@@ -31,8 +36,13 @@ def create_app():
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
     mail.init_app(app)
     db.init_app(app)
+    migrate.init_app(app, db)
+    redis_client.init_app(app)
     CORS(app, resources={r"*": {"origins": "*"}})
     socketio.init_app(app, cors_allowed_origins="*")
+
+    logging.basicConfig(filename='record.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
+
     
     from .auth import auth
     from .home import home
@@ -58,10 +68,12 @@ def create_app():
     from .notes import notes
     from backends.url_shortener.add import add_url
     from backends.url_shortener.view import view_url
+    from backends.scammer.addscamer import scammer
     # from .stream import stream
     from .svelte import svelte
     from .go import go
     from .shop import shop
+    from backends.cli.clix import clix
     app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(home, url_prefix='/')
     app.register_blueprint(todo, url_prefix='/')
@@ -87,9 +99,11 @@ def create_app():
     app.register_blueprint(notes, url_prefix="/")
     app.register_blueprint(go, url_prefix="/")
     app.register_blueprint(shop, url_prefix="/")
+    app.register_blueprint(clix, url_prfix="/")
     app.register_blueprint(apibp, url_prfix="/")
     app.register_blueprint(add_url, url_prefix="/")
     app.register_blueprint(view_url, url_prfix="/")
+    app.register_blueprint(scammer, url_prfix="/")
     # app.register_blueprint(stream, url_prefix="/")
     
     api.init_app(app)
@@ -135,6 +149,7 @@ def create_app():
     def add_header(response):
         response.headers['Access-Control-Allow-Origin'] = '*'
         return response
+    
 
     app.register_error_handler(404, page_not_found)
 

@@ -9,6 +9,7 @@ import markdown
 from . import mail
 import shutil
 from backends.functions import send_bying_request_thing
+from datetime import datetime
 
 shop = Blueprint("shop", __name__)
 
@@ -132,6 +133,7 @@ def buy_item_thing():
         item = Item.query.filter_by(id=itemx).first()
         item.stock -= 1
         obj.checkout_id = checkout_id
+        obj.added_to_checkout = datetime.utcnow()
     db.session.commit()
     return jsonify({"id": checkout_id})
 
@@ -214,7 +216,10 @@ def view_item(title):
         user_id = current_user.id
         if current_user.id == user.id:
             editable = True
-    return render_template("item.html", files=images, mainimage=mainimage, title=title, description=description, id=id, price=price, stock=stock, items=stuff, user_id=user_id, name=name, editable=editable)
+    
+    reviews = item.reviews
+    average_review = item.average_review()
+    return render_template("item.html", files=images, mainimage=mainimage, title=title, description=description, id=id, price=price, stock=stock, items=stuff, user_id=user_id, name=name, editable=editable, reviews=reviews, average_review=average_review)
 
 
 @shop.route("/api/shop/delete/item")
@@ -320,6 +325,94 @@ def add_review_to_item():
     itme_id = data["item_id"]
     user_id = data["user_id"]
     new = Review(stars=stars, text=text, item_id=itme_id, user_id=user_id)
+    db.session.add(new)
+    db.session.commit()
+
+@shop.route("/api/review/edit", methods=["POST"])
+def edit_review_thing():
+    data = request.get_json()
+    reviewid = data["review_id"]
+    text = data["text"]
+    review = Review.query.filter_by(id=reviewid).first()
+    review.text = text
+    db.session.commit()
+
+@shop.route("/api/review/delete/<id>")
+def delete_review_thing(id):
+    review = Review.query.filter_by(id=id).first()
+    review.text = "deleted"
+    db.session.commit()
+
+@shop.route("/api/checkout/delete/<id>")
+def delete_item_from_checkout(id):
+    item_id = int(request.args.get("item_id"))
+    checkout = Checkout.query.filter_by(id=id).first()
+    items = checkout.show_items()
+    objects = items[item_id]
+    for obj in objects:
+        object = Object.query.filter_by(id=obj).first()
+        object.checkout_id = None
+        object.added_to_checkout = None
+
+    item = Item.query.filter_by(id=item_id).first()
+    item.stock += len(objects)
+    db.session.commit()
+
+    return jsonify("deleted")
+
+@shop.route("/api/checkout/remove/<id>")
+def remove_objects_from_chekcout(id):
+    checkout = Checkout.query.filter_by(id=id).first()
+    item_id = int(request.args.get("item_id"))
+    amount = int(request.args.get("amount"))
+    items = checkout.show_items()
+    objects = items[item_id]
+    remove = objects[:amount]
+    for obj in remove:
+        object = Object.query.filter_by(id=obj).first()
+        object.checkout_id = None
+        object.added_to_checkout = None
+    
+    item = Item.query.filter_by(id=item_id).first()
+    item.stock += amount
+
+    db.session.commit()
+
+    return jsonify(f"removed {amount} items from checkout")
+
+@shop.route("/api/checkout/add/<id>")
+def add_objects_from_chekcout(id):
+    checkout = Checkout.query.filter_by(id=id).first()
+    item_id = int(request.args.get("item_id"))
+    amount = int(request.args.get("amount"))
+    item = Item.query.filter_by(id=item_id).first()
+    item.stock -= amount
+    objects = item.free_objects()[:amount]
+    for obj in objects:
+        obj.checkout_id = checkout.id
+        obj.added_to_checkout = datetime.utcnow()
+
+    db.session.commit()
+
+    return jsonify(f"added {amount} items to checkout")
+
+@login_required
+@shop.route("/user/baskets")
+def user_baskets():
+    current_scheckout = current_user.current_checkout()
+    items = current_scheckout.show_items()
+    names = [i for i in items.keys()]
+    objects = current_scheckout.objects
+    price = 0
+    for obj in objects:
+        price += obj.price
+
+@shop.route("/api/shop/reccomended/<id>")
+def reccomended_items(id):
+    item = Item.query.filter_by(id=id).first()
+    list = item.checkouts()
+
+    return jsonify(list)
 
 
 @shop.route("/api/test/multiple/list")

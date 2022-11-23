@@ -7,9 +7,13 @@ function checkout(user_id, objects){
         method : "POST",
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(data)
-    }).then(res => res.json()).then(document.getElementById("stocl").innerHTML -= amount)
+    }).then(document.getElementById("stock").value -= amount).then(document.getElementById("amount").value = "")
 }
 
 function increment_counter(){
 
+}
+
+function submit_review(){
+    
 }
