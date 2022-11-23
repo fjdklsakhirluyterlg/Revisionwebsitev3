@@ -14,6 +14,6 @@ async def get(url, method):
 
 async def main_run():
     status, reason = asyncio.gather(get("https://www.python.org/", "GET"))
-    print(status)
+    print(status, reason)
 
 asyncio.run(main_run())
