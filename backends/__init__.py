@@ -9,6 +9,7 @@ from flask_socketio import SocketIO, send
 from flask_migrate import Migrate
 from os import path
 from flask_redis import FlaskRedis
+import logging
 
 DB_NAME = "database.db"
 db = SQLAlchemy()
@@ -39,6 +40,8 @@ def create_app():
     redis_client.init_app(app)
     CORS(app, resources={r"*": {"origins": "*"}})
     socketio.init_app(app, cors_allowed_origins="*")
+
+    logging.basicConfig(filename='record.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
     
     from .auth import auth
     from .home import home
