@@ -493,6 +493,10 @@ class Item(db.Model):
         checkouts = Checkout.query.all()
         for check in checkouts:
             items = check.show_items()
+            if self.id in items:
+                for itm in items:
+                    if itm.title in dict:
+                        dict[itm.title] += 1
     
 
 class Checkout(db.Model):
