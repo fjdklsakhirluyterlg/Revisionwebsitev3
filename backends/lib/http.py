@@ -7,7 +7,7 @@ async def get(url, method):
     conn = http.client.HTTPSConnection(domain[0])
     conn.request(method, domain[1])
     r1 = conn.getresponse()
-    print(r1.status, r1.reason)
+    return r1.status, r1.reason
 
 async def main_run():
-    pass
+    status, reason = asyncio.gather(get())
