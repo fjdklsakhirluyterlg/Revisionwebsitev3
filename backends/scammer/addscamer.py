@@ -5,4 +5,7 @@ scammer = Blueprint("scammer", __name__)
 
 @scammer.route("/scams/support/add")
 def add_scam():
-    pass
+    data = request.get_json()
+    type = data["type"]
+    if type == "phone":
+        telephone = data["telephone"]
