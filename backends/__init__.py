@@ -153,7 +153,6 @@ def create_app():
     @app.before_request
     def log_request():
         app.logger.info('Info level log')
-        app.logger.warning('Warning level log')
 
     app.register_error_handler(404, page_not_found)
 
