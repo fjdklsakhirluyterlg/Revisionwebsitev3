@@ -4,4 +4,4 @@ def analyse_function(fun):
     fun.replace("^", "**")
 
 def sin(x):
-    pass
+    return x - ((x**3)/6) + (x**5)/(120)
