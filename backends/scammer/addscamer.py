@@ -9,5 +9,5 @@ def add_scam():
     type = data["type"]
     if type == "phone":
         telephone = data["telephone"]
-    elif type == "email"
+    elif type == "email":
         email = data["email"]
