@@ -1,4 +1,5 @@
 import numpy as np
+
 def analyse_function(fun):
     fun.lower()
     fun.replace("^", "**")
