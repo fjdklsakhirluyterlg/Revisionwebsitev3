@@ -42,6 +42,7 @@ def create_app():
     socketio.init_app(app, cors_allowed_origins="*")
 
     logging.basicConfig(filename='record.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
+
     
     from .auth import auth
     from .home import home
@@ -148,6 +149,10 @@ def create_app():
     def add_header(response):
         response.headers['Access-Control-Allow-Origin'] = '*'
         return response
+    
+    @app.before_request
+    def log_request():
+        pass
 
     app.register_error_handler(404, page_not_found)
 
