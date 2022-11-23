@@ -1,3 +1,3 @@
 
-def analyse_function():
-    pass
+def analyse_function(fun):
+    fun.replace("^", "**")
