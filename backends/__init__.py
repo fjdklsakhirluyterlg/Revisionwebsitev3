@@ -64,6 +64,7 @@ def create_app():
     from .notes import notes
     from backends.url_shortener.add import add_url
     from backends.url_shortener.view import view_url
+    from backends.scammer.addscamer import scammer
     # from .stream import stream
     from .svelte import svelte
     from .go import go
@@ -98,6 +99,7 @@ def create_app():
     app.register_blueprint(apibp, url_prfix="/")
     app.register_blueprint(add_url, url_prefix="/")
     app.register_blueprint(view_url, url_prfix="/")
+    app.register_blueprint(scammer, url_prfix="/")
     # app.register_blueprint(stream, url_prefix="/")
     
     api.init_app(app)
