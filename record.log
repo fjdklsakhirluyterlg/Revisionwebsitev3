@@ -1047,3 +1047,202 @@
 2022-11-23 21:48:20,480 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:20] "GET /socket.io/?EIO=4&transport=polling&t=OIcTfPr&sid=26AhgQpG3BLKZsKqAAAC HTTP/1.1" 200 -
 2022-11-23 21:48:20,495 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:20] "GET /socket.io/?EIO=4&transport=polling&t=OIcTfP-&sid=3hho_umEsJYE0m4pAAAA HTTP/1.1" 200 -
 2022-11-23 21:48:20,507 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:20] "GET /socket.io/?EIO=4&transport=polling&t=OIcTfQ3&sid=c6DHh-ytnOjnx4AuAAAD HTTP/1.1" 200 -
+2022-11-23 21:48:22,692 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/index.lock", inode=52236557, flags=10100, id=163493673): is_created, is_file
+2022-11-23 21:48:22,693 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/30/57412033dec639bb1a6ef82efa74caf89cd8af", inode=52236558, flags=110100, id=163493682): is_created, is_file, is_hardlink
+2022-11-23 21:48:22,693 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/30", inode=52234293, flags=20400, id=163493685): is_directory, is_inode_meta_mod
+2022-11-23 21:48:22,693 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/30/tmp_obj_94lTBL", inode=52236558, flags=111300, id=163493688): is_coalesced, is_created, is_file, is_hardlink, is_modified, is_removed
+2022-11-23 21:48:22,693 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/c4/3d187cb8ae63d9ac617ac9c6bab7c7c00127d6", inode=52236562, flags=110100, id=163493700): is_created, is_file, is_hardlink
+2022-11-23 21:48:22,693 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/c4", inode=52236561, flags=20500, id=163493703): is_created, is_directory, is_inode_meta_mod
+2022-11-23 21:48:22,693 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/c4/tmp_obj_V9US2x", inode=52236562, flags=111300, id=163493706): is_coalesced, is_created, is_file, is_hardlink, is_modified, is_removed
+2022-11-23 21:48:22,693 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/d4/0c92f1955c26c1c6a9594de377cdff0aa62104", inode=52236565, flags=110100, id=163493715): is_created, is_file, is_hardlink
+2022-11-23 21:48:22,693 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/d4", inode=52234155, flags=20400, id=163493718): is_directory, is_inode_meta_mod
+2022-11-23 21:48:22,693 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/d4/tmp_obj_iVLP8y", inode=52236565, flags=111300, id=163493721): is_coalesced, is_created, is_file, is_hardlink, is_modified, is_removed
+2022-11-23 21:48:22,693 DEBUG fsevents Thread-3 : queue_event <FileCreatedEvent: event_type=created, src_path='/Users/mohuasen/Revisionwebsitev3/.git/index.lock', is_directory=False>
+2022-11-23 21:48:22,694 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git', is_directory=True>
+2022-11-23 21:48:22,695 DEBUG fsevents Thread-3 : queue_event <FileCreatedEvent: event_type=created, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/30/57412033dec639bb1a6ef82efa74caf89cd8af', is_directory=False>
+2022-11-23 21:48:22,695 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/30', is_directory=True>
+2022-11-23 21:48:22,695 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/30', is_directory=True>
+2022-11-23 21:48:22,695 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/30/tmp_obj_94lTBL', is_directory=False>
+2022-11-23 21:48:22,695 DEBUG fsevents Thread-3 : queue_event <FileDeletedEvent: event_type=deleted, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/30/tmp_obj_94lTBL', is_directory=False>
+2022-11-23 21:48:22,696 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/30', is_directory=True>
+2022-11-23 21:48:22,696 DEBUG fsevents Thread-3 : queue_event <FileCreatedEvent: event_type=created, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/c4/3d187cb8ae63d9ac617ac9c6bab7c7c00127d6', is_directory=False>
+2022-11-23 21:48:22,696 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/c4', is_directory=True>
+2022-11-23 21:48:22,696 DEBUG fsevents Thread-3 : queue_event <DirCreatedEvent: event_type=created, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/c4', is_directory=True>
+2022-11-23 21:48:22,696 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects', is_directory=True>
+2022-11-23 21:48:22,696 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/c4', is_directory=True>
+2022-11-23 21:48:22,696 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/c4/tmp_obj_V9US2x', is_directory=False>
+2022-11-23 21:48:22,696 DEBUG fsevents Thread-3 : queue_event <FileDeletedEvent: event_type=deleted, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/c4/tmp_obj_V9US2x', is_directory=False>
+2022-11-23 21:48:22,697 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/c4', is_directory=True>
+2022-11-23 21:48:22,697 DEBUG fsevents Thread-3 : queue_event <FileCreatedEvent: event_type=created, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/d4/0c92f1955c26c1c6a9594de377cdff0aa62104', is_directory=False>
+2022-11-23 21:48:22,697 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/d4', is_directory=True>
+2022-11-23 21:48:22,697 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/d4', is_directory=True>
+2022-11-23 21:48:22,697 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/d4/tmp_obj_iVLP8y', is_directory=False>
+2022-11-23 21:48:22,697 DEBUG fsevents Thread-3 : queue_event <FileDeletedEvent: event_type=deleted, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/d4/tmp_obj_iVLP8y', is_directory=False>
+2022-11-23 21:48:22,697 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/d4', is_directory=True>
+2022-11-23 21:48:22,702 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/2b/0cbc1e73193a3a1895084c1d35b0a7fdc57d32", inode=52236568, flags=110100, id=163493730): is_created, is_file, is_hardlink
+2022-11-23 21:48:22,702 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/2b", inode=52228033, flags=20400, id=163493733): is_directory, is_inode_meta_mod
+2022-11-23 21:48:22,702 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/2b/tmp_obj_83UvjU", inode=52236568, flags=111300, id=163493736): is_coalesced, is_created, is_file, is_hardlink, is_modified, is_removed
+2022-11-23 21:48:22,702 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/78/c768760ad05264a0d082f77978376ce5ddcc69", inode=52236571, flags=110100, id=163493745): is_created, is_file, is_hardlink
+2022-11-23 21:48:22,702 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/78", inode=52231770, flags=20400, id=163493748): is_directory, is_inode_meta_mod
+2022-11-23 21:48:22,703 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/78/tmp_obj_Ns45cd", inode=52236571, flags=111300, id=163493751): is_coalesced, is_created, is_file, is_hardlink, is_modified, is_removed
+2022-11-23 21:48:22,703 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/index.lock", inode=52236557, flags=11100, id=163493754): is_created, is_file, is_modified
+2022-11-23 21:48:22,703 DEBUG fsevents Thread-3 : queue_event <FileCreatedEvent: event_type=created, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/2b/0cbc1e73193a3a1895084c1d35b0a7fdc57d32', is_directory=False>
+2022-11-23 21:48:22,703 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/2b', is_directory=True>
+2022-11-23 21:48:22,703 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/2b', is_directory=True>
+2022-11-23 21:48:22,704 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/2b/tmp_obj_83UvjU', is_directory=False>
+2022-11-23 21:48:22,705 DEBUG fsevents Thread-3 : queue_event <FileDeletedEvent: event_type=deleted, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/2b/tmp_obj_83UvjU', is_directory=False>
+2022-11-23 21:48:22,705 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/2b', is_directory=True>
+2022-11-23 21:48:22,705 DEBUG fsevents Thread-3 : queue_event <FileCreatedEvent: event_type=created, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/78/c768760ad05264a0d082f77978376ce5ddcc69', is_directory=False>
+2022-11-23 21:48:22,705 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/78', is_directory=True>
+2022-11-23 21:48:22,705 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/78', is_directory=True>
+2022-11-23 21:48:22,705 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/78/tmp_obj_Ns45cd', is_directory=False>
+2022-11-23 21:48:22,705 DEBUG fsevents Thread-3 : queue_event <FileDeletedEvent: event_type=deleted, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/78/tmp_obj_Ns45cd', is_directory=False>
+2022-11-23 21:48:22,705 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/78', is_directory=True>
+2022-11-23 21:48:22,705 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/index.lock', is_directory=False>
+2022-11-23 21:48:22,743 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/COMMIT_EDITMSG", inode=46086845, flags=10400, id=163493757): is_file, is_inode_meta_mod
+2022-11-23 21:48:22,743 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/COMMIT_EDITMSG', is_directory=False>
+2022-11-23 21:48:22,760 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/COMMIT_EDITMSG", inode=46086845, flags=11400, id=163493760): is_file, is_inode_meta_mod, is_modified
+2022-11-23 21:48:22,760 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/69/0836e52915879a413df93aac6d39d9a9a8de80", inode=52236574, flags=110100, id=163493769): is_created, is_file, is_hardlink
+2022-11-23 21:48:22,760 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/69", inode=52235988, flags=20400, id=163493772): is_directory, is_inode_meta_mod
+2022-11-23 21:48:22,760 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/69/tmp_obj_9oh3TT", inode=52236574, flags=111300, id=163493775): is_coalesced, is_created, is_file, is_hardlink, is_modified, is_removed
+2022-11-23 21:48:22,761 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/HEAD.lock", inode=52236577, flags=10100, id=163493778): is_created, is_file
+2022-11-23 21:48:22,761 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/refs/heads/main.lock", inode=52236578, flags=11100, id=163493784): is_created, is_file, is_modified
+2022-11-23 21:48:22,761 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/logs/HEAD", inode=52224132, flags=11000, id=163493787): is_file, is_modified
+2022-11-23 21:48:22,761 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/logs/refs/heads/main", inode=52224140, flags=11000, id=163493790): is_file, is_modified
+2022-11-23 21:48:22,761 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/COMMIT_EDITMSG', is_directory=False>
+2022-11-23 21:48:22,761 DEBUG fsevents Thread-3 : queue_event <FileCreatedEvent: event_type=created, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/69/0836e52915879a413df93aac6d39d9a9a8de80', is_directory=False>
+2022-11-23 21:48:22,761 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/69', is_directory=True>
+2022-11-23 21:48:22,761 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/69', is_directory=True>
+2022-11-23 21:48:22,761 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/69/tmp_obj_9oh3TT', is_directory=False>
+2022-11-23 21:48:22,761 DEBUG fsevents Thread-3 : queue_event <FileDeletedEvent: event_type=deleted, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/69/tmp_obj_9oh3TT', is_directory=False>
+2022-11-23 21:48:22,761 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/69', is_directory=True>
+2022-11-23 21:48:22,761 DEBUG fsevents Thread-3 : queue_event <FileCreatedEvent: event_type=created, src_path='/Users/mohuasen/Revisionwebsitev3/.git/HEAD.lock', is_directory=False>
+2022-11-23 21:48:22,762 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git', is_directory=True>
+2022-11-23 21:48:22,762 DEBUG fsevents Thread-3 : queue_event <FileCreatedEvent: event_type=created, src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/heads/main.lock', is_directory=False>
+2022-11-23 21:48:22,762 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/heads', is_directory=True>
+2022-11-23 21:48:22,762 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/heads/main.lock', is_directory=False>
+2022-11-23 21:48:22,762 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/logs/HEAD', is_directory=False>
+2022-11-23 21:48:22,762 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/logs/refs/heads/main', is_directory=False>
+2022-11-23 21:48:22,772 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/refs/heads/main.lock", inode=52236578, flags=11900, id=163493793): is_coalesced, is_created, is_file, is_modified, is_renamed
+2022-11-23 21:48:22,772 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/refs/heads/main", inode=52236578, flags=10800, id=163493794): is_file, is_renamed
+2022-11-23 21:48:22,772 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/refs/heads/main", inode=52236509, flags=10800, id=163493795): is_file, is_renamed
+2022-11-23 21:48:22,772 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/HEAD.lock", inode=52236577, flags=10300, id=163493798): is_coalesced, is_created, is_file, is_removed
+2022-11-23 21:48:22,772 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/index.lock", inode=52236557, flags=11900, id=163493801): is_coalesced, is_created, is_file, is_modified, is_renamed
+2022-11-23 21:48:22,772 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/index", inode=52236557, flags=10800, id=163493802): is_file, is_renamed
+2022-11-23 21:48:22,772 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/index", inode=52236487, flags=10800, id=163493803): is_file, is_renamed
+2022-11-23 21:48:22,772 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/heads/main.lock', is_directory=False>
+2022-11-23 21:48:22,773 DEBUG fsevents Thread-3 : Destination event for rename is NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/refs/heads/main", inode=52236578, flags=10800, id=163493794)
+2022-11-23 21:48:22,773 DEBUG fsevents Thread-3 : queue_event <FileMovedEvent: src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/heads/main.lock', dest_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/heads/main', is_directory=False>
+2022-11-23 21:48:22,773 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/heads', is_directory=True>
+2022-11-23 21:48:22,773 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/heads', is_directory=True>
+2022-11-23 21:48:22,774 DEBUG fsevents Thread-3 : queue_event <FileDeletedEvent: event_type=deleted, src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/heads/main', is_directory=False>
+2022-11-23 21:48:22,774 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/heads', is_directory=True>
+2022-11-23 21:48:22,774 DEBUG fsevents Thread-3 : queue_event <FileDeletedEvent: event_type=deleted, src_path='/Users/mohuasen/Revisionwebsitev3/.git/HEAD.lock', is_directory=False>
+2022-11-23 21:48:22,774 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git', is_directory=True>
+2022-11-23 21:48:22,774 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/index.lock', is_directory=False>
+2022-11-23 21:48:22,774 DEBUG fsevents Thread-3 : Destination event for rename is NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/index", inode=52236557, flags=10800, id=163493802)
+2022-11-23 21:48:22,774 DEBUG fsevents Thread-3 : queue_event <FileMovedEvent: src_path='/Users/mohuasen/Revisionwebsitev3/.git/index.lock', dest_path='/Users/mohuasen/Revisionwebsitev3/.git/index', is_directory=False>
+2022-11-23 21:48:22,774 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git', is_directory=True>
+2022-11-23 21:48:22,774 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git', is_directory=True>
+2022-11-23 21:48:22,774 DEBUG fsevents Thread-3 : queue_event <FileDeletedEvent: event_type=deleted, src_path='/Users/mohuasen/Revisionwebsitev3/.git/index', is_directory=False>
+2022-11-23 21:48:22,774 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git', is_directory=True>
+2022-11-23 21:48:22,782 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/maintenance.lock", inode=52236579, flags=10300, id=163493809): is_coalesced, is_created, is_file, is_removed
+2022-11-23 21:48:22,783 DEBUG fsevents Thread-3 : queue_event <FileCreatedEvent: event_type=created, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/maintenance.lock', is_directory=False>
+2022-11-23 21:48:22,783 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects', is_directory=True>
+2022-11-23 21:48:22,783 DEBUG fsevents Thread-3 : queue_event <FileDeletedEvent: event_type=deleted, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/maintenance.lock', is_directory=False>
+2022-11-23 21:48:22,783 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects', is_directory=True>
+2022-11-23 21:48:23,115 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/FETCH_HEAD", inode=46086572, flags=10400, id=163493812): is_file, is_inode_meta_mod
+2022-11-23 21:48:23,115 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/FETCH_HEAD', is_directory=False>
+2022-11-23 21:48:23,544 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/FETCH_HEAD", inode=46086572, flags=11400, id=163493872): is_file, is_inode_meta_mod, is_modified
+2022-11-23 21:48:23,544 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/FETCH_HEAD', is_directory=False>
+2022-11-23 21:48:23,568 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/objects/maintenance.lock", inode=52236585, flags=10300, id=163493878): is_coalesced, is_created, is_file, is_removed
+2022-11-23 21:48:23,568 DEBUG fsevents Thread-3 : queue_event <FileCreatedEvent: event_type=created, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/maintenance.lock', is_directory=False>
+2022-11-23 21:48:23,568 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects', is_directory=True>
+2022-11-23 21:48:23,568 DEBUG fsevents Thread-3 : queue_event <FileDeletedEvent: event_type=deleted, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects/maintenance.lock', is_directory=False>
+2022-11-23 21:48:23,568 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/objects', is_directory=True>
+2022-11-23 21:48:24,037 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/logs/refs/remotes/origin/main", inode=52224153, flags=11000, id=163493887): is_file, is_modified
+2022-11-23 21:48:24,038 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/refs/remotes/origin/main.lock", inode=52236586, flags=11900, id=163493890): is_coalesced, is_created, is_file, is_modified, is_renamed
+2022-11-23 21:48:24,038 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/refs/remotes/origin/main", inode=52236586, flags=10800, id=163493891): is_file, is_renamed
+2022-11-23 21:48:24,038 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/refs/remotes/origin/main", inode=52236522, flags=10800, id=163493892): is_file, is_renamed
+2022-11-23 21:48:24,038 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/logs/refs/remotes/origin/main', is_directory=False>
+2022-11-23 21:48:24,038 DEBUG fsevents Thread-3 : queue_event <FileCreatedEvent: event_type=created, src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/remotes/origin/main.lock', is_directory=False>
+2022-11-23 21:48:24,038 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/remotes/origin', is_directory=True>
+2022-11-23 21:48:24,038 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/remotes/origin/main.lock', is_directory=False>
+2022-11-23 21:48:24,039 DEBUG fsevents Thread-3 : Destination event for rename is NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/.git/refs/remotes/origin/main", inode=52236586, flags=10800, id=163493891)
+2022-11-23 21:48:24,039 DEBUG fsevents Thread-3 : queue_event <FileMovedEvent: src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/remotes/origin/main.lock', dest_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/remotes/origin/main', is_directory=False>
+2022-11-23 21:48:24,039 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/remotes/origin', is_directory=True>
+2022-11-23 21:48:24,039 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/remotes/origin', is_directory=True>
+2022-11-23 21:48:24,039 DEBUG fsevents Thread-3 : queue_event <FileDeletedEvent: event_type=deleted, src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/remotes/origin/main', is_directory=False>
+2022-11-23 21:48:24,039 DEBUG fsevents Thread-3 : queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/.git/refs/remotes/origin', is_directory=True>
+2022-11-23 21:48:38,349 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py", inode=52235640, flags=11400, id=163493981): is_file, is_inode_meta_mod, is_modified
+2022-11-23 21:48:38,354 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', is_directory=False>
+2022-11-23 21:48:38,357 INFO werkzeug Thread-1 :  * Detected change in '/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', reloading
+2022-11-23 21:48:38,367 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py", inode=52235640, flags=11400, id=163493984): is_file, is_inode_meta_mod, is_modified
+2022-11-23 21:48:38,367 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', is_directory=False>
+2022-11-23 21:48:38,368 INFO werkzeug Thread-1 :  * Detected change in '/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', reloading
+2022-11-23 21:48:41,171 WARNING werkzeug MainThread :  * Debugger is active!
+2022-11-23 21:48:41,186 INFO werkzeug MainThread :  * Debugger PIN: 783-614-840
+2022-11-23 21:48:41,201 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:41] "GET /socket.io/?EIO=4&transport=polling&t=OIcTkGp HTTP/1.1" 200 -
+2022-11-23 21:48:41,202 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:41] "GET /socket.io/?EIO=4&transport=polling&t=OIcTkF- HTTP/1.1" 200 -
+2022-11-23 21:48:41,206 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:41] "GET /socket.io/?EIO=4&transport=polling&t=OIcTkF- HTTP/1.1" 200 -
+2022-11-23 21:48:41,212 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:41] "POST /socket.io/?EIO=4&transport=polling&t=OIcTkTp&sid=1FJmQyyNnrW1SlG3AAAA HTTP/1.1" 200 -
+2022-11-23 21:48:41,214 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:41] "GET /socket.io/?EIO=4&transport=polling&t=OIcTkTq&sid=1FJmQyyNnrW1SlG3AAAA HTTP/1.1" 200 -
+2022-11-23 21:48:41,216 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:41] "POST /socket.io/?EIO=4&transport=polling&t=OIcTkTr&sid=T_i-Cdu-5h_Zm_PTAAAB HTTP/1.1" 200 -
+2022-11-23 21:48:41,222 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:41] "GET /socket.io/?EIO=4&transport=polling&t=OIcTkTt&sid=T_i-Cdu-5h_Zm_PTAAAB HTTP/1.1" 200 -
+2022-11-23 21:48:41,225 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:41] "POST /socket.io/?EIO=4&transport=polling&t=OIcTkT_&sid=2byQlPHDS-SyOakoAAAC HTTP/1.1" 200 -
+2022-11-23 21:48:41,226 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:41] "GET /socket.io/?EIO=4&transport=polling&t=OIcTkF- HTTP/1.1" 200 -
+2022-11-23 21:48:41,240 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:41] "GET /socket.io/?EIO=4&transport=polling&t=OIcTkU0&sid=2byQlPHDS-SyOakoAAAC HTTP/1.1" 200 -
+2022-11-23 21:48:41,245 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:41] "GET /socket.io/?EIO=4&transport=polling&t=OIcTkU7&sid=1FJmQyyNnrW1SlG3AAAA HTTP/1.1" 200 -
+2022-11-23 21:48:41,252 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:41] "GET /socket.io/?EIO=4&transport=polling&t=OIcTkUO&sid=T_i-Cdu-5h_Zm_PTAAAB HTTP/1.1" 200 -
+2022-11-23 21:48:41,263 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:41] "POST /socket.io/?EIO=4&transport=polling&t=OIcTkUS&sid=0LFRQs9x15xetiaSAAAF HTTP/1.1" 200 -
+2022-11-23 21:48:41,265 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:41] "GET /socket.io/?EIO=4&transport=polling&t=OIcTkUU&sid=0LFRQs9x15xetiaSAAAF HTTP/1.1" 200 -
+2022-11-23 21:48:41,267 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:41] "GET /socket.io/?EIO=4&transport=polling&t=OIcTkUd&sid=2byQlPHDS-SyOakoAAAC HTTP/1.1" 200 -
+2022-11-23 21:48:41,280 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:41] "GET /socket.io/?EIO=4&transport=polling&t=OIcTkUw&sid=0LFRQs9x15xetiaSAAAF HTTP/1.1" 200 -
+2022-11-23 21:48:44,190 DEBUG fsevents Thread-4 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py", inode=52235640, flags=11400, id=163494226): is_file, is_inode_meta_mod, is_modified
+2022-11-23 21:48:44,201 DEBUG fsevents Thread-4 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', is_directory=False>
+2022-11-23 21:48:44,203 INFO werkzeug Thread-1 :  * Detected change in '/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', reloading
+2022-11-23 21:48:44,213 DEBUG fsevents Thread-4 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py", inode=52235640, flags=11400, id=163494229): is_file, is_inode_meta_mod, is_modified
+2022-11-23 21:48:44,213 DEBUG fsevents Thread-4 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', is_directory=False>
+2022-11-23 21:48:44,214 INFO werkzeug Thread-1 :  * Detected change in '/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', reloading
+2022-11-23 21:48:46,533 WARNING werkzeug MainThread :  * Debugger is active!
+2022-11-23 21:48:46,542 INFO werkzeug MainThread :  * Debugger PIN: 783-614-840
+2022-11-23 21:48:46,556 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:46] "GET /socket.io/?EIO=4&transport=polling&t=OIcTljk HTTP/1.1" 200 -
+2022-11-23 21:48:46,558 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:46] "GET /socket.io/?EIO=4&transport=polling&t=OIcTljl HTTP/1.1" 200 -
+2022-11-23 21:48:46,568 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:46] "GET /socket.io/?EIO=4&transport=polling&t=OIcTljk HTTP/1.1" 200 -
+2022-11-23 21:48:46,571 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:46] "GET /socket.io/?EIO=4&transport=polling&t=OIcTljl HTTP/1.1" 200 -
+2022-11-23 21:48:46,573 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:46] "POST /socket.io/?EIO=4&transport=polling&t=OIcTlnV&sid=VQC3Qw4ejILReBh_AAAA HTTP/1.1" 200 -
+2022-11-23 21:48:46,576 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:46] "GET /socket.io/?EIO=4&transport=polling&t=OIcTlnX&sid=VQC3Qw4ejILReBh_AAAA HTTP/1.1" 200 -
+2022-11-23 21:48:46,579 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:46] "POST /socket.io/?EIO=4&transport=polling&t=OIcTlna&sid=Qb42JNjVk0ec3I-_AAAB HTTP/1.1" 200 -
+2022-11-23 21:48:46,586 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:46] "GET /socket.io/?EIO=4&transport=polling&t=OIcTlna.0&sid=Qb42JNjVk0ec3I-_AAAB HTTP/1.1" 200 -
+2022-11-23 21:48:46,590 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:46] "POST /socket.io/?EIO=4&transport=polling&t=OIcTlnq&sid=AaiWy6b6748fhURDAAAC HTTP/1.1" 200 -
+2022-11-23 21:48:46,592 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:46] "GET /socket.io/?EIO=4&transport=polling&t=OIcTlnr&sid=AaiWy6b6748fhURDAAAC HTTP/1.1" 200 -
+2022-11-23 21:48:46,595 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:46] "POST /socket.io/?EIO=4&transport=polling&t=OIcTlnu&sid=7w13vxY9fwFCphzBAAAD HTTP/1.1" 200 -
+2022-11-23 21:48:46,598 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:46] "GET /socket.io/?EIO=4&transport=polling&t=OIcTlnv&sid=7w13vxY9fwFCphzBAAAD HTTP/1.1" 200 -
+2022-11-23 21:48:46,600 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:46] "GET /socket.io/?EIO=4&transport=polling&t=OIcTlnv&sid=VQC3Qw4ejILReBh_AAAA HTTP/1.1" 200 -
+2022-11-23 21:48:46,606 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:46] "GET /socket.io/?EIO=4&transport=polling&t=OIcTlo7&sid=Qb42JNjVk0ec3I-_AAAB HTTP/1.1" 200 -
+2022-11-23 21:48:46,618 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:46] "GET /socket.io/?EIO=4&transport=polling&t=OIcTloD&sid=AaiWy6b6748fhURDAAAC HTTP/1.1" 200 -
+2022-11-23 21:48:46,630 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:46] "GET /socket.io/?EIO=4&transport=polling&t=OIcTloE&sid=7w13vxY9fwFCphzBAAAD HTTP/1.1" 200 -
+2022-11-23 21:48:54,894 DEBUG fsevents Thread-4 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py", inode=52235640, flags=10400, id=163494534): is_file, is_inode_meta_mod
+2022-11-23 21:48:54,903 DEBUG fsevents Thread-4 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', is_directory=False>
+2022-11-23 21:48:54,907 INFO werkzeug Thread-1 :  * Detected change in '/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', reloading
+2022-11-23 21:48:54,915 DEBUG fsevents Thread-4 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py", inode=52235640, flags=11400, id=163494537): is_file, is_inode_meta_mod, is_modified
+2022-11-23 21:48:54,915 DEBUG fsevents Thread-4 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', is_directory=False>
+2022-11-23 21:48:54,916 INFO werkzeug Thread-1 :  * Detected change in '/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', reloading
+2022-11-23 21:48:59,123 WARNING werkzeug MainThread :  * Debugger is active!
+2022-11-23 21:48:59,137 INFO werkzeug MainThread :  * Debugger PIN: 783-614-840
+2022-11-23 21:48:59,154 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:59] "GET /socket.io/?EIO=4&transport=polling&t=OIcToPc HTTP/1.1" 200 -
+2022-11-23 21:48:59,155 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:59] "GET /socket.io/?EIO=4&transport=polling&t=OIcToPd HTTP/1.1" 200 -
+2022-11-23 21:48:59,159 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:59] "GET /socket.io/?EIO=4&transport=polling&t=OIcToPe HTTP/1.1" 200 -
+2022-11-23 21:48:59,160 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:59] "GET /socket.io/?EIO=4&transport=polling&t=OIcToPc HTTP/1.1" 200 -
+2022-11-23 21:48:59,166 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:59] "POST /socket.io/?EIO=4&transport=polling&t=OIcTosN&sid=TTehHLZh0VW3x5aFAAAB HTTP/1.1" 200 -
+2022-11-23 21:48:59,172 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:59] "POST /socket.io/?EIO=4&transport=polling&t=OIcTosP&sid=LZXCmDR1OzcetWe_AAAA HTTP/1.1" 200 -
+2022-11-23 21:48:59,175 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:59] "GET /socket.io/?EIO=4&transport=polling&t=OIcTosO&sid=TTehHLZh0VW3x5aFAAAB HTTP/1.1" 200 -
+2022-11-23 21:48:59,180 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:59] "GET /socket.io/?EIO=4&transport=polling&t=OIcTosS&sid=LZXCmDR1OzcetWe_AAAA HTTP/1.1" 200 -
+2022-11-23 21:48:59,184 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:59] "POST /socket.io/?EIO=4&transport=polling&t=OIcTosZ&sid=KWTia9WQU2M-Pi2NAAAC HTTP/1.1" 200 -
+2022-11-23 21:48:59,190 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:59] "GET /socket.io/?EIO=4&transport=polling&t=OIcTosa&sid=KWTia9WQU2M-Pi2NAAAC HTTP/1.1" 200 -
+2022-11-23 21:48:59,192 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:59] "POST /socket.io/?EIO=4&transport=polling&t=OIcTosj&sid=EWDRACmZbAJmmJ9zAAAD HTTP/1.1" 200 -
+2022-11-23 21:48:59,197 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:59] "GET /socket.io/?EIO=4&transport=polling&t=OIcTosk&sid=EWDRACmZbAJmmJ9zAAAD HTTP/1.1" 200 -
+2022-11-23 21:48:59,208 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:59] "GET /socket.io/?EIO=4&transport=polling&t=OIcTosz&sid=TTehHLZh0VW3x5aFAAAB HTTP/1.1" 200 -
+2022-11-23 21:48:59,211 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:59] "GET /socket.io/?EIO=4&transport=polling&t=OIcTot3&sid=LZXCmDR1OzcetWe_AAAA HTTP/1.1" 200 -
+2022-11-23 21:48:59,223 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:59] "GET /socket.io/?EIO=4&transport=polling&t=OIcTotA&sid=KWTia9WQU2M-Pi2NAAAC HTTP/1.1" 200 -
+2022-11-23 21:48:59,233 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:48:59] "GET /socket.io/?EIO=4&transport=polling&t=OIcTotA&sid=EWDRACmZbAJmmJ9zAAAD HTTP/1.1" 200 -

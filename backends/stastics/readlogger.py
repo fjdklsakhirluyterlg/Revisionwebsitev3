@@ -9,7 +9,9 @@ def read_logger():
         if b"(process_request_thread)" in f:
             list.append(line)
     
-    print(f)
+
+
+    print(list)
 
 
 
