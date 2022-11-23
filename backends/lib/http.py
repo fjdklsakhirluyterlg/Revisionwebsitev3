@@ -3,4 +3,5 @@ import asyncio
 
 async def get(url, method):
     url.replace("https://", "")
-    conn = http.client.HTTPSConnection(url)
+    domain = url.split("/", 1)
+    conn = http.client.HTTPSConnection(domain[0])
