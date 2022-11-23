@@ -617,3 +617,7 @@ class ScamPhone(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     telephone_code = db.Column(db.Text)
     area_code = db.Column(db.Text)
+
+class ScamEmail(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.Text)
