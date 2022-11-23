@@ -8,13 +8,14 @@ from flask_restful import Resource, Api
 from flask_socketio import SocketIO, send
 from flask_migrate import Migrate
 from os import path
-
+from flask_redis import FlaskRedis
 
 DB_NAME = "database.db"
 db = SQLAlchemy()
 mail = Mail()
 socketio = SocketIO()
 migrate = Migrate()
+redis_client = FlaskRedis()
 
 def create_app():
     apibp = Blueprint("api", __name__)
