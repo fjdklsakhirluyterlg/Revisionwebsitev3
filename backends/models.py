@@ -601,7 +601,7 @@ class Headline(db.Model):
 
 calendar_event = db.Table("calendar_event",
     db.Column("event_id", db.Integer, primary_key=True),
-    db.Column("calendar_id", db.integer, primary_key=True)
+    db.Column("calendar_id", db.Integer, primary_key=True)
 )
 
 class Event(db.Model):
