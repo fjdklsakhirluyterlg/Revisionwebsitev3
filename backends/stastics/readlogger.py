@@ -10,5 +10,7 @@ def read_logger():
             list.append(line)
     f.close()
 
+    print(list)
+
 
 read_logger()   

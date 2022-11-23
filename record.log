@@ -798,3 +798,27 @@
 2022-11-23 21:46:57,863 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py", inode=52235640, flags=11400, id=163490903): is_file, is_inode_meta_mod, is_modified
 2022-11-23 21:46:57,863 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', is_directory=False>
 2022-11-23 21:46:57,863 INFO werkzeug Thread-1 :  * Detected change in '/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', reloading
+2022-11-23 21:47:01,727 WARNING werkzeug MainThread :  * Debugger is active!
+2022-11-23 21:47:01,736 INFO werkzeug MainThread :  * Debugger PIN: 783-614-840
+2022-11-23 21:47:01,750 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:47:01] "GET /socket.io/?EIO=4&transport=polling&t=OIcTLbv HTTP/1.1" 200 -
+2022-11-23 21:47:01,753 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:47:01] "GET /socket.io/?EIO=4&transport=polling&t=OIcTLbt HTTP/1.1" 200 -
+2022-11-23 21:47:01,756 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:47:01] "GET /socket.io/?EIO=4&transport=polling&t=OIcTLrm HTTP/1.1" 200 -
+2022-11-23 21:47:01,758 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:47:01] "POST /socket.io/?EIO=4&transport=polling&t=OIcTMBu&sid=pmBBumTidBb3kCqiAAAA HTTP/1.1" 200 -
+2022-11-23 21:47:01,759 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:47:01] "GET /socket.io/?EIO=4&transport=polling&t=OIcTLrs HTTP/1.1" 200 -
+2022-11-23 21:47:01,765 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:47:01] "GET /socket.io/?EIO=4&transport=polling&t=OIcTMBy&sid=pmBBumTidBb3kCqiAAAA HTTP/1.1" 200 -
+2022-11-23 21:47:01,771 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:47:01] "POST /socket.io/?EIO=4&transport=polling&t=OIcTMC2&sid=6RM3nXOfg9wjQkEvAAAB HTTP/1.1" 200 -
+2022-11-23 21:47:01,774 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:47:01] "POST /socket.io/?EIO=4&transport=polling&t=OIcTMC2&sid=UX1EDLDyY9zKJwIRAAAC HTTP/1.1" 200 -
+2022-11-23 21:47:01,780 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:47:01] "GET /socket.io/?EIO=4&transport=polling&t=OIcTMC3&sid=6RM3nXOfg9wjQkEvAAAB HTTP/1.1" 200 -
+2022-11-23 21:47:01,782 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:47:01] "GET /socket.io/?EIO=4&transport=polling&t=OIcTMC3&sid=UX1EDLDyY9zKJwIRAAAC HTTP/1.1" 200 -
+2022-11-23 21:47:01,786 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:47:01] "POST /socket.io/?EIO=4&transport=polling&t=OIcTMCE&sid=7UuiByOs8yG69RflAAAD HTTP/1.1" 200 -
+2022-11-23 21:47:01,790 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:47:01] "GET /socket.io/?EIO=4&transport=polling&t=OIcTMCF&sid=7UuiByOs8yG69RflAAAD HTTP/1.1" 200 -
+2022-11-23 21:47:01,794 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:47:01] "GET /socket.io/?EIO=4&transport=polling&t=OIcTMCH&sid=pmBBumTidBb3kCqiAAAA HTTP/1.1" 200 -
+2022-11-23 21:47:01,797 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:47:01] "GET /socket.io/?EIO=4&transport=polling&t=OIcTMCU&sid=6RM3nXOfg9wjQkEvAAAB HTTP/1.1" 200 -
+2022-11-23 21:47:01,806 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:47:01] "GET /socket.io/?EIO=4&transport=polling&t=OIcTMCU&sid=UX1EDLDyY9zKJwIRAAAC HTTP/1.1" 200 -
+2022-11-23 21:47:01,823 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [23/Nov/2022 21:47:01] "GET /socket.io/?EIO=4&transport=polling&t=OIcTMCa&sid=7UuiByOs8yG69RflAAAD HTTP/1.1" 200 -
+2022-11-23 21:47:11,747 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py", inode=52235640, flags=11400, id=163491599): is_file, is_inode_meta_mod, is_modified
+2022-11-23 21:47:11,757 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', is_directory=False>
+2022-11-23 21:47:11,763 INFO werkzeug Thread-1 :  * Detected change in '/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', reloading
+2022-11-23 21:47:11,771 DEBUG fsevents Thread-3 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py", inode=52235640, flags=11400, id=163491602): is_file, is_inode_meta_mod, is_modified
+2022-11-23 21:47:11,771 DEBUG fsevents Thread-3 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', is_directory=False>
+2022-11-23 21:47:11,772 INFO werkzeug Thread-1 :  * Detected change in '/Users/mohuasen/Revisionwebsitev3/backends/stastics/readlogger.py', reloading
