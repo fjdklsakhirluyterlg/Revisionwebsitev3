@@ -1,46 +1,25 @@
-# Python 3 program to find a prime factor of composite using
-# Pollard's Rho algorithm
+
 import random
 import math
 
-# Function to calculate (base^exponent)%modulus
 def modular_pow(base, exponent,modulus):
-
-	# initialize result
 	result = 1
 
 	while (exponent > 0):
-	
-		# if y is odd, multiply base with result
 		if (exponent & 1):
 			result = (result * base) % modulus
-
-		# exponent = exponent/2
 		exponent = exponent >> 1
-
-		# base = base * base
 		base = (base * base) % modulus
 	
 	return result
 
-# method to return prime divisor for n
 def PollardRho( n):
-
-	# no prime divisor for 1
 	if (n == 1):
 		return n
-
-	# even number means one of the divisors is 2
 	if (n % 2 == 0):
 		return 2
-
-	# we will pick from the range [2, N)
 	x = (random.randint(0, 2) % (n - 2))
 	y = x
-
-	# the constant in f(x).
-	# Algorithm can be re-run with a different c
-	# if it throws failure for a composite.
 	c = (random.randint(0, 1) % (n - 1))
 	d = 1
 	while (d == 1):
