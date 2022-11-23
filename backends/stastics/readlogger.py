@@ -1,3 +1,8 @@
 
 def read_logger():
-    pass
+    file = "../../record.log"
+    with open(file, "rb+") as f:
+        print("connected")
+    f.close()
+
+    
