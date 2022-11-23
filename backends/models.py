@@ -599,6 +599,11 @@ class Headline(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     news_id = db.Column(db.Integer, db.ForeignKey("newssource.id"))
 
+calendar_event = db.Table("calendar_event",
+    db.Column("event_id", db.Integer, primary_key=True),
+    db.Column("calendar_id", db.Integer, primary_key=True)
+)
+
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date_scheduled = db.Column(db.DateTime)
