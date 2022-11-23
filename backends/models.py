@@ -491,7 +491,8 @@ class Item(db.Model):
     def checkouts(self):
         dict = {}
         checkouts = Checkout.query.all()
-        
+        for check in checkouts:
+            items = check.show_items()
     
 
 class Checkout(db.Model):
