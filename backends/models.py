@@ -498,7 +498,7 @@ class Item(db.Model):
                     item = Item.query.filter_by(id=itm).first()
                     if item.title in dict:
                         dict[item.title] += 1
-                    else:
+                    elif item.title != self.title:
                         dict[item.title] = 1
 
         return dict
