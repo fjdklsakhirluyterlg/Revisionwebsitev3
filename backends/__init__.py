@@ -150,9 +150,6 @@ def create_app():
         response.headers['Access-Control-Allow-Origin'] = '*'
         return response
     
-    @app.before_request
-    def log_request():
-        app.logger.info('Info level log')
 
     app.register_error_handler(404, page_not_found)
 
