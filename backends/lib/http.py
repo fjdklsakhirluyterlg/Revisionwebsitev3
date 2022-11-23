@@ -1,4 +1,5 @@
 import http.client
+import asyncio
 
-def get():
-    pass
+async def get(url):
+    conn = http.client.HTTPSConnection(url)
