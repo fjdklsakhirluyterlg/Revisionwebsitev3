@@ -488,6 +488,9 @@ class Item(db.Model):
         
         return list
     
+    def checkouts(self):
+        pass
+    
 
 class Checkout(db.Model):
     id = db.Column(db.Integer, primary_key=True)
