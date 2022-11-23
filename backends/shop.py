@@ -410,6 +410,8 @@ def user_baskets():
 @shop.route("/api/shop/reccomended/<id>")
 def reccomended_items(id):
     item = Item.query.filter_by(id=id).first()
+    dict = {}
+    
 
 
 @shop.route("/api/test/multiple/list")
