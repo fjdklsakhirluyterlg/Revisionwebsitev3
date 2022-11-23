@@ -11,7 +11,7 @@ def read_logger():
     
 
 
-    print(list)
+    print(f)
 
 
 
