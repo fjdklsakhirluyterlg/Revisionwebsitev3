@@ -8,3 +8,6 @@ async def get(url, method):
     conn.request(method, domain[1])
     r1 = conn.getresponse()
     print(r1.status, r1.reason)
+
+async def main_run():
+    pass
