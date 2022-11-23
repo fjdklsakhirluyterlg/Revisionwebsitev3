@@ -497,6 +497,8 @@ class Item(db.Model):
                 for itm in items:
                     if itm.title in dict:
                         dict[itm.title] += 1
+                    else:
+                        dict[itm.title] = 1
     
 
 class Checkout(db.Model):
