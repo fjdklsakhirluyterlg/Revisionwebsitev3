@@ -5,4 +5,5 @@ def read_logger():
         print("connected")
     f.close()
 
-    
+
+read_logger()   
