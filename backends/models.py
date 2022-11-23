@@ -489,7 +489,9 @@ class Item(db.Model):
         return list
     
     def checkouts(self):
-        pass
+        dict = {}
+        checkouts = Checkout.query.all()
+        
     
 
 class Checkout(db.Model):
