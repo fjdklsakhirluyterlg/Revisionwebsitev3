@@ -13,4 +13,4 @@ async def main_run():
     status, reason = asyncio.gather(get())
     print(status)
 
-asyncio.run(main_def())
+asyncio.run(main_run())
