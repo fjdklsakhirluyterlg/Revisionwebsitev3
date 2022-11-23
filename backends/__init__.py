@@ -6,13 +6,16 @@ from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Resource, Api
 from flask_socketio import SocketIO, send
+from flask_migrate import Migrate
 from os import path
-
+from flask_redis import FlaskRedis
 
 DB_NAME = "database.db"
 db = SQLAlchemy()
 mail = Mail()
 socketio = SocketIO()
+migrate = Migrate()
+redis_client = FlaskRedis()
 
 def create_app():
     apibp = Blueprint("api", __name__)
@@ -32,6 +35,8 @@ def create_app():
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
     mail.init_app(app)
     db.init_app(app)
+    migrate.init_app(app, db)
+    redis_client.init_app(app)
     CORS(app, resources={r"*": {"origins": "*"}})
     socketio.init_app(app, cors_allowed_origins="*")
     

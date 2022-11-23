@@ -407,6 +407,13 @@ def user_baskets():
     for obj in objects:
         price += obj.price
 
+@shop.route("/api/shop/reccomended/<id>")
+def reccomended_items(id):
+    item = Item.query.filter_by(id=id).first()
+    list = item.checkouts()
+
+    return jsonify(list)
+
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():

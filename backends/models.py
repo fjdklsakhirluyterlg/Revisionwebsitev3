@@ -488,6 +488,21 @@ class Item(db.Model):
         
         return list
     
+    def checkouts(self):
+        dict = {}
+        checkouts = Checkout.query.all()
+        for check in checkouts:
+            items = check.show_items()
+            if self.id in items:
+                for itm in items:
+                    item = Item.query.filter_by(id=itm).first()
+                    if item.title in dict:
+                        dict[item.title] += 1
+                    elif item.title != self.title:
+                        dict[item.title] = 1
+
+        return dict
+    
 
 class Checkout(db.Model):
     id = db.Column(db.Integer, primary_key=True)
