@@ -495,7 +495,7 @@ class Item(db.Model):
             items = check.show_items()
             if self.id in items:
                 for itm in items:
-                    item = item.query.filter_by(id=itm).first()
+                    item = Item.query.filter_by(id=itm).first()
                     if itm.title in dict:
                         dict[item.title] += 1
                     else:
