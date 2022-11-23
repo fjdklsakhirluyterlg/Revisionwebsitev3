@@ -6,12 +6,11 @@ def read_logger():
     
     list = []
     for line in f:
-        if "(process_request_thread)" in f:
+        if b"(process_request_thread)" in f:
             list.append(line)
     
     print(f)
 
-    print(list)
 
 
 read_logger()   
