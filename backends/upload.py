@@ -87,7 +87,23 @@ def upload_banner_to_server():
 
 @upload.route("/upload/banner/edit")
 def edit_banner_photo():
-    pass
+    if request.method == 'POST':
+        if 'file' not in request.files:
+            return redirect(request.url)
+        names = []
+        for file in request.files.getlist('file'):
+            if file.filename == '':
+                flash('No selected file')
+                return redirect(request.url)
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                names.append(filename)
+                curdir = os.getcwd()
+                namex = f"{current_user.name}.{current_user.id}.{filename}"
+                name = os.path.join(f"{curdir}/backends/banners/", namex)
+                file.save(name)
+
+        return redirect("/dashboard")
 
 
 # app.register_blueprint(upload, url_prefix="/")
