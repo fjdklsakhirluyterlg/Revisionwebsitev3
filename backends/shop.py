@@ -414,7 +414,10 @@ def reccomended_items(id):
     price = item.price
     min = int(price*0.95)
     max = int(price*1.05)
-    
+    related = []
+    for i in range(min, max):
+        itemsx = Item.query.filter(Item.price.like(f"%{i}%"))
+
 
     return jsonify(list)
 
