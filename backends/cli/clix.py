@@ -48,3 +48,7 @@ def cli_login_user(name):
     user = User.query.filter_by(name=name).first()
     login_user(user, remember=True)
     print("logged in")
+
+@clix.cli.command("sitemap")
+def sitemap():
+    pass
