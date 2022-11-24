@@ -4070,3 +4070,86 @@
 2022-11-24 19:27:27,353 DEBUG fsevents Thread-4 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/backends/shop.py", inode=51788418, flags=11400, id=164310088): is_file, is_inode_meta_mod, is_modified
 2022-11-24 19:27:27,353 DEBUG fsevents Thread-4 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/backends/shop.py', is_directory=False>
 2022-11-24 19:27:27,354 INFO werkzeug Thread-1 :  * Detected change in '/Users/mohuasen/Revisionwebsitev3/backends/shop.py', reloading
+2022-11-24 19:27:37,302 INFO werkzeug MainThread :  * Restarting with watchdog (fsevents)
+2022-11-24 19:27:41,682 WARNING werkzeug MainThread :  * Debugger is active!
+2022-11-24 19:27:41,692 INFO werkzeug MainThread :  * Debugger PIN: 783-614-840
+2022-11-24 19:27:41,737 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:41] "GET /socket.io/?EIO=4&transport=polling&t=OIh726F HTTP/1.1" 200 -
+2022-11-24 19:27:41,739 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:41] "GET /socket.io/?EIO=4&transport=polling&t=OIh72Ls HTTP/1.1" 200 -
+2022-11-24 19:27:41,740 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:41] "GET /socket.io/?EIO=4&transport=polling&t=OIh726H HTTP/1.1" 200 -
+2022-11-24 19:27:41,787 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:41] "POST /socket.io/?EIO=4&transport=polling&t=OIh72wk&sid=JfgV1LjNMQFrNjorAAAA HTTP/1.1" 200 -
+2022-11-24 19:27:41,807 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:41] "GET /socket.io/?EIO=4&transport=polling&t=OIh72wo&sid=JfgV1LjNMQFrNjorAAAA HTTP/1.1" 200 -
+2022-11-24 19:27:41,854 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:41] "POST /socket.io/?EIO=4&transport=polling&t=OIh72x1&sid=_INXIzoYTQzM4CVhAAAB HTTP/1.1" 200 -
+2022-11-24 19:27:41,868 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:41] "GET /socket.io/?EIO=4&transport=polling&t=OIh72x5&sid=_INXIzoYTQzM4CVhAAAB HTTP/1.1" 200 -
+2022-11-24 19:27:41,884 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:41] "GET /socket.io/?EIO=4&transport=polling&t=OIh726H HTTP/1.1" 200 -
+2022-11-24 19:27:41,913 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:41] "GET /socket.io/?EIO=4&transport=polling&t=OIh72xO&sid=kmb23dnkiScIthyrAAAC HTTP/1.1" 200 -
+2022-11-24 19:27:41,905 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:41] "POST /socket.io/?EIO=4&transport=polling&t=OIh72xM&sid=kmb23dnkiScIthyrAAAC HTTP/1.1" 200 -
+2022-11-24 19:27:41,932 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:41] "GET /socket.io/?EIO=4&transport=polling&t=OIh72x_&sid=JfgV1LjNMQFrNjorAAAA HTTP/1.1" 200 -
+2022-11-24 19:27:41,935 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:41] "GET /socket.io/?EIO=4&transport=polling&t=OIh72yo&sid=_INXIzoYTQzM4CVhAAAB HTTP/1.1" 200 -
+2022-11-24 19:27:42,047 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:42] "GET /socket.io/?EIO=4&transport=polling&t=OIh72-_&sid=kmb23dnkiScIthyrAAAC HTTP/1.1" 200 -
+2022-11-24 19:27:42,068 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:42] "POST /socket.io/?EIO=4&transport=polling&t=OIh72_I&sid=vWQlj5aDfRPF9lu5AAAF HTTP/1.1" 200 -
+2022-11-24 19:27:42,071 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:42] "GET /socket.io/?EIO=4&transport=polling&t=OIh72_M&sid=vWQlj5aDfRPF9lu5AAAF HTTP/1.1" 200 -
+2022-11-24 19:27:42,102 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:42] "GET /socket.io/?EIO=4&transport=polling&t=OIh7301&sid=vWQlj5aDfRPF9lu5AAAF HTTP/1.1" 200 -
+2022-11-24 19:27:42,335 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:42] "[35m[1mGET /api/shop/reccomended/1 HTTP/1.1[0m" 500 -
+2022-11-24 19:27:42,440 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:42] "[36mGET /api/shop/reccomended/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2022-11-24 19:27:42,445 INFO werkzeug Thread-41 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:42] "[36mGET /api/shop/reccomended/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2022-11-24 19:27:42,464 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:42] "[35m[1mGET /api/shop/reccomended/1 HTTP/1.1[0m" 500 -
+2022-11-24 19:27:42,673 INFO werkzeug Thread-43 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:42] "[36mGET /api/shop/reccomended/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2022-11-24 19:27:43,114 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:43] "[36mGET /api/shop/reccomended/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2022-11-24 19:27:52,647 INFO werkzeug MainThread :  * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5090
+ * Running on http://192.168.1.112:5090 (Press CTRL+C to quit)
+2022-11-24 19:27:52,659 INFO werkzeug MainThread :  * Restarting with watchdog (fsevents)
+2022-11-24 19:27:55,211 WARNING werkzeug MainThread :  * Debugger is active!
+2022-11-24 19:27:55,243 INFO werkzeug MainThread :  * Debugger PIN: 783-614-840
+2022-11-24 19:27:55,262 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "GET /socket.io/?EIO=4&transport=polling&t=OIh75mj HTTP/1.1" 200 -
+2022-11-24 19:27:55,267 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "GET /socket.io/?EIO=4&transport=polling&t=OIh763p HTTP/1.1" 200 -
+2022-11-24 19:27:55,268 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "GET /socket.io/?EIO=4&transport=polling&t=OIh763n HTTP/1.1" 200 -
+2022-11-24 19:27:55,275 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "POST /socket.io/?EIO=4&transport=polling&t=OIh76E3&sid=eBR-GSo4XQEEyXoAAAAA HTTP/1.1" 200 -
+2022-11-24 19:27:55,279 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "GET /socket.io/?EIO=4&transport=polling&t=OIh76E5&sid=eBR-GSo4XQEEyXoAAAAA HTTP/1.1" 200 -
+2022-11-24 19:27:55,289 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "POST /socket.io/?EIO=4&transport=polling&t=OIh76EA&sid=kuxIR85aCp9DV9aOAAAB HTTP/1.1" 200 -
+2022-11-24 19:27:55,292 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "POST /socket.io/?EIO=4&transport=polling&t=OIh76ED&sid=xKro_avnKd3njuSeAAAC HTTP/1.1" 200 -
+2022-11-24 19:27:55,297 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "GET /socket.io/?EIO=4&transport=polling&t=OIh76EB&sid=kuxIR85aCp9DV9aOAAAB HTTP/1.1" 200 -
+2022-11-24 19:27:55,301 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "GET /socket.io/?EIO=4&transport=polling&t=OIh76EG&sid=xKro_avnKd3njuSeAAAC HTTP/1.1" 200 -
+2022-11-24 19:27:55,314 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "GET /socket.io/?EIO=4&transport=polling&t=OIh76Ef&sid=eBR-GSo4XQEEyXoAAAAA HTTP/1.1" 200 -
+2022-11-24 19:27:55,323 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "GET /socket.io/?EIO=4&transport=polling&t=OIh76Ep&sid=kuxIR85aCp9DV9aOAAAB HTTP/1.1" 200 -
+2022-11-24 19:27:55,325 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "GET /socket.io/?EIO=4&transport=polling&t=OIh76Eq&sid=xKro_avnKd3njuSeAAAC HTTP/1.1" 200 -
+2022-11-24 19:27:55,563 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "[35m[1mGET /api/shop/reccomended/1 HTTP/1.1[0m" 500 -
+2022-11-24 19:27:55,593 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "[36mGET /api/shop/reccomended/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2022-11-24 19:27:55,616 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "[36mGET /api/shop/reccomended/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2022-11-24 19:27:55,639 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "[36mGET /api/shop/reccomended/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2022-11-24 19:27:55,717 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:55] "[36mGET /api/shop/reccomended/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2022-11-24 19:27:56,388 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:56] "GET /socket.io/?EIO=4&transport=polling&t=OIh76VT HTTP/1.1" 200 -
+2022-11-24 19:27:56,396 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:56] "POST /socket.io/?EIO=4&transport=polling&t=OIh76Vd&sid=8oE7fY2RomDzFydOAAAG HTTP/1.1" 200 -
+2022-11-24 19:27:56,403 INFO werkzeug Thread-41 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:56] "GET /socket.io/?EIO=4&transport=polling&t=OIh76Vf&sid=8oE7fY2RomDzFydOAAAG HTTP/1.1" 200 -
+2022-11-24 19:27:56,411 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:56] "GET /socket.io/?EIO=4&transport=polling&t=OIh76Vu&sid=8oE7fY2RomDzFydOAAAG HTTP/1.1" 200 -
+2022-11-24 19:27:56,811 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:56] "[35m[1mGET /api/shop/reccomended/1 HTTP/1.1[0m" 500 -
+2022-11-24 19:27:56,848 INFO werkzeug Thread-45 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:56] "[36mGET /api/shop/reccomended/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2022-11-24 19:27:56,854 INFO werkzeug Thread-46 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:56] "[36mGET /api/shop/reccomended/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2022-11-24 19:27:56,894 INFO werkzeug Thread-47 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:56] "[36mGET /api/shop/reccomended/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2022-11-24 19:27:57,025 INFO werkzeug Thread-48 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:27:57] "[36mGET /api/shop/reccomended/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2022-11-24 19:28:09,319 DEBUG fsevents Thread-5 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/backends/shop.py", inode=51788418, flags=10400, id=164312381): is_file, is_inode_meta_mod
+2022-11-24 19:28:09,328 DEBUG fsevents Thread-5 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/backends/shop.py', is_directory=False>
+2022-11-24 19:28:09,331 INFO werkzeug Thread-1 :  * Detected change in '/Users/mohuasen/Revisionwebsitev3/backends/shop.py', reloading
+2022-11-24 19:28:09,342 DEBUG fsevents Thread-5 : NativeEvent(path="/Users/mohuasen/Revisionwebsitev3/backends/shop.py", inode=51788418, flags=11400, id=164312384): is_file, is_inode_meta_mod, is_modified
+2022-11-24 19:28:09,342 DEBUG fsevents Thread-5 : queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/mohuasen/Revisionwebsitev3/backends/shop.py', is_directory=False>
+2022-11-24 19:28:09,344 INFO werkzeug Thread-1 :  * Detected change in '/Users/mohuasen/Revisionwebsitev3/backends/shop.py', reloading
+2022-11-24 19:28:09,795 INFO werkzeug MainThread :  * Restarting with watchdog (fsevents)
+2022-11-24 19:28:13,043 WARNING werkzeug MainThread :  * Debugger is active!
+2022-11-24 19:28:13,052 INFO werkzeug MainThread :  * Debugger PIN: 783-614-840
+2022-11-24 19:28:13,174 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:28:13] "GET /socket.io/?EIO=4&transport=polling&t=OIh7A9q HTTP/1.1" 200 -
+2022-11-24 19:28:13,206 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:28:13] "GET /socket.io/?EIO=4&transport=polling&t=OIh7A9t HTTP/1.1" 200 -
+2022-11-24 19:28:13,207 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:28:13] "GET /socket.io/?EIO=4&transport=polling&t=OIh79wC HTTP/1.1" 200 -
+2022-11-24 19:28:13,307 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:28:13] "GET /socket.io/?EIO=4&transport=polling&t=OIh7A9q HTTP/1.1" 200 -
+2022-11-24 19:28:13,524 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:28:13] "POST /socket.io/?EIO=4&transport=polling&t=OIh7Agy&sid=227t79RBDoASC4B3AAAB HTTP/1.1" 200 -
+2022-11-24 19:28:13,532 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:28:13] "GET /socket.io/?EIO=4&transport=polling&t=OIh7Ah0&sid=227t79RBDoASC4B3AAAB HTTP/1.1" 200 -
+2022-11-24 19:28:13,539 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:28:13] "POST /socket.io/?EIO=4&transport=polling&t=OIh7AhD&sid=D1oo91U03G3zZcqfAAAC HTTP/1.1" 200 -
+2022-11-24 19:28:13,540 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:28:13] "GET /socket.io/?EIO=4&transport=polling&t=OIh7AhE&sid=D1oo91U03G3zZcqfAAAC HTTP/1.1" 200 -
+2022-11-24 19:28:13,809 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:28:13] "POST /socket.io/?EIO=4&transport=polling&t=OIh7Ahu&sid=BlVOJh-nzmxHAg7TAAAA HTTP/1.1" 200 -
+2022-11-24 19:28:13,815 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:28:13] "GET /socket.io/?EIO=4&transport=polling&t=OIh7Ahw&sid=BlVOJh-nzmxHAg7TAAAA HTTP/1.1" 200 -
+2022-11-24 19:28:13,816 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:28:13] "POST /socket.io/?EIO=4&transport=polling&t=OIh7AkH&sid=UHWzZOW8kxFsQzehAAAD HTTP/1.1" 200 -
+2022-11-24 19:28:13,817 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:28:13] "GET /socket.io/?EIO=4&transport=polling&t=OIh7AkJ&sid=UHWzZOW8kxFsQzehAAAD HTTP/1.1" 200 -
+2022-11-24 19:28:13,820 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:28:13] "GET /socket.io/?EIO=4&transport=polling&t=OIh7AlJ&sid=D1oo91U03G3zZcqfAAAC HTTP/1.1" 200 -
+2022-11-24 19:28:13,821 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:28:13] "GET /socket.io/?EIO=4&transport=polling&t=OIh7AlM&sid=227t79RBDoASC4B3AAAB HTTP/1.1" 200 -
+2022-11-24 19:28:13,854 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:28:13] "GET /socket.io/?EIO=4&transport=polling&t=OIh7AmH&sid=BlVOJh-nzmxHAg7TAAAA HTTP/1.1" 200 -
+2022-11-24 19:28:13,856 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [24/Nov/2022 19:28:13] "GET /socket.io/?EIO=4&transport=polling&t=OIh7AmJ&sid=UHWzZOW8kxFsQzehAAAD HTTP/1.1" 200 -
