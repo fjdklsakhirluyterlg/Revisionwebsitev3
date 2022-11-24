@@ -159,8 +159,8 @@ def create_app():
         get = []
         post = []
         for rule in urls:
-            all.append(url)
             url = url_for(rule.endpoint, **(rule.defaults or {}))
+            all.append(url)
             if "GET" in rule.methods:
                 get.append(url)
             elif "POST" in rule.methods:
