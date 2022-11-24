@@ -85,6 +85,7 @@ def upload_banner_to_server():
     else:
         return redirect("/dashboard")
 
+@login_required
 @upload.route("/upload/banner/edit")
 def edit_banner_photo():
     if request.method == 'POST':
