@@ -352,10 +352,6 @@ def user_followers_api_test(id):
     followers = [i.name for i in user.followers]
     return {"amount":followers}
 
-@user.route("/api/user/banners/edit")
-def edit_banner_phot():
-    pass
-
 @user.route("/banners/<filename>")
 def see_banner(filename):
     curdir = os.getcwd()
