@@ -9,7 +9,7 @@
         {% if ask %}
         <p>Please check your emails and validate your account from a link sent to you by drive1.banerjee.armaan@outlook.com</p>
         {% endif %}<a href="/logout"><button>logout</button></a>
-        {% if banner %}<img style="width: 100%; height: 300px;"src="/banners/{{files}}">{%else%}<form enctype="multipart/form-data" method="POST" action="/upload/banner"><label>Enter banner:</label><input type="file" name="file"  accept="image/*"><button type="submit">submit</button></form>{%endif%}
+        {% if banner %}<img style="width: 100%; height: 300px;"src="/banners/{{files}}"><br><form enctype="multipart/form-data" method="POST" action="/upload/banner/edit"><label>Edit banner:</label><input type="file" name="file"  accept="image/*"><button type="submit">submit</button></form>{%else%}<form enctype="multipart/form-data" method="POST" action="/upload/banner"><label>Enter banner:</label><input type="file" name="file"  accept="image/*"><button type="submit">submit</button></form>{%endif%}
         <h2>Notifications: <button style="text-align:rightl"><a href="/user/notification/allread/{{id}}">mark all as read</a></button></h2>
         {% if notifications %}
         <div style="max-height: 150px; scroll: auto; background-color: grey; border-radius: 25px; padding-left: 20px; overflow:auto;">
