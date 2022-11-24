@@ -85,5 +85,9 @@ def upload_banner_to_server():
     else:
         return redirect("/dashboard")
 
+@upload.route("/upload/banner/edit")
+def edit_banner_photo():
+    pass
+
 
 # app.register_blueprint(upload, url_prefix="/")
