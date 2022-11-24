@@ -152,6 +152,10 @@ def create_app():
         response.headers['Access-Control-Allow-Origin'] = '*'
         return response
     
+    @app.route("/admin/sitemap")
+    def site_map():
+        urls = app.url_map.iter_rules():
+    
 
     app.register_error_handler(404, page_not_found)
 
