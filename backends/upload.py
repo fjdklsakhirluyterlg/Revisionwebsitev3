@@ -99,6 +99,10 @@ def edit_banner_photo():
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 names.append(filename)
+                files = os.listdir()
+                for fx in files:
+                    if fx.split(".")[1] == current_user.id:
+                        os.remove(fx)
                 curdir = os.getcwd()
                 namex = f"{current_user.name}.{current_user.id}.{filename}"
                 name = os.path.join(f"{curdir}/backends/banners/", namex)
