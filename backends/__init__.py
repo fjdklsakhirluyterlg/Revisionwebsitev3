@@ -166,7 +166,7 @@ def create_app():
             elif "POST" in rule.methods:
                 post.append(url)
         
-        
+        return jsonify(all, get, post)
 
     app.register_error_handler(404, page_not_found)
 
