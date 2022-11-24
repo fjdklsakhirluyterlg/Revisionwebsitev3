@@ -104,7 +104,7 @@ def edit_banner_photo():
                 for fx in files:
                     name_list = fx.split(".")
                     if int(name_list[1]) == current_user.id and name_list[0] == current_user.name:
-                        os.remove(fx)
+                        os.remove(f"{curdir}/backends/banners/{fx}")
                 namex = f"{current_user.name}.{current_user.id}.{filename}"
                 name = os.path.join(f"{curdir}/backends/banners/", namex)
                 file.save(name)
