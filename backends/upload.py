@@ -104,6 +104,7 @@ def edit_banner_photo():
                 for fx in files:
                     name_list = fx.split(".")
                     print(name_list)
+                    print(current_user.id)
                     if name_list[1] == current_user.id:
                         os.remove(fx)
                 namex = f"{current_user.name}.{current_user.id}.{filename}"
