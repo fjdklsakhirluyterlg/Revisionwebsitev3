@@ -159,10 +159,14 @@ def create_app():
         get = []
         post = []
         for rule in urls:
+            all.append(url)
             url = url_for(rule.endpoint, **(rule.defaults or {}))
             if "GET" in rule.methods:
-                all.append()
-    
+                get.append(url)
+            elif "POST" in rule.methods:
+                post.append(url)
+        
+        
 
     app.register_error_handler(404, page_not_found)
 
