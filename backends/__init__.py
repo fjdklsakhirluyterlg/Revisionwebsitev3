@@ -41,7 +41,8 @@ def create_app():
     CORS(app, resources={r"*": {"origins": "*"}})
     socketio.init_app(app, cors_allowed_origins="*")
 
-    logging.basicConfig(filename='record.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
+    if not app.development:
+        logging.basicConfig(filename='record.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 
     
     from .auth import auth
