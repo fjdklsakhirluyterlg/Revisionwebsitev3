@@ -154,7 +154,14 @@ def create_app():
     
     @app.route("/admin/sitemap")
     def site_map():
-        urls = app.url_map.iter_rules():
+        urls = app.url_map.iter_rules()
+        all = []
+        get = []
+        post = []
+        for rule in urls:
+            url = url_for(rule.endpoint, **(rule.defaults or {}))
+            if "GET" in rule.methods:
+                all.append()
     
 
     app.register_error_handler(404, page_not_found)
