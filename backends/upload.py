@@ -86,7 +86,7 @@ def upload_banner_to_server():
         return redirect("/dashboard")
 
 @login_required
-@upload.route("/upload/banner/edit")
+@upload.route("/upload/banner/edit", methods=["POST"])
 def edit_banner_photo():
     if request.method == 'POST':
         if 'file' not in request.files:
