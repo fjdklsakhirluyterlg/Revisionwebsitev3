@@ -1,4 +1,4 @@
 
 class Network:
-    def __init__(self, layers):
+    def __init__(self, layers, start, out):
         self.layers = layers
