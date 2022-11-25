@@ -219,7 +219,7 @@ def cehck_if_chat_exists():
     for chat in chats:
         people = chat.users
         if name in people:
-            return redirect()
+            return redirect(f"/chats/{chat.id}")
 
 @chat.route("/chat/<path:path>")
 def static_dir(path):
