@@ -27,3 +27,5 @@ def create_and_write_tables():
     ans = crsr.fetchall()
     print(ans)
 
+def insert_into_databse():
+    pass
