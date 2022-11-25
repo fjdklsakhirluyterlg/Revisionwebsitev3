@@ -45,3 +45,7 @@ def add_url_to_shortenere():
     db.session.commit()
 
     return {"id":act_id}   
+
+@add_url.route("/url/add")
+def add_url():
+    pass
