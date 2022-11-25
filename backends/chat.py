@@ -216,6 +216,8 @@ def pls_better_chat():
 def cehck_if_chat_exists():
     name = request.args.get("name")
     chats = current_user.chats
+    for chat in chats:
+        people = chat
 
 @chat.route("/chat/<path:path>")
 def static_dir(path):
