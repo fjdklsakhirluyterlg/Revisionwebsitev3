@@ -47,6 +47,7 @@ def add_url_to_shortenere():
 
     return {"id":act_id}   
 
+@login_required
 @add_url.route("/url/add")
 def add_url_to_thing_get():
-    pass
+    id = current_user.id
