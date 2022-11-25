@@ -20,4 +20,3 @@ def get_blogs():
     ans = crsr.fetchall()
     return ans
 
-get_users()
