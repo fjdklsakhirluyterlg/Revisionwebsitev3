@@ -10,6 +10,7 @@ from flask_migrate import Migrate
 from os import path
 from flask_redis import FlaskRedis
 import logging
+import os
 
 DB_NAME = "database.db"
 db = SQLAlchemy()
@@ -41,7 +42,8 @@ def create_app():
     CORS(app, resources={r"*": {"origins": "*"}})
     socketio.init_app(app, cors_allowed_origins="*")
 
-    logging.basicConfig(filename='record.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
+    # if not os.environ['ENV'] == 'prod':
+    #     logging.basicConfig(filename='record.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 
     
     from .auth import auth
@@ -150,6 +152,21 @@ def create_app():
         response.headers['Access-Control-Allow-Origin'] = '*'
         return response
     
+    @app.route("/admin/sitemap")
+    def site_map():
+        urls = app.url_map.iter_rules()
+        all = []
+        get = []
+        post = []
+        for rule in urls:
+            url = rule.endpoint
+            all.append(url)
+            if "GET" in rule.methods:
+                get.append(url)
+            elif "POST" in rule.methods:
+                post.append(url)
+        
+        return jsonify(all, get, post)
 
     app.register_error_handler(404, page_not_found)
 
@@ -164,7 +181,6 @@ def create_app():
     app.config['MAIL_USE_SSL'] = False
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
-    
     
     db.create_all(app=app)
 
