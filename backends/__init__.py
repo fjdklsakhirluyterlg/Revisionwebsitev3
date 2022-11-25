@@ -66,7 +66,7 @@ def create_app():
     from .songs import songs
     from .bank import bank
     from .ide import ide
-    # from .c import c
+    from .c import c
     from .notes import notes
     from backends.url_shortener.add import add_url
     from backends.url_shortener.view import view_url
@@ -97,7 +97,7 @@ def create_app():
     app.register_blueprint(bank, url_prefix="/")
     app.register_blueprint(svelte, url_prefix="/")
     app.register_blueprint(ide, url_prefix="/")
-    # app.register_blueprint(c, url_prefix="/")
+    app.register_blueprint(c, url_prefix="/")
     app.register_blueprint(notes, url_prefix="/")
     app.register_blueprint(go, url_prefix="/")
     app.register_blueprint(shop, url_prefix="/")
