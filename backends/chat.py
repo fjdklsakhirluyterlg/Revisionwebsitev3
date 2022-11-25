@@ -213,7 +213,7 @@ def pls_better_chat():
 
 @chat.route("/api/chat/exists")
 def cehck_if_chat_exists():
-    pass
+    name = request.args.get("name")
 
 @chat.route("/chat/<path:path>")
 def static_dir(path):
