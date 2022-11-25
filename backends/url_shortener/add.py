@@ -51,3 +51,4 @@ def add_url_to_shortenere():
 @add_url.route("/url/add")
 def add_url_to_thing_get():
     id = current_user.id
+    
