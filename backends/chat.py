@@ -211,6 +211,18 @@ def get_teh_texts_from_a_chat():
 def pls_better_chat():
     return render_template("socketchat.html")
 
+@login_required
+@chat.route("/api/chat/exists")
+def cehck_if_chat_exists():
+    name = request.args.get("name")
+    chats = current_user.chats
+    for chat in chats:
+        people = chat.users
+        if name in people:
+            return redirect(f"/chats/{chat.id}")
+    else:
+        return redirect(f"/chat/add?name={name}")
+
 @chat.route("/chat/<path:path>")
 def static_dir(path):
     return send_from_directory("static", path)

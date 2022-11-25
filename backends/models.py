@@ -626,3 +626,8 @@ class ScamPhone(db.Model):
 class ScamEmail(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.Text)
+
+class SocialPost(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.Text)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
