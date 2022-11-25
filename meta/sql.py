@@ -5,7 +5,6 @@ connection = sqlite3.connect("../backends/database.db")
 crsr = connection.cursor()
 
 def get_users():
-    print("running")
     sql_query = """
     SELECT name, timestamp, points, email FROM USER        
     """
