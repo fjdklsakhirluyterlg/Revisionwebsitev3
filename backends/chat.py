@@ -211,9 +211,11 @@ def get_teh_texts_from_a_chat():
 def pls_better_chat():
     return render_template("socketchat.html")
 
+@login_required
 @chat.route("/api/chat/exists")
 def cehck_if_chat_exists():
     name = request.args.get("name")
+    chats = current_user.chats
 
 @chat.route("/chat/<path:path>")
 def static_dir(path):
