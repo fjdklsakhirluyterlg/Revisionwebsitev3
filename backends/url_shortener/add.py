@@ -47,5 +47,5 @@ def add_url_to_shortenere():
     return {"id":act_id}   
 
 @add_url.route("/url/add")
-def add_url():
+def add_url_to_thing_get():
     pass
