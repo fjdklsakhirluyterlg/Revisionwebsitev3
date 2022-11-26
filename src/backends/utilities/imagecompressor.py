@@ -23,9 +23,9 @@ def clear_images():
 
 def clear_shop():
     parent = Path(Path.cwd()).parent
-    directory = f"{parent}/shop/**"
+    directory = f"{parent}/shop/**/*"
     for f in glob.glob(directory, recursive=True):
-        compress(f)
+        print(f)
 
 if __name__ == "__main__":
     clear_shop()
