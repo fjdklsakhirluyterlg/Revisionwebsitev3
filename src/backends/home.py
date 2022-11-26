@@ -126,6 +126,7 @@ def resonance():
 
 @home.route('/math/square/<number>')
 def square(number):
+    escape(number)
     try:
         return f"Your number squared is {float(number)**2}"
     except Exception as e:
