@@ -383,7 +383,7 @@ def file_sorter():
         
         return f"<ul>{y}</ul>"
     except Exception as e:
-        return f"something went wrong: {e}"
+        return f"something went wrong"
 
 # @home.route("/stream")
 # def stream():
