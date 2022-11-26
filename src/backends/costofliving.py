@@ -9,7 +9,9 @@ def bath_cost_for_user():
         volume = request.form["volume"]
         escape(volume)
         start = request.form["start"]
+        escape(start)
         end = request.form["end"]
+        escape(end)
         energy = volume * 4.18 * (start - end)
         energyk = energy / 1000
         cost = 0.50 * energyk
