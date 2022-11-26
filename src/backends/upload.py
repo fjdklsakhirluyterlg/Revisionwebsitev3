@@ -42,19 +42,19 @@ def upload_files_to_server():
 @upload.route('/uploads/<filename>')
 def see_upload(filename):
     curdir = os.getcwd()
-    return send_from_directory(f"{curdir}/backends/images/", filename)
+    return send_from_directory(f"{curdir}/src/backends/images/", filename)
 
 @upload.route("/uploaded/all")
 def see_all_files():
     curdir = os.getcwd()
-    files = os.listdir(f"{curdir}/backends/images")
+    files = os.listdir(f"{curdir}/src/backends/images")
     return render_template("files.html", files=files)
 
 @login_required
 @upload.route("/uploaded/user/all")
 def al_that_user_uploaded():
     curdir = os.getcwd()
-    filer = os.listdir(f"{curdir}/backends/images")
+    filer = os.listdir(f"{curdir}/src/backends/images")
     files = []
     for f in filer:
         z = f.split(".")
@@ -78,7 +78,7 @@ def upload_banner_to_server():
                 names.append(filename)
                 curdir = os.getcwd()
                 namex = f"{current_user.name}.{current_user.id}.{filename}"
-                name = os.path.join(f"{curdir}/backends/banners/", namex)
+                name = os.path.join(f"{curdir}/src/backends/banners/", namex)
                 file.save(name)
 
         return redirect("/dashboard")
@@ -100,13 +100,13 @@ def edit_banner_photo():
                 filename = secure_filename(file.filename)
                 names.append(filename)
                 curdir = os.getcwd()
-                files = os.listdir(f"{curdir}/backends/banners/")
+                files = os.listdir(f"{curdir}/src/backends/banners/")
                 for fx in files:
                     name_list = fx.split(".")
                     if int(name_list[1]) == current_user.id and name_list[0] == current_user.name:
                         os.remove(f"{curdir}/backends/banners/{fx}")
                 namex = f"{current_user.name}.{current_user.id}.{filename}"
-                name = os.path.join(f"{curdir}/backends/banners/", namex)
+                name = os.path.join(f"{curdir}/src/backends/banners/", namex)
                 file.save(name)
 
         return redirect("/dashboard")
