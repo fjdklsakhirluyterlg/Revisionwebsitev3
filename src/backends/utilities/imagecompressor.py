@@ -35,4 +35,4 @@ def clear_banners():
         compress(f"{directory}/{file}")
 
 if __name__ == "__main__":
-    clear_banners()
+    clear_shop()
