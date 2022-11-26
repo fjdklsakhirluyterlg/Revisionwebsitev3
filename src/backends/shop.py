@@ -1,5 +1,5 @@
 from sqlalchemy import or_
-from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
+from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort, escape
 from . import db
 from flask_login import current_user, login_required
 from .models import Item, Object, Checkout, User, Shopaccount, Notifications, Review
@@ -428,4 +428,4 @@ def reccomended_items(id):
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
     items = request.args.get("q")
-    return jsonify({"items":items})
+    return jsonify({"items":escape(items)})
