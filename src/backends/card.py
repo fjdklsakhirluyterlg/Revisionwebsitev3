@@ -105,7 +105,7 @@ def api_card_add_stuff():
             db.session.add(new_image)
             db.session.commit()
             namex = getattr(new_image, "id")
-            name = os.path.join(f"{curdir}/backends/cards/", f"{namex}.{filename}")
+            name = os.path.join(f"{curdir}/src/backends/cards/", f"{namex}.{filename}")
             file.save(name)
     return jsonify({"id": id})
     
