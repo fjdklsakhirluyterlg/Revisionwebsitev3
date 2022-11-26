@@ -199,7 +199,7 @@ def view_item(title):
     user = User.query.filter_by(id=userid).first()
     name = user.name
     description = item.description
-    images = os.listdir(f"./backends/shop/{item.id}")
+    images = os.listdir(f"./src/backends/shop/{item.id}")
     images.sort()
     mainimage = images[0]
     id=item.id
