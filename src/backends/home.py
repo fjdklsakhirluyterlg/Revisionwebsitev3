@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
+from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort, escape
 import requests
 from .models import Snake_leaderboard
 from flask_login import login_user, login_required, logout_user, current_user, LoginManager, UserMixin
@@ -527,6 +527,7 @@ def test_of_post_stuff():
         # if request.headers['Content-Type'] == 'application/json':
         if request.method == "POST":
             data = request.get_json()
+            escape(data)
             return jsonify(data)
         return jsonify(error="wrong method")
     except Exception as e:
