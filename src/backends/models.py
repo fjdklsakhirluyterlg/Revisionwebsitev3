@@ -640,3 +640,4 @@ class ImageGuide(db.Model):
 class Guide(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     images = db.relationship("ImageGuide")
+    content = db.Column(db.Text)
