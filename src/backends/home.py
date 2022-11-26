@@ -407,6 +407,7 @@ def file_sorter():
 def ip_address():
     x = get_user_ip_address()
     if x:
+        escape(x)
         return f"Your ip address is {x}"
     return "broken"
 
