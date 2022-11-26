@@ -10,7 +10,7 @@ Flask_RESTful==0.3.9
 Flask_SocketIO==5.3.1
 Flask_SQLAlchemy==2.5.1
 Markdown==3.3.7
-numpy==1.22.3
+numpy==1.23.5
 opencv_python==4.6.0.66
 pandas==1.4.2
 psutil==5.9.0
