@@ -12,3 +12,5 @@ def write_users():
         fieldnames = ["name", "timestamp", "points", "email"]
         writer = csv.writer(file)
         writer.writerows(users)
+
+write_users()
