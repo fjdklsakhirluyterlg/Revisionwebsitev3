@@ -31,7 +31,8 @@ def clear_shop():
 def clear_banners():
     parent = Path(Path.cwd()).parent  
     directory = f"{parent}/banners"
-    
+    for file in os.listdir(directory):
+        compress(f"{directory}/{file}")
 
 if __name__ == "__main__":
     clear_shop()
