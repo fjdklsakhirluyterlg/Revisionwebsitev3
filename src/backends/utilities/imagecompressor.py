@@ -12,7 +12,8 @@ def compress(path):
 def clean_directory(directory):
     files = os.listdir(directory)
     for file in files:
-        compress(file)
+        im = Image.open(file)
+        im.save(file,optimize=True,quality=30) 
 
 if __name__ == "__main__":
     clean_directory("../images")
