@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
+from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort, escape
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user, LoginManager, UserMixin
 from .models import User
@@ -104,6 +104,7 @@ def logout():
 def does_user_exist_api():
     data = request.get_json()
     name = data["name"]
+    escape(name)
     user = User.query.filter_by(name=name).first()
     if user:
         return jsonify({"message":f"{name} already exists"})

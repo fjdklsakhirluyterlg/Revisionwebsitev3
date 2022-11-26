@@ -1,5 +1,5 @@
 from sqlalchemy import or_
-from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
+from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort, escape
 from . import db
 from flask_login import current_user, login_required
 from .models import Item, Object, Checkout, User, Shopaccount, Notifications, Review
@@ -297,7 +297,7 @@ def see_user_shop_account_name(name):
         dict["selling"] = names
         return dict
     
-@shop.route("/api/shop/delete/<id>")
+@shop.route("/api/shop/delete/<int:id>")
 def delete_item_thingy(id):
     item = Item.query.filter_by(id=id).first()
     for object in item.objects:
@@ -311,6 +311,9 @@ def delete_item_thingy(id):
         object.user_id = None
         db.session.commit()
     curdir = os.getcwd()
+    dir = f"{curdir}/src/backends/shop/{id}"
+    if not dir.startswith(f"{curdir}/src/backends/shop/"):
+        return "bad request"
     shutil.rmtree(f"{curdir}/src/backends/shop/{id}")
     db.session.delete(item)
     db.session.commit()
@@ -425,4 +428,4 @@ def reccomended_items(id):
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
     items = request.args.get("q")
-    return jsonify({"items":items})
+    return jsonify({"items":escape(items)})

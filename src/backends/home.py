@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
+from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort, escape
 import requests
 from .models import Snake_leaderboard
 from flask_login import login_user, login_required, logout_user, current_user, LoginManager, UserMixin
@@ -126,10 +126,11 @@ def resonance():
 
 @home.route('/math/square/<number>')
 def square(number):
+    escape(number)
     try:
         return f"Your number squared is {float(number)**2}"
     except Exception as e:
-        return e
+        return "an error occured"
 
 @home.route('/math/add/<number>')
 def add_num(number):
@@ -197,11 +198,12 @@ def emailer():
     if request.method == "POST":
         try:
             Email = request.form["Email"]
+            escape(Email)
             x = send_email(Email)
             if x == "Success":
                 return "Sent the email successfully, please do not spam me"
             else:
-                return x
+                return "no success"
         except:
             return f"Did not work properly, are you sure you meant to send it to {Email}"
     else:
@@ -363,8 +365,11 @@ def docs():
 def conway_game_of_life():
     return "I am working on it"
 
+@login_required
 @home.route("/me/files")
 def file_sorter():
+    if current_user.name != "admin":
+        return "no"
     y = []
     dir = request.args.get("dir", default="./files")
     dest = "/Users/mohuasen/prev/all/Armaan/PDFS"
@@ -380,7 +385,7 @@ def file_sorter():
         
         return f"<ul>{y}</ul>"
     except Exception as e:
-        return f"something went wrong: {e}"
+        return f"something went wrong"
 
 # @home.route("/stream")
 # def stream():
@@ -400,7 +405,9 @@ def file_sorter():
 @home.route("/ip-address")
 def ip_address():
     x = get_user_ip_address()
-    return f"Your ip address is {x}"
+    if x:
+        return f"Your ip address is {x}"
+    return "broken"
 
 @home.route("/quizzes")
 def quizzes_home():
@@ -423,7 +430,9 @@ def day_of_year():
 @home.route("/api/test/simpleparams")
 def with_parameters():
     name = request.args.get('name')
+    escape(name)
     age = request.args.get('age', default=4)
+    escape(age)
     return jsonify(message="My name is " + name + " and I am " + str(age) + " years old")
 
 @home.route("/api/test/question")
@@ -524,6 +533,7 @@ def test_of_post_stuff():
         # if request.headers['Content-Type'] == 'application/json':
         if request.method == "POST":
             data = request.get_json()
+            escape(data)
             return jsonify(data)
         return jsonify(error="wrong method")
     except Exception as e:
