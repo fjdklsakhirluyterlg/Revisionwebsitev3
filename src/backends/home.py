@@ -403,7 +403,9 @@ def file_sorter():
 @home.route("/ip-address")
 def ip_address():
     x = get_user_ip_address()
-    return f"Your ip address is {x}"
+    if x:
+        return f"Your ip address is {x}"
+    return "broken"
 
 @home.route("/quizzes")
 def quizzes_home():
