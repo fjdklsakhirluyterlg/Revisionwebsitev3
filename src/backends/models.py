@@ -632,3 +632,6 @@ class SocialPost(db.Model):
     title = db.Column(db.Text)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     content = db.Column(db.Text)
+
+class Guide(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
