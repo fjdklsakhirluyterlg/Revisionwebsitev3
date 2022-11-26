@@ -299,6 +299,7 @@ def see_user_shop_account_name(name):
     
 @shop.route("/api/shop/delete/<int:id>")
 def delete_item_thingy(id):
+    escape(id)
     item = Item.query.filter_by(id=id).first()
     for object in item.objects:
         if not object.sold:
