@@ -27,6 +27,10 @@ def clear_shop():
     for f in glob.glob(directory, recursive=True):
         if not os.path.isdir(f):
             compress(f)
+
+def clear_banners():
+    parent = Path(Path.cwd()).parent  
+    directory = f"{parent}/banners"
     
 
 if __name__ == "__main__":
