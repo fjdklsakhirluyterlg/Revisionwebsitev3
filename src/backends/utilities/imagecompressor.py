@@ -15,7 +15,7 @@ def clean_directory(directory):
     for file in files:
         compress(file)
 
-if __name__ == "__main__":
+def clear_images()
     parent = Path(Path.cwd()).parent
     print(parent)
     directory = f"{parent}/images"
