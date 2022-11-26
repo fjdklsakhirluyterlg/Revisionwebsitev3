@@ -4,7 +4,7 @@ import csv
 
 def write_users():
     users = []
-    query = User.query.all()
+    query = db.session.query(User).all()
     for q in query:
         data = [q.name, q.timestamp, q.points, q.email]
         users.append(data)
