@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
+from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort, escape
 from .import db
 from .models import Note
 from flask_login import current_user, login_required
@@ -23,6 +23,7 @@ def api_add_a_note_thing():
 
 @notes.route("/notes/edit/<id>", methods=["POST"])
 def edite_note_thing(id):
+    escape(id)
     data = request.get_json()
     text = data["text"]
     note = Note.query.filter_by(id=id).first()
