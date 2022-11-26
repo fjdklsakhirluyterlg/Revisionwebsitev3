@@ -10,6 +10,7 @@ from . import mail
 import shutil
 from backends.functions import send_bying_request_thing
 from datetime import datetime
+from backends.utilities import clear_shop
 
 shop = Blueprint("shop", __name__)
 
@@ -77,7 +78,7 @@ def view_add_for_shopadd():
                 namex = f"{count}.{filename}"
                 name = os.path.join(f"{curdir}/src/backends/shop/{id}", namex)
                 file.save(name)
-
+                clear_shop()
         return redirect(f"/shop/view/{title}")
     else:
         user_id = current_user.id
