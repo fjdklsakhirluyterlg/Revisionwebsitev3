@@ -80,10 +80,10 @@ def view_single_note(id):
 def user_on_notes(message):
     room = message["id"]
 
-    socketio.emit("note-add", room=room)
+    socketio.send("note-add", room=room)
 
 @socketio.on("note-change")
 def note_change(message):
     room = message["id"]
     join_room(room)
-    socketio.emit("note-change", message, room=room)
+    socketio.send("note-change", message, room=room)
