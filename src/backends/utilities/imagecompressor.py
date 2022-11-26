@@ -17,11 +17,16 @@ def clean_directory(directory):
 
 def clear_images():
     parent = Path(Path.cwd()).parent
-    print(parent)
     directory = f"{parent}/images"
     for file in os.listdir(directory):
         compress(f"{parent}/images/{file}")
 
+def clear_shop():
+    parent = Path(Path.cwd()).parent
+    directory = f"{parent}/shop"
+    for f in glob.glob(directory, recursive=True):
+        print(f)
+
 if __name__ == "__main__":
-    for f in glob.glob('../shop', recursive=True):
+    for f in glob.glob('../shop/**', recursive=True):
         print(f)
