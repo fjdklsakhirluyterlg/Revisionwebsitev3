@@ -23,5 +23,5 @@ def clear_images():
         compress(f"{parent}/images/{file}")
 
 if __name__ == "__main__":
-    for path in Path('../shop').rglob():
+    for path in Path('../shop').rglob(""):
         print(path.name)
