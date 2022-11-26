@@ -453,7 +453,10 @@ def test_of_question():
 def api_email():
     adress = request.args.get("adress")
     x = send_email(adress)
-    return jsonify(status=x)
+    if x == "success":
+        return jsonify("success")
+    else:
+        return jsonify("failur")
 
 @home.route("/api/math/fibonacci")
 def api_fibonacci():
