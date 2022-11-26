@@ -28,5 +28,4 @@ def clear_shop():
         print(f)
 
 if __name__ == "__main__":
-    for f in glob.glob('../shop/**', recursive=True):
-        print(f)
+    clear_shop()
