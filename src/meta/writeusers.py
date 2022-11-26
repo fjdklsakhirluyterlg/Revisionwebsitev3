@@ -1,5 +1,5 @@
 import csv
-from sql import get_users
+from .sql import get_users
 
 def write_users():
     users = []
