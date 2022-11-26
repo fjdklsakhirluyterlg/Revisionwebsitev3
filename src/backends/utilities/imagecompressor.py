@@ -20,4 +20,4 @@ if __name__ == "__main__":
     print(parent)
     directory = f"{parent}/images"
     for file in os.listdir(directory):
-        print(f"{parent}/images/{file}")
+        compress(f"{parent}/images/{file}")
