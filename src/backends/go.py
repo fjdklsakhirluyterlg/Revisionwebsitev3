@@ -7,7 +7,7 @@ go = Blueprint("go", __name__)
 dir = os.getcwd()
 
 if "backends" not in dir:
-    dir += "/backends"
+    dir += "/src/backends"
 
 library = ctypes.cdll.LoadLibrary(f'{dir}/go_stuff/test.so')
 

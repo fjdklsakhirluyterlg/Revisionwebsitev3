@@ -66,7 +66,7 @@ def view_add_for_shopadd():
 
         curdir = os.getcwd()
         count = 0
-        os.mkdir(f"{curdir}/backends/shop/{id}")
+        os.mkdir(f"{curdir}/src/backends/shop/{id}")
         for file in request.files.getlist('file'):
             count += 1
             if file.filename == '':
@@ -75,7 +75,7 @@ def view_add_for_shopadd():
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 namex = f"{count}.{filename}"
-                name = os.path.join(f"{curdir}/backends/shop/{id}", namex)
+                name = os.path.join(f"{curdir}/src/backends/shop/{id}", namex)
                 file.save(name)
 
         return redirect(f"/shop/view/{title}")
@@ -189,7 +189,7 @@ def view_object(id):
 @shop.route("/images/<id>/<filename>")
 def see_image_thing(id, filename):
     curdir = os.getcwd()
-    return send_from_directory(f"{curdir}/backends/shop/{id}/", filename)
+    return send_from_directory(f"{curdir}/src/backends/shop/{id}/", filename)
 
 @shop.route("/shop/view/<title>")
 def view_item(title):
@@ -311,7 +311,7 @@ def delete_item_thingy(id):
         object.user_id = None
         db.session.commit()
     curdir = os.getcwd()
-    shutil.rmtree(f"{curdir}/backends/shop/{id}")
+    shutil.rmtree(f"{curdir}/src/backends/shop/{id}")
     db.session.delete(item)
     db.session.commit()
 

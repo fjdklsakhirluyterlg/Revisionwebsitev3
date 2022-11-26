@@ -57,7 +57,7 @@ def dashboard():
         curdir = os.getcwd()
         count = 0
         files = ""
-        filer = os.listdir(f"{curdir}/backends/banners")
+        filer = os.listdir(f"{curdir}/src/backends/banners")
         for f in filer:
             z = f.split(".")
             if z[1] == str(current_user.id):
@@ -355,7 +355,7 @@ def user_followers_api_test(id):
 @user.route("/banners/<filename>")
 def see_banner(filename):
     curdir = os.getcwd()
-    return send_from_directory(f"{curdir}/backends/banners/", filename)
+    return send_from_directory(f"{curdir}/src/backends/banners/", filename)
 
 
 # app.register_blueprint(user, url_prefix="/")

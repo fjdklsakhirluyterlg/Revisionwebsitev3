@@ -272,21 +272,22 @@ def stopwatch():
 
 @home.route("/bloger/add", methods=["POST", "GET"])
 def bog_add():
-    if request.method == "POST":
-        x = request.form["title"]
-        cmd = f" cd ./templates && touch {x}.html"
-        os.system(cmd)
-        y = request.form["content1"]
-        z = y.split(". ")
-        with open(f"{x}.html") as file:
-            file.write('{% extends "baseblog.html" %} \n')
-            file.write('{% block title %}' + x + '{% endblock %}')
-            file.write('{% block content%}')
-            for i in z:
-                file.write(f"<p>{i}</p>")
-            file.write("{% endblock %}")
-            file.close()
-    return render_template("blogadd.html")
+    return "this is deprecated"
+    # if request.method == "POST":
+    #     x = request.form["title"]
+    #     cmd = f" cd ./templates && touch {x}.html"
+    #     os.system(cmd)
+    #     y = request.form["content1"]
+    #     z = y.split(". ")
+    #     with open(f"{x}.html") as file:
+    #         file.write('{% extends "baseblog.html" %} \n')
+    #         file.write('{% block title %}' + x + '{% endblock %}')
+    #         file.write('{% block content%}')
+    #         for i in z:
+    #             file.write(f"<p>{i}</p>")
+    #         file.write("{% endblock %}")
+    #         file.close()
+    # return render_template("blogadd.html")
 
 @home.route("/about")
 def about():
