@@ -10,7 +10,7 @@ from . import mail
 import shutil
 from backends.functions import send_bying_request_thing
 from datetime import datetime
-from backends.utilities import clear_shop
+from backends.utilities.imagecompressor import clear_shop
 
 shop = Blueprint("shop", __name__)
 
