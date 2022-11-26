@@ -1,3 +1,3 @@
-from src.backends import db
+from backends import db
 
 print("successful import")
