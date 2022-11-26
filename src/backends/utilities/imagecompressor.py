@@ -8,6 +8,6 @@ def compress(path):
     print(f"The image size dimensions are: {im.size}")
     im.save(path,optimize=True,quality=30) 
 
-file = "../images/nasa_pic.png"
 
-compress(file)
+def clean_directory():
+    pass
