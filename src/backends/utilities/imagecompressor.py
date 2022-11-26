@@ -2,6 +2,7 @@ from PIL import Image
 import PIL
 import os
 import glob
+from pathlib import Path
 
 def compress(path):
     im = Image.open(path)
@@ -12,8 +13,8 @@ def compress(path):
 def clean_directory(directory):
     files = os.listdir(directory)
     for file in files:
-        im = Image.open(file)
-        im.save(file,optimize=True,quality=30) 
+        compress(file)
 
 if __name__ == "__main__":
-    clean_directory("../images")
+    parent = Path(Path.cwd()).parent
+    clean_directory(f"{parent}/images")
