@@ -17,5 +17,6 @@ def clean_directory(directory):
 
 if __name__ == "__main__":
     parent = Path(Path.cwd()).parent
+    print(parent)
     for file in f"{parent}/images":
-        compress(f"{parent}/images/{file}")
+        print(f"{parent}/images/{file}")
