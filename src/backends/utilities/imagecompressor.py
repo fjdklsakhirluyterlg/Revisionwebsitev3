@@ -13,3 +13,6 @@ def clean_directory(directory):
     files = os.listdir(directory)
     for file in files:
         compress(file)
+
+if __name__ == "__main__":
+    clean_directory("../images")
