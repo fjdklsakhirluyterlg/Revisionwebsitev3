@@ -197,6 +197,7 @@ def emailer():
     if request.method == "POST":
         try:
             Email = request.form["Email"]
+            escape(Email)
             x = send_email(Email)
             if x == "Success":
                 return "Sent the email successfully, please do not spam me"
