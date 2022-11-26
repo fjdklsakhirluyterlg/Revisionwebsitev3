@@ -456,7 +456,7 @@ def api_email():
     if x == "success":
         return jsonify("success")
     else:
-        return jsonify("failur")
+        return jsonify("failure")
 
 @home.route("/api/math/fibonacci")
 def api_fibonacci():
