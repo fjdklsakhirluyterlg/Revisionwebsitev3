@@ -297,7 +297,7 @@ def see_user_shop_account_name(name):
         dict["selling"] = names
         return dict
     
-@shop.route("/api/shop/delete/<id>")
+@shop.route("/api/shop/delete/<id:int>")
 def delete_item_thingy(id):
     item = Item.query.filter_by(id=id).first()
     for object in item.objects:
@@ -311,7 +311,6 @@ def delete_item_thingy(id):
         object.user_id = None
         db.session.commit()
     curdir = os.getcwd()
-    id = int(id)
     shutil.rmtree(f"{curdir}/src/backends/shop/{id}")
     db.session.delete(item)
     db.session.commit()
