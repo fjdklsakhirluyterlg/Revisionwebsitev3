@@ -426,7 +426,9 @@ def day_of_year():
 @home.route("/api/test/simpleparams")
 def with_parameters():
     name = request.args.get('name')
+    escape(name)
     age = request.args.get('age', default=4)
+    escape(age)
     return jsonify(message="My name is " + name + " and I am " + str(age) + " years old")
 
 @home.route("/api/test/question")
