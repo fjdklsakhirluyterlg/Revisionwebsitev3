@@ -27,7 +27,7 @@ def add_newsletter():
         else:
             return "What?"
     except Exception as e:
-        return f"Could not be carried out because {e}" 
+        return f"Could not be carried out because of an error" 
 
 @newsletter.route("/api/newsletter/add")
 def api_add_newsletter():
