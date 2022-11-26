@@ -9,5 +9,7 @@ def compress(path):
     im.save(path,optimize=True,quality=30) 
 
 
-def clean_directory():
-    pass
+def clean_directory(directory):
+    files = os.listdir(directory)
+    for file in files:
+        compress(file)
