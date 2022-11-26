@@ -366,6 +366,8 @@ def conway_game_of_life():
 @login_required
 @home.route("/me/files")
 def file_sorter():
+    if current_user.name != "admin":
+        return "no"
     y = []
     dir = request.args.get("dir", default="./files")
     dest = "/Users/mohuasen/prev/all/Armaan/PDFS"
