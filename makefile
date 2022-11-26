@@ -1,4 +1,5 @@
 test:
+	cd src
 	pytest
 serve:
 	pytest
