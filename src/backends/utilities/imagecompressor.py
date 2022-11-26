@@ -25,7 +25,8 @@ def clear_shop():
     parent = Path(Path.cwd()).parent
     directory = f"{parent}/shop/**/*"
     for f in glob.glob(directory, recursive=True):
-        print(f)
+        if not os.path.isdir(f):
+            print(f)
 
 if __name__ == "__main__":
     clear_shop()
