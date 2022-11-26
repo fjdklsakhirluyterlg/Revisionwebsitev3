@@ -10,6 +10,7 @@ from . import mail
 import shutil
 from backends.functions import send_bying_request_thing
 from datetime import datetime
+from backends.utilities.imagecompressor import clear_shop
 
 shop = Blueprint("shop", __name__)
 
@@ -77,7 +78,7 @@ def view_add_for_shopadd():
                 namex = f"{count}.{filename}"
                 name = os.path.join(f"{curdir}/src/backends/shop/{id}", namex)
                 file.save(name)
-
+                clear_shop()
         return redirect(f"/shop/view/{title}")
     else:
         user_id = current_user.id
@@ -198,7 +199,7 @@ def view_item(title):
     user = User.query.filter_by(id=userid).first()
     name = user.name
     description = item.description
-    images = os.listdir(f"./backends/shop/{item.id}")
+    images = os.listdir(f"./src/backends/shop/{item.id}")
     images.sort()
     mainimage = images[0]
     id=item.id
