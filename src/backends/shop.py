@@ -297,7 +297,7 @@ def see_user_shop_account_name(name):
         dict["selling"] = names
         return dict
     
-@shop.route("/api/shop/delete/<id:int>")
+@shop.route("/api/shop/delete/<int:id>")
 def delete_item_thingy(id):
     item = Item.query.filter_by(id=id).first()
     for object in item.objects:
