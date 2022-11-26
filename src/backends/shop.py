@@ -312,6 +312,8 @@ def delete_item_thingy(id):
         db.session.commit()
     curdir = os.getcwd()
     dir = f"{curdir}/src/backends/shop/{id}"
+    if not dir.startswith(f"{curdir}/src/backends/shop/"):
+        return "bad request"
     shutil.rmtree(f"{curdir}/src/backends/shop/{id}")
     db.session.delete(item)
     db.session.commit()
