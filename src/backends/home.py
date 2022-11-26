@@ -201,7 +201,7 @@ def emailer():
             if x == "Success":
                 return "Sent the email successfully, please do not spam me"
             else:
-                return x
+                return "no success"
         except:
             return f"Did not work properly, are you sure you meant to send it to {Email}"
     else:
