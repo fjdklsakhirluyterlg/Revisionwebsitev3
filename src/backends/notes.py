@@ -86,4 +86,4 @@ def user_on_notes(message):
 def note_change(message):
     room = message["id"]
     join_room(room)
-    socketio.emit("note-changed", message, room=room)
+    socketio.emit("note-change", message, room=room)
