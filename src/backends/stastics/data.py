@@ -14,4 +14,6 @@ def write_users():
         writer = csv.writer(file)
         writer.writerows(users)
 
-write_users()
+
+if __name__ == "__main__":
+    write_users()
