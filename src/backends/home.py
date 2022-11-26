@@ -129,7 +129,7 @@ def square(number):
     try:
         return f"Your number squared is {float(number)**2}"
     except Exception as e:
-        return e
+        return "an error occured"
 
 @home.route('/math/add/<number>')
 def add_num(number):
