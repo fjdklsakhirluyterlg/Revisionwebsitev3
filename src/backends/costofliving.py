@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
+from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort, escape
 from . import db
 
 cost = Blueprint("cost", __name__)
@@ -7,6 +7,7 @@ cost = Blueprint("cost", __name__)
 def bath_cost_for_user():
     if request.method == "POST":
         volume = request.form["volume"]
+        escape(volume)
         start = request.form["start"]
         end = request.form["end"]
         energy = volume * 4.18 * (start - end)
