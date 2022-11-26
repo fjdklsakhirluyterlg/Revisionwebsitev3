@@ -372,6 +372,7 @@ def file_sorter():
         return "no"
     y = []
     dir = request.args.get("dir", default="./files")
+    escape(dir)
     dest = "/Users/mohuasen/prev/all/Armaan/PDFS"
     try:
         x = os.listdir(dir)
