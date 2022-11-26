@@ -1,6 +1,8 @@
 import sqlite3
+from pathlib import Path
 
-connection = sqlite3.connect("../backends/database.db")
+parent = Path(Path.cwd()).parent
+connection = sqlite3.connect(f"./backends/database.db")
 
 crsr = connection.cursor()
 
