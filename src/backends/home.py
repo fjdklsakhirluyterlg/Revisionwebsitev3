@@ -372,6 +372,7 @@ def file_sorter():
         return "no"
     y = []
     dir = request.args.get("dir", default="./files")
+    escape(dir)
     dest = "/Users/mohuasen/prev/all/Armaan/PDFS"
     try:
         x = os.listdir(dir)
@@ -406,6 +407,7 @@ def file_sorter():
 def ip_address():
     x = get_user_ip_address()
     if x:
+        escape(x)
         return f"Your ip address is {x}"
     return "broken"
 
@@ -451,7 +453,10 @@ def test_of_question():
 def api_email():
     adress = request.args.get("adress")
     x = send_email(adress)
-    return jsonify(status=x)
+    if x == "success":
+        return jsonify("success")
+    else:
+        return jsonify("failure")
 
 @home.route("/api/math/fibonacci")
 def api_fibonacci():
