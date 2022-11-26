@@ -21,3 +21,7 @@ def clear_images():
     directory = f"{parent}/images"
     for file in os.listdir(directory):
         compress(f"{parent}/images/{file}")
+
+if __name__ == "__main__":
+    for path in Path('../shop').rglob():
+        print(path.name)
