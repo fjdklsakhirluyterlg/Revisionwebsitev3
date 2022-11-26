@@ -4,4 +4,4 @@ import os
 import glob
 
 def compress(path):
-    pass
+    im = Image.open(path)
