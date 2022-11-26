@@ -363,6 +363,7 @@ def docs():
 def conway_game_of_life():
     return "I am working on it"
 
+@login_required
 @home.route("/me/files")
 def file_sorter():
     y = []
