@@ -311,6 +311,7 @@ def delete_item_thingy(id):
         object.user_id = None
         db.session.commit()
     curdir = os.getcwd()
+    dir = f"{curdir}/src/backends/shop/{id}"
     shutil.rmtree(f"{curdir}/src/backends/shop/{id}")
     db.session.delete(item)
     db.session.commit()
