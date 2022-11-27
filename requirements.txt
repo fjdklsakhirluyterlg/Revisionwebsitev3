@@ -21,4 +21,4 @@ requests==2.27.1
 setuptools==58.1.0
 SQLAlchemy==1.4.36
 Werkzeug==2.1.2
-Fask_Redis
+Flask_Redis
