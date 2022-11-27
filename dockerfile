@@ -1,5 +1,6 @@
 FROM python:3.10.5
 
+ADD /Revisionwebsitev3
 WORKDIR /Revisionwebsitev3
 
 COPY requirements.txt requirements.txt
