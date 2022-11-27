@@ -20,4 +20,4 @@ pytube==12.1.0
 requests==2.27.1
 setuptools==58.1.0
 SQLAlchemy==1.4.36
-Werkzeug==2.2.2
+Werkzeug==2.1.2
