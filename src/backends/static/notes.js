@@ -1,5 +1,6 @@
 var urlid = window.location.href.split("")[window.location.href.split("").length - 1]
-var socket = io.connect("http://127.0.0.1:5090");
+sockurl = window.location.origin
+var socket = io.connect(sockurl);
 
 if (Number.isInteger(parseInt(urlid))){
     id = parseInt(urlid)

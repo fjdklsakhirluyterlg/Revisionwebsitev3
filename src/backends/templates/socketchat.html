@@ -15,7 +15,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.2/socket.io.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function(){
-    var socket = io.connect("http://localhost:5090");
+    sockurl=window.location.origin    
+    var socket = io.connect(sockurl);
     socket.on('connect', function(){
         socket.send("User connected")
     })

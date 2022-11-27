@@ -1,11 +1,11 @@
 FROM python:3.10.5
 
-WORKDIR /Revisionwebsitev3
+WORKDIR /app
 
-COPY requirements.txt requirements.txt
+COPY ./requirements.txt /app
 
 RUN pip3 install -r requirements.txt
 
-COPY . .
+COPY . /app
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=5090"]
+CMD [ "flask", "run", "--host=0.0.0.0", "--port=5090"]
