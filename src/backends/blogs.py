@@ -405,6 +405,9 @@ def blog_view_add():
 @blogs.route("/blogs/addlike/<id>")
 def add_like_to_blog(id):
     blog = db.session.query(Blog).filter(Blog.id == id).first()
+    user_id = blog.user_id
+    user = User.query.filter_by(id=user_id).first()
+    user.points += 1
     l = blog.title
     blog.likes += 1
     blog.views -= 1
