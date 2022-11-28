@@ -20,3 +20,6 @@ def new_notification_recieved(message):
 def emit_new_notification(text, user_id):
     join_room(user_id)
     socketio.emit("new-notification", text, room=user_id)
+
+def emit_new_thing():
+    pass

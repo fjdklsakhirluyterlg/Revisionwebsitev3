@@ -43,4 +43,3 @@ def test_chat(new_chat, new_user):
 def test_urls(new_url):
     assert new_url.actual == "https://www.google.com"
     assert new_url.id != 0
-
