@@ -1,6 +1,6 @@
 import pandas as pd
 import sqlite3
-
+from IPython.display import display
 from pathlib import Path
 
 parent = Path(Path.cwd()).parent
@@ -13,4 +13,4 @@ crsr.execute("""
 """)
 
 df = pd.DataFrame(crsr.fetchall())
-df.style
+display(df)
