@@ -13,3 +13,4 @@ crsr.execute("""
 """)
 
 df = pd.DataFrame(crsr.fetchall(), columns = ['name', 'email', 'password', 'points'])
+print(df)
