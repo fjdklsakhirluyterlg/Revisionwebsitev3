@@ -13,4 +13,4 @@ crsr.execute("""
 """)
 
 df = pd.DataFrame(crsr.fetchall())
-print(df)
+df.style
