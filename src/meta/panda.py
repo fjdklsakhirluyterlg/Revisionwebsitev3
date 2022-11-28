@@ -12,5 +12,5 @@ crsr.execute("""
     SELECT * FROM user
 """)
 
-df = pd.DataFrame(crsr.fetchall(), columns = ['name', 'email', 'password', 'points'])
+df = pd.DataFrame(crsr.fetchall())
 print(df)
