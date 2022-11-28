@@ -417,6 +417,9 @@ def add_like_to_blog(id):
 @blogs.route("/blogs/adddislike/<id>")
 def add_dislike_to_blog(id):
     blog = db.session.query(Blog).filter(Blog.id == id).first()
+    user_id = blog.user_id
+    user = User.query.filter_by(id=user_id).first()
+    user.points -= 1
     l = blog.title
     blog.dislikes += 1
     blog.views -= 1
