@@ -17,7 +17,7 @@ def python_ide():
         x = request.form.get("script")
         num = random.randint(0, 100000)
         current = os.getcwd()
-        path = f"{current}/backends/programs/file{num}.py"
+        path = f"{current}/src/backends/programs/file{num}.py"
         with open(path, "w+") as file:
             file.write(x)
         
