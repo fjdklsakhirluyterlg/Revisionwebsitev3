@@ -183,7 +183,7 @@ def change_password_for_user():
 @user.route("/user/rankings")
 def ranking_of_users():
     limit = request.args.get("limit", default=10)
-    users = User.query.order_by(User.points)[::-1][(limit - 1):limit]
+    users = User.query.order_by(User.points)[::-1][:limit]
     return render_template("userrankings.html", users=users)
 
 @login_required
