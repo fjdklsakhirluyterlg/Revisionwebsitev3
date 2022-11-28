@@ -260,6 +260,7 @@ def see_content_blog(title):
     revli.sort(reverse=True)
     zippedli = zip(rellist, revli)
     actrel = [key for key, val in zippedli]
+    bookmarked = False
     if current_user.is_authenticated:
         current_bookmarks = [bookmark.blog_id for bookmark in current_user.bookmarks]
         bookmarked = True if id in current_bookmarks else False
