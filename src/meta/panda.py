@@ -12,4 +12,4 @@ crsr.execute("""
     SELECT * FROM user
 """)
 
-df = pd.DataFrame(crsr.fetchall(), columns = ['product_id', 'product_name', 'price'])
+df = pd.DataFrame(crsr.fetchall(), columns = ['name', 'email', 'password', 'points'])
