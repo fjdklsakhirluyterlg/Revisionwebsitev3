@@ -13,4 +13,4 @@ crsr.execute("""
 """)
 
 df = pd.DataFrame(crsr.fetchall())
-display(df)
+df.to_csv("actdata.csv")
