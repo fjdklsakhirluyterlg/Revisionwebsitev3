@@ -29,7 +29,7 @@ def dashboard():
             x = comment.blog_id
             blog = db.session.query(Blog).filter(Blog.id == x).first() 
             print(blog.title)
-        #     l.userend(blog)
+            l.append(blog)
         
         bookmarks = []
         notifications = db.session.query(Notifications).filter(Notifications.user_id == id).all()[::-1]
