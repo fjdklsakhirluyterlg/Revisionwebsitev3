@@ -17,3 +17,4 @@ class AESCipher(object):
 
 text = "hi there"
 out = AESCipher.encrypt(text)
+print(out)
