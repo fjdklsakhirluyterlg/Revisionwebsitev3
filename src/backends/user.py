@@ -25,10 +25,10 @@ def dashboard():
         points = usern.points
         comments = usern.comments
         l = []
-        for comment in comments:
-            x = comment.blog_id
-            blog = db.session.query(Blog).filter(Blog.id == x).first()
-            l.userend(blog)
+        # for comment in comments:
+        #     x = comment.blog_id
+        #     blog = db.session.query(Blog).filter(Blog.id == x).first()
+        #     l.userend(blog)
         
         bookmarks = []
         notifications = db.session.query(Notifications).filter(Notifications.user_id == id).all()[::-1]
