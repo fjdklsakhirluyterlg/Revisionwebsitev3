@@ -28,6 +28,7 @@ def dashboard():
         for comment in comments:
             x = comment.blog_id
             blog = db.session.query(Blog).filter(Blog.id == x).first() 
+            print(blog.title)
         #     l.userend(blog)
         
         bookmarks = []
