@@ -36,5 +36,5 @@ class AESCipher(object):
 
 
 text = "hi there"
-out = AESCipher.encrypt(text)
+out = AESCipher.encrypt("hi there")
 print(out)
