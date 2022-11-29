@@ -14,3 +14,6 @@ class AESCipher(object):
         cipher = AES.new(self.key, AES.MODE_CBC, iv)
         encrypted_text = cipher.encrypt(plain_text.encode())
         return b64encode(iv + encrypted_text).decode("utf-8")
+
+text = "hi there"
+out = AESCipher.encrypt(text)
