@@ -36,4 +36,5 @@ class AESCipher(object):
 
 
 encryptor = AESCipher("never gonna give you up")
-print(encryptor.encrypt("hi ther"))
+out = encryptor.encrypt("hi ther")
+print(encryptor.decrypt(out))
