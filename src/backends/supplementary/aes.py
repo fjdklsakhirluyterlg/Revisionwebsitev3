@@ -35,5 +35,5 @@ class AESCipher(object):
         return plain_text[:-ord(last_character)]
 
 
-encryptor = AESCipher("nevergonnagiveyouup")
+encryptor = AESCipher("never gonna give you up")
 print(encryptor.encrypt("hi ther"))
