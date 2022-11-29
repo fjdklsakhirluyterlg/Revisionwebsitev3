@@ -30,6 +30,7 @@ def dashboard():
             blog = db.session.query(Blog).filter(Blog.id == x).first()
             l.userend(blog)
         
+        bookmarks = []
         notifications = db.session.query(Notifications).filter(Notifications.user_id == id).all()[::-1]
         bookmarks = usern.bookmarks
         blog_bookmarks = []
@@ -37,6 +38,7 @@ def dashboard():
             bookmark_blog_id = bookmark.blog_id
             hog = Blog.query.filter_by(id=bookmark_blog_id).first()
             blog_bookmarks.append(hog.title)
+        
             
         posts = usern.posts
         awnsers = usern.awnsers
