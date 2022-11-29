@@ -25,8 +25,8 @@ def dashboard():
         points = usern.points
         comments = usern.comments
         l = []
-        # for comment in comments:
-        #     x = comment.blog_id
+        for comment in comments:
+            x = comment.blog_id
         #     blog = db.session.query(Blog).filter(Blog.id == x).first()
         #     l.userend(blog)
         
