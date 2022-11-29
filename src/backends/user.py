@@ -27,7 +27,7 @@ def dashboard():
         l = []
         for comment in comments:
             x = comment.blog_id
-        #     blog = db.session.query(Blog).filter(Blog.id == x).first()
+            blog = db.session.query(Blog).filter(Blog.id == x).first() 
         #     l.userend(blog)
         
         bookmarks = []
