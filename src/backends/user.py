@@ -34,10 +34,10 @@ def dashboard():
         notifications = db.session.query(Notifications).filter(Notifications.user_id == id).all()[::-1]
         bookmarks = usern.bookmarks
         blog_bookmarks = []
-        for bookmark in bookmarks:
-            bookmark_blog_id = bookmark.blog_id
-            hog = Blog.query.filter_by(id=bookmark_blog_id).first()
-            blog_bookmarks.append(hog.title)
+        # for bookmark in bookmarks:
+        #     bookmark_blog_id = bookmark.blog_id
+        #     hog = Blog.query.filter_by(id=bookmark_blog_id).first()
+        #     blog_bookmarks.append(hog.title)
         
             
         posts = usern.posts
