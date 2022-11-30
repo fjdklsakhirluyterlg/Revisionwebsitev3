@@ -269,10 +269,12 @@ def user_home():
     
     user_list = []
     followering = []
-    # followering.extend(user.followers)
+    followering.extend(user.followers)
     followering.extend(user.followed)
     for fol in followering:
-        folls = fol.following
+        folls = []
+        folls.extend(fol.followed)
+        folls.extend(fol.followers)
         for f in folls:
             # if not f in followering:
             user_list.append(f.name)
