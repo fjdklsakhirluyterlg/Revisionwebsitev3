@@ -272,6 +272,7 @@ def user_home():
     # followering.extend(user.followers)
     followering.extend(user.followed)
     for fol in followering:
+        print(fol.name)
         folls = fol.following
         for f in folls:
             # if not f in followering:
