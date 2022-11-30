@@ -270,6 +270,7 @@ def user_home():
     user_list = []
     for fol in following:
         folls = fol.following
+        user_list.extend(folls)
 
     return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags, "tag_blogs": tag_blogs, "tags":tagnames, "posts":postnames, "recomended_posts":recposts, "user_followed_posts":user_followed_posts})
 
