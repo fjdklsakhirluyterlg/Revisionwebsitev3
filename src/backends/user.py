@@ -127,7 +127,7 @@ def view_user(id):
     for comment in comments:
         x = comment.blog_id
         blog = db.session.query(Blog).filter(Blog.id == x).first()
-        l.userend(blog) 
+        l.append(blog) 
     
     posts = user.posts
     awnsers = user.awnsers
@@ -266,8 +266,18 @@ def user_home():
         posts = folls.posts
         for zsy in posts:
             user_followed_posts.append(zsy.title)
-
-    return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags, "tag_blogs": tag_blogs, "tags":tagnames, "posts":postnames, "recomended_posts":recposts, "user_followed_posts":user_followed_posts})
+    
+    user_list = []
+    followering = []
+    # followering.extend(user.followers)
+    followering.extend(user.followed)
+    for fol in followering:
+        folls = fol.following
+        for f in folls:
+            # if not f in followering:
+            user_list.append(f.name)
+    
+    return jsonify({"following": blogs, "reccomended": list(set(otherblogs)), "tags reccomended": othertags, "tag_blogs": tag_blogs, "tags":tagnames, "posts":postnames, "recomended_posts":recposts, "user_followed_posts":user_followed_posts, "user_following_reccomoendations":user_list})
 
 @login_required
 @user.route("/find/related/tags")
