@@ -127,7 +127,7 @@ def view_user(id):
     for comment in comments:
         x = comment.blog_id
         blog = db.session.query(Blog).filter(Blog.id == x).first()
-        l.userend(blog) 
+        l.append(blog) 
     
     posts = user.posts
     awnsers = user.awnsers
