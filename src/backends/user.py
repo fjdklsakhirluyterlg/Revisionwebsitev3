@@ -268,7 +268,7 @@ def user_home():
             user_followed_posts.append(zsy.title)
     
     user_list = []
-    followering = user.followed
+    followering = zip(user.followed, user.followers)
     for fol in followering:
         folls = fol.following
         for f in folls:
