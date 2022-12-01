@@ -1,5 +1,6 @@
 import http.client
 import asyncio
+import re
 
 def get(url: str, method):
     url.replace("https://", "")
@@ -15,7 +16,8 @@ def get(url: str, method):
 def get_data(url: str, pattern=""):
     res = get(url, "GET")
     data = res.read()
-
+    if pattern != ""
+        re.search(data, pattern)
 
 def main_run():
     res = get("www.python.org/", "GET")
