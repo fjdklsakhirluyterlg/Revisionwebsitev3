@@ -16,7 +16,7 @@ def get(url: str, method):
 def get_data(url: str, pattern=""):
     res = get(url, "GET")
     data = res.read()
-    if pattern != ""
+    if pattern != "":
         re.search(data, pattern)
 
 def main_run():
