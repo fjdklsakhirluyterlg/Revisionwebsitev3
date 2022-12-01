@@ -183,6 +183,6 @@ def create_app():
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
     
     with app.app_context():
-        db.create_all(app=app)
+        db.create_all()
 
     return app
