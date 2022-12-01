@@ -1,8 +1,10 @@
 from backends.models import User
 from backends import db
+from . import new_app
 import csv
 
 def write_users():
+    new_app()
     users = []
     query = db.session.query(User).all()
     for q in query:
