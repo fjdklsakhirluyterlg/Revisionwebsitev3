@@ -24,7 +24,7 @@ def get_data(url: str, pattern=""):
 def main_run():
     res = get("www.python.org/", "GET")
     print(res.status, res.reason)
-    res1 = get_data("www.python.org", "p")
+    res1 = get_data("www.python.org", "A")
     print(res1)
 
 main_run()
