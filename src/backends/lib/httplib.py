@@ -1,7 +1,7 @@
 import http.client
 import asyncio
 
-def get(url, method):
+def get(url: str, method):
     url.replace("https://", "")
     domain = url.split("/", 1)
     print(domain)
