@@ -14,6 +14,7 @@ def get(url: str, method):
 
 def get_data(url: str):
     res = get(url, "GET")
+    data = res.read()
 
 def main_run():
     res = get("www.python.org/", "GET")
