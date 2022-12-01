@@ -16,4 +16,4 @@ def main_run():
     status, reason = get("https://www.python.org/", "GET")
     print(status, reason)
 
-asyncio.run(main_run())
+main_run()
