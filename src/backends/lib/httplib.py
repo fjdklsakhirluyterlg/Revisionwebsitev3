@@ -6,8 +6,8 @@ def get(url: str, method):
     url.replace("https://", "")
     domain = url.split("/", 1)
     conn = http.client.HTTPSConnection(domain[0])
-    if domain[1]:
-        conn.request(method, domain[1])
+    if domain[0]:
+        conn.request(method, domain[0])
     else:
         conn.request(method, "/")
     r1 = conn.getresponse()
