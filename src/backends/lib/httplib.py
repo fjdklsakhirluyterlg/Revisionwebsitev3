@@ -17,7 +17,9 @@ def get_data(url: str, pattern=""):
     res = get(url, "GET")
     data = res.read()
     if pattern != "":
-        re.search(data, pattern)
+        r = re.search(data, pattern)
+        return r
+    return data
 
 def main_run():
     res = get("www.python.org/", "GET")
