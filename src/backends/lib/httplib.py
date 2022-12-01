@@ -12,7 +12,8 @@ def get(url: str, method):
     r1 = conn.getresponse()
     return r1
 
-
+def get_data():
+    pass
 
 def main_run():
     res = get("www.python.org/", "GET")
