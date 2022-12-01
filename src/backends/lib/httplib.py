@@ -12,9 +12,10 @@ def get(url: str, method):
     r1 = conn.getresponse()
     return r1
 
-def get_data(url: str):
+def get_data(url: str, pattern=""):
     res = get(url, "GET")
     data = res.read()
+
 
 def main_run():
     res = get("www.python.org/", "GET")
