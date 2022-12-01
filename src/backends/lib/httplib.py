@@ -14,7 +14,7 @@ def get(url: str, method):
     return r1.status, r1.reason
 
 def main_run():
-    status, reason = get("https://www.python.org/", "GET")
+    status, reason = get("www.python.org/", "GET")
     print(status, reason)
 
 main_run()
