@@ -7,4 +7,5 @@ def new_app():
         "TESTING": True,
     })
 
-    
+    with app.app_context():
+        yield
