@@ -6,3 +6,5 @@ class c:
     
     def connect(self, filename):
         self.location = filename
+    
+    
