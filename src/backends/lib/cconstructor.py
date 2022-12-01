@@ -1,5 +1,5 @@
-import cdll
+import ctypes
 
 class c:
     def __init__(self):
-        pass
+        self.location = ""
