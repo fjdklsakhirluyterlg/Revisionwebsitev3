@@ -13,7 +13,7 @@ def get(url: str, method):
     return r1.status, r1.reason, r1.read()
 
 def main_run():
-    status, reason = get("www.python.org/", "GET")
-    print(status, reason)
+    status, reason, data = get("www.python.org/", "GET")
+    print(status, reason, data)
 
 main_run()
