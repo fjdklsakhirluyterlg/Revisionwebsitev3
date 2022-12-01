@@ -4,6 +4,7 @@ import asyncio
 def get(url, method):
     url.replace("https://", "")
     domain = url.split("/", 1)
+    print(domain)
     conn = http.client.HTTPSConnection(domain[0])
     if domain[1]:
         conn.request(method, domain[1])
