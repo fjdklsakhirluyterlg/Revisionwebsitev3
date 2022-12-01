@@ -182,6 +182,7 @@ def create_app():
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
     
-    db.create_all(app=app)
+    with app.app_context():
+        db.create_all(app=app)
 
     return app

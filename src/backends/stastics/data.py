@@ -1,5 +1,6 @@
 from backends.models import User
 from backends import db
+
 import csv
 
 def write_users():
