@@ -16,6 +16,6 @@ def get(url: str, method):
 
 def main_run():
     res = get("www.python.org/", "GET")
-    print(res.status)
+    print(res.status, res.reason)
 
 main_run()
