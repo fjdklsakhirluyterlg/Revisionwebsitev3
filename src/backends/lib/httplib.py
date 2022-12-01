@@ -10,7 +10,7 @@ def get(url: str, method):
     else:
         conn.request(method, "/")
     r1 = conn.getresponse()
-    return r1.status, r1.reason
+    return r1.status, r1.reason, r1.read()
 
 def main_run():
     status, reason = get("www.python.org/", "GET")
