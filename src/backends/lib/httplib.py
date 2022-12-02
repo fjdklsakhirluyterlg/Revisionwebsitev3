@@ -20,6 +20,7 @@ def get_data(url: str, pattern=""):
         r = re.search(data, pattern)
         return r
     return data
+    
 
 def main_run():
     res = get("www.python.org/", "GET")
