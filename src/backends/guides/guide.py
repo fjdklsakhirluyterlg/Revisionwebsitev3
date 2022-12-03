@@ -4,4 +4,5 @@ guide = Blueprint("guide", __name__)
 
 @guide.route("/api/guides/add")
 def add_guide():
-    pass
+    data = request.get_json()
+    
