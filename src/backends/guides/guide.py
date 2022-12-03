@@ -15,4 +15,4 @@ def add_guide():
     db.session.commit()
     id = getattr(new, "id")
     for file in request.files():
-        new_image = ImageGuide()
+        new_image = ImageGuide(guide_id=id)
