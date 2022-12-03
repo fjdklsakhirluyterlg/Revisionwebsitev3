@@ -9,4 +9,5 @@ def add_guide():
     content = data["content"]
     user_id = data["user_id"]
     new = Guide(content=content, user_id=user_id)
-    
+    db.session.add(new)
+    db.session.commit()
