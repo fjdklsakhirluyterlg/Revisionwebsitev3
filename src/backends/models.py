@@ -634,7 +634,7 @@ class SocialPost(db.Model):
     content = db.Column(db.Text)
 
 class ImageGuide(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.String(255), primary_key=True)
     guide_id = db.Column(db.Integer, db.ForeignKey("guide.id"))
 
 class Guide(db.Model):
