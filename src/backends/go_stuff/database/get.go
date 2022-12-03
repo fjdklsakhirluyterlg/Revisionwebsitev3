@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 	"database/sql"
-	"os"
+	// "os"
 	_ "github.com/mattn/go-sqlite3"
 )
 
-func main() {
+func mainx() {
 	db, err := sql.Open("sqlite3", "../../database.db")
 	rows, errs := db.Query("SELECT * FROM User")
     if err != nil{
