@@ -21,8 +21,6 @@ def get_data(url: str, pattern=""):
         return r
     return data
 
-def no():
-    pass
 
 def main_run():
     res = get("www.python.org/", "GET")
