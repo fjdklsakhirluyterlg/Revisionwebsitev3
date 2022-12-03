@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"database/sql"
-	"os"
+	// "os"
 	_ "github.com/mattn/go-sqlite3"
 )
 

@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func main() {
+func mainx() {
 	resp, err := http.Get("https://jsonplaceholder.typicode.com/posts")
 	if err != nil {
 	   log.Fatalln(err)
