@@ -1,5 +1,5 @@
 from flask import Blueprint, request, render_template
-from backends.models import Guide, ImageGuide
+from backends.models import Guide, ImageGuide, Tag
 from backends import db
 from werkzeug.utils import secure_filename
 
@@ -18,4 +18,7 @@ def add_guide():
         filename = secure_filename(file.filename)
         new_image = ImageGuide(guide_id=id, name=filename)
         db.session.add(new_image)
+    for tag in data["tags"]:
+        tag = Tag.query.filter_by(name=tag).first()
+        tag.guides.append(new)
     
