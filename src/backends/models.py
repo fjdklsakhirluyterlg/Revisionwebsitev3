@@ -654,3 +654,4 @@ class Guide(db.Model):
     images = db.relationship("ImageGuide")
     content = db.Column(db.Text)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    tags=db.relationship('Tag',secondary=tag_guide,backref=db.backref('guides',lazy="dynamic"))
