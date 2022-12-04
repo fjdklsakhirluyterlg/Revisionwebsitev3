@@ -9,11 +9,20 @@ from flask_socketio import SocketIO, send
 from flask_migrate import Migrate
 from os import path
 from flask_redis import FlaskRedis
+from sqlalchemy import MetaData
 import logging
 import os
 
+convention = {
+    "ix": 'ix_%(column_0_label)s',
+    "uq": "uq_%(table_name)s_%(column_0_name)s",
+    "ck": "ck_%(table_name)s_%(constraint_name)s",
+    "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
+    "pk": "pk_%(table_name)s"
+}
+metadata = MetaData(naming_convention=convention)
 DB_NAME = "database.db"
-db = SQLAlchemy()
+db = SQLAlchemy(metadata=metadata)
 mail = Mail()
 socketio = SocketIO()
 migrate = Migrate()
@@ -37,7 +46,7 @@ def create_app():
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
     mail.init_app(app)
     db.init_app(app)
-    migrate.init_app(app, db)
+    migrate.init_app(app, db, render_as_batch=True)
     redis_client.init_app(app)
     CORS(app, resources={r"*": {"origins": "*"}})
     socketio.init_app(app, cors_allowed_origins="*")
@@ -76,6 +85,7 @@ def create_app():
     from .go import go
     from .shop import shop
     from backends.cli.clix import clix
+    from backends.guides.guide import guide
     app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(home, url_prefix='/')
     app.register_blueprint(todo, url_prefix='/')
@@ -106,6 +116,7 @@ def create_app():
     app.register_blueprint(add_url, url_prefix="/")
     app.register_blueprint(view_url, url_prfix="/")
     app.register_blueprint(scammer, url_prfix="/")
+    app.register_blueprint(guide, url_prfix="/")
     # app.register_blueprint(stream, url_prefix="/")
     
     api.init_app(app)

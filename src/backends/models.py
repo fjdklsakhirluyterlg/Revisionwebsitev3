@@ -242,6 +242,11 @@ tag_post = db.Table('tag_post',
     db.Column('post_id', db.Integer,db.ForeignKey('post.id'),primary_key=True)
 )
 
+tag_guide = db.Table('tag_guide',
+    db.Column('tag_id',db.Integer,db.ForeignKey('tag.id'), primary_key=True),
+    db.Column('guide_id', db.Integer,db.ForeignKey('guide.id'),primary_key=True)
+)
+
 class Blog(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     title=db.Column(db.String(50),nullable=False)
@@ -293,6 +298,12 @@ class Post(db.Model):
     views = db.Column(db.Integer, default=0)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     comments = db.relationship("Postcomment", backref="Post")
+
+    def remove_tag(self, name):
+        tags = self.tags
+        for tag in tags:
+            if tag.name == name:
+                self.tags.remove(tag)
 
 class Postcomment(db.Model):
     _N = 6
@@ -636,9 +647,11 @@ class SocialPost(db.Model):
 class ImageGuide(db.Model):
     id = db.Column(db.String(255), primary_key=True)
     guide_id = db.Column(db.Integer, db.ForeignKey("guide.id"))
+    name = db.Column(db.Text)
 
 class Guide(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     images = db.relationship("ImageGuide")
     content = db.Column(db.Text)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    tags=db.relationship('Tag',secondary=tag_guide,backref=db.backref('guides',lazy="dynamic"))
