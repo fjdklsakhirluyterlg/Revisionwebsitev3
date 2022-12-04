@@ -294,8 +294,11 @@ class Post(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     comments = db.relationship("Postcomment", backref="Post")
 
-    def remove_tag(self):
-        pass
+    def remove_tag(self, name):
+        tags = self.tags
+        for tag in tags:
+            if tag.name == name:
+                self.tags.remove(tag)
 
 class Postcomment(db.Model):
     _N = 6
