@@ -111,5 +111,8 @@ def edit_banner_photo():
 
         return redirect("/dashboard")
 
+class Upload:
+    def __init__(self):
+        self
 
 # app.register_blueprint(upload, url_prefix="/")
