@@ -1,7 +1,7 @@
 test:
 	pytest
 serve:
-	gunicorn app:app -b 127.0.0.1:5090
+	gunicorn -w 4 'backends:create_app()' -b 0.0.0.0:5090
 serve-dev:
 	pytest
 	python3 -u app.py
