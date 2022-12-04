@@ -15,6 +15,7 @@ def add_guide():
     db.session.commit()
     id = getattr(new, "id")
     for file in request.files():
-        new_image = ImageGuide(guide_id=id)
+        filename = secure_filename(file.filename)
+        new_image = ImageGuide(guide_id=id, name=filename)
         db.session.add(new_image)
     
