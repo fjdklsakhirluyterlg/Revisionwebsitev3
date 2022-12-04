@@ -22,7 +22,7 @@ convention = {
 }
 metadata = MetaData(naming_convention=convention)
 DB_NAME = "database.db"
-db = SQLAlchemy()
+db = SQLAlchemy(metadata=metadata)
 mail = Mail()
 socketio = SocketIO()
 migrate = Migrate()
