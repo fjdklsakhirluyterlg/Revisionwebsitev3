@@ -13,12 +13,6 @@ from sqlalchemy import MetaData
 import logging
 import os
 
-DB_NAME = "database.db"
-db = SQLAlchemy()
-mail = Mail()
-socketio = SocketIO()
-migrate = Migrate()
-redis_client = FlaskRedis()
 convention = {
     "ix": 'ix_%(column_0_label)s',
     "uq": "uq_%(table_name)s_%(column_0_name)s",
@@ -27,6 +21,12 @@ convention = {
     "pk": "pk_%(table_name)s"
 }
 metadata = MetaData(naming_convention=convention)
+DB_NAME = "database.db"
+db = SQLAlchemy()
+mail = Mail()
+socketio = SocketIO()
+migrate = Migrate()
+redis_client = FlaskRedis()
 
 def create_app():
     apibp = Blueprint("api", __name__)
