@@ -29,4 +29,7 @@ def add_guide():
 
 @guide.route("/api/guide/all")
 def api_guide_all():
-    pass
+    dict = {}
+    guides = Guide.query.all()
+    for guide in guides:
+        dict[guide.id] = {"content":guide.content, "tags":guide.tags}
