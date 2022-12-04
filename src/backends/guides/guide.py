@@ -24,5 +24,5 @@ def add_guide():
     
     db.session.commit()
 
-    
-    
+
+    return {"id":id}
