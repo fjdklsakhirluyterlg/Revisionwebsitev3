@@ -85,6 +85,7 @@ def create_app():
     from .go import go
     from .shop import shop
     from backends.cli.clix import clix
+    from backends.guides.guide import guide
     app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(home, url_prefix='/')
     app.register_blueprint(todo, url_prefix='/')
