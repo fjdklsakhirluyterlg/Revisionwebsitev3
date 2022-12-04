@@ -28,7 +28,7 @@ def create_app():
     "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
     "pk": "pk_%(table_name)s"
     }
-
+    metadata = MetaData(naming_convention=convention)
     apibp = Blueprint("api", __name__)
     api = Api(apibp)
 
@@ -45,7 +45,7 @@ def create_app():
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
     mail.init_app(app)
-    db.init_app(app)
+    db.init_app(app, metadata=metadata)
     migrate.init_app(app, db, render_as_batch=True)
     redis_client.init_app(app)
     CORS(app, resources={r"*": {"origins": "*"}})
