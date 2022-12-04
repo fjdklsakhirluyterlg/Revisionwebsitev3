@@ -22,3 +22,7 @@ def add_guide():
         tag = Tag.query.filter_by(name=tag).first()
         tag.guides.append(new)
     
+    db.session.commit()
+
+    
+    
