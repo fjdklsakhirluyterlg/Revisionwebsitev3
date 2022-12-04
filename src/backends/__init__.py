@@ -9,6 +9,7 @@ from flask_socketio import SocketIO, send
 from flask_migrate import Migrate
 from os import path
 from flask_redis import FlaskRedis
+from sqlalchemy import MetaData
 import logging
 import os
 
