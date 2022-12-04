@@ -294,6 +294,9 @@ class Post(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     comments = db.relationship("Postcomment", backref="Post")
 
+    def remove_tag(self):
+        pass
+
 class Postcomment(db.Model):
     _N = 6
     id = db.Column(db.Integer, primary_key=True)
