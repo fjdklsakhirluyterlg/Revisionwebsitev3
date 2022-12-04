@@ -19,16 +19,16 @@ mail = Mail()
 socketio = SocketIO()
 migrate = Migrate()
 redis_client = FlaskRedis()
-
-def create_app():
-    convention = {
+convention = {
     "ix": 'ix_%(column_0_label)s',
     "uq": "uq_%(table_name)s_%(column_0_name)s",
     "ck": "ck_%(table_name)s_%(constraint_name)s",
     "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
     "pk": "pk_%(table_name)s"
-    }
-    metadata = MetaData(naming_convention=convention)
+}
+metadata = MetaData(naming_convention=convention)
+
+def create_app():
     apibp = Blueprint("api", __name__)
     api = Api(apibp)
 
@@ -45,7 +45,7 @@ def create_app():
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
     mail.init_app(app)
-    db.init_app(app, metadata=metadata)
+    db.init_app(app)
     migrate.init_app(app, db, render_as_batch=True)
     redis_client.init_app(app)
     CORS(app, resources={r"*": {"origins": "*"}})
