@@ -24,7 +24,6 @@ def add_guide():
     
     db.session.commit()
 
-
     return {"id":id}
 
 @guide.route("/api/guide/all")
