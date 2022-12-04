@@ -26,3 +26,7 @@ def add_guide():
 
 
     return {"id":id}
+
+@guide.route("/api/guide/all")
+def api_guide_all():
+    pass
