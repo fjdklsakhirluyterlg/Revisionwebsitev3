@@ -32,4 +32,6 @@ def api_guide_all():
     dict = {}
     guides = Guide.query.all()
     for guide in guides:
-        dict[guide.id] = {"content":guide.content, "tags":guide.tags}
+        dict[guide.id] = {"content":guide.content}
+
+    return dict
