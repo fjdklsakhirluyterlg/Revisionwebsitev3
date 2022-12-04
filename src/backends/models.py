@@ -242,6 +242,11 @@ tag_post = db.Table('tag_post',
     db.Column('post_id', db.Integer,db.ForeignKey('post.id'),primary_key=True)
 )
 
+tag_guide = db.Table('tag_guide',
+    db.Column('tag_id',db.Integer,db.ForeignKey('tag.id'), primary_key=True),
+    db.Column('guide_id', db.Integer,db.ForeignKey('guide.id'),primary_key=True)
+)
+
 class Blog(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     title=db.Column(db.String(50),nullable=False)
