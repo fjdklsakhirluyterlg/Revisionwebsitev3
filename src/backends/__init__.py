@@ -116,6 +116,7 @@ def create_app():
     app.register_blueprint(add_url, url_prefix="/")
     app.register_blueprint(view_url, url_prfix="/")
     app.register_blueprint(scammer, url_prfix="/")
+    app.register_blueprint(guide, url_prfix="/")
     # app.register_blueprint(stream, url_prefix="/")
     
     api.init_app(app)
