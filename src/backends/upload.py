@@ -111,5 +111,8 @@ def edit_banner_photo():
 
         return redirect("/dashboard")
 
+class Upload:
+    def __init__(self, allowed_list=ALLOWED_EXTENSIONS):
+        self.allowed_list = allowed_list
 
 # app.register_blueprint(upload, url_prefix="/")
