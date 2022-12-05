@@ -38,4 +38,6 @@ def api_guide_all():
 @guide.route("/api/guide/view/<id>")
 def return_singel_guide_thign():
     guide = Guide.query.filter_by(id=id).first()
-    
+    content = guide.content 
+    dict = {}
+    dict[guide.id] = content
