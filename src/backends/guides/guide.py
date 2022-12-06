@@ -41,3 +41,21 @@ def return_singel_guide_thign():
     content = guide.content 
     dict = {}
     dict[guide.id] = content
+
+@guide.route("/api/guide/delete/<id>")
+def delete_guide_from_id():
+    guide = Guide.query.filter_by(id=id).first()
+    db.session.delete(guide)
+
+@guide.route("/api/guide/edit/<id>", methods=["POST"])
+def edit_id_thing():
+    data = request.get_json()
+    content = data["content"]
+    id = data["id"]
+    guide = Guide.query.filter_by(id=id).first()
+    guide.content = content
+    db.session.commit()
+
+@guide.route("/api/guide/reccomended/<id>")
+def reccomend_guide_from_guide():
+    pass
