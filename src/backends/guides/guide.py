@@ -45,3 +45,4 @@ def return_singel_guide_thign():
 @guide.route("/api/guide/delete/<id>")
 def delete_guide_from_id():
     guide = Guide.query.filter_by(id=id).first()
+    db.session.delete(guide)
