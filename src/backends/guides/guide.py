@@ -46,3 +46,7 @@ def return_singel_guide_thign():
 def delete_guide_from_id():
     guide = Guide.query.filter_by(id=id).first()
     db.session.delete(guide)
+
+@guide.route("/api/guide/edit/<id>")
+def edit_id_thing():
+    pass
