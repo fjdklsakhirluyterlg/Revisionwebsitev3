@@ -47,6 +47,6 @@ def delete_guide_from_id():
     guide = Guide.query.filter_by(id=id).first()
     db.session.delete(guide)
 
-@guide.route("/api/guide/edit/<id>")
+@guide.route("/api/guide/edit/<id>", methods=["POST"])
 def edit_id_thing():
-    pass
+    data = request.get_json()
