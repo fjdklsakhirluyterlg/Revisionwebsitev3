@@ -50,3 +50,6 @@ def delete_guide_from_id():
 @guide.route("/api/guide/edit/<id>", methods=["POST"])
 def edit_id_thing():
     data = request.get_json()
+    content = data["content"]
+    id = data["id"]
+    guide = Guide.query.filter_by(id=id).first()
