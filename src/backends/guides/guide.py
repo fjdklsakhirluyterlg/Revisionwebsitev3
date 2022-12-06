@@ -55,3 +55,7 @@ def edit_id_thing():
     guide = Guide.query.filter_by(id=id).first()
     guide.content = content
     db.session.commit()
+
+@guide.route("/api/guide/reccomended/<id>")
+def reccomend_guide_from_guide();
+    pass
