@@ -41,3 +41,7 @@ def return_singel_guide_thign():
     content = guide.content 
     dict = {}
     dict[guide.id] = content
+
+@guide.route("/api/guide/delete/<id>")
+def delete_guide_from_id():
+    pass
