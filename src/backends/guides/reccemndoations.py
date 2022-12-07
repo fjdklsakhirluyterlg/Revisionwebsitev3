@@ -1,5 +1,6 @@
 from flask import Blueprint, request
 from backends.models import Guide
+from flask_login import current_user, login_required
 
 recomendation_guide = Blueprint("recomendation_guide", __name__)
 
@@ -18,6 +19,7 @@ def reccomnd_guide_on_id(id):
     
     return dict
 
+@login_required
 @recomendation_guide.route("/api/reccomend/guide/user")
 def reccomend_for_current_user():
     pass
