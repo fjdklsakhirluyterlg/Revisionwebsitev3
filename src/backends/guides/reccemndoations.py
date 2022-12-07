@@ -10,3 +10,5 @@ def reccomnd_guide_on_id(id):
     dict = {}
     for tag in tags:
         guides = tag.guides
+        
+
