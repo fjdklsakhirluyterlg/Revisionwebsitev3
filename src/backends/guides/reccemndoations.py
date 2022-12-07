@@ -19,6 +19,10 @@ def reccomnd_guide_on_id(id):
     
     return dict
 
+@recomendation_guide.route("/api/guide/tags")
+def guide_tags():
+    pass
+
 @login_required
 @recomendation_guide.route("/api/reccomend/guide/user")
 def reccomend_for_current_user():
