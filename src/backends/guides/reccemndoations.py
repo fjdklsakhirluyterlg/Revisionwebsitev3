@@ -15,4 +15,6 @@ def reccomnd_guide_on_id(id):
                 dict[g.id] += 1
             else:
                 dict[g.id] = 1
+    
+    return dict
 
