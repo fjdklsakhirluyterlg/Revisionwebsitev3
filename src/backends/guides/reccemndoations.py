@@ -19,8 +19,8 @@ def reccomnd_guide_on_id(id):
     
     return dict
 
-@recomendation_guide.route("/api/guide/tags")
-def guide_tags():
+@recomendation_guide.route("/api/guide/tag/<id>")
+def guide_tag(id):
     pass
 
 @login_required
