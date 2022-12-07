@@ -23,6 +23,9 @@ def reccomnd_guide_on_id(id):
 def guide_tag(id):
     tag = Tag.query.filter_by(id=id).first()
     guides = tag.guides
+    dict = {}
+    for guide in guides:
+        dict[guide.id] = [guide.content]
 
 @login_required
 @recomendation_guide.route("/api/reccomend/guide/user")
