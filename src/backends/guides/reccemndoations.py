@@ -25,7 +25,7 @@ def guide_tag(id):
     guides = tag.guides
     dict = {}
     for guide in guides:
-        dict[guide.id] = [guide.content]
+        dict[guide.id] = [guide.content, guide.user_id, guide.created_at]
 
 @login_required
 @recomendation_guide.route("/api/reccomend/guide/user")
