@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from backends.models import Guide
+from backends.models import Guide, Tag
 from flask_login import current_user, login_required
 
 recomendation_guide = Blueprint("recomendation_guide", __name__)
@@ -21,7 +21,8 @@ def reccomnd_guide_on_id(id):
 
 @recomendation_guide.route("/api/guide/tag/<id>")
 def guide_tag(id):
-    pass
+    tag = Tag.query.filter_by(id=id).first()
+    guides = tag.guides
 
 @login_required
 @recomendation_guide.route("/api/reccomend/guide/user")
