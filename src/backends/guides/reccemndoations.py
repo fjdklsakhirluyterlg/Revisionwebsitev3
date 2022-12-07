@@ -18,3 +18,7 @@ def reccomnd_guide_on_id(id):
     
     return dict
 
+@recomendation_guide.route("/api/reccomend/guide/user")
+def reccomend_for_current_user():
+    pass
+
