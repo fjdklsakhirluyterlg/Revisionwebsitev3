@@ -23,4 +23,5 @@ def reccomnd_guide_on_id(id):
 @recomendation_guide.route("/api/reccomend/guide/user")
 def reccomend_for_current_user():
     following = current_user.following
+    dict = {}
 
