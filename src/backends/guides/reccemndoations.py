@@ -7,3 +7,5 @@ recomendation_guide = Blueprint("recomendation_guide", __name__)
 def reccomnd_guide_on_id(id):
     guide = Guide.query.filter_by(id=id).first()
     tags = guide.tags
+    dict = {}
+    
