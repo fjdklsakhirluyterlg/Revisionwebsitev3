@@ -416,13 +416,13 @@ def user_baskets():
 def reccomended_items(id):
     item = Item.query.filter_by(id=id).first()
     list = item.checkouts()
-    price = int(item.price * 100)
-    min = int(price*0.95)
-    max = int(price*1.05)
-    related = []
-    for i in range(min, max):
-        itemsx = Item.query.filter(Item.price.like(f"%{i / 100}%"))
-        related.append(itemsx)
+    # price = int(item.price * 100)
+    # min = int(price*0.95)
+    # max = int(price*1.05)
+    # related = []
+    # for i in range(min, max):
+    #     itemsx = Item.query.filter(Item.price.like(f"%{i / 100}%"))
+    #     related.append(itemsx)
 
     return jsonify(list)
 
