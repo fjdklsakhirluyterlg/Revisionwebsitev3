@@ -36,4 +36,9 @@ def reccomend_for_current_user():
     dict = {}
     for fol in following:
         guides = fol.guides
+        for guide in guides:
+            if dict[guide.id]:
+                dict[guide.id] += 1
+            else:
+                dict[guide.id] = 1
 
