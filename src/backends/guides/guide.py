@@ -56,6 +56,3 @@ def edit_id_thing():
     guide.content = content
     db.session.commit()
 
-@guide.route("/api/guide/reccomended/<id>")
-def reccomend_guide_from_guide():
-    pass
