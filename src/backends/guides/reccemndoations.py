@@ -41,4 +41,6 @@ def reccomend_for_current_user():
                 dict[guide.id] += 1
             else:
                 dict[guide.id] = 1
+    
+    return dict
 
