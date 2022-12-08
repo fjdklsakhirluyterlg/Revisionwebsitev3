@@ -416,7 +416,7 @@ def user_baskets():
 def reccomended_items(id):
     item = Item.query.filter_by(id=id).first()
     list = item.checkouts()
-    # price = int(item.price * 100)
+    price = int(item.price * 100)
     # min = int(price*0.95)
     # max = int(price*1.05)
     # related = []
