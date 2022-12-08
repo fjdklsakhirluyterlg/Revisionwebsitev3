@@ -423,8 +423,8 @@ def reccomended_items(id):
     for i in range(min, max):
         itemsx = Item.query.filter(Item.price.like(f"%{i / 100}%"))
         related.append(itemsx)
-
-    return jsonify(list, related)
+    print(related)
+    return jsonify(list)
 
 
 @shop.route("/api/test/multiple/list")
