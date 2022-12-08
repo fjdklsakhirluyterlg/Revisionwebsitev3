@@ -422,8 +422,8 @@ def reccomended_items(id):
     related = []
     for i in range(min, max):
         print(i)
-        # itemsx = Item.query.filter(Item.price.like(f"%{i / 100}%"))
-    #     related.append(itemsx)
+        itemsx = Item.query.filter(Item.price.like(f"%{i / 100}%"))
+        related.append(itemsx)
 
     return jsonify(list)
 
