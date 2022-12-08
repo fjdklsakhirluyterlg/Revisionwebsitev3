@@ -34,4 +34,6 @@ def guide_tag(id):
 def reccomend_for_current_user():
     following = current_user.following
     dict = {}
+    for fol in following:
+        guides = fol.guides
 
