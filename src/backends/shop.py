@@ -421,7 +421,7 @@ def reccomended_items(id):
     max = int(price*1.05)
     related = []
     for i in range(min, max):
-        itemsx = Item.query.filter(or_(Item.price.like(f"%{i / 100}%"), Item.title.filter_by(id=f"{i}")))
+        itemsx = Item.query.filter(Item.price.like(f"%{i / 100}%"))
         # related.append(itemsx.name)
         print(itemsx)
     print(related)
