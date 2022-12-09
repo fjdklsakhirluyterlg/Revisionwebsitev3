@@ -428,7 +428,7 @@ def reccomended_items(id):
     return jsonify(list)
 
 
-
+wbed = "https://www.google.com"
 
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
