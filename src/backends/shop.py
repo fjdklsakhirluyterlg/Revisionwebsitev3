@@ -431,7 +431,8 @@ def reccomended_items(id):
 def api_shop_stastics(id):
     item = Item.query.filter_by(id=id).first()
     dict = {}
-    
+    checkouts = item.checkouts().keys()
+
 
 
 @shop.route("/api/test/multiple/list")
