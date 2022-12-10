@@ -8,3 +8,4 @@ def generate_random_id(length):
         result += characters[random.randint(0, charactersLength)]
     
     return result
+
