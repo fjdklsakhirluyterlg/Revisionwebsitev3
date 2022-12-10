@@ -660,4 +660,5 @@ class Guide(db.Model):
 
 class GuideLike(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    guide_id = db.Column(db.Integer, db.ForeignKey())
+    guide_id = db.Column(db.Integer, db.ForeignKey("guide.id"))
+    user_id = db.Column(db.Integer, db.ForeingKey("user.id"))
