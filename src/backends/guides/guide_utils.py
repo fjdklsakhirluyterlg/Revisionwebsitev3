@@ -8,4 +8,5 @@ def fork_guide_thing():
     data = request.get_json()
     guide_id = data["id"]
     user_id = data["user_id"]
-    
+    guide = Guide.query.filter_by(id=guide_id).first()
+    new = Guide(title=guide.title)
