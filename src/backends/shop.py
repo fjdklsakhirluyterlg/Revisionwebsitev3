@@ -430,6 +430,7 @@ def reccomended_items(id):
 @shop.route("/api/shop/statistics/<id>")
 def api_shop_stastics(id):
     item = Item.query.filter_by(id=id).first()
+    dict = {}
     
 
 
