@@ -658,7 +658,8 @@ class Guide(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     tags=db.relationship('Tag',secondary=tag_guide,backref=db.backref('guides',lazy="dynamic"))
 
-    d
+    def likes(self):
+        pass
 
 class GuideLike(db.Model):
     id = db.Column(db.Integer, primary_key=True)
