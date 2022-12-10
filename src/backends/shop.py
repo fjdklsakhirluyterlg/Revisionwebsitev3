@@ -427,6 +427,10 @@ def reccomended_items(id):
     print(related)
     return jsonify(list)
 
+@shop.route("/api/shop/statistics/")
+def api_shop_stastics():
+    pass
+
 
 
 @shop.route("/api/test/multiple/list")
