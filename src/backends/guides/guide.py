@@ -10,7 +10,8 @@ def add_guide():
     data = request.get_json()
     content = data["content"]
     user_id = data["user_id"]
-    new = Guide(content=content, user_id=user_id)
+    title = data["title"]
+    new = Guide(content=content, user_id=user_id, title=title)
     db.session.add(new)
     db.session.commit()
     id = getattr(new, "id")
