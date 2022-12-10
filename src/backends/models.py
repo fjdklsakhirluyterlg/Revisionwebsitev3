@@ -658,7 +658,9 @@ class Guide(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     tags=db.relationship('Tag',secondary=tag_guide,backref=db.backref('guides',lazy="dynamic"))
 
+    d
+
 class GuideLike(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     guide_id = db.Column(db.Integer, db.ForeignKey("guide.id"))
-    user_id = db.Column(db.Integer, db.ForeingKey("user.id"))
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
