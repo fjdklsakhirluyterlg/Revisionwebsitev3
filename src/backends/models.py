@@ -663,3 +663,8 @@ class GuideLike(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     guide_id = db.Column(db.Integer, db.ForeignKey("guide.id"))
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+
+class GuideDisLike(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    guide_id = db.Column(db.Integer, db.ForeignKey("guide.id"))
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
