@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from backends.models import Guide
+from backends.models import Guide, GuideLike
 from backends import db
 
 guide_utils = Blueprint("guide_utils", __name__)
@@ -14,6 +14,8 @@ def fork_guide_thing():
     db.session.add(new)
     db.session.commit()
 
-@guide_utils.route("/api/guides/like/<id>")
-def like_guide(id):
-    pass
+@guide_utils.route("/api/guides/like")
+def like_guide():
+    data = request.get_json()
+    guide_id = data["guide_id"]
+    user_id = data["user_id"]
