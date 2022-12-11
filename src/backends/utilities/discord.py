@@ -3,7 +3,7 @@ import requests
 URL = "https://discord.com/api/webhooks/1051545491227299910/DHacX3fNuTkNwypJWU9vnfpSlUztwc-F9Pky-3W21sRDsKOrYHmvmxt5TKp6p5B8otS2"
 
 data = {
-    "content" : "hi",
+    "content" : "",
     "username" : "revisionwebsite"
 }
 
