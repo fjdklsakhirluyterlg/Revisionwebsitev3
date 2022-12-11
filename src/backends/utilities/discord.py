@@ -4,8 +4,15 @@ URL = "https://discord.com/api/webhooks/1051545491227299910/DHacX3fNuTkNwypJWU9v
 
 data = {
     "content" : "message content",
-    "username" : "custom username"
+    "username" : "revisionwebsite"
 }
+
+data["embeds"] = [
+    {
+        "description" : "text in embed",
+        "title" : "embed title"
+    }
+]
 
 def main():
     result = requests.post(URL, json = data)
