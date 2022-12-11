@@ -153,7 +153,7 @@ class User(db.Model, UserMixin):
         backref=db.backref('followers', lazy='dynamic'), lazy='dynamic')
     
     def older_than(self, date):
-        pass
+        time = datetime.utcnow()
     
     def follow(self, user):
         if not self.is_following(user):
