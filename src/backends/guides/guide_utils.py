@@ -19,3 +19,4 @@ def like_guide():
     data = request.get_json()
     guide_id = data["guide_id"]
     user_id = data["user_id"]
+    new = GuideLike(guide_id=guide_id, user_id=user_id)
