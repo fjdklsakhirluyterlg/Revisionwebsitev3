@@ -25,10 +25,10 @@ def main():
         print("Payload delivered successfully, code {}.".format(result.status_code))
 
 class discord_notifier:
-    def __init__(self, url, embeds:list):
+    def __init__(self, url, content="", embeds=""):
         self.url = url
         self.userame = "revisionwebsite"
-        self.content = ""
+        self.content = content
         self.embeds = embeds
     
     def dict_event(self):
@@ -54,6 +54,6 @@ class discord_notifier:
             return result.status_code
 
 if __name__ == "__main__":
-    new = discord_notifier(url="https://discord.com/api/webhooks/1051545491227299910/DHacX3fNuTkNwypJWU9vnfpSlUztwc-F9Pky-3W21sRDsKOrYHmvmxt5TKp6p5B8otS2", embeds=[{"description" : "text in embed","title" : "embed title", "color":0x552E12}])
+    new = discord_notifier(url="https://discord.com/api/webhooks/1051545491227299910/DHacX3fNuTkNwypJWU9vnfpSlUztwc-F9Pky-3W21sRDsKOrYHmvmxt5TKp6p5B8otS2", embeds=[{"description" : "text in embed","title" : "embed title", "color":0xFF5733}])
     res = new.send()
     print(res)
