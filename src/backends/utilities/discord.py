@@ -24,8 +24,10 @@ def main():
     else:
         print("Payload delivered successfully, code {}.".format(result.status_code))
 
-def send_discord_notification():
-    pass
+class discord_notifier:
+    def __init__(self, url, name):
+        self.url = url
+        self.name = name
 
 if __name__ == "__main__":
     main()
