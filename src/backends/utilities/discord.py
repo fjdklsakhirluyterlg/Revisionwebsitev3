@@ -25,12 +25,14 @@ def main():
         print("Payload delivered successfully, code {}.".format(result.status_code))
 
 class discord_notifier:
-    def __init__(self, url, name):
+    def __init__(self, url, username):
         self.url = url
-        self.name = name
+        self.userame = username
     
-    def add_event():
+    def add_event(self):
         dict = {}
+        dict["username"] = self.userame
+
 
 if __name__ == "__main__":
     main()
