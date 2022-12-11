@@ -13,3 +13,7 @@ def fork_guide_thing():
     new = Guide(title=guide.title, content=guide.content, user_id=user_id)
     db.session.add(new)
     db.session.commit()
+
+@guide_utils.route("/api/guides/like/<id>")
+def like_guide(id):
+    pass
