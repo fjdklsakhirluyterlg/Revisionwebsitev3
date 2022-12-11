@@ -155,6 +155,7 @@ class User(db.Model, UserMixin):
     def older_than(self, date):
         time = datetime.utcnow
         created_at = self.timestamp
+        
         date = time.replace(day=time.day - date)
         if date > created_at:
             return True
