@@ -434,6 +434,8 @@ def api_shop_stastics(id):
     checkouts = item.checkouts().keys()
     for item in checkouts:
         itm = Item.query.filter_by(name=item).first()
+        id = itm.id
+        
 
 
 @shop.route("/api/test/multiple/list")
