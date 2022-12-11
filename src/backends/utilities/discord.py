@@ -18,3 +18,4 @@ def main():
         print("Payload delivered successfully, code {}.".format(result.status_code))
 
 if __name__ == "__main__":
+    main()
