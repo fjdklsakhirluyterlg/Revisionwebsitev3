@@ -48,9 +48,9 @@ class discord_notifier:
         try:
             result.raise_for_status()
         except requests.exceptions.HTTPError as err:
-            print(err)
+            return err
         else:
-            print("Payload delivered successfully, code {}.".format(result.status_code))
+            return result.status_code
 
 if __name__ == "__main__":
     main()
