@@ -39,7 +39,7 @@ class discord_notifier:
 
         return dict
     
-    def add_embed(self, description, title, colour:0x000000):
+    def add_embed(self, description, title, colour=0x000000):
         dict = {"description":description, "title":title, colour:colour}
         self.embeds.append(dict)
     
