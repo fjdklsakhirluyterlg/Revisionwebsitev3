@@ -35,6 +35,11 @@ class discord_notifier:
         dict["url"] = self.url
         dict["embeds"] = embeds
 
+        return dict
+    
+    def add_embed():
+        pass
+
 
 if __name__ == "__main__":
     main()
