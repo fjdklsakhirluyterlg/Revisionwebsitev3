@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from getdata import *
+from .getdata import *
 
 news = Blueprint("news", __name__)
 
