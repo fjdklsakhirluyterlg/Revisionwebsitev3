@@ -31,7 +31,7 @@ class discord_notifier:
         self.content = ""
         self.embeds = embeds
     
-    def dict_event(self, embeds:list):
+    def dict_event(self):
         dict = {}
         dict["username"] = self.userame
         dict["url"] = self.url
