@@ -28,6 +28,9 @@ class discord_notifier:
     def __init__(self, url, name):
         self.url = url
         self.name = name
+    
+    def add_event():
+        dict = {}
 
 if __name__ == "__main__":
     main()
