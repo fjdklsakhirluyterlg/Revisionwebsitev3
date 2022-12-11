@@ -55,6 +55,7 @@ class discord_notifier:
             return result.status_code
 
 if __name__ == "__main__":
-    new = discord_notifier(url="https://discord.com/api/webhooks/1051545491227299910/DHacX3fNuTkNwypJWU9vnfpSlUztwc-F9Pky-3W21sRDsKOrYHmvmxt5TKp6p5B8otS2", embeds=[{"description" : "text for test", "title" : "embed title test", "color":0xFF5733}])
+    new = discord_notifier(url="https://discord.com/api/webhooks/1051545491227299910/DHacX3fNuTkNwypJWU9vnfpSlUztwc-F9Pky-3W21sRDsKOrYHmvmxt5TKp6p5B8otS2")
+    new.add_embed(description="this is a description", title="and this is a title")
     res = new.send()
     print(res)
