@@ -25,20 +25,21 @@ def main():
         print("Payload delivered successfully, code {}.".format(result.status_code))
 
 class discord_notifier:
-    def __init__(self, url, username):
+    def __init__(self, url, username, embeds:list):
         self.url = url
         self.userame = username
+        self.embeds = embeds
     
-    def add_event(self, embeds):
+    def dict_event(self, embeds:list):
         dict = {}
         dict["username"] = self.userame
         dict["url"] = self.url
-        dict["embeds"] = embeds
+        dict["embeds"] = self.embeds
 
         return dict
     
-    def add_embed():
-        pass
+    def add_embed(self, event:dict):
+        self.dict_event()
 
 
 if __name__ == "__main__":
