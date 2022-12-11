@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from backends.models import Guide, GuideLike
+from backends.models import Guide, GuideLike, GuideDisLike
 from backends import db
 
 guide_utils = Blueprint("guide_utils", __name__)
@@ -28,6 +28,6 @@ def like_guide():
     data = request.get_json()
     guide_id = data["guide_id"]
     user_id = data["user_id"]
-    new = GuideLike(guide_id=guide_id, user_id=user_id)
+    new = GuideDisLike(guide_id=guide_id, user_id=user_id)
     db.session.add(new)
     db.session.commit()
