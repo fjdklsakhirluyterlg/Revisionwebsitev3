@@ -29,9 +29,11 @@ class discord_notifier:
         self.url = url
         self.userame = username
     
-    def add_event(self):
+    def add_event(self, embeds):
         dict = {}
         dict["username"] = self.userame
+        dict["url"] = self.url
+        dict["embeds"] = embeds
 
 
 if __name__ == "__main__":
