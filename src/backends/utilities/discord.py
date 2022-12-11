@@ -39,8 +39,10 @@ class discord_notifier:
         return dict
     
     def add_embed(self, event:dict):
-        self.dict_event()
-
+        self.embeds.append(event)
+    
+    def send(self):
+        data = self.dict_event()
 
 if __name__ == "__main__":
     main()
