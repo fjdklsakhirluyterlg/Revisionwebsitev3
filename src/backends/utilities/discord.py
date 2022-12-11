@@ -41,6 +41,7 @@ class discord_notifier:
     
     def add_embed(self, description, title, colour:0x000000):
         dict = {"description":description, "title":title, colour:colour}
+        self.embeds.append(dict)
     
     def send(self):
         data = self.dict_event()
