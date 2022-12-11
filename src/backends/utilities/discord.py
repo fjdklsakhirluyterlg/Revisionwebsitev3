@@ -25,9 +25,10 @@ def main():
         print("Payload delivered successfully, code {}.".format(result.status_code))
 
 class discord_notifier:
-    def __init__(self, url, username, embeds:list):
+    def __init__(self, url,embeds:list):
         self.url = url
-        self.userame = username
+        self.userame = "revisionwebsite"
+        self.content = ""
         self.embeds = embeds
     
     def dict_event(self, embeds:list):
