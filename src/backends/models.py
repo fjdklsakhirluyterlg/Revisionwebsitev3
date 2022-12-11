@@ -155,6 +155,7 @@ class User(db.Model, UserMixin):
     def older_than(self, date):
         time = datetime.utcnow
         created_at = self.timestamp
+        diff = time - created_at
     
     def follow(self, user):
         if not self.is_following(user):
