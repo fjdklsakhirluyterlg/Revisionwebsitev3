@@ -7,3 +7,4 @@ news = Blueprint("news", __name__)
 def return_news_source(name):
     if name == "bbc":
         results = get_bbc_news()
+    
