@@ -152,6 +152,9 @@ class User(db.Model, UserMixin):
         secondaryjoin=(followers.c.followed_id == id),
         backref=db.backref('followers', lazy='dynamic'), lazy='dynamic')
     
+    def older_than(self, date):
+        pass
+    
     def follow(self, user):
         if not self.is_following(user):
             self.followed.append(user)
