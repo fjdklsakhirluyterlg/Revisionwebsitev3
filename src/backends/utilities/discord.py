@@ -7,11 +7,14 @@ data = {
     "username" : "custom username"
 }
 
-result = requests.post(URL, json = data)
+def main():
+    result = requests.post(URL, json = data)
 
-try:
-    result.raise_for_status()
-except requests.exceptions.HTTPError as err:
-    print(err)
-else:
-    print("Payload delivered successfully, code {}.".format(result.status_code))
+    try:
+        result.raise_for_status()
+    except requests.exceptions.HTTPError as err:
+        print(err)
+    else:
+        print("Payload delivered successfully, code {}.".format(result.status_code))
+
+if __name__ == "__main__":
