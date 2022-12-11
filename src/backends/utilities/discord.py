@@ -24,5 +24,8 @@ def main():
     else:
         print("Payload delivered successfully, code {}.".format(result.status_code))
 
+def send_discord_notification():
+    pass
+
 if __name__ == "__main__":
     main()
