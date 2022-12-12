@@ -146,6 +146,7 @@ class User(db.Model, UserMixin):
     shopaccount = db.relationship("Shopaccount", backref="user")
     urls = db.relationship("Urlshortner", backref="user")
     reviews = db.relationship("Review", backref="user")
+    # discrod_wbhook = db.Column(db.Text)
     followed = db.relationship(
         'User', secondary=followers,
         primaryjoin=(followers.c.follower_id == id),
