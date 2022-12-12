@@ -108,6 +108,8 @@ class Notifications(db.Model):
         user_id = self.user_id
         user = User.query.filter_by(id=user_id).first()
         discord_webhook = user.discord_webhook
+        new = discord_notifier(url=discord_webhook)
+        new.add_embed(description=self.text, title="New notification")
 
 
 user_tag = db.Table("user_tag", 
