@@ -104,7 +104,7 @@ def add_text(id):
         users = chat.users
         for i in users:
             text = f"<p>{authorname} sent a message in <a href='/chats/{id}'>{chat.name}</a>"
-            x = Notifications(text=text, user_id=i.id)
+            # x = Notifications(text=text, user_id=i.id)
             db.session.add(x)
             db.session.commit()
         return redirect(f"/chats/{id}")
