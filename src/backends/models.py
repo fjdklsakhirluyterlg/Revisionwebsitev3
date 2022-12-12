@@ -103,6 +103,9 @@ class Notifications(db.Model):
     timestamp = db.Column(db.DateTime(), default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
+    def send_discord(self):
+        pass
+
 user_tag = db.Table("user_tag", 
     db.Column('tag_id',db.Integer,db.ForeignKey('tag.id'), primary_key=True), 
     db.Column('user_id',db.Integer,db.ForeignKey('user.id'), primary_key=True)
