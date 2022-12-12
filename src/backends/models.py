@@ -2,6 +2,7 @@ from flask_login import UserMixin
 from sqlalchemy import or_
 from datetime import datetime
 from . import db
+from backends.utilities.discord import discord_notifier
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -103,6 +104,15 @@ class Notifications(db.Model):
     timestamp = db.Column(db.DateTime(), default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
+    def send_discord(self):
+        user_id = self.user_id
+        user = User.query.filter_by(id=user_id).first()
+        discord_webhook = user.discord_webhook
+        new = discord_notifier(url=discord_webhook)
+        new.add_embed(description=self.text, title="New notification")
+        new.send()
+
+
 user_tag = db.Table("user_tag", 
     db.Column('tag_id',db.Integer,db.ForeignKey('tag.id'), primary_key=True), 
     db.Column('user_id',db.Integer,db.ForeignKey('user.id'), primary_key=True)
@@ -146,6 +156,7 @@ class User(db.Model, UserMixin):
     shopaccount = db.relationship("Shopaccount", backref="user")
     urls = db.relationship("Urlshortner", backref="user")
     reviews = db.relationship("Review", backref="user")
+    # discrod_wbhook = db.Column(db.Text)
     followed = db.relationship(
         'User', secondary=followers,
         primaryjoin=(followers.c.follower_id == id),
