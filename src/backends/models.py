@@ -104,7 +104,10 @@ class Notifications(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def send_discord(self):
-        pass
+        user_id = self.user_id
+        user = User.query.filter_by(id=user_id).first()
+        discord_webhook = user.discord_webhook
+        
 
 user_tag = db.Table("user_tag", 
     db.Column('tag_id',db.Integer,db.ForeignKey('tag.id'), primary_key=True), 
