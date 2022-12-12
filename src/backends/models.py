@@ -2,6 +2,7 @@ from flask_login import UserMixin
 from sqlalchemy import or_
 from datetime import datetime
 from . import db
+from backends.utilities.discord import discord_notifier
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -107,7 +108,7 @@ class Notifications(db.Model):
         user_id = self.user_id
         user = User.query.filter_by(id=user_id).first()
         discord_webhook = user.discord_webhook
-        
+
 
 user_tag = db.Table("user_tag", 
     db.Column('tag_id',db.Integer,db.ForeignKey('tag.id'), primary_key=True), 
