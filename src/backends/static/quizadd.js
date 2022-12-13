@@ -25,6 +25,7 @@ function add_multi(){
 
 function add_awnser(id){
     var awnser = document.getElementById("awnser")
+    var clone = awnser.content.cloneNode(true)
     var el = document.getElementById(id)
-
+    el.append(clone)
 }
