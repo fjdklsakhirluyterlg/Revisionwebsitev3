@@ -18,7 +18,7 @@ function add_multi(){
     multi_id += 1
     var multi = document.getElementById("multi")
     var clone = multi.content.cloneNode(true);
-    // clone.querySelector(".main").id = multi_id
+    clone.id = multi_id
     var div = document.getElementById("main")
     div.append(clone)
 }
