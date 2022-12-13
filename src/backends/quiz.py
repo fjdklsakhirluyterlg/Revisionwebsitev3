@@ -246,6 +246,10 @@ def quiz_related_to_quiz(id):
     
     return dict
 
+@quiz.route("/api/quiz/user/realated/<id>")
+def user_related_quizzes():
+    pass
+
 @quiz.route("/quiz/add")
 def add_quiz_endpoint():
     return render_template("quizadd.html")
