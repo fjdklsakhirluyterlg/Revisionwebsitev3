@@ -249,6 +249,7 @@ def quiz_related_to_quiz(id):
 @quiz.route("/api/quiz/user/realated/<id>")
 def user_related_quizzes(id):
     user = User.query.filter_by(id=id).first()
+    followed = user.followed
     
 
 @quiz.route("/quiz/add")
