@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort, escape
 from . import db
 from flask_login import current_user, login_required
-from .models import Quiz, Category, Question, Qawnser, Singlequestion, Multiawnser, Multiplechoice
+from .models import Quiz, Category, Question, Qawnser, Singlequestion, Multiawnser, Multiplechoice, User
 # from . import app
 
 quiz = Blueprint("quiz", __name__)
@@ -245,6 +245,12 @@ def quiz_related_to_quiz(id):
                 dict[quiz.name] = 1
     
     return dict
+
+@quiz.route("/api/quiz/user/realated/<id>")
+def user_related_quizzes(id):
+    user = User.query.filter_by(id=id).first()
+    followed = user.followed
+    
 
 @quiz.route("/quiz/add")
 def add_quiz_endpoint():

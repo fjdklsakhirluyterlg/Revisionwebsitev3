@@ -8,6 +8,7 @@ from .models import Blog, Notifications, Tag, Post
 from werkzeug.security import generate_password_hash, check_password_hash
 from .blogs import blogs_related_to_blog, related_tags_thingy
 from .community import find_user_related_posts, posts_related_to_post
+from backends.supplementary.aes import AESCipher
 import os
 # from . import app
 
@@ -367,6 +368,16 @@ def user_followers_api_test(id):
     user = User.query.filter_by(id=id).first()
     followers = [i.name for i in user.followers]
     return {"amount":followers}
+
+@user.route("/api/discord/add/webhook")
+def add_wbhook_dsicord():
+    data = request.get_json()
+    encrytor = AESCipher("discord webhook")
+    out = encrytor.encrypt(data["url"])
+    user_id = data["user_id"]
+    user = User.query.filter_by(id=id).first()
+    user.discord_webhook = out
+    db.session.commit()
 
 @user.route("/banners/<filename>")
 def see_banner(filename):
