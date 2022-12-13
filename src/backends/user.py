@@ -377,6 +377,7 @@ def add_wbhook_dsicord():
     user_id = data["user_id"]
     user = User.query.filter_by(id=id).first()
     user.discord_webhook = out
+    db.session.commit()
 
 @user.route("/banners/<filename>")
 def see_banner(filename):
