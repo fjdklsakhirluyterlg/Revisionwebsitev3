@@ -371,9 +371,9 @@ def user_followers_api_test(id):
 
 @user.route("/api/discord/add/webhook")
 def add_wbhook_dsicord():
-    data = request.get_data()
+    data = request.get_json()
     encrytor = AESCipher("discord webhook")
-    
+    encrytor.encrypt(data["url"])
 
 @user.route("/banners/<filename>")
 def see_banner(filename):
