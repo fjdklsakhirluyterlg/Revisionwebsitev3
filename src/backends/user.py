@@ -374,6 +374,9 @@ def add_wbhook_dsicord():
     data = request.get_json()
     encrytor = AESCipher("discord webhook")
     out = encrytor.encrypt(data["url"])
+    user_id = data["user_id"]
+    user = User.query.filter_by(id=id).first()
+    user.discord_webhook = out
 
 @user.route("/banners/<filename>")
 def see_banner(filename):
