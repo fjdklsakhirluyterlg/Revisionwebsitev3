@@ -23,3 +23,8 @@ function add_multi(){
     div.append(clone)
 }
 
+function add_awnser(id){
+    var awnser = document.getElementById("awnser")
+    var el = document.getElementById(id)
+
+}
