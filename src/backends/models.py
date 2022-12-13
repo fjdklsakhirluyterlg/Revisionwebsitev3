@@ -3,6 +3,7 @@ from sqlalchemy import or_
 from datetime import datetime
 from . import db
 from backends.utilities.discord import discord_notifier
+from backends.supplementary.aes import AESCipher
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -107,7 +108,8 @@ class Notifications(db.Model):
     def send_discord(self):
         user_id = self.user_id
         user = User.query.filter_by(id=user_id).first()
-        discord_webhook = user.discord_webhook
+        decryptor = AESCipher("discord webhook")
+        discord_webhook = decryptor.decrypt(user.discord_webhook)
         new = discord_notifier(url=discord_webhook)
         new.add_embed(description=self.text, title="New notification")
         new.send()
