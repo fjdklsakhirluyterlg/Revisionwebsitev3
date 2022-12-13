@@ -368,6 +368,10 @@ def user_followers_api_test(id):
     followers = [i.name for i in user.followers]
     return {"amount":followers}
 
+@user.route("/api/discord/add/webhook")
+def add_wbhook_dsicord():
+    pass
+
 @user.route("/banners/<filename>")
 def see_banner(filename):
     curdir = os.getcwd()
