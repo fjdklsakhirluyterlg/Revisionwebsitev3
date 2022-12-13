@@ -159,7 +159,7 @@ class User(db.Model, UserMixin):
     urls = db.relationship("Urlshortner", backref="user")
     reviews = db.relationship("Review", backref="user")
     # discord_wbhook = db.Column(db.Text)
-    # guides = db.relationship("Guide", backref="user")
+    guides = db.relationship("Guide", backref="user")
     followed = db.relationship(
         'User', secondary=followers,
         primaryjoin=(followers.c.follower_id == id),
