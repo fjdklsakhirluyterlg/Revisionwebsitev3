@@ -1,4 +1,5 @@
 var quiz_id = 0;
+var multi_id = 0
 
 function sumbit_quiz(id){
     var name = document.getElementById("name")
@@ -14,6 +15,7 @@ function sumbit_quiz(id){
 }
 
 function add_multi(){
+    multi_id += 1
     var multi = document.getElementById("multi")
     var clone = multi.content.cloneNode(true);
     var div = document.getElementById("main")
