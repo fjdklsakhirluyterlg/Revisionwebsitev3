@@ -34,4 +34,7 @@ def like_guide():
 
 @guide_utils.route("/api/guide/report")
 def report_guide():
-    pass
+    data = request.get_json()
+    guide_id = data["guide_id"]
+    reason = data["reason"]
+    
