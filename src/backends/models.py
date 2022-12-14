@@ -174,8 +174,8 @@ class User(db.Model, UserMixin):
             return True
         return False
     
-    def delete():
-        pass
+    def delete(self):
+        posts = self.posts
 
     def follow(self, user):
         if not self.is_following(user):
