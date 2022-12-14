@@ -4,6 +4,7 @@ from flask_login import current_user, login_required
 from .models import Chat, Text, User, Notifications, Reaction
 from . import socketio
 from flask_socketio import join_room, send, emit
+from backends.supplementary.aes import AESCipher
 # from . import app
 
 chat = Blueprint("chat", __name__)
