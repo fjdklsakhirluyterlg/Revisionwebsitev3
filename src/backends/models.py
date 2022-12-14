@@ -173,8 +173,16 @@ class User(db.Model, UserMixin):
         if date > created_at:
             return True
         return False
-
     
+    def delete(self):
+        posts = self.posts
+        guides = self.guides
+        urls = self.urls
+        notes = self.notes
+        for url in urls:
+            db.session.delete(url)
+        
+
     def follow(self, user):
         if not self.is_following(user):
             self.followed.append(user)

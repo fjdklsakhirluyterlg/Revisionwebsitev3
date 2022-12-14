@@ -4,6 +4,7 @@ from flask_login import current_user, login_required
 from .models import Chat, Text, User, Notifications, Reaction
 from . import socketio
 from flask_socketio import join_room, send, emit
+from backends.supplementary.aes import AESCipher
 # from . import app
 
 chat = Blueprint("chat", __name__)
@@ -95,6 +96,8 @@ def joinRoom(message):
 def add_text(id):
     if request.method == "POST":
         chat = db.session.query(Chat).filter(Chat.id == id).first()
+        encryptor = AESCipher(chat.title)
+        # text = encryptor.encrypt(request.form.get("text"))
         text = request.form.get("text")
         authorname = current_user.name
         new_text = Text(text=text, authorname=authorname, chat_id=id)
