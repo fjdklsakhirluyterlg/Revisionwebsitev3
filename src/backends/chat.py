@@ -96,6 +96,7 @@ def joinRoom(message):
 def add_text(id):
     if request.method == "POST":
         chat = db.session.query(Chat).filter(Chat.id == id).first()
+        encryptor = AESCipher(chat.title)
         text = request.form.get("text")
         authorname = current_user.name
         new_text = Text(text=text, authorname=authorname, chat_id=id)
