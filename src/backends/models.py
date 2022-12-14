@@ -173,6 +173,9 @@ class User(db.Model, UserMixin):
         if date > created_at:
             return True
         return False
+    
+    def delete():
+        pass
 
     def follow(self, user):
         if not self.is_following(user):
