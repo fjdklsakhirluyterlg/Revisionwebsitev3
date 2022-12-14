@@ -176,6 +176,12 @@ class User(db.Model, UserMixin):
     
     def delete(self):
         posts = self.posts
+        guides = self.guides
+        urls = self.urls
+        notes = self.notes
+        for url in urls:
+            db.session.delete(url)
+        
 
     def follow(self, user):
         if not self.is_following(user):
