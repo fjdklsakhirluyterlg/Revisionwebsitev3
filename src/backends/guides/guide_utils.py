@@ -31,3 +31,7 @@ def like_guide():
     new = GuideDisLike(guide_id=guide_id, user_id=user_id)
     db.session.add(new)
     db.session.commit()
+
+@guide_utils.route("/api/guide/report")
+def report_guide():
+    pass
