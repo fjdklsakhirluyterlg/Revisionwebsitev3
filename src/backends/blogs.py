@@ -635,4 +635,8 @@ def add_api_bookmark_things():
     bookmark_id = getattr(new, "id")
     return {"id": bookmark_id}
 
+@blogs.route("/api/help/add/blog")
+def api_make_blog_help():
+    pass
+
 # app.register_blueprint(blogs, url_prefix="/")
