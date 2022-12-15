@@ -114,8 +114,11 @@ class Notifications(db.Model):
         new.add_embed(description=self.text, title="New notification")
         new.send()
     
-    def add(self):
-        pass
+    def add(self, text, user_id):
+        new = Notifications(text=text, user_id=user_id)
+        db.session.add(new)
+        db.session.commit()
+        
 
 
 user_tag = db.Table("user_tag", 
