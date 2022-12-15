@@ -108,11 +108,18 @@ class Notifications(db.Model):
     def send_discord(self):
         user_id = self.user_id
         user = User.query.filter_by(id=user_id).first()
-        decryptor = AESCipher("discord webhook")
-        discord_webhook = decryptor.decrypt(user.discord_webhook)
-        new = discord_notifier(url=discord_webhook)
-        new.add_embed(description=self.text, title="New notification")
-        new.send()
+        if user.discord_webhook:
+            decryptor = AESCipher("discord webhook")
+            discord_webhook = decryptor.decrypt(user.discord_webhook)
+            new = discord_notifier(url=discord_webhook)
+            new.add_embed(description=self.text, title="New notification")
+            new.send()
+    
+    def add(self, text, user_id):
+        new = Notifications(text=text, user_id=user_id)
+        db.session.add(new)
+        db.session.commit()
+        self.send_discord()
 
 
 user_tag = db.Table("user_tag", 
