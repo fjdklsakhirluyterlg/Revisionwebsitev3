@@ -386,7 +386,7 @@ def api_view_all_notifications():
     notifications = user.notifications
     dict = {}
     for notify in notifications:
-        dict[notify.timestamp] = []
+        dict[notify.timestamp] = [notify.text, notify.read]
 
 @user.route("/banners/<filename>")
 def see_banner(filename):
