@@ -268,7 +268,12 @@ def view_comments_on_post_stuff(id):
 
 @community.route("/api/guide/add/community")
 def add_community_to_guide_thing():
-    pass
+    user_id = request.args.get("user_id")
+    post_id = request.args.get("post_id")
+    post = Post.query.filter_by(id=post_id).first()
+    if post.user_id != user_id:
+        return {"error":"you do not have permission to do this"}
+    
 
 @login_required    
 @community.route("/community/posts/user/related")
