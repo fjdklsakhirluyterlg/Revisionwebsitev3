@@ -381,7 +381,9 @@ def add_wbhook_dsicord():
 
 @user.route("/api/notifications/all")
 def api_view_all_notifications():
-    pass
+    user_id = request.args.get("user_id")
+    user = User.query.filter_by(id=user_id).first()
+    
 
 @user.route("/banners/<filename>")
 def see_banner(filename):
