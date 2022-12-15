@@ -273,7 +273,10 @@ def add_community_to_guide_thing():
     post = Post.query.filter_by(id=post_id).first()
     if post.user_id != user_id:
         return {"error":"you do not have permission to do this"}
-    
+    id = post.make_help()
+    if not id:
+        return {"error":"needs tags"}
+    return {"id":"id"}
 
 @login_required    
 @community.route("/community/posts/user/related")
