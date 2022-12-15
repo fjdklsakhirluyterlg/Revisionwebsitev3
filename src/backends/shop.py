@@ -166,8 +166,8 @@ def bu_the_checkout():
     for i in items:
         names.append(i)
         text = f"""{user_name} wants to buy your product: {i} """
-        new = Notifications(user_id=seller_id, text=text)
-        db.session.add(new)
+        new = Notifications.add(user_id=seller_id, text=text)
+        # db.session.add(new)
         db.session.commit()
 
     out = "".join(str(e) for e in names)
