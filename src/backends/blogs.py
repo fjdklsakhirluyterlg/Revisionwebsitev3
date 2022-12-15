@@ -640,8 +640,8 @@ def api_make_blog_help():
     blog_id = request.args.get("blog_id")
     blog = Blog.query.filter_by(id=blog_id).first()
     id = blog.make_help()
-    if id:
-        return {"id":id}
-    return {"erro":"needs tags"}
+    if not id:
+        return {"error":"needs tags"}
+    return {"id":id}
 
 # app.register_blueprint(blogs, url_prefix="/")
