@@ -226,8 +226,8 @@ def user_unfollow_tag(id):
     user = current_user    
     tag.followers.remove(user)
     text = f"<p>You are no longer following <a href='/blogs/tags/{tag.name}'>{tag.name}</a></p>"
-    notification = Notifications(user_id=user.id, text=text)
-    db.session.add(notification)
+    notification = Notifications.add(user_id=user.id, text=text)
+    # db.session.add(notification)
     db.session.commit()
     next = request.args.get("next", default=request.referrer)
     return redirect(next)
