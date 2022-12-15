@@ -379,6 +379,10 @@ def add_wbhook_dsicord():
     user.discord_webhook = out
     db.session.commit()
 
+@user.route("/notifications/all")
+def view_all_notifications():
+    pass
+
 @user.route("/banners/<filename>")
 def see_banner(filename):
     curdir = os.getcwd()
