@@ -199,8 +199,8 @@ def add_awnser_tp_post(id):
     post = Post.query.filter_by(id=id).first()
     post_title = post.title
     text = f"<p>you created an awnser at <a href='/community/view/{post_title}'>{post_title}</a> called {title}</p>"
-    notification = Notifications(text=text, user_id=user_id)
-    db.session.add(notification)
+    notification = Notifications.add(text=text, user_id=user_id)
+    # db.session.add(notification)
     db.session.commit()
     return redirect(f'/community/view/{post_title}')
 
