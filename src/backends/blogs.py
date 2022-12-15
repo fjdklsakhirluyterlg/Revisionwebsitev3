@@ -5,7 +5,7 @@ from flask_login import current_user, login_required
 import html, requests, math
 from .functions import send_newsletter_with_flask
 import markdown
-from .socket import emit_new_notification
+from .socket_1 import emit_new_notification
 # from . import app
 
 blogs = Blueprint("blogs", __name__)
