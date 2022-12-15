@@ -280,7 +280,10 @@ def add_community_to_guide_thing():
 
 @community.route("/api/community/awnser/best")
 def make_best_community_awnser():
-    pass
+    awnser_id = request.args.get("awnser_id")
+    post_id = request.args.get("post_id")
+    awnser = Awnser.query.filter_by(id=awnser_id).first()
+    post = Post.qeury.filter_by(id=post_id).first()
 
 @login_required    
 @community.route("/community/posts/user/related")
