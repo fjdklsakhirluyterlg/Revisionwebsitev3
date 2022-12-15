@@ -383,7 +383,10 @@ def add_wbhook_dsicord():
 def api_view_all_notifications():
     user_id = request.args.get("user_id")
     user = User.query.filter_by(id=user_id).first()
-    
+    notifications = user.notifications
+    dict = {}
+    for notify in notifications:
+        dict[notify.timestamp] = []
 
 @user.route("/banners/<filename>")
 def see_banner(filename):
