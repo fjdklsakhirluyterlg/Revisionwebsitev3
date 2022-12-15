@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort
 from . import db
-from .models import Blog, Notifications, Post, Tag, tag_blog, Comment, Replies, User, Bookmark
+from .models import Blog, Notifications, Post, Tag, tag_blog, Comment, Replies, User, Bookmark, Help
 from flask_login import current_user, login_required
 import html, requests, math
 from .functions import send_newsletter_with_flask
@@ -637,6 +637,8 @@ def add_api_bookmark_things():
 
 @blogs.route("/api/help/add/blog")
 def api_make_blog_help():
-    pass
+    blog_id = request.args.get("blog_id")
+    blog = Blog.query.filter_by(id=blog_id).first()
+
 
 # app.register_blueprint(blogs, url_prefix="/")
