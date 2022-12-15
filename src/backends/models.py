@@ -360,6 +360,22 @@ class Post(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     comments = db.relationship("Postcomment", backref="Post")
 
+    def make_help(self):
+        question = self.title
+        awnser = self.content
+        awnser = html.unescape(awnser)
+        tags = self.tags
+        subject = tags[0].name
+        new = Help(subject=subject, awnser=awnser, question=question)
+        db.session.add(new)
+        db.session.commit()
+        id = getattr(new, "id")
+        for tag in tags:
+            tag.help.append(new)
+        db.session.commit()
+
+        return id
+
     def remove_tag(self, name):
         tags = self.tags
         for tag in tags:
