@@ -286,7 +286,9 @@ def make_best_community_awnser():
     post = Post.qeury.filter_by(id=post_id).first()
     if awnser not in post.awnsers:
         return {"error":"wrong post"}
-    
+    awnser.best = True
+    db.session.commit()
+    return {"message":"made best"}
 
 @login_required    
 @community.route("/community/posts/user/related")
