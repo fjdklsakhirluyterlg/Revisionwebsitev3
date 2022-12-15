@@ -119,7 +119,7 @@ class Notifications(db.Model):
         new = Notifications(text=text, user_id=user_id)
         db.session.add(new)
         db.session.commit()
-        
+        self.send_discord()
 
 
 user_tag = db.Table("user_tag", 
