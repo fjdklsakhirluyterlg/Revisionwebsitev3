@@ -78,19 +78,19 @@ def view_add_community():
         db.session.commit()
         post_id = getattr(new_post, "title")
         text = f"<p>You created a new post at <a href='/community/{post_id}'>{post_id}</a></p>"
-        x = Notifications(user_id=user_id, text=text)
+        x = Notifications.add(user_id=user_id, text=text)
         
         for user in users:
-            notification = Notifications(user_id=user, text=text_users)
-            db.session.add(notification)
+            notification = Notifications.add(user_id=user, text=text_users)
+            # db.session.add(notification)
 
         users_following = current_user.followers
         text_following = f"<p><a href='/users/view/{user_id}'>{current_user.name}</a> created a new post at <a href='/community/{post_id}'>{post_id}</a></p>"
         for userx in users_following:
-            notificationx = Notifications(user_id=userx.id, text=text_following)
-            db.session.add(notificationx)
+            notificationx = Notifications.add(user_id=userx.id, text=text_following)
+            # db.session.add(notificationx)
             
-        db.session.add(x)
+        # db.session.add(x)
         db.session.commit()
         return redirect(f"/community/view/{post_id}")
     else:
@@ -199,8 +199,8 @@ def add_awnser_tp_post(id):
     post = Post.query.filter_by(id=id).first()
     post_title = post.title
     text = f"<p>you created an awnser at <a href='/community/view/{post_title}'>{post_title}</a> called {title}</p>"
-    notification = Notifications(text=text, user_id=user_id)
-    db.session.add(notification)
+    notification = Notifications.add(text=text, user_id=user_id)
+    # db.session.add(notification)
     db.session.commit()
     return redirect(f'/community/view/{post_title}')
 
@@ -212,8 +212,8 @@ def user_follow_tag(id):
     if user not in tag.followers:
         tag.followers.append(user)
         text = f"<p>You are now following <a href='/blogs/tags/{tag.name}'>{tag.name}</a></p>"
-        notification = Notifications(user_id=user.id, text=text)
-        db.session.add(notification)
+        notification = Notifications.add(user_id=user.id, text=text)
+        # db.session.add(notification)
         db.session.commit()
         next = request.args.get("next", default=request.referrer)
         return redirect(next)
@@ -226,8 +226,8 @@ def user_unfollow_tag(id):
     user = current_user    
     tag.followers.remove(user)
     text = f"<p>You are no longer following <a href='/blogs/tags/{tag.name}'>{tag.name}</a></p>"
-    notification = Notifications(user_id=user.id, text=text)
-    db.session.add(notification)
+    notification = Notifications.add(user_id=user.id, text=text)
+    # db.session.add(notification)
     db.session.commit()
     next = request.args.get("next", default=request.referrer)
     return redirect(next)
