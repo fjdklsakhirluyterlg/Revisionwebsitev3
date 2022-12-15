@@ -305,7 +305,8 @@ class Blog(db.Model):
     bookmarks = db.relationship('Bookmark', backref="blog")
 
     def make_help(self):
-        pass
+        question = self.title
+        awnser = self.content
  
     @property
     def serialize(self):
