@@ -284,6 +284,9 @@ def make_best_community_awnser():
     post_id = request.args.get("post_id")
     awnser = Awnser.query.filter_by(id=awnser_id).first()
     post = Post.qeury.filter_by(id=post_id).first()
+    if awnser not in post.awnsers:
+        return {"error":"wrong post"}
+    
 
 @login_required    
 @community.route("/community/posts/user/related")
