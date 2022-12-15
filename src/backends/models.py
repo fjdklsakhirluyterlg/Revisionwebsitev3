@@ -312,6 +312,8 @@ class Blog(db.Model):
         tags = self.tags
         subject = tags[0].name
         new = Help(subject=subject, awnser=awnser, question=question)
+        db.session.add(new)
+        db.session.commit()
  
     @property
     def serialize(self):
