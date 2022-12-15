@@ -278,6 +278,10 @@ def add_community_to_guide_thing():
         return {"error":"needs tags"}
     return {"id":"id"}
 
+@community.route("/api/community/awnser/best")
+def make_best_community_awnser():
+    pass
+
 @login_required    
 @community.route("/community/posts/user/related")
 def find_user_related_posts():
