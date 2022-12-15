@@ -379,6 +379,15 @@ def add_wbhook_dsicord():
     user.discord_webhook = out
     db.session.commit()
 
+@user.route("/api/notifications/all")
+def api_view_all_notifications():
+    user_id = request.args.get("user_id")
+    user = User.query.filter_by(id=user_id).first()
+    notifications = user.notifications
+    dict = {}
+    for notify in notifications:
+        dict[notify.timestamp] = [notify.text, notify.read]
+
 @user.route("/banners/<filename>")
 def see_banner(filename):
     curdir = os.getcwd()

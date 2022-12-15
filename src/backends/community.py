@@ -266,6 +266,30 @@ def view_comments_on_post_stuff(id):
     names = [c.text for c in comments]
     return {"comments":names}
 
+@community.route("/api/guide/add/community")
+def add_community_to_guide_thing():
+    user_id = request.args.get("user_id")
+    post_id = request.args.get("post_id")
+    post = Post.query.filter_by(id=post_id).first()
+    if post.user_id != user_id:
+        return {"error":"you do not have permission to do this"}
+    id = post.make_help()
+    if not id:
+        return {"error":"needs tags"}
+    return {"id":"id"}
+
+@community.route("/api/community/awnser/best")
+def make_best_community_awnser():
+    awnser_id = request.args.get("awnser_id")
+    post_id = request.args.get("post_id")
+    awnser = Awnser.query.filter_by(id=awnser_id).first()
+    post = Post.qeury.filter_by(id=post_id).first()
+    if awnser not in post.awnsers:
+        return {"error":"wrong post"}
+    awnser.best = True
+    db.session.commit()
+    return {"message":"made best"}
+
 @login_required    
 @community.route("/community/posts/user/related")
 def find_user_related_posts():

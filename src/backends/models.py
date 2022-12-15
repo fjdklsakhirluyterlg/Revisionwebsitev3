@@ -4,6 +4,7 @@ from datetime import datetime
 from . import db
 from backends.utilities.discord import discord_notifier
 from backends.supplementary.aes import AESCipher
+import html
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -285,6 +286,12 @@ tag_guide = db.Table('tag_guide',
     db.Column('guide_id', db.Integer,db.ForeignKey('guide.id'),primary_key=True)
 )
 
+tag_help = db.Table('tag_help',
+    db.Column('tag_id',db.Integer,db.ForeignKey('tag.id'), primary_key=True),
+    db.Column('help_id', db.Integer,db.ForeignKey('help.id'),primary_key=True)
+)
+
+
 class Blog(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     title=db.Column(db.String(50),nullable=False)
@@ -297,6 +304,24 @@ class Blog(db.Model):
     tags=db.relationship('Tag',secondary=tag_blog,backref=db.backref('blogs_associated',lazy="dynamic"))
     comments = db.relationship('Comment', backref="blog")
     bookmarks = db.relationship('Bookmark', backref="blog")
+
+    def make_help(self):
+        question = self.title
+        awnser = self.content
+        awnser = html.unescape(awnser)
+        tags = self.tags
+        if len(tags) < 1:
+            return False
+        subject = tags[0].name
+        new = Help(subject=subject, awnser=awnser, question=question)
+        db.session.add(new)
+        db.session.commit()
+        id = getattr(new, "id")
+        for tag in tags:
+            tag.help.append(new)
+        db.session.commit()
+
+        return id
  
     @property
     def serialize(self):
@@ -336,6 +361,24 @@ class Post(db.Model):
     views = db.Column(db.Integer, default=0)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     comments = db.relationship("Postcomment", backref="Post")
+
+    def make_help(self):
+        question = self.title
+        awnser = self.content
+        awnser = html.unescape(awnser)
+        tags = self.tags
+        if len(tags) < 1:
+            return False
+        subject = tags[0].name
+        new = Help(subject=subject, awnser=awnser, question=question)
+        db.session.add(new)
+        db.session.commit()
+        id = getattr(new, "id")
+        for tag in tags:
+            tag.help.append(new)
+        db.session.commit()
+
+        return id
 
     def remove_tag(self, name):
         tags = self.tags
@@ -451,9 +494,9 @@ class Stack(db.Model):
 class Help(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     subject = db.Column(db.String(1000))
-    topic = db.Column(db.String(1000))
     question = db.Column(db.String(1000))
     awnser = db.Column(db.String(1000))
+    tags=db.relationship('Tag',secondary=tag_help,backref=db.backref('help',lazy="dynamic"))
     # FUTURE ME: REMEBER TO MAKE THIS SO THAT WHEN SOMEONE SEARCHES FOR HELP ON SOMETHING THEY GET CORRECT AWNSER BACK, IE: ?topic:chemistry&q="electron" GOES TO {"electron": "A subatomic particle with a negative charge and orbits the nuclues in shells"}
 
 class Note(db.Model):
