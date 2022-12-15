@@ -32,9 +32,9 @@ def create_blog():
             
     text = f"""<p><a href='/blogs/views/{data["title"]}'>{data["title"]}</a> was created"""
     for user in users:
-        notification = Notifications(user_id=user, text=text)
+        notification = Notifications.add(user_id=user, text=text)
         emit_new_notification(text, user_id=user)
-        db.session.add(notification)    
+        # db.session.add(notification)    
     
     db.session.add(new_blog)
     db.session.commit()
