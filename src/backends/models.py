@@ -4,6 +4,7 @@ from datetime import datetime
 from . import db
 from backends.utilities.discord import discord_notifier
 from backends.supplementary.aes import AESCipher
+import html
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -307,6 +308,7 @@ class Blog(db.Model):
     def make_help(self):
         question = self.title
         awnser = self.content
+        awnser = html.unescape(awnser)
  
     @property
     def serialize(self):
