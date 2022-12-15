@@ -212,8 +212,8 @@ def user_follow_tag(id):
     if user not in tag.followers:
         tag.followers.append(user)
         text = f"<p>You are now following <a href='/blogs/tags/{tag.name}'>{tag.name}</a></p>"
-        notification = Notifications(user_id=user.id, text=text)
-        db.session.add(notification)
+        notification = Notifications.add(user_id=user.id, text=text)
+        # db.session.add(notification)
         db.session.commit()
         next = request.args.get("next", default=request.referrer)
         return redirect(next)
