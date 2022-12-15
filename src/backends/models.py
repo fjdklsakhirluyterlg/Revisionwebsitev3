@@ -297,6 +297,9 @@ class Blog(db.Model):
     tags=db.relationship('Tag',secondary=tag_blog,backref=db.backref('blogs_associated',lazy="dynamic"))
     comments = db.relationship('Comment', backref="blog")
     bookmarks = db.relationship('Bookmark', backref="blog")
+
+    def make_help(self):
+        pass
  
     @property
     def serialize(self):
