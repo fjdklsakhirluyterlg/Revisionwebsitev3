@@ -392,8 +392,8 @@ def blog_view_add():
             
         text = f"""<p><a href='/blogs/views/{title}'>{title}</a> was created"""
         for user in users:
-            notification = Notifications(user_id=user, text=text)
-            db.session.add(notification)    
+            notification = Notifications.add(user_id=user, text=text)
+            # db.session.add(notification)    
         
         db.session.add(new_blog)
         db.session.commit()
