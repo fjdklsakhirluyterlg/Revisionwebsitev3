@@ -310,6 +310,8 @@ class Blog(db.Model):
         awnser = self.content
         awnser = html.unescape(awnser)
         tags = self.tags
+        if len(tags) < 1:
+            return False
         subject = tags[0].name
         new = Help(subject=subject, awnser=awnser, question=question)
         db.session.add(new)
@@ -365,6 +367,8 @@ class Post(db.Model):
         awnser = self.content
         awnser = html.unescape(awnser)
         tags = self.tags
+        if len(tags) < 1:
+            return False
         subject = tags[0].name
         new = Help(subject=subject, awnser=awnser, question=question)
         db.session.add(new)
