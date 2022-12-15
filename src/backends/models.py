@@ -309,6 +309,9 @@ class Blog(db.Model):
         question = self.title
         awnser = self.content
         awnser = html.unescape(awnser)
+        tags = self.tags
+        subject = tags[0].name
+        new = Help(subject=subject, awnser=awnser, question=question)
  
     @property
     def serialize(self):
