@@ -314,9 +314,12 @@ class Blog(db.Model):
         new = Help(subject=subject, awnser=awnser, question=question)
         db.session.add(new)
         db.session.commit()
+        id = getattr(new, "id")
         for tag in tags:
             tag.help.append(new)
         db.session.commit()
+
+        return id
  
     @property
     def serialize(self):

@@ -639,6 +639,7 @@ def add_api_bookmark_things():
 def api_make_blog_help():
     blog_id = request.args.get("blog_id")
     blog = Blog.query.filter_by(id=blog_id).first()
-
+    id = blog.make_help()
+    return {"id":id}
 
 # app.register_blueprint(blogs, url_prefix="/")
