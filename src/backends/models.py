@@ -287,7 +287,7 @@ tag_guide = db.Table('tag_guide',
 
 tag_help = db.Table('tag_help',
     db.Column('tag_id',db.Integer,db.ForeignKey('tag.id'), primary_key=True),
-    db.Column('guide_id', db.Integer,db.ForeignKey('guide.id'),primary_key=True)
+    db.Column('help_id', db.Integer,db.ForeignKey('help.id'),primary_key=True)
 )
 
 
