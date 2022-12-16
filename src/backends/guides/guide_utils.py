@@ -40,4 +40,5 @@ def report_guide():
 
 @guide_utils.route("/api/help/add/guide")
 def add_guide_to_help():
-    pass
+    id = request.args.get("id")
+    guide = Guide.query.filter_by(id=id).first()
