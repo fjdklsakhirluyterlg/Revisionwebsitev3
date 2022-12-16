@@ -37,4 +37,7 @@ def report_guide():
     data = request.get_json()
     guide_id = data["guide_id"]
     reason = data["reason"]
-    
+
+@guide_utils.route("/api/help/add/guide")
+def add_guide_to_help():
+    pass
