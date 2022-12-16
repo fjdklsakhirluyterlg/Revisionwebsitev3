@@ -328,6 +328,8 @@ def see_tags_all(name):
     avwords = words/things
     avtime = time_to_read/things
     id = tag.id
+
+    help = tag.help
     if current_user.is_authenticated:
         id = tag.id
         following = current_user.following
