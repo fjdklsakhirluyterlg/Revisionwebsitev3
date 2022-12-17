@@ -28,4 +28,9 @@ def create_and_write_tables():
     print(ans)
 
 def insert_into_databse():
-    pass
+    sql_statement = """
+    """
+
+    crsr.execute(sql_statement)
+    ans = crsr.fetchall()
+    print(ans)
