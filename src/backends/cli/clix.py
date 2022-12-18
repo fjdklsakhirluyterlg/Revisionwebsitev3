@@ -52,3 +52,9 @@ def cli_login_user(name):
 @clix.cli.command("sitemap")
 def sitemap():
     pass
+
+
+@clix.cli.command("add")
+@click.argument("feature")
+def add_feature_to_database(feature):
+    pass
