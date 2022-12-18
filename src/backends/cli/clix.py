@@ -54,8 +54,6 @@ def cli_login_user(name):
 def sitemap():
     pass
 
-
-
 @clix.cli.command("add-blog")
 @click.argument("title")
 @clicj.argument("content")
