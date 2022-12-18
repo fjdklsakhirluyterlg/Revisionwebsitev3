@@ -1,7 +1,7 @@
 import click
 from flask import Blueprint
 from backends import db
-from backends.models import User
+from backends.models import User, Blod
 from werkzeug.security import generate_password_hash, check_password_hash
 from backends.auth import login, make_security_key
 from flask_login import logout_user, login_user
@@ -54,7 +54,9 @@ def sitemap():
     pass
 
 
+
 @clix.cli.command("add")
 @click.argument("feature")
 def add_feature_to_database(feature):
-    pass
+    if feature == "blog":
+        
