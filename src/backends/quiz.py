@@ -258,5 +258,7 @@ def add_quiz_endpoint():
 
 @quiz.route("/api/quiz/fork")
 def api_fork_a_quiz_thing():
-    pass
+    id = request.args.get("id")
+    quiz = Quiz.query.filter_by(id=id).first()
+    new = Quiz(quiz.title)
 # app.register_blueprint(quiz, url_prefix="/")
