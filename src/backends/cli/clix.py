@@ -5,7 +5,7 @@ from backends.models import User, Blod
 from werkzeug.security import generate_password_hash, check_password_hash
 from backends.auth import login, make_security_key
 from flask_login import logout_user, login_user
-from backends.utilities.imagecompressor.py
+from backends.utilities.imagecompressor import clear_revisionwebs
 
 clix = Blueprint("cli", __name__, cli_group=None)
 
