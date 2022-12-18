@@ -34,5 +34,10 @@ def clear_banners():
     for file in os.listdir(directory):
         compress(f"{directory}/{file}")
 
+def clear_revisionwebs():
+    clear_banners()
+    clear_shop()
+    clear_images()
+
 if __name__ == "__main__":
     clear_shop()
