@@ -255,4 +255,8 @@ def user_related_quizzes(id):
 @quiz.route("/quiz/add")
 def add_quiz_endpoint():
     return render_template("quizadd.html")
+
+@quiz.route("/api/quiz/fork")
+def api_fork_a_quiz_thing():
+    pass
 # app.register_blueprint(quiz, url_prefix="/")
