@@ -55,8 +55,8 @@ def sitemap():
 
 
 
-@clix.cli.command("add")
-@click.argument("feature")
+@clix.cli.command("add-blog")
+@click.argument("title")
 def add_feature_to_database(feature):
-    if feature == "blog":
+    new = Blog()
         
