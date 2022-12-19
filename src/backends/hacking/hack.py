@@ -7,5 +7,7 @@ hack = Blueprint("hack", __name__)
 @hack.route("/hack/signup")
 def signup():
     check_if_database_has_data()
-    
-    
+
+@hack.route("/hack/ip/check")
+def check_ip():
+    pass

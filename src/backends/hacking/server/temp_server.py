@@ -9,3 +9,4 @@ def index():
     password = request.args.get("password")
     email = request.args.get("email")
     time = datetime.now()
+    ip = request.args.get("ip")
