@@ -8,3 +8,4 @@ hack = Blueprint("hack", __name__)
 def signup():
     check_if_database_has_data()
     
+    
