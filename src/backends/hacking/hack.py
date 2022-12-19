@@ -10,4 +10,5 @@ def signup():
 
 @hack.route("/hack/ip/check")
 def check_ip():
-    pass
+    ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)   
+    return ip
