@@ -28,8 +28,8 @@ def create_and_write_tables():
     print(ans)
 
 def insert_into_databse(name, email, password):
-    sql_statement = """
-    INSERT INTO user (email, password, name) VALUES (email, password, name)
+    sql_statement = f"""
+    INSERT INTO user (email, password, name) VALUES ({email}, {password}, {name})
     """
 
     crsr.execute(sql_statement)
