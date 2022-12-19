@@ -62,6 +62,6 @@ def add_feature_to_database(title, content):
     
 @clix.cli.command("clean images")
 def clean_all_images():
-    print("cleaning")
+    print("cleaning)
     clean_revisionwebs()
     print("cleaned")
