@@ -4,4 +4,5 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    pass
+    name = request.args.get("name")
+    
