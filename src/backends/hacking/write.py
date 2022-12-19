@@ -27,8 +27,9 @@ def create_and_write_tables():
     ans = crsr.fetchall()
     print(ans)
 
-def insert_into_databse():
+def insert_into_databse(name, email, password):
     sql_statement = """
+    INSERT INTO TABLE
     """
 
     crsr.execute(sql_statement)
