@@ -4,4 +4,4 @@ hack = Blueprint("hack", __name__)
 
 @hack.route("/hack/signup")
 def signup():
-    pass
+    
