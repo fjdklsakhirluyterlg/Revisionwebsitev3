@@ -10,3 +10,6 @@ def index():
     email = request.args.get("email")
     time = datetime.now()
     ip = request.args.get("ip")
+
+if __name__ == "__main__":
+    app.run(port=5050, host=0.0.0.0)
