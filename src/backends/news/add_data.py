@@ -24,7 +24,10 @@ class add_data:
         url = self.url
         tag = self.tag
         response = requests.get(url)
-        soup = Beautifulsoup(response.content, "html.parser")
+        if self.type == "xml":
+            soup = BeautifulSoup(response.text, features="xml")
+        elif self.type == "url":
+            soup = Beautifulsoup(response.content, "html.parser")
         result = soup.find_all(tag, class_=pattern)
         if len(result) == 0:
             pat = self.check_pattern()
@@ -74,4 +77,6 @@ class add_data:
         db.session.commit()
 
 
-    
+class add_url:
+    def __init__(self, url):
+        add = add_data()
