@@ -94,3 +94,21 @@ class add_url:
         url = self.url
         res = new.add(url=url, name=name, tag=tag, pattern=pattern)
         return res
+
+
+class add_ress:
+    def __init__(self, url, pattern, tag, name):
+        new = add_data(type="rss")
+        self.new = new
+        self.pattern = pattern
+        self.tag = tag
+        self.name = name
+    
+    def add(self):
+        new = self.new
+        tag = self.tag
+        pattern = self.tag
+        name - self.name
+        url = self.url
+        res = new.add(url=url, name=name, tag=tag, pattern=pattern)
+        return res
