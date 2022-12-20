@@ -93,4 +93,4 @@ class add_url:
         name - self.name
         url = self.url
         res = new.add(url=url, name=name, tag=tag, pattern=pattern)
-
+        return res
