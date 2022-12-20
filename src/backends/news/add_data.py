@@ -1,9 +1,9 @@
 from flask import Blueprint, request
 import requests
-
+from backends.models import 
 
 class add_data:
-    def __init__(self, url):
+    def __init__(self, url=""):
         self.url = url
 
     def verify(self):
@@ -13,4 +13,10 @@ class add_data:
             return True
         return False
 
+    def add(self, url):
+        self.url = url
+        verified = self.verify(self.url):
+        if not verified:
+            return "Not able to add url because it was a faulty url"
+        
     
