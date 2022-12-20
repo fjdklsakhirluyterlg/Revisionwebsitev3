@@ -75,8 +75,22 @@ class add_data:
         new = Newssource(name=name, url=url, pattern=pattern, tag=tag)
         db.session.add(new)
         db.session.commit()
+        return "added"
 
 
 class add_url:
-    def __init__(self, url):
-        add = add_data()
+    def __init__(self, url, pattern, tag, name):
+        new = add_data(type="url")
+        self.new = new
+        self.pattern = pattern
+        self.tag = tag
+        self.name = name
+    
+    def add(self):
+        new = self.new
+        tag = self.tag
+        pattern = self.tag
+        name - self.name
+        url = self.url
+        res = new.add(url=url, name=name, tag=tag, pattern=pattern)
+
