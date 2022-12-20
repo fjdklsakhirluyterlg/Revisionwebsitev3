@@ -2,6 +2,7 @@ from flask import Blueprint, request
 import requests
 from bs4 import Beautifulsoup
 from backends.models import Newssource
+from backends import db
 
 class add_data:
     def __init__(self, url="", pattern="", name="", tag=""):
@@ -68,5 +69,6 @@ class add_data:
         if check != "valid tag and pattern":
             return check
         new = Newssource(name=name, url=url, pattern=pattern, tag=tag)
-        
+        db.session.add(new)
+        db.session.commit()
     
