@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 import requests
-from backends.models import 
+from backends.models import Newssource
 
 class add_data:
     def __init__(self, url=""):
@@ -13,10 +13,10 @@ class add_data:
             return True
         return False
 
-    def add(self, url):
+    def add(self, url, name):
         self.url = url
         verified = self.verify(self.url):
         if not verified:
             return "Not able to add url because it was a faulty url"
-        
+        new = Newssource(name=name, url=url)
     
