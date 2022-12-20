@@ -30,7 +30,10 @@ class add_data:
 
     def check_pattern(self):
         url = self.url
-        pattern = self.pattenr
+        pattern = self.pattern
+        response = requests.get(url)
+        soup = Beautifulsoup(response.content, "html.parser")
+        
 
     def add(self, url, name, tag, pattern):
         self.url = url
