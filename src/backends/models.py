@@ -683,6 +683,7 @@ class Newssource(db.Model):
     name = db.Column(db.Text)
     url = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    pattern = db.Column(db.Text, nullable=True)
     headlines = db.relationship("Headline", backref="news")
 
 class Headline(db.Model):
