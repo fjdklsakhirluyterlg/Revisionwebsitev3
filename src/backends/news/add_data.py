@@ -26,6 +26,15 @@ class add_data:
         result = soup.find_all(tag, class_=pattern)
         if len(result) == 0:
             pat = self.check_pattern()
+            tg = self.check_tag()
+            if pat and tag:
+                return "Error with framework"
+            elif pat and not tag:
+                return "invalid tag"
+            elif tag and not pat:
+                return "invalid pattern"
+            elif not tag and not pat:
+                retrun "ivalid pattern and tag"
         return "valid tag and pattern"
 
     def check_pattern(self):
