@@ -17,7 +17,7 @@ class add_data:
             return True
         return False
     
-    def check_pattern(self):
+    def check(self):
         pattern = self.pattern
         url = self.url
         tag = self.tag
@@ -25,9 +25,12 @@ class add_data:
         soup = Beautifulsoup(response.content, "html.parser")
         result = soup.find_all(tag, class_=pattern)
         if len(result) == 0:
-            return "Invalid tag or pattern"
+            pat = self.check_pattern()
         return "valid tag and pattern"
 
+    def check_pattern(self):
+        url = self.url
+        pattern = self.pattenr
 
     def add(self, url, name, tag, pattern):
         self.url = url
