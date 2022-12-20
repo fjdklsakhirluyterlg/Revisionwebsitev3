@@ -42,3 +42,6 @@ def report_guide():
 def add_guide_to_help():
     id = request.args.get("id")
     guide = Guide.query.filter_by(id=id).first()
+    question = guide.title
+    subject = guide.tags[0]
+    awnser = guide.content
