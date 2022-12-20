@@ -34,7 +34,7 @@ class add_data:
             elif tag and not pat:
                 return "invalid pattern"
             elif not tag and not pat:
-                retrun "ivalid pattern and tag"
+                return "invalid pattern and tag"
         return "valid tag and pattern"
 
     def check_pattern(self):
@@ -64,5 +64,6 @@ class add_data:
             return "Not able to add url because it was a faulty url"
         self.pattern = pattern
         self.tag = tag
+        check = self.check()
         new = Newssource(name=name, url=url)
     
