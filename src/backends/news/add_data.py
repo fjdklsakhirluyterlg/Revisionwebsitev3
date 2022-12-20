@@ -24,7 +24,9 @@ class add_data:
         response = requests.get(url)
         soup = Beautifulsoup(response.content, "html.parser")
         result = soup.find_all(tag, class_=pattern)
-
+        if len(result) == 0:
+            return "Invalid tag or pattern"
+        return "valid tag and pattern"
 
 
     def add(self, url, name, tag, pattern):
