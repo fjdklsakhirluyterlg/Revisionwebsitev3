@@ -1,5 +1,6 @@
 from flask import Blueprint, request
 import requests
+from bs4 import Beautifulsoup
 from backends.models import Newssource
 
 class add_data:
@@ -11,12 +12,16 @@ class add_data:
     def verify(self):
         url = self.url
         response = requests.get(url)
-        if 200 <= response.status_code <= 299 and len(response.data) > 0:
+        if 200 <= response.status_code <= 299 and len(response.content) > 0:
             return True
         return False
     
     def check_pattern(self):
-        pass
+        pattern = self.pattern
+        url = self.url
+        response = requests.get(url)
+        soup = Beautifulsoup(response.content, "html.parser")
+        
 
     def add(self, url, name):
         self.url = url
