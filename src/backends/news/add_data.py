@@ -3,8 +3,10 @@ import requests
 from backends.models import Newssource
 
 class add_data:
-    def __init__(self, url=""):
+    def __init__(self, url="", pattern="", name=""):
         self.url = url
+        self.pattern = pattern
+        self.name = name
 
     def verify(self):
         url = self.url
@@ -12,6 +14,8 @@ class add_data:
         if 200 <= response.status_code <= 299 and len(response.data) > 0:
             return True
         return False
+    
+    def check_pattern(self)
 
     def add(self, url, name):
         self.url = url
