@@ -15,7 +15,8 @@ class add_data:
             return True
         return False
     
-    def check_pattern(self)
+    def check_pattern(self):
+        pass
 
     def add(self, url, name):
         self.url = url
