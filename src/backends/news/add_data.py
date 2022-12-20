@@ -5,11 +5,12 @@ from backends.models import Newssource
 from backends import db
 
 class add_data:
-    def __init__(self, url="", pattern="", name="", tag=""):
+    def __init__(self, url="", pattern="", name="", tag="", type_):
         self.url = url
         self.pattern = pattern
         self.name = name
         self.tag = tag
+        self.type = type_
 
     def verify(self):
         url = self.url
@@ -71,4 +72,6 @@ class add_data:
         new = Newssource(name=name, url=url, pattern=pattern, tag=tag)
         db.session.add(new)
         db.session.commit()
+
+
     
