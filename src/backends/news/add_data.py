@@ -67,5 +67,6 @@ class add_data:
         check = self.check()
         if check != "valid tag and pattern":
             return check
-        new = Newssource(name=name, url=url)
+        new = Newssource(name=name, url=url, pattern=pattern, tag=tag)
+        
     
