@@ -33,7 +33,20 @@ class add_data:
         pattern = self.pattern
         response = requests.get(url)
         soup = Beautifulsoup(response.content, "html.parser")
-        
+        result = soup.find_all(class_=pattern)
+        if len(result) == 0:
+            return False
+        return True
+    
+    def check_tag(self):
+        url = self.url
+        tag = self.tag
+        response = requests.get(url)
+        soup = Beautifulsoup(response.content, "html.parser")
+        result = soup.find_all(tag)
+        if len(result) == 0:
+            return False
+        return True
 
     def add(self, url, name, tag, pattern):
         self.url = url
