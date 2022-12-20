@@ -20,9 +20,10 @@ class add_data:
     def check_pattern(self):
         pattern = self.pattern
         url = self.url
+        tag = self.tag
         response = requests.get(url)
         soup = Beautifulsoup(response.content, "html.parser")
-        result = soup.find_all(pattern)
+        result = soup.find_all(tag, class_=pattern)
 
 
 
