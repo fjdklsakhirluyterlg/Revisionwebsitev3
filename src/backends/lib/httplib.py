@@ -28,4 +28,5 @@ def main_run():
     res1 = get_data("www.python.org", "A")
     print(res1)
 
-main_run()
+if __name__ == "__main__":
+    main_run()
