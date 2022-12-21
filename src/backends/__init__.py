@@ -167,6 +167,9 @@ def create_app():
     @app.before_request
     def register_view(request):
         url = str(request.url_rule)
+        new = WebView(url=url)
+        db.session.add(new)
+        db.session.commit()
     
     @app.route("/admin/sitemap")
     def site_map():
