@@ -72,6 +72,8 @@ class add_data:
         check = self.check()
         if check != "valid tag and pattern":
             return check
+        if self.type == "rss":
+            new = Newssource(name=name, url=url, pattern=pattern, tag=tag, rss=True)
         new = Newssource(name=name, url=url, pattern=pattern, tag=tag)
         db.session.add(new)
         db.session.commit()
@@ -96,7 +98,7 @@ class add_url:
         return res
 
 
-class add_ress:
+class add_rss:
     def __init__(self, url, pattern, tag, name):
         new = add_data(type="rss")
         self.new = new
