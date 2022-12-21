@@ -74,7 +74,8 @@ class add_data:
             return check
         if self.type == "rss":
             new = Newssource(name=name, url=url, pattern=pattern, tag=tag, rss=True)
-        new = Newssource(name=name, url=url, pattern=pattern, tag=tag)
+        else:
+            new = Newssource(name=name, url=url, pattern=pattern, tag=tag)
         db.session.add(new)
         db.session.commit()
         return "added"
