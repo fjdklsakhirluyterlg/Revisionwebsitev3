@@ -759,5 +759,12 @@ class WebView(db.Model):
     url = db.Column(db.Text)
     timestamp = db.Column(db.Datetime, default=datetime.utcnow)
 
-    def post_views(self):
-        pass
+    def post_views(self, title):
+        views = WebView.query.all()
+        out = []
+        for view in views:
+            if f"/community/{title}" in views:
+                out.append(view)
+
+        return out
+        )
