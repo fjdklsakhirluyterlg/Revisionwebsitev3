@@ -117,3 +117,7 @@ def get_wsj():
 class get_data:
     def __init__(self, url):
         self.url = url
+        newssource = Newssource.query.filter_by(url=url).first()
+        self.newssource = newssource
+
+    
