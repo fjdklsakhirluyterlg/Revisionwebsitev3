@@ -38,9 +38,12 @@ def api_add_help():
         # question = "test"
         awnser = data["awnser"]
         # awnser = "test"
+        tags = data["tags"]
         x = Help(subject=subject, topic=topic, question=question, awnser=awnser)
         db.session.add(x)
         db.session.commit()
+        id = getattr(x, "id")
+        
         return "added!"
     except:
         return jsonify(error="error!")
