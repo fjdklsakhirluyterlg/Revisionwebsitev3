@@ -12,6 +12,7 @@ from flask_redis import FlaskRedis
 from sqlalchemy import MetaData
 import logging
 import os
+from backends.models import WebView
 
 convention = {
     "ix": 'ix_%(column_0_label)s',
@@ -162,6 +163,10 @@ def create_app():
     def add_header(response):
         response.headers['Access-Control-Allow-Origin'] = '*'
         return response
+    
+    @app.before_request
+    def register_view(request):
+        pass
     
     @app.route("/admin/sitemap")
     def site_map():
