@@ -166,7 +166,7 @@ def create_app():
     
     @app.before_request
     def register_view(request):
-        pass
+        url = str(request.url_rule)
     
     @app.route("/admin/sitemap")
     def site_map():
