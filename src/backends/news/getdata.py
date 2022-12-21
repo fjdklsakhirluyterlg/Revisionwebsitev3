@@ -120,4 +120,11 @@ class get_data:
         newssource = Newssource.query.filter_by(url=url).first()
         self.newssource = newssource
 
-    
+    def get(self):
+        url = self.url
+        newssource = self.newssource
+        tag = newssource.tag
+        pattern = newssource.patter
+        if not nessource.rss:
+            urlx = UrlFetcher(URL, tag, pattern)
+            
