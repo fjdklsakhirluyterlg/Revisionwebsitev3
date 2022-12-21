@@ -56,4 +56,3 @@ def edit_id_thing():
     guide = Guide.query.filter_by(id=id).first()
     guide.content = content
     db.session.commit()
-
