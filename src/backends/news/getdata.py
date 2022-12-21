@@ -129,3 +129,5 @@ class get_data:
             urlx = UrlFetcher(url, tag, pattern)
         else:
             urlx = RssFetcher(url, pattern)
+        data = urlx.get_data()
+        return data
