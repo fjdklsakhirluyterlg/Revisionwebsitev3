@@ -43,7 +43,9 @@ def api_add_help():
         db.session.add(x)
         db.session.commit()
         id = getattr(x, "id")
-        
+        for tag in tags:
+            tag = Tag.query.filter_by(name=tag).first()
+            tag.help.append(x)
         return "added!"
     except:
         return jsonify(error="error!")
