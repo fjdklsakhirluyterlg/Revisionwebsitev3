@@ -114,3 +114,6 @@ def get_wsj():
         out.append(new)
     return out
 
+class get_data:
+    def __init__(self, url):
+        self.url = url
