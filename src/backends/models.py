@@ -758,3 +758,6 @@ class WebView(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     url = db.Column(db.Text)
     timestamp = db.Column(db.Datetime, default=datetime.utcnow)
+
+    def post_views(self):
+        pass
