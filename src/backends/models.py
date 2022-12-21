@@ -686,6 +686,7 @@ class Newssource(db.Model):
     pattern = db.Column(db.Text, nullable=True)
     tag = db.Column(db.Text, nullable=True)
     headlines = db.relationship("Headline", backref="news")
+    rss = db.Column(db.Boolean(), default=False)
 
 class Headline(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -752,3 +753,18 @@ class GuideDisLike(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     guide_id = db.Column(db.Integer, db.ForeignKey("guide.id"))
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+
+class WebView(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    url = db.Column(db.Text)
+    timestamp = db.Column(db.Datetime, default=datetime.utcnow)
+
+    def post_views(self, title):
+        views = WebView.query.all()
+        out = []
+        for view in views:
+            if f"/community/{title}" in views:
+                out.append(view)
+
+        return out
+        )
