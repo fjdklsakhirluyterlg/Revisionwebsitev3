@@ -754,7 +754,7 @@ class GuideDisLike(db.Model):
     guide_id = db.Column(db.Integer, db.ForeignKey("guide.id"))
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
 
-class View(db.Model):
+class WebView(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     url = db.Column(db.Text)
     timestamp = db.Column(db.Datetime, default=datetime.utcnow)
