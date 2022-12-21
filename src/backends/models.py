@@ -686,6 +686,7 @@ class Newssource(db.Model):
     pattern = db.Column(db.Text, nullable=True)
     tag = db.Column(db.Text, nullable=True)
     headlines = db.relationship("Headline", backref="news")
+    rss = db.Column(db.Boolean())
 
 class Headline(db.Model):
     id = db.Column(db.Integer, primary_key=True)
