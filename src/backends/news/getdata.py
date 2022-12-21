@@ -114,3 +114,20 @@ def get_wsj():
         out.append(new)
     return out
 
+class get_data:
+    def __init__(self, url):
+        self.url = url
+        newssource = Newssource.query.filter_by(url=url).first()
+        self.newssource = newssource
+
+    def get(self):
+        url = self.url
+        newssource = self.newssource
+        tag = newssource.tag
+        pattern = newssource.patter
+        if not nessource.rss:
+            urlx = UrlFetcher(url, tag, pattern)
+        else:
+            urlx = RssFetcher(url, pattern)
+        data = urlx.get_data()
+        return data
