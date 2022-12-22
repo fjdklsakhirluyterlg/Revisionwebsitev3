@@ -13,3 +13,5 @@ def add_scam():
     elif type == "email":
         email = data["email"]
         new = ScamEmail(email)
+    
+    db.session.add(new)
