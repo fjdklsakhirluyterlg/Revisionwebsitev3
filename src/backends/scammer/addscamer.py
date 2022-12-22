@@ -9,5 +9,9 @@ def add_scam():
     type = data["type"]
     if type == "phone":
         telephone = data["telephone"]
+        new = ScamPhone(telephone)
     elif type == "email":
         email = data["email"]
+        new = ScamEmail(email)
+    
+    db.session.add(new)
