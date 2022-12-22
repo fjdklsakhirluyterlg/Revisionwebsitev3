@@ -30,7 +30,7 @@ def update_help(id):
 def api_add_help():
     try:
         data = request.get_json()
-        subject = data["subject"]
+        subject = data["tags"][0]
         # subject = "test"
         topic = data["topic"]
         # topic = "test"
