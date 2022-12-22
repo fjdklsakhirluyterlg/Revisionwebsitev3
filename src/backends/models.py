@@ -767,4 +767,6 @@ class WebView(db.Model):
                 out.append(view)
 
         return out
-        )
+    
+    def guide_views(self):
+        pass
