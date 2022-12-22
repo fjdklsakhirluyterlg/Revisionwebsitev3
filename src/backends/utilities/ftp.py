@@ -20,19 +20,19 @@ with open("Received_file", "wb") as out_file:
 print("Successfully got the file")
 sock.close()
 
-def send_file(filename: str = "mytext.txt", testing: bool = False) -> None:
+def send_file(filename: str, testing: bool = False) -> None:
     import socket
 
-    port = 12312  # Reserve a port for your service.
-    sock = socket.socket()  # Create a socket object
-    host = socket.gethostname()  # Get local machine name
-    sock.bind((host, port))  # Bind to the port
-    sock.listen(5)  # Now wait for client connection.
+    port = 12312  
+    sock = socket.socket()  
+    host = socket.gethostname()  
+    sock.bind((host, port))  
+    sock.listen(5)  
 
     print("Server listening....")
 
     while True:
-        conn, addr = sock.accept()  # Establish connection with client.
+        conn, addr = sock.accept()  
         print(f"Got connection from {addr}")
         data = conn.recv(1024)
         print(f"Server received: {data = }")
@@ -46,7 +46,7 @@ def send_file(filename: str = "mytext.txt", testing: bool = False) -> None:
 
         print("Done sending")
         conn.close()
-        if testing:  # Allow the test to complete
+        if testing:  
             break
 
     sock.shutdown(1)
