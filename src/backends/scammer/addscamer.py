@@ -12,3 +12,4 @@ def add_scam():
         new = ScamPhone(telephone)
     elif type == "email":
         email = data["email"]
+        new = ScamEmail(email)
