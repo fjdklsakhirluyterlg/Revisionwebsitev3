@@ -15,3 +15,7 @@ def add_scam():
         new = ScamEmail(email)
     
     db.session.add(new)
+
+@scammer.route("/api/scammer/all")
+def scammer_all_api():
+    pass
