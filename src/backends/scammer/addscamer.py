@@ -18,4 +18,5 @@ def add_scam():
 
 @scammer.route("/api/scammer/all")
 def scammer_all_api():
-    pass
+    email - ScamPhone.query.all()
+    phone = ScamEmail.query.all()
