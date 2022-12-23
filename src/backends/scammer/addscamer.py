@@ -15,3 +15,11 @@ def add_scam():
         new = ScamEmail(email)
     
     db.session.add(new)
+
+@scammer.route("/api/scammer/all")
+def scammer_all_api():
+    email - ScamPhone.query.all()
+    phone = ScamEmail.query.all()
+    dict = {}
+    for em in email:
+        dict[em.id] = []
