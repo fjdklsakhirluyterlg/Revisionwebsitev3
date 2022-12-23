@@ -20,3 +20,6 @@ def add_scam():
 def scammer_all_api():
     email - ScamPhone.query.all()
     phone = ScamEmail.query.all()
+    dict = {}
+    for em in email:
+        dict[em.id] = []
