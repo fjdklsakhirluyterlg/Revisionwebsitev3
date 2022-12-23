@@ -65,3 +65,8 @@ def clean_all_images():
     print("cleaning)
     clean_revisionwebs()
     print("cleaned")
+
+@clix.cli.command("show users")
+def show_users_stuff():
+    users = User.query.all()
+    
