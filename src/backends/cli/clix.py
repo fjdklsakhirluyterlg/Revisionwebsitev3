@@ -68,4 +68,5 @@ def clean_all_images():
 
 @clix.cli.command("show users")
 def show_users_stuff():
-    pass
+    users = User.query.all()
+    
