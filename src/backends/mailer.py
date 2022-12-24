@@ -25,6 +25,7 @@ class emailer:
             message["to"] = ad
             message["subject"] = self.subject
             html = self.body
+            message.add_alternative(html, subtype="html")
 
 
 
