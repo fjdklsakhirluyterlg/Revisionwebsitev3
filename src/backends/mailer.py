@@ -19,5 +19,11 @@ class emailer:
     body: str
 
     def send(self):
-        message = EmailMessage()
+        for ad in self.adress:
+            message = EmailMessage()
+            message["from"] = "banerjee.armaan@hotmail.com"
+            message["to"] = ad
+            
+
+
 
