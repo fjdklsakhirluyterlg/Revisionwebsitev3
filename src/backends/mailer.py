@@ -23,7 +23,9 @@ class emailer:
             message = EmailMessage()
             message["from"] = "banerjee.armaan@hotmail.com"
             message["to"] = ad
-            
+            message["subject"] = self.subject
+            html = self.body
+
 
 
 
