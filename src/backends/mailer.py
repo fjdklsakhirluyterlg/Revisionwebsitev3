@@ -10,3 +10,7 @@ def validate_user_with_email_better(address, securitykey, name):
 
 def user_buy_request(sender, text, reciever):
     pass
+
+class emailer:
+    def __init__(self, message, address, subject):
+        
