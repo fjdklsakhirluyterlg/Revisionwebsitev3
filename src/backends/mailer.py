@@ -1,6 +1,7 @@
 import ssl
 import smtplib
 from email.message import EmailMessage
+from dataclasses import dataclass
 
 def validate_user_with_email_better(address, securitykey, name):
     sender_email = "banerjee.armaan@hotmail.com"
@@ -11,6 +12,12 @@ def validate_user_with_email_better(address, securitykey, name):
 def user_buy_request(sender, text, reciever):
     pass
 
+@dataclass
 class emailer:
-    def __init__(self, message, address, subject):
-        
+    subject: str
+    adress: list
+    body: str
+
+    def send(self):
+        message = EmailMessage()
+
