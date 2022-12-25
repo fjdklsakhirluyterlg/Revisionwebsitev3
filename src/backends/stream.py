@@ -19,4 +19,4 @@ def stream():
 
 @stream.route("/stream/next")
 def next_stream():
-    pass
+    next_date = ""
