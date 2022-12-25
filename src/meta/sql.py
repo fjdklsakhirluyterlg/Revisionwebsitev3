@@ -24,5 +24,7 @@ def get_blogs():
 
 def get_posts():
     sql_query = """
+    SELECT * FROM POST
     """
+    crsr.execute(sql_query)
 
