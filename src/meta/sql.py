@@ -22,3 +22,7 @@ def get_blogs():
     ans = crsr.fetchall()
     return ans
 
+def get_posts():
+    sql_query = """
+    """
+
