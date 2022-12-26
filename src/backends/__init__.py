@@ -12,7 +12,6 @@ from flask_redis import FlaskRedis
 from sqlalchemy import MetaData
 import logging
 import os
-from backends.models import WebView
 
 convention = {
     "ix": 'ix_%(column_0_label)s',
@@ -166,6 +165,7 @@ def create_app():
     
     @app.before_request
     def register_view(request):
+        from backends.models import WebView
         url = str(request.url_rule)
         new = WebView(url=url)
         db.session.add(new)

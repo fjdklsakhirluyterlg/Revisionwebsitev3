@@ -131,7 +131,7 @@ user_tag = db.Table("user_tag",
 followers = db.Table('followers',
     db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id')),
-    db.Column('timestamp'), db.Datetime, default=datetime.utcnow
+    # db.Column('timestamp'), db.DateTime, default=datetime.utcnow
 )
 
 user_category = db.Table("user_category",
@@ -758,7 +758,7 @@ class GuideDisLike(db.Model):
 class WebView(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     url = db.Column(db.Text)
-    timestamp = db.Column(db.Datetime, default=datetime.utcnow)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
 
     def post_views(self, title):
         views = WebView.query.all()
