@@ -131,7 +131,7 @@ user_tag = db.Table("user_tag",
 followers = db.Table('followers',
     db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id')),
-    db.Column('timestamp'), db.DateTime, default=datetime.utcnow
+    # db.Column('timestamp'), db.DateTime, default=datetime.utcnow
 )
 
 user_category = db.Table("user_category",
