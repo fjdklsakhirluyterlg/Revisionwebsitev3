@@ -1,7 +1,7 @@
 from flask_login import UserMixin
 from sqlalchemy import or_
 from datetime import datetime
-from . import db
+from backends import db
 from backends.utilities.discord import discord_notifier
 from backends.supplementary.aes import AESCipher
 import html
