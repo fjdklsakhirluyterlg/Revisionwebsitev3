@@ -758,7 +758,7 @@ class GuideDisLike(db.Model):
 class WebView(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     url = db.Column(db.Text)
-    timestamp = db.Column(db.Datetime, default=datetime.utcnow)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
 
     def post_views(self, title):
         views = WebView.query.all()
