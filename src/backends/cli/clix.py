@@ -1,7 +1,7 @@
 import click
 from flask import Blueprint
 from backends import db
-from backends.models import User, Blod
+from backends.models import User, Blog, Post
 from werkzeug.security import generate_password_hash, check_password_hash
 from backends.auth import login, make_security_key
 from flask_login import logout_user, login_user
@@ -56,13 +56,13 @@ def sitemap():
 
 @clix.cli.command("add-blog")
 @click.argument("title")
-@clicj.argument("content")
+@click.argument("content")
 def add_feature_to_database(title, content):
     new = Blog(title=title, content=content)
     
 @clix.cli.command("clean images")
 def clean_all_images():
-    print("cleaning)
+    print("cleaning")
     clean_revisionwebs()
     print("cleaned")
 
