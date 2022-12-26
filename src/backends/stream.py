@@ -16,3 +16,7 @@ def stream():
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
     
     return Response(generator(video),mimetype='multipart/x-mixed-replace; boundary=frame')
+
+@stream.route("/stream/next")
+def next_stream():
+    next_date = ""
