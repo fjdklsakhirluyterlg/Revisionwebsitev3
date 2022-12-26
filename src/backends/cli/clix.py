@@ -1,7 +1,7 @@
 import click
 from flask import Blueprint
 from backends import db
-from backends.models import User, Blod
+from backends.models import User, Blog, Post
 from werkzeug.security import generate_password_hash, check_password_hash
 from backends.auth import login, make_security_key
 from flask_login import logout_user, login_user
