@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory, send_file, flash, jsonify, Blueprint, Response, abort, escape
 import requests
-from .models import Snake_leaderboard
+from .models import Snake_leaderboard, WebView
 from flask_login import login_user, login_required, logout_user, current_user, LoginManager, UserMixin
 from . import db
 from .functions import is_integer_num, coefficient, fib, send_email, get_ecenomic_stuff, get_day_of_the_year, get_user_ip_address, collatz, generateπfrom_random, get_loc_from_ip, quadratic_solver
@@ -660,6 +660,15 @@ def complex_quadratic_thing():
         <form action="/caculators/quadratic" method=POST><input type="text" name="a"><label>x<sup>2</sup></label><input type="text" name="b"><label>x</label><input type="text" name="c"><button type="submit">submit</button></form>
         
         """
+
+@home.route("/views")
+def show_views():
+    views = WebView.query.all()
+    dict = {}
+    for view in views:
+        dict[view.id] = {"url":view.url, "timestamp":view.timestamp}
+    
+    return dict
 
 @home.route("/test/tracker")
 def test_tracker():
