@@ -164,7 +164,7 @@ def create_app():
         return response
     
     @app.before_request
-    def register_view(request):
+    def before_request(request):
         from backends.models import WebView
         url = str(request.url_rule)
         new = WebView(url=url)
