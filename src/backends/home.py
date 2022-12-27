@@ -666,7 +666,7 @@ def show_views():
     views = WebView.query.all()
     dict = {}
     for view in views:
-        dict[view.id] = {"url":view.url}
+        dict[view.id] = {"url":view.url, "timestamp":view.timestamp}
 
 @home.route("/test/tracker")
 def test_tracker():
