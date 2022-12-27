@@ -661,6 +661,10 @@ def complex_quadratic_thing():
         
         """
 
+@home.route("/views")
+def show_views():
+    pass
+
 @home.route("/test/tracker")
 def test_tracker():
     return render_template("tracker.html")
