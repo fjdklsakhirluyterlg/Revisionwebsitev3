@@ -664,6 +664,9 @@ def complex_quadratic_thing():
 @home.route("/views")
 def show_views():
     views = WebView.query.all()
+    dict = {}
+    for view in views:
+        dict[view.id] = {}
 
 @home.route("/test/tracker")
 def test_tracker():
