@@ -15,7 +15,7 @@ with open("Received_file", "wb") as out_file:
         print(f"{data = }")
         if not data:
             break
-        out_file.write(data)  # Write data to a file
+        out_file.write(data) 
 
 print("Successfully got the file")
 sock.close()
