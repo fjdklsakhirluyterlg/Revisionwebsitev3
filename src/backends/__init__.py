@@ -166,7 +166,7 @@ def create_app():
     @app.before_request
     def before_request():
         from backends.models import WebView
-        url = str(request.endpoint)
+        url = str(request.base_url)
         new = WebView(url=url)
         db.session.add(new)
         db.session.commit()
