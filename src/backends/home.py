@@ -667,6 +667,8 @@ def show_views():
     dict = {}
     for view in views:
         dict[view.id] = {"url":view.url, "timestamp":view.timestamp}
+    
+    return dict
 
 @home.route("/test/tracker")
 def test_tracker():
