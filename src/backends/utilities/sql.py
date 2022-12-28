@@ -1,4 +1,5 @@
 import flask_sqlalchemy
+from backends import db
 
-def add():
+def add(thing):
     pass
