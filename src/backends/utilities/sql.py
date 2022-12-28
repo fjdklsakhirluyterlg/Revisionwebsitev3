@@ -1,13 +1,4 @@
-import sqlite3
+import flask_sqlalchemy
 
-def insert():
-    pass
-
-def delete():
-    pass
-
-def update():
-    pass
-
-def filter():
+def add():
     pass
