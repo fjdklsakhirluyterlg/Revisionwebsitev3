@@ -330,11 +330,14 @@ def see_tags_all(name):
     id = tag.id
 
     help = tag.help
+    authenticated = current_user.is_authenticated
     if current_user.is_authenticated:
         id = tag.id
         following = current_user.following
+        followed = False
         if tag in following:
             id = tag.id
+            followed = True
             return render_template("tagblogs.html", blogs=uuu, things=things, views=views, average=average, words=words, time_to_read=time_to_read, avwords=avwords, avtime=avtime, id=id, showf=False, unfollowf=True)
         else:
             return render_template("tagblogs.html", blogs=uuu, things=things, views=views, average=average, words=words, time_to_read=time_to_read, avwords=avwords, avtime=avtime, id=id, showf=True, unfollowf=False)
