@@ -126,7 +126,7 @@ class get_data:
         newssource = self.newssource
         tag = newssource.tag
         pattern = newssource.patter
-        if not Neswsource.rss:
+        if not Newssource.rss:
             urlx = UrlFetcher(url, tag, pattern)
         else:
             urlx = RssFetcher(url, pattern)
