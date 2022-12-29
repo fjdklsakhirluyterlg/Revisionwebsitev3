@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+from backends.models import Newssource
 
 class UrlFetcher:
     def __init__(self, url, tag, pattern=None):
@@ -125,7 +126,7 @@ class get_data:
         newssource = self.newssource
         tag = newssource.tag
         pattern = newssource.patter
-        if not nessource.rss:
+        if not Neswsource.rss:
             urlx = UrlFetcher(url, tag, pattern)
         else:
             urlx = RssFetcher(url, pattern)
