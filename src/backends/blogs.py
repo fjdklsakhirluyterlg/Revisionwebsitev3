@@ -330,6 +330,7 @@ def see_tags_all(name):
     id = tag.id
 
     help = tag.help
+    authenticated = current_user.is_authenticated
     if current_user.is_authenticated:
         id = tag.id
         following = current_user.following
