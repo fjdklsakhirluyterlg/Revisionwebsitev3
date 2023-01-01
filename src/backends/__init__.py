@@ -167,7 +167,7 @@ def create_app():
     def before_request():
         from backends.models import WebView
         id = None
-        if current_user.authenticated:
+        if current_user.is_authenticated:
             id = current_user.id
         url = str(request.base_url, user_id=id)
         new = WebView(url=url)
