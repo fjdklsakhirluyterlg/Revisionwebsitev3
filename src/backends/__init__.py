@@ -166,8 +166,11 @@ def create_app():
     @app.before_request
     def before_request():
         from backends.models import WebView
+        id = None
+        if current_user.is_authenticated:
+            id = current_user.id
         url = str(request.base_url)
-        new = WebView(url=url)
+        new = WebView(url=url, user_id=id)
         db.session.add(new)
         db.session.commit()
     

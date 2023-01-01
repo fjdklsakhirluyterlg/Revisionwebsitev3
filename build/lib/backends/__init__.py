@@ -166,7 +166,10 @@ def create_app():
     
     @app.before_request
     def register_view(request):
-        url = str(request.url_rule)
+        id = None
+        if current_user.is_authenticated:
+            id=current_user.id
+        url = str(request.url_rule, user_id=id)
         new = WebView(url=url)
         db.session.add(new)
         db.session.commit()
