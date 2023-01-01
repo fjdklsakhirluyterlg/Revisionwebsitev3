@@ -166,6 +166,9 @@ def create_app():
     @app.before_request
     def before_request():
         from backends.models import WebView
+        id = None
+        if current_user.authenticated:
+            id = current_user.id
         url = str(request.base_url)
         new = WebView(url=url)
         db.session.add(new)
