@@ -4,5 +4,5 @@ const app = express()
 var port = 5070
 
 app.get("/", (req, res) => {
-    res.send("hi")
+    res.send("happy new year")
 })
