@@ -170,7 +170,7 @@ def create_app():
         if current_user.is_authenticated:
             id = current_user.id
         url = str(request.base_url)
-        new = WebView(url=url, user_id=id))
+        new = WebView(url=url, user_id=id)
         db.session.add(new)
         db.session.commit()
     
