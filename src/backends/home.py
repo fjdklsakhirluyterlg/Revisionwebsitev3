@@ -666,7 +666,7 @@ def show_views():
     views = WebView.query.all()
     dict = {}
     for view in views:
-        dict[view.id] = {"url":view.url, "timestamp":view.timestamp}
+        dict[view.id] = {"url":view.url, "timestamp":view.timestamp, "user_id":view.user_id}
     
     return dict
 
