@@ -6,3 +6,5 @@ var port = 5070
 app.get("/", (req, res) => {
     res.send("happy new year")
 })
+
+app.run()
