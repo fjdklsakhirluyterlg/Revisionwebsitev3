@@ -1,4 +1,4 @@
-alembic==1.8.1
+alembic==1.9.1
 beautifulsoup4==4.11.1
 Flask==2.2.2
 Flask_And_Redis==1.0.0
