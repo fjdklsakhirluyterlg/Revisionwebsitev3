@@ -983,27 +983,5 @@ def covid():
         infect_everyone()
         time.sleep(7776000)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if __name__ == "__main__":
+    covid()
