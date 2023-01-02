@@ -167,6 +167,7 @@ class User(db.Model, UserMixin):
     shopaccount = db.relationship("Shopaccount", backref="user")
     urls = db.relationship("Urlshortner", backref="user")
     reviews = db.relationship("Review", backref="user")
+    webviews = db.relationship("WebView", backref="user")
     # discord_wbhook = db.Column(db.Text)
     guides = db.relationship("Guide", backref="user")
     followed = db.relationship(
