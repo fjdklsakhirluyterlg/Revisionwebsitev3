@@ -969,7 +969,7 @@ def infect_everyone():
 
 
 
-
+next_greek_letter = ""
 
 
 
@@ -978,7 +978,10 @@ def infect_everyone():
 
 
 def covid():
-
+    while True:
+        make_new_variant(next_greek_letter)
+        infect_everyone()
+        time.sleep(7776000)
 
 
 
