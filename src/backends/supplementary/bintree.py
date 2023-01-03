@@ -1,7 +1,7 @@
 class Treenode:
-    def __init__(self, right, left, value):
-        self.right = right
-        self.left = left
+    def __init__(self, value):
+        self.right = None
+        self.left = None
         self.value = value
     
     def insert(self, value):
@@ -12,6 +12,7 @@ class Treenode:
             if self.left:
                 self.left.insert(value)
             self.left = Treenode(value)
+            
 
     
     
