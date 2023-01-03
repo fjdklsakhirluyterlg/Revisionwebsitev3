@@ -18,6 +18,10 @@ class Treenode:
                 self.right.insert(value)
             else:
                 self.right = Treenode(value)
+    
+    def search(self, value):
+        if self.value == value:
+            return
 
 
     
