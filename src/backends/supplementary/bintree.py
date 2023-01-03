@@ -40,8 +40,7 @@ class Treenode:
         if self.left:
             self.left.print_nodes()
 
-        level = self.printLevel(self.value)
-        print(self.value, level)
+        print(self.value)
 
         if self.right:
             self.right.print_nodes()
