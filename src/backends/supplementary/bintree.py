@@ -21,7 +21,18 @@ class Treenode:
     
     def search(self, value):
         if self.value == value:
-            return
+            return True
+        
+        if value < self.value:
+            if self.left:
+                return self.left.search(val)
+            else:
+                return False
+        else:
+            if self.right:
+                return self.right.search(val)
+            else:
+                return False
 
 
     
