@@ -25,12 +25,12 @@ class Treenode:
         
         if value < self.value:
             if self.left:
-                return self.left.search(val)
+                return self.left.search(value)
             else:
                 return False
         else:
             if self.right:
-                return self.right.search(val)
+                return self.right.search(value)
             else:
                 return False
 
