@@ -438,6 +438,10 @@ def api_shop_stastics(id):
         name = itm.name
         price = itm.price
 
+@shop.route("/api/shop/popular")
+def popular_shop_thing():
+    pass
+
 @shop.route("/api/test/multiple/list")
 def multiple_list_test():
     items = request.args.get("q")
