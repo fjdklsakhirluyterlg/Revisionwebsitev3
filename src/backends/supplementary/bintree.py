@@ -47,6 +47,28 @@ class Treenode:
 
         return False
     
+    def printLevel(self, X):
+        if self is None:
+            return 0
+        q = []
+        currLevel = 1
+        q.append(self)
+        
+        while(len(q) > 0):
+            size = len(q)
+            for i in range(size):
+                node = q.pop(0)
+                if(node.data == X):
+                    return currLevel
+                # Enqueue left child
+                if node.left is not None:
+                    q.append(node.left)
+                # Enqueue right child
+                if node.right is not None:
+                    q.append(node.right)
+            currLevel += 1
+        return 0
+    
 
 def buildbintree(values):
     root = Treenode(values[0])
