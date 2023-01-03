@@ -33,6 +33,19 @@ class Treenode:
                 return self.right.search(value)
             else:
                 return False
+    
+    def print_nodes(self):
+        
+
+        if self.left:
+            self.left.print_nodes()
+
+        print(self.node)
+
+        if self.right:
+            self.right.print_nodes()
+
+        return False
 
 
     
