@@ -58,12 +58,10 @@ class Treenode:
             size = len(q)
             for i in range(size):
                 node = q.pop(0)
-                if(node.data == X):
+                if(node.value == X):
                     return currLevel
-                # Enqueue left child
                 if node.left is not None:
                     q.append(node.left)
-                # Enqueue right child
                 if node.right is not None:
                     q.append(node.right)
             currLevel += 1
