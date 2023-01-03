@@ -7,6 +7,11 @@ class Treenode:
     def insert(self, value):
         if self.value == value:
             return 
+        
+        if value < self.value:
+            if self.left:
+                self.left.insert(value)
+            self.left = Treenode(value)
 
     
     
