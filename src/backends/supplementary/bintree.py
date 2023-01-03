@@ -57,7 +57,7 @@ def buildbintree(values):
 
 if __name__ == "__main__":
     nodes = [30, 10, 40, 22, 15, 18]
-    tree = build_tree(nodes)
+    tree = buildbintree(nodes)
     tree.add_node(18)
     tree.add_node(20)
     print("15 found in binary tree", tree.search(15))
