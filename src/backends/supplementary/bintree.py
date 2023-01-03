@@ -11,8 +11,14 @@ class Treenode:
         if value < self.value:
             if self.left:
                 self.left.insert(value)
-            self.left = Treenode(value)
-            
+            else:
+                self.left = Treenode(value)
+        else:
+            if self.right:
+                self.right.insert(value)
+            else:
+                self.right = Treenode(value)
+
 
     
     
