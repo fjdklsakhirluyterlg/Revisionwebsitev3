@@ -82,7 +82,7 @@ if __name__ == "__main__":
     tree.insert(20)
     print("15 found in binary tree", tree.search(15))
     print("100 found in binary tree", tree.search(100))
-    print(tree.printLevel(10))
+    print("10 is on level: ",tree.printLevel(10))
     tree.print_nodes()
     
     
