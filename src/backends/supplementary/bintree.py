@@ -46,6 +46,14 @@ class Treenode:
             self.right.print_nodes()
 
         return False
+    
+
+def buildbintree(values):
+    root = Treenode(values[0])
+    for i in range(1, len(values)):
+        root.insert(values[i])
+    return root
+
 
 
     
