@@ -7,4 +7,8 @@ app.get("/", (req, res) => {
     res.send("happy new year")
 })
 
+app.post("/data", (req, res) => {
+    
+})
+
 app.run()
