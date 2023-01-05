@@ -67,6 +67,13 @@ class Treenode:
             currLevel += 1
         return 0
     
+    def invert(self):
+        temp = self.left
+        self.left = self.right
+        self.right = temp
+        self.right.invert()
+        self.left.invert()
+    
 
 def buildbintree(values):
     root = Treenode(values[0])
