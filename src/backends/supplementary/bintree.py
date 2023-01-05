@@ -69,7 +69,8 @@ class Treenode:
     
     def invert(self):
         temp = self.left
-        
+        self.left = self.right
+        self.right = temp
     
 
 def buildbintree(values):
