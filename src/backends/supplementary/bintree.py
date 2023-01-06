@@ -74,6 +74,7 @@ class Treenode:
         self.right.invert()
         self.left.invert()
     
+    
 
 def buildbintree(values):
     root = Treenode(values[0])
