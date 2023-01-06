@@ -1,3 +1,5 @@
+import socket
+
 def send_file(filename: str, testing: bool = False) -> None:
     import socket
 
