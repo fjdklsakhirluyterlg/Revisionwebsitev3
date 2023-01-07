@@ -24,3 +24,8 @@ class LinkedList:
                 node = node.next
                 count += 1
             return count
+    
+    def __getitem__(self, index):
+        return self.head[index]
+    
+    
