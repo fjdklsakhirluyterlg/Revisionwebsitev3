@@ -85,3 +85,18 @@ class LinkedList:
                 node = node.next
             prevNode.next = None
             del node
+    
+    def reverse(self):
+        if(self.head == None):
+            return 
+        else:
+            node = self.head
+            prevNode = None
+            while(node != None):
+                temp = node.next 
+                node.next = prevNode
+                prevNode = node
+                node = temp
+                if(temp == None):
+                    self.head = prevNode
+            return self.head
