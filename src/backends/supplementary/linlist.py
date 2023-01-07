@@ -43,3 +43,13 @@ class LinkedList:
             prevHead = self.head
             self.head = newNode
             newNode.next = prevHead
+
+    def pushBack(self, data):
+        newNode = Node(data)
+        if self.head == None:
+            self.head = newNode
+        else:
+            temp = self.head
+            while(temp.next != None):
+                temp = temp.next
+            temp.next = newNode
