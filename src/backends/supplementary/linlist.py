@@ -7,5 +7,9 @@ class Node:
     def setData(self,data):
         self.data = data
 
-    def getData(self)
+    def getData(self):
         return self.data
+
+class LinkedList:
+    def __init__(self, head = None):
+        self.head = None
