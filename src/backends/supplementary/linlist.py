@@ -73,3 +73,15 @@ class LinkedList:
                 del temp            
             else:
                 node.next = None
+    
+    def pop(self):
+        if(self.head == None):
+            return
+        else:
+            node = self.head
+            prevNode = None
+            while(node.next != None):
+                prevNode = node
+                node = node.next
+            prevNode.next = None
+            del node
