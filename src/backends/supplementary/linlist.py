@@ -28,4 +28,9 @@ class LinkedList:
     def __getitem__(self, index):
         return self.head[index]
     
-    
+    def show(self):
+        node = self.head
+        while(node.next != None):
+            print(node.data, end=" -> ")
+            node = node.next
+        print(node.data)
