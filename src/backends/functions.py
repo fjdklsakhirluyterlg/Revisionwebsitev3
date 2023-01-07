@@ -443,3 +443,6 @@ def send_bying_request_thing(title, content, addresses):
     msg = Message(f"Buying {title}", sender="drive1.banerjee.armaan@outlook.com", recipients=addresses)
     msg.html = content
     mail.send(msg)
+
+def i_am_stupid():
+    pass
