@@ -34,3 +34,12 @@ class LinkedList:
             print(node.data, end=" -> ")
             node = node.next
         print(node.data)
+
+    def pushFront(self, data):
+        newNode = Node(data)
+        if(self.head == None):
+            self.head = newNode
+        else:
+            prevHead = self.head
+            self.head = newNode
+            newNode.next = prevHead
