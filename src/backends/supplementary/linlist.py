@@ -53,3 +53,23 @@ class LinkedList:
             while(temp.next != None):
                 temp = temp.next
             temp.next = newNode
+    
+    def remove(self, index):
+        if(self.head == None):
+            return None
+        else:
+            i, size = 1, len(self)
+            if(index > size):
+                index = index % size
+            if(index == 1):
+                self.head = self.head.next
+                return 
+            while(i < index-1):
+                node = node.next
+                i += 1
+            if(node.next and node.next.next):
+                temp = node.next 
+                node.next = node.next.next
+                del temp            
+            else:
+                node.next = None
