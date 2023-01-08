@@ -390,6 +390,10 @@ def api_view_all_notifications():
     
     return dict
 
+@user.route("/user/yes")
+def user_yes():
+    pass
+
 @user.route("/banners/<filename>")
 def see_banner(filename):
     curdir = os.getcwd()
