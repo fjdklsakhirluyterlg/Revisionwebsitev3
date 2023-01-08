@@ -100,3 +100,6 @@ class LinkedList:
                 if(temp == None):
                     self.head = prevNode
             return self.head
+    
+    def create(self):
+        pass
