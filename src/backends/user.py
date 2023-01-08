@@ -392,7 +392,7 @@ def api_view_all_notifications():
 
 @user.route("/user/yes")
 def user_yes():
-    pass
+    users = User.query.all()
 
 @user.route("/banners/<filename>")
 def see_banner(filename):
