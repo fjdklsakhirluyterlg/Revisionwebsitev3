@@ -394,7 +394,7 @@ def api_view_all_notifications():
 def user_yes():
     id = request.args.get("id")
     users = User.query.all()
-    users.index()
+    
 
 
 @user.route("/banners/<filename>")
