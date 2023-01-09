@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, josnify
 
 meme_api = Blueprint("meme_api", __name__)
 
