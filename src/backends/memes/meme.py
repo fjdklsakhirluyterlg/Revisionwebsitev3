@@ -4,4 +4,10 @@ meme_api = Blueprint("meme_api", __name__)
 
 @meme_api.route("/meme")
 def meme():
-    pass
+    return ""
+
+@meme_api.route("api/meme/add", methods=["POST"])
+def add_meme_thing():
+    data = request.get_json()
+    name = data["name"]
+    caption = data["caption"]
