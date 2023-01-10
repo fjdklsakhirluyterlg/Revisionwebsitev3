@@ -8,4 +8,4 @@ def meme():
 
 @meme_api.route("api/meme/add", methods=["POST"])
 def add_meme_thing():
-    pass
+    data = request.get_json()
