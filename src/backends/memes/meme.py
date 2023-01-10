@@ -5,3 +5,7 @@ meme_api = Blueprint("meme_api", __name__)
 @meme_api.route("/meme")
 def meme():
     return ""
+
+@meme_api.route("/meme/add")
+def add_meme_thing():
+    pass
