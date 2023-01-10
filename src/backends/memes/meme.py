@@ -9,3 +9,5 @@ def meme():
 @meme_api.route("api/meme/add", methods=["POST"])
 def add_meme_thing():
     data = request.get_json()
+    name = data["name"]
+    caption = data["caption"]
